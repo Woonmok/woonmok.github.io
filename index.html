@@ -4,89 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="120">
-    <title>POM & Farmerstree Live Signage</title>
+    <title>The Wave Tree Project Dashboard</title>
     <style>
         :root {
-            --glass-bg: rgba(0, 0, 0, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --bg-dark: #0a0a0a;
+            --card-bg: rgba(20, 20, 20, 0.85); /* Darker, less transparent */
             --text-primary: #ffffff;
-            --text-secondary: #e0e0e0;
+            --text-secondary: #cccccc;
             --accent: #00ff88;
+            --accent-glow: rgba(0, 255, 136, 0.3);
         }
         body {
             margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden;
             font-family: 'Pretendard', sans-serif;
             color: var(--text-primary);
-            background: url('https://source.unsplash.com/featured/1920x1080/?nature') no-repeat center center fixed;
-            background-size: cover;
+            background-color: var(--bg-dark);
+            /* Global simple dark bg */
+            background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
             display: flex; flex-direction: column; justify-content: space-between;
         }
-        .overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); z-index: 0;
-        }
         header {
-            position: relative; z-index: 10; padding: 30px 60px;
+            padding: 30px 50px;
             display: flex; justify-content: space-between; align-items: flex-start;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.5);
         }
-        .brand { border-left: 4px solid var(--accent); padding-left: 20px; margin-top: 10px; }
-        .brand h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; }
-        .brand span { font-size: 1.1rem; color: var(--accent); }
+        .brand { border-left: 5px solid var(--accent); padding-left: 20px; }
+        .brand h1 { margin: 0; font-size: 2.4rem; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 20px var(--accent-glow); }
+        .brand span { font-size: 1.2rem; color: var(--accent); font-weight: 600; letter-spacing: 3px; }
         
         .header-right { display: flex; gap: 40px; text-align: right; }
-        
         .weather-widget { display: flex; flex-direction: column; }
         .weather-info { display: flex; gap: 15px; justify-content: flex-end; font-size: 1.1rem; margin-bottom: 5px; }
         .weather-label { color: var(--accent); font-weight: 600; margin-right: 5px; }
-        .weather-temp { font-size: 2.5rem; font-weight: 700; line-height: 1; }
+        .weather-temp { font-size: 2.5rem; font-weight: 700; color: #fff; }
 
         .datetime { text-align: right; }
-        .time { font-size: 3.2rem; font-weight: 700; line-height: 1; }
-        .date { font-size: 1.1rem; opacity: 0.8; margin-top: 5px; }
+        .time { font-size: 3.2rem; font-weight: 700; line-height: 1; color: #fff; }
+        .date { font-size: 1.1rem; opacity: 0.7; margin-top: 5px; }
         
         main {
-            position: relative; z-index: 10; padding: 0 60px 40px 60px;
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; height: 65%;
+            padding: 30px 50px;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; height: 68%;
         }
         .news-card {
-            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px;
-            display: flex; flex-direction: column; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+            border-radius: 16px; padding: 25px;
+            display: flex; flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative; overflow: hidden;
+            /* Default dark bg */
+            background-color: #111;
+            transition: transform 0.3s ease;
         }
+        /* Background Image overlay logic handled inline */
+        .news-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+            z-index: 1;
+        }
+        .card-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; }
+        
         .category {
-            font-size: 0.9rem; font-weight: 600; color: var(--accent);
-            text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center;
+            font-size: 0.9rem; font-weight: 800; color: var(--accent);
+            text-transform: uppercase; margin-bottom: 20px; 
+            border-bottom: 2px solid var(--accent); padding-bottom: 10px;
+            display: inline-block; width: fit-content;
         }
-        .category::before {
-            content: ''; display: block; width: 8px; height: 8px;
-            background-color: var(--accent); border-radius: 50%; margin-right: 10px;
-        }
-        .news-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
-        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .news-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; }
+        
+        .news-item { margin-bottom: 20px; flex-grow: 1; }
+        .news-title { font-size: 1.3rem; font-weight: 700; margin: 0 0 10px 0; line-height: 1.4; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .news-summary {
-            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0;
-            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+            font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+            display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
         }
+        .news-date { font-size: 0.8rem; opacity: 0.6; margin-top: 5px; display: block; }
+
         footer {
-            position: relative; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
-            padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; opacity: 0.7;
+            padding: 15px 50px; background: #000; border-top: 1px solid #333;
+            display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #888;
         }
+        a { color: inherit; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <header>
         <div class="brand">
-            <h1>Pom & Farmerstree</h1>
-            <span>Live Signage Director</span>
+            <h1>The Wave Tree Project</h1>
+            <span>Farmerstree</span>
         </div>
         <div class="header-right">
             <div class="weather-widget">
                 <div class="weather-temp">--°C</div>
                 <div class="weather-info">
-                   <span><span class="weather-label">날씨</span>확인중</span>
+                   <span><span class="weather-label">날씨</span>데이터 없음</span>
                    <span><span class="weather-label">습도</span>--%</span>
                 </div>
                 <div class="weather-info">
@@ -101,16 +112,76 @@
     </header>
 
     <main>
-        <article class="news-card"><div class="category">Listeria Free Tech</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">Cultured Meat</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">High-end Audio</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">Jinan-gun Issue</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article>
+        
+        <article class="news-card" style="background-image: url('https://images.unsplash.com/photo-1626202378942-e1d033722e92?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
+            <div class="card-content">
+                <div class="category">LISTERIA FREE</div>
+                
+            <div class="news-item">
+                <a href="https://www.foodicon.co.kr/news/articleView.html?idxno=9291" target="_blank">
+                    <h2 class="news-title">농업현장 리스테리아균 신속 검출기술 개발… 팽이버섯 수출 결함 보상 피해 예방</h2>
+                </a>
+                <p class="news-summary">농촌진흥청(청장 허태웅)은 경상대학교(심원보 교수 연구팀)와 함께 59.5℃에서 40분간 리스테리아를 증폭한 뒤 발색기질 용액을 넣어 양성 혹은 음성인지... (2020. 11. 17.)</p>
+                <span class="news-date">2020. 11. 17.</span>
+            </div>
+            
+            </div>
+        </article>
+        
+        <article class="news-card" style="background-image: url('https://images.unsplash.com/photo-1579165466741-7f35a4755657?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
+            <div class="card-content">
+                <div class="category">CULTURED MEAT</div>
+                
+            <div class="news-item">
+                <a href="https://www.yonhapnewstv.co.kr/news/MYH202510241850561ok" target="_blank">
+                    <h2 class="news-title">가축 줄기세포로 만든 고기…'세포배양육' 공개</h2>
+                </a>
+                <p class="news-summary">돼지 배아줄기세포로 만들어진 '세포배양육'이 공개됐습니다. 세포농업기술 연구기업인 스페이스에프는 오늘(24일) 배양 돈육 시식회를 열고,... (2025. 10. 24.)</p>
+                <span class="news-date">2025. 10. 24.</span>
+            </div>
+            
+            </div>
+        </article>
+        
+        <article class="news-card" style="background-image: url('https://images.unsplash.com/photo-1558485203-b5417ae4a43b?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
+            <div class="card-content">
+                <div class="category">HIGH-END AUDIO</div>
+                
+            <div class="news-item">
+                <a href="https://zdnet.co.kr/view/?no=20251216233519" target="_blank">
+                    <h2 class="news-title">JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니</h2>
+                </a>
+                <p class="news-summary">턴테이블에서 바늘이 내려가자 공간의 공기가 달라졌다. JBL 서밋 마칼루가 들려주는 다이내믹스와 공간감이 또렷하게 전달됐다. 삼성전자 오디오... (1개월 전)</p>
+                <span class="news-date">1개월 전</span>
+            </div>
+            
+            </div>
+        </article>
+        
+        <article class="news-card" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
+            <div class="card-content">
+                <div class="category">COMPUTER & AI</div>
+                
+            <div class="news-item">
+                <a href="https://news.nate.com/view/20260118n12028" target="_blank">
+                    <h2 class="news-title">LLM 이어 영상 AI까지 중국 모델, 美 바짝 추격</h2>
+                </a>
+                <p class="news-summary">한눈에 보는 오늘 : IT/과학 - 뉴스 : 최근 중국 영상 생성 인공지능(AI)의 약진이 두드러지고 있다. 그간 영상 AI 서비스 분야에선 미국 모델에... (1주 전)</p>
+                <span class="news-date">1주 전</span>
+            </div>
+            
+            </div>
+        </article>
+        
     </main>
 
     <footer>
-        <div>Location: Seoul, KR</div>
+        <div>System: Online (Farmerstree HQ)</div>
         <div>
-            <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete: Command Center Online</span>
-            <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent); text-decoration: none;">▶ Play Celebration Music</a>
+            <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete</span>
+            <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent);">▶ Celebration Music</a>
         </div>
-        <div>System Status: Online | Auto-refresh: 2min | Source: Serper API</div>
+        <div>Source: Serper / Google News RSS</div>
     </footer>
 
     <script>
