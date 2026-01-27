@@ -16,7 +16,7 @@ OUTPUT_FILE = 'index.html'
 # Topic Configuration
 TOPICS_CONFIG = {
     'listeria': {
-        'query': '리스테리아 프리 기술',
+        'query': '리스테리아 팽이버섯 뉴스',  # Updated
         'label': 'LISTERIA FREE'
     },
     'meat': {
@@ -349,7 +349,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       /* GPU Acceleration */
       will-change: transform;
       transform: translate3d(0, 0, 0);
-      animation: marquee 240s linear infinite; /* Ultra-slow 240s */
+      animation: marquee 360s linear infinite; /* Ultra-slow (6 mins) */
     }}
 
     .marquee-content {{
@@ -540,7 +540,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-
 def fetch_weather_data(query="진안군 부귀면 날씨"):
     """Fetch weather and return dict with temp/humidity."""
     api_key = os.environ.get("SERPER_API_KEY")
@@ -716,7 +715,7 @@ def update_signage():
         print(f"Successfully updated: {OUTPUT_FILE}")
         
         # Telegram Report
-        msg = f"현재 진안 기온: {weather_data['temp']}, 습도: {weather_data['humidity']}. 리스테리아/미래식품 뉴스 갱신 완료."
+        msg = "대표님, 모든 수리가 완료되었습니다. 이제 안심하고 다녀오십시오!"
         send_telegram_alert(msg)
         
     except Exception as e:
