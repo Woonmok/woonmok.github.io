@@ -687,14 +687,50 @@ def update_signage():
         marquee_items=marquee_html
     )
 
+
     # 5. Save
     try:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write(final_html)
         print(f"Successfully updated: {OUTPUT_FILE}")
+        
+        # 6. Telegram Alert
+        # Extract temp for message "기온: -XX°C"
+        # weather_html format: <span>...기온</span> -XX°C</span>...
+        # Simple extraction or pass raw temp if available. 
+        # For now, let's parse from the HTML string or just re-use if we had a variable.
+        # We don't have raw temp variable easily available in this scope without refactoring fetch_weather_serper.
+        # Let's extract from weather_html or just say "Updated".
+        # Better: Refactor fetch_weather_serper to return dict, but let's do a quick regex on weather_html.
+        
+        temp_match = re.search(r'기온</span>\s*(-?[\d\.]+°C)', weather_html)
+        current_temp = temp_match.group(1) if temp_match else "N/A"
+        
+        send_telegram_alert(f"대표님, Farmerstree 지휘소 업데이트 완료되었습니다. (진안 기온: {current_temp})")
+        
     except Exception as e:
         print(f"Error writing file: {e}")
         sys.exit(1)
+
+def send_telegram_alert(message):
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    
+    if not token or not chat_id:
+        print("Telegram Config Missing. Skipping alert.")
+        return
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    payload = {
+        "chat_id": chat_id,
+        "text": message
+    }
+    
+    try:
+        requests.post(url, json=payload, timeout=5)
+        print("Telegram notification sent.")
+    except Exception as e:
+        print(f"Failed to send Telegram alert: {e}")
 
 if __name__ == "__main__":
     update_signage()
