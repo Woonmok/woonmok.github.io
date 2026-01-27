@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="600">
+    <meta http-equiv="refresh" content="120">
     <title>POM & Farmerstree Live Signage</title>
     <style>
         :root {
@@ -17,7 +17,7 @@
             margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden;
             font-family: 'Pretendard', sans-serif;
             color: var(--text-primary);
-            background: url('https://source.unsplash.com/featured/1920x1080/?minimalist%20architecture') no-repeat center center fixed;
+            background: url('https://source.unsplash.com/featured/1920x1080/?nature') no-repeat center center fixed;
             background-size: cover;
             display: flex; flex-direction: column; justify-content: space-between;
         }
@@ -26,16 +26,25 @@
             background: rgba(0, 0, 0, 0.4); z-index: 0;
         }
         header {
-            position: relative; z-index: 10; padding: 40px 60px;
-            display: flex; justify-content: space-between; align-items: flex-end;
+            position: relative; z-index: 10; padding: 30px 60px;
+            display: flex; justify-content: space-between; align-items: flex-start;
             background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
         }
-        .brand { border-left: 4px solid var(--accent); padding-left: 20px; }
-        .brand h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; }
-        .brand span { font-size: 1.2rem; color: var(--accent); }
+        .brand { border-left: 4px solid var(--accent); padding-left: 20px; margin-top: 10px; }
+        .brand h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; }
+        .brand span { font-size: 1.1rem; color: var(--accent); }
+        
+        .header-right { display: flex; gap: 40px; text-align: right; }
+        
+        .weather-widget { display: flex; flex-direction: column; }
+        .weather-info { display: flex; gap: 15px; justify-content: flex-end; font-size: 1.1rem; margin-bottom: 5px; }
+        .weather-label { color: var(--accent); font-weight: 600; margin-right: 5px; }
+        .weather-temp { font-size: 2.5rem; font-weight: 700; line-height: 1; }
+
         .datetime { text-align: right; }
-        .time { font-size: 3.5rem; font-weight: 700; }
-        .date { font-size: 1.2rem; opacity: 0.8; margin-top: 5px; }
+        .time { font-size: 3.2rem; font-weight: 700; line-height: 1; }
+        .date { font-size: 1.1rem; opacity: 0.8; margin-top: 5px; }
+        
         main {
             position: relative; z-index: 10; padding: 0 60px 40px 60px;
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; height: 65%;
@@ -55,10 +64,10 @@
         }
         .news-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
         .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .news-title { font-size: 1.3rem; font-weight: 700; margin: 0 0 10px 0; line-height: 1.3; }
+        .news-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; }
         .news-summary {
-            font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0;
-            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
         }
         footer {
             position: relative; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
@@ -73,49 +82,35 @@
             <h1>Pom & Farmerstree</h1>
             <span>Live Signage Director</span>
         </div>
-        <div class="datetime">
-            <div class="time" id="clock">--:--</div>
-            <div class="date" id="date">--.--.--</div>
+        <div class="header-right">
+            <div class="weather-widget">
+                <div class="weather-temp">--°C</div>
+                <div class="weather-info">
+                   <span><span class="weather-label">날씨</span>확인중</span>
+                   <span><span class="weather-label">습도</span>--%</span>
+                </div>
+                <div class="weather-info">
+                    <span><span class="weather-label">기온</span>--</span>
+                </div>
+            </div>
+            <div class="datetime">
+                <div class="time" id="clock">--:--</div>
+                <div class="date" id="date">--.--.--</div>
+            </div>
         </div>
     </header>
 
     <main>
-        <article class="news-card"><div class="category">Listeria Free Tech</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">관련 최신 뉴스를 불러오는 중입니다.</p></div></article><article class="news-card"><div class="category">Cultured Meat</div>
-            <div class="news-item">
-                <h2 class="news-title">[식물성 대체육③/경쟁재]저단백 단점 보완 위해 동물성 배양육 뜬다 - 비즈니스플러스</h2>
-                <p class="news-summary">[식물성 대체육③/경쟁재]저단백 단점 보완 위해 동물성 배양육 뜬다  비즈니스플러스</p>
-            </div>
-            
-            <div class="news-item">
-                <h2 class="news-title">미국의 세포배양육 규제 갈등, 혁신의 시험대에 서다-이주형의 글로벌 푸드트렌드(14) - 식품음료신문</h2>
-                <p class="news-summary">미국의 세포배양육 규제 갈등, 혁신의 시험대에 서다-이주형의 글로벌 푸드트렌드(14)  식품음료신문</p>
-            </div>
-            </article><article class="news-card"><div class="category">High-end Audio</div>
-            <div class="news-item">
-                <h2 class="news-title">JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니 - 지디넷코리아</h2>
-                <p class="news-summary">JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니  지디넷코리아</p>
-            </div>
-            
-            <div class="news-item">
-                <h2 class="news-title">오디오엑스포서울 2025 w.전자랜드, 11월 개최…"국내외 하이엔드 오디오 총집결" - 이코노미톡뉴스</h2>
-                <p class="news-summary">오디오엑스포서울 2025 w.전자랜드, 11월 개최…"국내외 하이엔드 오디오 총집결"  이코노미톡뉴스</p>
-            </div>
-            </article><article class="news-card"><div class="category">Jinan-gun Issue</div>
-            <div class="news-item">
-                <h2 class="news-title">모바일헬스케어 참여로 만성질환 예방하세요 - 경제투데이</h2>
-                <p class="news-summary">모바일헬스케어 참여로 만성질환 예방하세요  경제투데이</p>
-            </div>
-            
-            <div class="news-item">
-                <h2 class="news-title">[전춘성 진안군수] "용담호 수돗물 곧 군민 공급... 진안읍 아파트촌 변모" - thevoiceofus.co.kr</h2>
-                <p class="news-summary">[전춘성 진안군수] "용담호 수돗물 곧 군민 공급... 진안읍 아파트촌 변모"  thevoiceofus.co.kr</p>
-            </div>
-            </article>
+        <article class="news-card"><div class="category">Listeria Free Tech</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">Cultured Meat</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">High-end Audio</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">Jinan-gun Issue</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article>
     </main>
 
     <footer>
-        <div>Weather: Check Local Data</div>
-        <div>System Status: Online | Auto-refresh: 10min | Loop: 30min</div>
+        <div>Location: Seoul, KR</div>
+        <div>
+            <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete: Command Center Online</span>
+            <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent); text-decoration: none;">▶ Play Celebration Music</a>
+        </div>
+        <div>System Status: Online | Auto-refresh: 2min | Source: Serper API</div>
     </footer>
 
     <script>
