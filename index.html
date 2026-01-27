@@ -17,7 +17,7 @@
             margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden;
             font-family: 'Pretendard', sans-serif;
             color: var(--text-primary);
-            background: url('https://source.unsplash.com/featured/1920x1080/?nature') no-repeat center center fixed;
+            background: url('https://source.unsplash.com/featured/1920x1080/?minimalist%20architecture') no-repeat center center fixed;
             background-size: cover;
             display: flex; flex-direction: column; justify-content: space-between;
         }
@@ -36,11 +36,12 @@
         
         .header-right { display: flex; gap: 40px; text-align: right; }
         
-        .weather-widget { display: flex; flex-direction: column; }
-        .weather-info { display: flex; gap: 15px; justify-content: flex-end; font-size: 1.1rem; margin-bottom: 5px; }
+        .weather-widget { display: flex; flex-direction: column; align-items: flex-end; }
+        .weather-main { display: flex; align-items: center; gap: 15px; margin-bottom: 5px; }
+        .weather-temp { font-size: 3rem; font-weight: 700; line-height: 1; }
+        .weather-details { font-size: 1rem; opacity: 0.9; }
         .weather-label { color: var(--accent); font-weight: 600; margin-right: 5px; }
-        .weather-temp { font-size: 2.5rem; font-weight: 700; line-height: 1; }
-
+        
         .datetime { text-align: right; }
         .time { font-size: 3.2rem; font-weight: 700; line-height: 1; }
         .date { font-size: 1.1rem; opacity: 0.8; margin-top: 5px; }
@@ -50,10 +51,20 @@
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; height: 65%;
         }
         .news-card {
-            background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: var(--glass-bg); 
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px;
             display: flex; flex-direction: column; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+            position: relative; overflow: hidden;
+            transition: transform 0.3s ease;
         }
+        .news-card-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            opacity: 0.3; z-index: 0; filter: grayscale(30%);
+        }
+        .news-content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
+        
         .category {
             font-size: 0.9rem; font-weight: 600; color: var(--accent);
             text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center;
@@ -64,10 +75,11 @@
         }
         .news-item { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
         .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .news-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; }
+        .news-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .news-summary {
             font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0;
             display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
         footer {
             position: relative; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
@@ -85,12 +97,9 @@
         <div class="header-right">
             <div class="weather-widget">
                 <div class="weather-temp">--°C</div>
-                <div class="weather-info">
-                   <span><span class="weather-label">날씨</span>확인중</span>
-                   <span><span class="weather-label">습도</span>--%</span>
-                </div>
-                <div class="weather-info">
-                    <span><span class="weather-label">기온</span>--</span>
+                <div class="weather-details">
+                   <span><span class="weather-label">위치</span>진안군 부귀면</span>
+                   <span style="margin-left: 10px;"><span class="weather-label">습도</span>--%</span>
                 </div>
             </div>
             <div class="datetime">
@@ -101,7 +110,7 @@
     </header>
 
     <main>
-        <article class="news-card"><div class="category">Listeria Free Tech</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">Cultured Meat</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">High-end Audio</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article><article class="news-card"><div class="category">Jinan-gun Issue</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 키가 없거나 뉴스를 불러올 수 없습니다. Serper API Key를 확인해주세요.</p></div></article>
+        <article class="news-card"><div class="news-card-bg" style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=2070&auto=format&fit=crop');"></div><div class="news-content"><div class="category">Listeria Free Tech</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 데이터를 불러올 수 없습니다.</p></div></div></article><article class="news-card"><div class="news-card-bg" style="background-image: url('https://images.unsplash.com/photo-1579154235602-3c2c23736671?q=80&w=2070&auto=format&fit=crop');"></div><div class="news-content"><div class="category">Cultured Meat</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 데이터를 불러올 수 없습니다.</p></div></div></article><article class="news-card"><div class="news-card-bg" style="background-image: url('https://images.unsplash.com/photo-1558352520-435728a0d922?q=80&w=2070&auto=format&fit=crop');"></div><div class="news-content"><div class="category">High-end Audio</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 데이터를 불러올 수 없습니다.</p></div></div></article><article class="news-card"><div class="news-content"><div class="category">Jinan-gun Issue</div><div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 데이터를 불러올 수 없습니다.</p></div></div></article>
     </main>
 
     <footer>
@@ -110,7 +119,7 @@
             <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete: Command Center Online</span>
             <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent); text-decoration: none;">▶ Play Celebration Music</a>
         </div>
-        <div>System Status: Online | Auto-refresh: 2min | Source: Serper API</div>
+        <div>System Status: Online | Auto-refresh: 120s | Source: Serper API</div>
     </footer>
 
     <script>
@@ -123,6 +132,11 @@
         }
         setInterval(updateTime, 1000);
         updateTime();
+        
+        // Auto-refresh logic (just in case meta refresh fails or for smooth reload)
+        setTimeout(() => {
+            window.location.reload();
+        }, 120000);
     </script>
 </body>
 </html>
