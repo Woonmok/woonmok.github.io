@@ -14,8 +14,6 @@ import re
 OUTPUT_FILE = 'index.html'
 
 # Topic Configuration
-# We fetch news for these 4 categories.
-# The template has fixed slots for them: listeria, meat, audio, computer
 TOPICS_CONFIG = {
     'listeria': {
         'query': '리스테리아 프리 기술',
@@ -36,7 +34,6 @@ TOPICS_CONFIG = {
 }
 
 # HTML Template (Based on digital_signage.html)
-# We use Python format strings {key} to inject content.
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="ko">
 
@@ -352,7 +349,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       /* GPU Acceleration */
       will-change: transform;
       transform: translate3d(0, 0, 0);
-      animation: marquee 120s linear infinite; /* Fixed to 120s as requested */
+      animation: marquee 240s linear infinite; /* Ultra-slow 240s */
     }}
 
     .marquee-content {{
@@ -544,7 +541,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 """
 
 def fetch_weather_serper(query="진안군 부귀면 날씨"):
-    """Fetch weather and return formatted HTML string."""
+    """Fetch weather and return formatted string."""
     api_key = os.environ.get("SERPER_API_KEY")
     # Default fallback
     temp = "-XX°C"
@@ -564,50 +561,70 @@ def fetch_weather_serper(query="진안군 부귀면 날씨"):
             data = response.json()
             
             # Parsing Strategy (Snippet/AnswerBox)
-            found_temp = False
+            found = False
             
-            # Check answerBox first
-            if 'answerBox' in data and 'temperature' in data['answerBox']:
+            # Strategy 1: AnswerBox (High confidence)
+            if 'answerBox' in data:
                 box = data['answerBox']
-                temp = str(box.get('temperature')) + "°C"
-                if 'humidity' in box: humidity = str(box.get('humidity')) + "%"
-                found_temp = True
+                # Check directly for temperature key
+                if 'temperature' in box:
+                    temp = str(box.get('temperature')) + "°C"
+                    if 'humidity' in box: humidity = str(box.get('humidity')) + "%"
+                    found = True
             
-            # Check snippet if not found
-            if not found_temp and 'organic' in data:
+            # Strategy 2: Knowledge Graph
+            if not found and 'knowledgeGraph' in data:
+                kg = data['knowledgeGraph']
+                if 'attributes' in kg:
+                    attrs = kg['attributes']
+                    if 'Temperature' in attrs: temp = attrs['Temperature']
+                    elif '기온' in attrs: temp = attrs['기온']
+                    
+                    if 'Humidity' in attrs: humidity = attrs['Humidity']
+                    elif '습도' in attrs: humidity = attrs['습도']
+                    found = True
+
+            # Strategy 3: Organic Snippet (Fallback, strictly parse only near "기온")
+            if not found and 'organic' in data:
                 for res in data['organic']:
                     text = (res.get('title', '') + " " + res.get('snippet', ''))
-                    t_match = re.search(r'(-?\d{1,2})\s*(°C|도)', text)
+                    # Look for "기온: -5°C" or "-5도" context
+                    # Avoid years like '21년' -> must have °C or 도 immediately after number
+                    t_match = re.search(r'기온.*?(-?\d{1,2})\s*(°C|도)', text)
                     if t_match:
                         temp = t_match.group(1) + "°C"
-                        h_match = re.search(r'습도\s*:?\s*(\d{1,3})%', text)
+                        found = True
+                    
+                    if found:
+                        h_match = re.search(r'습도.*?(\d{1,3})%', text)
                         if h_match: humidity = h_match.group(1) + "%"
                         break
                         
         except Exception as e:
             print(f"Weather Fetch Error: {e}")
 
-    # Return Formatted HTML
-    # <span><span class="text-orange">기온</span> -3.4°</span>
-    # <span><span class="text-blue">습도</span> 63%</span>
+    # Return Formatted HTML (Strict Format)
     return f"""
         <span><span class="text-orange">기온</span> {temp}</span>
         <span><span class="text-blue">습도</span> {humidity}</span>
     """
 
-def fetch_top_news_serper(query, count=4):
-    """Fetch news items list."""
+def fetch_top_news_serper(query, count=5):
+    """Fetch news items list. Limit to 5."""
     api_key = os.environ.get("SERPER_API_KEY")
     if not api_key:
-        # Dummy Data for offline testing
         return [
-            {'title': f'Data Pending for {query}', 'date': datetime.datetime.now().strftime('%Y.%m.%d')},
-            {'title': 'System is online but API Key missing', 'date': 'Check Config'}
+            {'title': f'Data Pending for {query}', 'date': datetime.datetime.now().strftime('%Y.%m.%d')}
         ]
 
+    # Force Korean results by adding Korean keywords to query if needed, 
+    # but 'hl=ko' usually handles UI language.
+    # The user insists on Korean content. 
+    # Providing 'gl=kr' and 'hl=ko' is the standard way.
+    
     url = "https://google.serper.dev/news"
     payload = json.dumps({
-        "q": query, "gl": "kr", "hl": "ko", "num": count
+        "q": query, "gl": "kr", "hl": "ko", "num": 10 # Fetch more to filter
     })
     headers = { 'X-API-KEY': api_key, 'Content-Type': 'application/json' }
 
@@ -618,12 +635,28 @@ def fetch_top_news_serper(query, count=4):
         
         if 'news' in data:
             for news in data['news']:
-                items.append({
-                    'title': news.get('title', 'No Title'),
-                    'date': news.get('date', datetime.datetime.now().strftime('%Y.%m.%d')) 
-                    # Serper sometimes gives 'date', usually 'timeAgo'. We can use current date if missing or parse timeAgo. 
-                    # For simplicity, use current date or "Today".
-                })
+                if len(items) >= count: break
+                
+                title = news.get('title', 'No Title')
+                
+                # Filter: Prefer Korean characters?
+                # Simple check: does it contain Hangul?
+                if re.search(r'[가-힣]', title):
+                    items.append({
+                        'title': title,
+                        'date': news.get('date', 'Today') # Simplified date
+                    })
+                
+            # If we don't have enough Korean items, fill with remaining
+            if len(items) < count:
+                 for news in data['news']:
+                    if len(items) >= count: break
+                    if not any(x['title'] == news.get('title') for x in items):
+                        items.append({
+                            'title': news.get('title', 'No Title'),
+                            'date': news.get('date', 'Today')
+                        })
+                        
     except Exception as e:
         print(f"News Fetch Error {query}: {e}")
         
@@ -643,8 +676,28 @@ def generate_news_html(items):
         """
     return html_output
 
+def send_telegram_alert(message):
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    
+    if not token or not chat_id:
+        print("Telegram Config Missing. Skipping alert.")
+        return
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    payload = {
+        "chat_id": chat_id,
+        "text": message
+    }
+    
+    try:
+        requests.post(url, json=payload, timeout=5)
+        print("Telegram notification sent.")
+    except Exception as e:
+        print(f"Failed to send Telegram alert: {e}")
+
 def update_signage():
-    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Design Restore Update...")
+    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Final Tuning Update...")
 
     # 1. Fetch Weather
     print("Fetching Weather...")
@@ -656,7 +709,7 @@ def update_signage():
 
     for key, config in TOPICS_CONFIG.items():
         print(f"Fetching {key}...")
-        items = fetch_top_news_serper(config['query'])
+        items = fetch_top_news_serper(config['query'], count=5) # Limit to 5
         news_content[key] = generate_news_html(items)
         
         # Collect headlines for marquee
@@ -687,7 +740,6 @@ def update_signage():
         marquee_items=marquee_html
     )
 
-
     # 5. Save
     try:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
@@ -696,13 +748,6 @@ def update_signage():
         
         # 6. Telegram Alert
         # Extract temp for message "기온: -XX°C"
-        # weather_html format: <span>...기온</span> -XX°C</span>...
-        # Simple extraction or pass raw temp if available. 
-        # For now, let's parse from the HTML string or just re-use if we had a variable.
-        # We don't have raw temp variable easily available in this scope without refactoring fetch_weather_serper.
-        # Let's extract from weather_html or just say "Updated".
-        # Better: Refactor fetch_weather_serper to return dict, but let's do a quick regex on weather_html.
-        
         temp_match = re.search(r'기온</span>\s*(-?[\d\.]+°C)', weather_html)
         current_temp = temp_match.group(1) if temp_match else "N/A"
         
@@ -711,26 +756,6 @@ def update_signage():
     except Exception as e:
         print(f"Error writing file: {e}")
         sys.exit(1)
-
-def send_telegram_alert(message):
-    token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    
-    if not token or not chat_id:
-        print("Telegram Config Missing. Skipping alert.")
-        return
-
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": message
-    }
-    
-    try:
-        requests.post(url, json=payload, timeout=5)
-        print("Telegram notification sent.")
-    except Exception as e:
-        print(f"Failed to send Telegram alert: {e}")
 
 if __name__ == "__main__":
     update_signage()
