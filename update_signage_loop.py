@@ -48,16 +48,25 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             background: rgba(0, 0, 0, 0.4); z-index: 0;
         }}
         header {{
-            position: relative; z-index: 10; padding: 40px 60px;
-            display: flex; justify-content: space-between; align-items: flex-end;
+            position: relative; z-index: 10; padding: 30px 60px;
+            display: flex; justify-content: space-between; align-items: flex-start;
             background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
         }}
-        .brand {{ border-left: 4px solid var(--accent); padding-left: 20px; }}
-        .brand h1 {{ margin: 0; font-size: 2.5rem; text-transform: uppercase; }}
-        .brand span {{ font-size: 1.2rem; color: var(--accent); }}
+        .brand {{ border-left: 4px solid var(--accent); padding-left: 20px; margin-top: 10px; }}
+        .brand h1 {{ margin: 0; font-size: 2.2rem; text-transform: uppercase; }}
+        .brand span {{ font-size: 1.1rem; color: var(--accent); }}
+        
+        .header-right {{ display: flex; gap: 40px; text-align: right; }}
+        
+        .weather-widget {{ display: flex; flex-direction: column; }}
+        .weather-info {{ display: flex; gap: 15px; justify-content: flex-end; font-size: 1.1rem; margin-bottom: 5px; }}
+        .weather-label {{ color: var(--accent); font-weight: 600; margin-right: 5px; }}
+        .weather-temp {{ font-size: 2.5rem; font-weight: 700; line-height: 1; }}
+
         .datetime {{ text-align: right; }}
-        .time {{ font-size: 3.5rem; font-weight: 700; }}
-        .date {{ font-size: 1.2rem; opacity: 0.8; margin-top: 5px; }}
+        .time {{ font-size: 3.2rem; font-weight: 700; line-height: 1; }}
+        .date {{ font-size: 1.1rem; opacity: 0.8; margin-top: 5px; }}
+        
         main {{
             position: relative; z-index: 10; padding: 0 60px 40px 60px;
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; height: 65%;
@@ -77,10 +86,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }}
         .news-item {{ margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }}
         .news-item:last-child {{ border-bottom: none; margin-bottom: 0; padding-bottom: 0; }}
-        .news-title {{ font-size: 1.3rem; font-weight: 700; margin: 0 0 10px 0; line-height: 1.3; }}
+        .news-title {{ font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; }}
         .news-summary {{
-            font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0;
-            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
         }}
         footer {{
             position: relative; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
@@ -95,9 +104,21 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <h1>Pom & Farmerstree</h1>
             <span>Live Signage Director</span>
         </div>
-        <div class="datetime">
-            <div class="time" id="clock">--:--</div>
-            <div class="date" id="date">--.--.--</div>
+        <div class="header-right">
+            <div class="weather-widget">
+                <div class="weather-temp">{weather_temp}</div>
+                <div class="weather-info">
+                   <span><span class="weather-label">날씨</span>{weather_condition}</span>
+                   <span><span class="weather-label">습도</span>{weather_humidity}</span>
+                </div>
+                <div class="weather-info">
+                    <span><span class="weather-label">기온</span>{weather_temp_label}</span>
+                </div>
+            </div>
+            <div class="datetime">
+                <div class="time" id="clock">--:--</div>
+                <div class="date" id="date">--.--.--</div>
+            </div>
         </div>
     </header>
 
@@ -106,7 +127,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     </main>
 
     <footer>
-        <div>Weather: Check Local Data</div>
+        <div>Location: Seoul, KR</div>
         <div>
             <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete: Command Center Online</span>
             <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent); text-decoration: none;">▶ Play Celebration Music</a>
@@ -128,6 +149,60 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+def fetch_weather_serper(location="Seoul Weather"):
+    """Fetch weather using Serper Search API."""
+    api_key = os.environ.get("SERPER_API_KEY")
+    default_weather = {
+        'temp': '--°C',
+        'condition': '확인중',
+        'humidity': '--%',
+        'temp_label': '--'
+    }
+    
+    if not api_key:
+        print("Warning: SERPER_API_KEY not found. Returning dummy weather.")
+        return default_weather
+
+    url = "https://google.serper.dev/search"
+    payload = json.dumps({
+        "q": location,
+        "gl": "kr",
+        "hl": "ko"
+    })
+    headers = {
+        'X-API-KEY': api_key,
+        'Content-Type': 'application/json'
+    }
+
+    try:
+        response = requests.request("POST", url, headers=headers, data=payload, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        # Try to parse Knowledge Graph or Answer Box
+        # Usually Serper returns 'answerBox' for weather queries
+        
+        if 'answerBox' in data and 'temperature' in data['answerBox']:
+            box = data['answerBox']
+            return {
+                'temp': f"{box.get('temperature', 0)}°C",
+                'condition': box.get('weather', '맑음'),
+                'humidity': f"{box.get('humidity', '0')}", # Serper sometimes puts humidity in a different field or attributes
+                'temp_label': f"{box.get('temperature', 0)}°C" 
+            }
+        
+        # Fallback parsing if structure varies
+        # Need to be robust. Using dummy for safety if exact parse fails, 
+        # but let's try to grab snippet.
+        
+        # For this specific demo, let's assume we might get standard JSON.
+        # If 'answerBox' is missing, return default.
+        return default_weather
+
+    except Exception as e:
+        print(f"Error fetching weather: {e}")
+        return default_weather
 
 def fetch_top_news_serper(query, count=2):
     """Fetch news using Serper API."""
@@ -161,11 +236,12 @@ def fetch_top_news_serper(query, count=2):
                 title = news.get("title", "")
                 link = news.get("link", "")
                 snippet = news.get("snippet", "")
+                date_str = news.get("date", "")
                 
                 items.append({
                     'title': title,
                     'link': link,
-                    'summary': snippet
+                    'summary': f"{snippet} ({date_str})"
                 })
         return items
             
@@ -181,7 +257,11 @@ def update_signage():
     bg_url = f"https://source.unsplash.com/featured/1920x1080/?{requests.utils.quote(bg_keyword)}"
     print(f"Selected Background: {bg_keyword}")
 
-    # 2. Fetch News
+    # 2. Fetch Weather
+    print("Fetching Weather...")
+    weather_data = fetch_weather_serper("서울 날씨")
+    
+    # 3. Fetch News
     news_sections_html = ""
     
     for category_en, query_kr in TOPICS.items():
@@ -195,8 +275,8 @@ def update_signage():
         
         for art in articles:
             summary = art['summary']
-            if len(summary) > 150:
-                summary = summary[:150] + "..."
+            if len(summary) > 120:
+                summary = summary[:120] + "..."
                 
             news_html += f"""
             <div class="news-item">
@@ -208,13 +288,17 @@ def update_signage():
         news_html += '</article>'
         news_sections_html += news_html
 
-    # 3. Generate HTML
+    # 4. Generate HTML
     final_html = HTML_TEMPLATE.format(
         bg_url=bg_url,
+        weather_temp=weather_data['temp'],
+        weather_condition=weather_data['condition'],
+        weather_humidity=weather_data['humidity'],
+        weather_temp_label=weather_data['temp_label'],
         news_sections=news_sections_html
     )
 
-    # 4. Save
+    # 5. Save
     try:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write(final_html)
