@@ -12,9 +12,8 @@ import re
 # Configuration
 # =============================================================================
 OUTPUT_FILE = 'index.html'
-BG_KEYWORDS = ['misty mountain', 'forest', 'analog audio', 'minimalist architecture', 'nature']
 
-# Topic Configuration: (English Label, Korean Query, Optional Background Image)
+# Topic Configuration
 TOPICS_CONFIG = [
     {
         'label': 'Listeria Free Tech',
@@ -32,9 +31,9 @@ TOPICS_CONFIG = [
         'image': 'https://images.unsplash.com/photo-1558352520-435728a0d922?q=80&w=2070&auto=format&fit=crop'
     },
     {
-        'label': 'Jinan-gun Issue',
-        'query': '전북 진안군 소식',
-        'image': None  # Keep default glass style
+        'label': 'COMPUTER & AI',
+        'query': 'AI 기술 트렌드',
+        'image': 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'
     }
 ]
 
@@ -45,102 +44,123 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="120">
-    <title>POM & Farmerstree Live Signage</title>
+    <title>THE WAVE TREE PROJECT</title>
     <style>
         :root {{
-            --glass-bg: rgba(0, 0, 0, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --bg-color: #000000;
+            --glass-bg: rgba(20, 20, 20, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.15);
             --text-primary: #ffffff;
-            --text-secondary: #e0e0e0;
+            --text-secondary: #cccccc;
             --accent: #00ff88;
         }}
         body {{
             margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden;
             font-family: 'Pretendard', sans-serif;
             color: var(--text-primary);
-            background: url('{bg_url}') no-repeat center center fixed;
-            background-size: cover;
+            background-color: var(--bg-color);
             display: flex; flex-direction: column; justify-content: space-between;
         }}
         .overlay {{
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); z-index: 0;
+             /* No overlay needed for pure black, but kept for compatibility if needed */
         }}
         header {{
-            position: relative; z-index: 10; padding: 30px 60px;
+            padding: 30px 60px;
             display: flex; justify-content: space-between; align-items: flex-start;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            border-bottom: 1px solid var(--glass-border);
         }}
         .brand {{ border-left: 4px solid var(--accent); padding-left: 20px; margin-top: 10px; }}
-        .brand h1 {{ margin: 0; font-size: 2.2rem; text-transform: uppercase; }}
-        .brand span {{ font-size: 1.1rem; color: var(--accent); }}
+        .brand h1 {{ margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }}
         
         .header-right {{ display: flex; gap: 40px; text-align: right; }}
         
         .weather-widget {{ display: flex; flex-direction: column; align-items: flex-end; }}
-        .weather-main {{ display: flex; align-items: center; gap: 15px; margin-bottom: 5px; }}
-        .weather-temp {{ font-size: 3rem; font-weight: 700; line-height: 1; }}
-        .weather-details {{ font-size: 1rem; opacity: 0.9; }}
-        .weather-label {{ color: var(--accent); font-weight: 600; margin-right: 5px; }}
+        .weather-main {{ display: flex; align-items: center; gap: 10px; margin-bottom: 5px; font-size: 1.5rem; font-weight: 600; color: var(--accent); }}
+        .weather-details {{ font-size: 1rem; opacity: 0.8; }}
         
         .datetime {{ text-align: right; }}
         .time {{ font-size: 3.2rem; font-weight: 700; line-height: 1; }}
         .date {{ font-size: 1.1rem; opacity: 0.8; margin-top: 5px; }}
         
         main {{
-            position: relative; z-index: 10; padding: 0 60px 40px 60px;
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; height: 65%;
+            padding: 40px 60px;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; height: 60%;
         }}
         .news-card {{
             background: var(--glass-bg); 
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px;
-            display: flex; flex-direction: column; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+            border: 1px solid var(--glass-border); border-radius: 12px; 
+            display: flex; flex-direction: column; 
             position: relative; overflow: hidden;
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }}
         .news-card-bg {{
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover; background-position: center;
-            opacity: 0.3; z-index: 0; filter: grayscale(30%);
+            opacity: 0.4; z-index: 0; filter: grayscale(50%) contrast(1.2);
         }}
-        .news-content {{ position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }}
+        .news-content {{ 
+            position: relative; z-index: 1; padding: 25px; 
+            display: flex; flex-direction: column; height: 100%; 
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
+        }}
         
         .category {{
-            font-size: 0.9rem; font-weight: 600; color: var(--accent);
-            text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center;
+            font-size: 0.9rem; font-weight: 700; color: var(--accent);
+            text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px;
+            border-bottom: 1px solid var(--accent); padding-bottom: 5px; display: inline-block;
         }}
-        .category::before {{
-            content: ''; display: block; width: 8px; height: 8px;
-            background-color: var(--accent); border-radius: 50%; margin-right: 10px;
-        }}
-        .news-item {{ margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }}
-        .news-item:last-child {{ border-bottom: none; margin-bottom: 0; padding-bottom: 0; }}
-        .news-title {{ font-size: 1.2rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }}
+        
+        .news-item {{ margin-bottom: 20px; }}
+        .news-item:last-child {{ margin-bottom: 0; }}
+        .news-title {{ font-size: 1.15rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.4; }}
         .news-summary {{
-            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin: 0;
+            font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;
             display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }}
-        footer {{
-            position: relative; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
-            padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; opacity: 0.7;
+
+        /* Marquee Styles */
+        .marquee-container {{
+            background: #111;
+            border-top: 1px solid var(--glass-border);
+            height: 50px;
+            display: flex; align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }}
+        .marquee-label {{
+            background: var(--accent); color: #000; font-weight: 800;
+            padding: 0 20px; height: 100%; display: flex; align-items: center;
+            z-index: 10;
+        }}
+        .marquee-content {{
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 40s linear infinite;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }}
+        .marquee-content span {{ margin-right: 50px; color: var(--text-secondary); }}
+        .marquee-content span b {{ color: #fff; margin-right: 10px; }}
+
+        @keyframes marquee {{
+            0% {{ transform: translate(0, 0); }}
+            100% {{ transform: translate(-100%, 0); }}
         }}
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <header>
         <div class="brand">
-            <h1>Pom & Farmerstree</h1>
-            <span>Live Signage Director</span>
+            <h1>THE WAVE TREE PROJECT</h1>
         </div>
         <div class="header-right">
             <div class="weather-widget">
-                <div class="weather-temp">{weather_temp}</div>
+                <div class="weather-main">
+                    {weather_str}
+                </div>
                 <div class="weather-details">
-                   <span><span class="weather-label">위치</span>진안군 부귀면</span>
-                   <span style="margin-left: 10px;"><span class="weather-label">습도</span>{weather_humidity}</span>
+                   진안군 부귀면
                 </div>
             </div>
             <div class="datetime">
@@ -154,14 +174,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         {news_sections}
     </main>
 
-    <footer>
-        <div>Location: Seoul, KR</div>
-        <div>
-            <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete: Command Center Online</span>
-            <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent); text-decoration: none;">▶ Play Celebration Music</a>
+    <div class="marquee-container">
+        <div class="marquee-label">NEWS FLASH</div>
+        <div class="marquee-content">
+            {marquee_items}
         </div>
-        <div>System Status: Online | Auto-refresh: 120s | Source: Serper API</div>
-    </footer>
+    </div>
 
     <script>
         function updateTime() {{
@@ -174,7 +192,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         setInterval(updateTime, 1000);
         updateTime();
         
-        // Auto-refresh logic (just in case meta refresh fails or for smooth reload)
         setTimeout(() => {{
             window.location.reload();
         }}, 120000);
@@ -187,7 +204,7 @@ def fetch_weather_serper(query="진안군 부귀면 날씨"):
     """Fetch weather using Serper API (Search)."""
     api_key = os.environ.get("SERPER_API_KEY")
     if not api_key:
-        return "--°C", "--%"
+        return "--°C / --% / --"
         
     url = "https://google.serper.dev/search"
     payload = json.dumps({
@@ -204,23 +221,22 @@ def fetch_weather_serper(query="진안군 부귀면 날씨"):
         response = requests.request("POST", url, headers=headers, data=payload, timeout=10)
         data = response.json()
         
+        # Default
         temp = "--°C"
         humidity = "--%"
+        condition = "Unknown"
         
-        # Try to parse from answerBox or knowledgeGraph or organic
-        # Serper 'answerBox' often contains weather
-        if 'answerBox' in data and 'temperature' in data['answerBox']:
-             temp = str(data['answerBox'].get('temperature', '--')) + "°C"
-             humidity = str(data['answerBox'].get('humidity', '--')) + "%"
-        
-        # Fallback to snippet parsing if structured data isn't perfect but exists
-        # This is a basic fallback, strict parsing is preferred
-        
-        return temp, humidity
+        if 'answerBox' in data:
+            box = data['answerBox']
+            if 'temperature' in box: temp = str(box.get('temperature')) + "°C"
+            if 'humidity' in box: humidity = str(box.get('humidity')) + "%"
+            if 'precipitation' in box: condition = f"Precip: {box.get('precipitation')}"
+            
+        return f"{temp} / {humidity} / {condition}"
 
     except Exception as e:
         print(f"Error fetching weather: {e}")
-        return "--°C", "--%"
+        return "--°C / --% / API Error"
 
 def fetch_top_news_serper(query, count=2):
     """Fetch news using Serper API."""
@@ -267,20 +283,16 @@ def fetch_top_news_serper(query, count=2):
         return []
 
 def update_signage():
-    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting update cycle...")
+    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Wave Tree Project update...")
     
-    # 1. Select Random Main Background
-    bg_keyword = random.choice(BG_KEYWORDS)
-    bg_url = f"https://source.unsplash.com/featured/1920x1080/?{requests.utils.quote(bg_keyword)}"
-    print(f"Selected Main Background: {bg_keyword}")
+    # 1. Fetch Weather
+    print("Fetching Weather...")
+    weather_str = fetch_weather_serper("진안군 부귀면 날씨")
+    print(f"Weather String: {weather_str}")
 
-    # 2. Fetch Weather
-    print("Fetching Weather for Jinan-gun Bugwi-myeon...")
-    weather_temp, weather_humidity = fetch_weather_serper("진안군 부귀면 날씨")
-    print(f"Weather: {weather_temp}, {weather_humidity}")
-
-    # 3. Fetch News & Build Segments
+    # 2. Fetch News & Build Segments
     news_sections_html = ""
+    all_headlines = []
     
     for topic in TOPICS_CONFIG:
         label = topic['label']
@@ -301,13 +313,18 @@ def update_signage():
             news_html += '<div class="news-item"><h2 class="news-title">데이터 수신 대기 중</h2><p class="news-summary">API 데이터를 불러올 수 없습니다.</p></div>'
         
         for art in articles:
+            title = art['title']
             summary = art['summary']
-            if len(summary) > 120:
-                summary = summary[:120] + "..."
-                
+            if len(summary) > 100:
+                summary = summary[:100] + "..."
+            
+            # Clean title for simple display
+            clean_title = html.escape(title)
+            all_headlines.append(f"<b>[{label}]</b> {clean_title}")
+
             news_html += f"""
             <div class="news-item">
-                <h2 class="news-title">{art['title']}</h2>
+                <h2 class="news-title">{title}</h2>
                 <p class="news-summary">{summary}</p>
             </div>
             """
@@ -315,12 +332,19 @@ def update_signage():
         news_html += '</div></article>' # Close content and article
         news_sections_html += news_html
 
+    # 3. Build Marquee Content
+    if not all_headlines:
+         all_headlines = ["THE WAVE TREE PROJECT - SYSTEM ONLINE"]
+         
+    marquee_html = ""
+    for hl in all_headlines:
+        marquee_html += f"<span>{hl}</span>"
+        
     # 4. Generate HTML
     final_html = HTML_TEMPLATE.format(
-        bg_url=bg_url,
-        weather_temp=weather_temp,
-        weather_humidity=weather_humidity,
-        news_sections=news_sections_html
+        weather_str=weather_str,
+        news_sections=news_sections_html,
+        marquee_items=marquee_html
     )
 
     # 5. Save
