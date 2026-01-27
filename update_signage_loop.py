@@ -107,7 +107,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     <footer>
         <div>Weather: Check Local Data</div>
-        <div>System Status: Online | Auto-refresh: 10min | Source: Serper API</div>
+        <div>
+            <span style="color: #ffeb3b; font-weight: bold; margin-right: 15px;">🎉 Mission Complete: Command Center Online</span>
+            <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" style="color: var(--accent); text-decoration: none;">▶ Play Celebration Music</a>
+        </div>
+        <div>System Status: Online | Auto-refresh: 2min | Source: Serper API</div>
     </footer>
 
     <script>
