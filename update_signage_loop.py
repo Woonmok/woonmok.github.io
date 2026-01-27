@@ -221,22 +221,86 @@ def fetch_weather_serper(query="진안군 부귀면 날씨"):
         response = requests.request("POST", url, headers=headers, data=payload, timeout=10)
         data = response.json()
         
-        # Default
+        # Defaults
         temp = "--°C"
         humidity = "--%"
-        condition = "Unknown"
-        
-        if 'answerBox' in data:
-            box = data['answerBox']
-            if 'temperature' in box: temp = str(box.get('temperature')) + "°C"
-            if 'humidity' in box: humidity = str(box.get('humidity')) + "%"
-            if 'precipitation' in box: condition = f"Precip: {box.get('precipitation')}"
+        condition = "정보없음"
+        found = False
+
+        # Strategy 1: 'knowledgeGraph' (Most common for "Location Weather" queries)
+        if 'knowledgeGraph' in data:
+            kg = data['knowledgeGraph']
             
+            # Check for attributes dict
+            if 'attributes' in kg:
+                attrs = kg['attributes']
+                # Try English Keys
+                if 'Temperature' in attrs: temp = attrs['Temperature']
+                if 'Humidity' in attrs: humidity = attrs['Humidity']
+                if 'Weather' in attrs: condition = attrs['Weather']
+                elif 'Precipitation' in attrs: condition = f"강수: {attrs['Precipitation']}"
+                
+                # Try Korean Keys (just in case)
+                if '기온' in attrs: temp = attrs['기온']
+                if '습도' in attrs: humidity = attrs['습도']
+                if '날씨' in attrs: condition = attrs['날씨']
+                
+                if temp != "--°C": found = True
+
+        # Strategy 2: 'answerBox' (The dedicated weather box)
+        if not found and 'answerBox' in data:
+            box = data['answerBox']
+            
+            # Direct fields
+            if 'temperature' in box: 
+                temp = str(box.get('temperature')) + "°C"
+                found = True
+            if 'humidity' in box: 
+                humidity = str(box.get('humidity')) + "%"
+            if 'precipitation' in box: 
+                condition = f"강수: {box.get('precipitation')}"
+            
+            # Sometimes it's in a 'snippet' inside answerBox
+            if not found and 'snippet' in box:
+                snippet = box['snippet']
+                # Regex for Temp: "20°C" or "20도"
+                t_match = re.search(r'(-?\d{1,2})\s*(°C|도)', snippet)
+                if t_match:
+                    temp = t_match.group(1) + "°C"
+                    found = True
+                
+                h_match = re.search(r'습도\s*:?\s*(\d{1,3})%', snippet)
+                if h_match:
+                    humidity = h_match.group(1) + "%"
+
+        # Strategy 3: Organic Snippet parsing (Fallback)
+        if not found and 'organic' in data:
+            for result in data['organic']:
+                snippet = result.get('snippet', '')
+                title = result.get('title', '')
+                text = title + " " + snippet
+                
+                # Look for "XX°C" pattern or "기온: XX"
+                if '기온' in text or '날씨' in text:
+                    t_match = re.search(r'(-?\d{1,2})\s*(°C|도)', text)
+                    if t_match:
+                        temp = t_match.group(1) + "°C"
+                        found = True
+                        
+                        h_match = re.search(r'습도\s*:?\s*(\d{1,3})%', text)
+                        if h_match:
+                            humidity = h_match.group(1) + "%"
+                            
+                        cond_match = re.search(r'(맑음|흐림|비|눈|구름|소나기|안개)', text)
+                        if cond_match:
+                            condition = cond_match.group(1)
+                        break
+        
         return f"{temp} / {humidity} / {condition}"
 
     except Exception as e:
         print(f"Error fetching weather: {e}")
-        return "--°C / --% / API Error"
+        return "--°C / --% / Error"
 
 def fetch_top_news_serper(query, count=2):
     """Fetch news using Serper API."""
