@@ -8,6 +8,16 @@ import xml.etree.ElementTree as ET
 import subprocess
 import sys
 from bs4 import BeautifulSoup
+import threading
+import queue
+
+# Global State for Thread Communication
+DASHBOARD_STATE = {
+    "weather": {"temp": "N/A", "status": "N/A", "humidity": "N/A"},
+    "news": {}
+}
+# Lock for thread safety not strictly needed for this simple dict, but good practice
+STATE_LOCK = threading.Lock()
 
 # --- CONFIGURATION ---
 # Dynamic Paths
@@ -393,40 +403,87 @@ def update_json(weather, news_data):
         print(f"[{get_timestamp()}] Error updating JSON: {e}")
 
 # --- MAIN LOOP ---
-def main():
-    print("--- Digital Signage Director Started ---")
-    
-    # --- TEST MODE ---
-    if len(sys.argv) > 1 and sys.argv[1] == "test":
-        print("!!! TEST MODE TRIGGERED !!!")
-        weather = fetch_weather()
-        news = {}
-        
-        # Use real logic for test
-        listeria_keywords = ["팽이버섯 시장", "수출용 팽이버섯", "리스테리아 검역", "식중독 예방"]
-        listeria_items = []
-        for k in listeria_keywords:
-            listeria_items.extend(fetch_news_rss(k))
-        # Deduplicate
-        unique_listeria = []
-        seen_l = set()
-        for i in listeria_items:
-            if i['title'] not in seen_l:
-                unique_listeria.append(i)
-                seen_l.add(i['title'])
-        news['listeria'] = unique_listeria[:5]
-        
-        news['meat'] = fetch_news_rss("배양육")
-        news['audio'] = fetch_news_rss("High End Audio")
-        news['ai'] = fetch_news_rss("Artificial Intelligence")
-        
-        # Update files for verification
-        update_html(weather, news)
-        update_json(weather, news)
+# --- 5. TELEGRAM BOT (Threaded) ---
+def handle_telegram_updates(offset=None):
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates"
+    params = {"timeout": 10, "offset": offset}
+    try:
+        resp = requests.get(url, params=params, timeout=15)
+        return resp.json()
+    except Exception as e:
+        print(f"  > Telegram Poll Error: {e}")
+        return None
 
-        send_hourly_report(weather, news)
-        push_to_github()
-        return
+def process_todo_command(text):
+    global MISSIONS
+    # 1. Add Task: "/할일 [content]"
+    if text.startswith("/할일"):
+        content = text.replace("/할일", "").strip()
+        if content:
+            print(f"[TODO] Adding task: {content}")
+            MISSIONS.append(content)
+            return f"✅ 할 일 추가됨: {content}"
+        else:
+            return "❌ 내용을 입력해주세요. (예: /할일 장비점검)"
+            
+    # 2. Complete Task: "[content] 완료"
+    if text.endswith("완료"):
+        target = text.replace("완료", "").strip()
+        removed = False
+        # Fuzzy match or exact? Let's try exact then contains.
+        for m in MISSIONS[:]:
+            if target in m:
+                MISSIONS.remove(m)
+                removed = True
+                print(f"[TODO] Completed task: {m}")
+        
+        if removed:
+            return f"🎉 완료 처리됨: {target}"
+        
+    return None
+
+def telegram_listener_loop():
+    print(f"[{get_timestamp()}] Telegram Listener Thread Started...")
+    offset = None
+    while True:
+        updates = handle_telegram_updates(offset)
+        if updates and "result" in updates:
+            for u in updates["result"]:
+                offset = u["update_id"] + 1
+                if "message" in u and "text" in u["message"]:
+                    text = u["message"]["text"]
+                    chat_id = u["message"]["chat"]["id"]
+                    
+                    # Logic
+                    reply = process_todo_command(text)
+                    
+                    if reply:
+                        # Send Reply
+                        requests.post(
+                            f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
+                            json={"chat_id": chat_id, "text": reply}
+                        )
+                        
+                        # TRIGGER IMMEDIATE REFRESH
+                        print(f"[{get_timestamp()}] Triggering Immediate Update due to To-Do Change...")
+                        with STATE_LOCK:
+                            w = DASHBOARD_STATE["weather"]
+                            n = DASHBOARD_STATE["news"]
+                        
+                        # Re-render and Push
+                        update_html(w, n)
+                        update_json(w, n)
+                        push_to_github()
+
+        time.sleep(1)
+
+# --- MAIN LOOP (Refactored) ---
+def main():
+    print("--- Digital Signage Director (Threaded) Started ---")
+    
+    # 1. Start Telegram Thread
+    t_thread = threading.Thread(target=telegram_listener_loop, daemon=True)
+    t_thread.start()
 
     print(f"Target HTML: {HTML_PATH}")
     print(f"Target JSON: {JSON_PATH}")
@@ -434,18 +491,18 @@ def main():
     
     last_sent_hour = -1
 
+    # 2. Main Content Loop
     while True:
         try:
             # 1. Fetch Data
             weather = fetch_weather()
             
             news = {}
-            # Listeria: Combine results for broader coverage
+            # Listeria
             listeria_keywords = ["팽이버섯 시장", "수출용 팽이버섯", "리스테리아 검역", "식중독 예방"]
             listeria_items = []
             for k in listeria_keywords:
                 listeria_items.extend(fetch_news_rss(k))
-            # Deduplicate and sort/slice listeria items
             unique_listeria = []
             seen_l = set()
             for i in listeria_items:
@@ -458,21 +515,20 @@ def main():
             news['audio'] = fetch_news_rss("High End Audio") or fetch_news_rss("Audiophile")
             news['ai'] = fetch_news_rss("Artificial Intelligence") or fetch_news_rss("AI Tech")
 
-            # 2. Update HTML
+            # Update Global State
+            with STATE_LOCK:
+                DASHBOARD_STATE["weather"] = weather
+                DASHBOARD_STATE["news"] = news
+
+            # 2. Update Files
             update_html(weather, news)
-            
-            # 3. Update JSON
             update_json(weather, news)
             
-            # 4. Git Push (Every Cycle)
+            # 3. Git Push
             push_to_github()
 
-            # 5. Hourly Report Check
+            # 4. Hourly Report
             now = datetime.datetime.now()
-            # Send if it's the top of the hour (minute 0) OR if we haven't sent it for this hour yet
-            # Adjusted logic as requested: "Every hour on the hour"
-            # However, since loop is 30 mins, we check if we entered a new hour for reporting
-            
             if now.minute < 30 and now.hour != last_sent_hour:
                  send_hourly_report(weather, news)
                  last_sent_hour = now.hour
