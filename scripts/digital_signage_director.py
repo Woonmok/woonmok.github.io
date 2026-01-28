@@ -78,13 +78,15 @@ def push_to_github():
     run_command('git commit -m "Auto-update dashboard data"')
     run_command("git push")
 
-def send_hourly_report(weather, news_data):
-    print(f"[{get_timestamp()}] Preparing Hourly Report...")
+LAST_REPORT_HASH = ""
+
+def send_regular_report(weather, news_data):
+    global LAST_REPORT_HASH
+    print(f"[{get_timestamp()}] Checking for Regular Report updates...")
     
     # 1. Weather Summary
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
-    status = weather.get('status', 'N/A')
     
     # 2. News Headlines (Top 3 mixed)
     headlines = []
@@ -98,24 +100,32 @@ def send_hourly_report(weather, news_data):
     ]
     
     count = 0
+    news_items = []
     for source in sources:
         if source:
-            headlines.append(f"- {source[0]['title']}")
+            item_title = source[0]['title']
+            news_items.append(f"- {item_title}")
             count += 1
             if count >= 3:
                 break
                 
-    news_text = "\n".join(headlines) if headlines else "뉴스 업데이트 없음"
+    news_text = "\n".join(news_items) if news_items else "뉴스 업데이트 없음"
 
-    message = (
-        f"**[Farmerstree 지휘소 정기 보고]**\n\n"
-        f"🌡 **진안 기온/습도**\n"
-        f"{temp} / {humidity} ({status})\n\n"
-        f"📰 **주요 뉴스 업데이트**\n"
-        f"{news_text}"
-    )
+    # Construct Message
+    header = "[Farmerstree 지휘소 정기 보고]"
+    body = f"진안 부귀면 기온: {temp} / 습도: {humidity} / 최신 뉴스 {len(news_items)}건 요약"
     
-    send_telegram(message)
+    full_message = f"**{header}**\n\n{body}\n{news_text}"
+    
+    # Duplicate Check
+    current_hash = hash(full_message)
+    if current_hash == LAST_REPORT_HASH:
+        print(f"[{get_timestamp()}] Skipping Telegram report (Data unchanged).")
+        return
+
+    # Send
+    send_telegram(full_message)
+    LAST_REPORT_HASH = current_hash
 
 # --- 1. WEATHER FETCHING (Serper + Fallback) ---
 def fetch_weather_serper():
@@ -527,11 +537,8 @@ def main():
             # 3. Git Push
             push_to_github()
 
-            # 4. Hourly Report
-            now = datetime.datetime.now()
-            if now.minute < 30 and now.hour != last_sent_hour:
-                 send_hourly_report(weather, news)
-                 last_sent_hour = now.hour
+            # 4. Regular Report (Checks for duplicates internally)
+            send_regular_report(weather, news)
             
             print(f"[{get_timestamp()}] Cycle complete. Sleeping for {REFRESH_INTERVAL}s...")
         except Exception as e:

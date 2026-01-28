@@ -385,7 +385,7 @@ async function updateContent() {
     `5. *[COMPUTER]* ${globalData.computer[0].title}`
   ].join('\n');
 
-  await sendBriefing(summary);
+  // await sendBriefing(summary); // Disabled to prevent duplicate/spamming. Handled by Python Director.
 }
 
 // Init
