@@ -126,7 +126,7 @@ def fetch_weather():
     try:
         print("  > Attempting Naver Weather Scraping...")
         # Precise Query
-        url = "https://search.naver.com/search.naver?query=전북+진안군+진안읍+현재+날씨"
+        url = "https://search.naver.com/search.naver?query=전북특별자치도+진안군+진안읍+현재+날씨"
         # Add random param to avoid caching just in case
         url += f"&rand={int(time.time())}"
         

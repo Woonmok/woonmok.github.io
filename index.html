@@ -281,15 +281,18 @@
     }
 
     .news-title {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 600;
       color: #e5e7eb;
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
+      /* Reduced to 2 lines to fit better */
       -webkit-box-orient: vertical;
       overflow: hidden;
+      min-height: 3.2em;
+      /* Ensure height for 2 lines */
     }
 
     .news-meta {
@@ -318,8 +321,8 @@
       /* GPU Acceleration */
       will-change: transform;
       transform: translate3d(0, 0, 0);
-      animation: marquee 1080s linear infinite;
-      /* Ultra-slow (18 mins) */
+      animation: marquee 3000s linear infinite;
+      /* Ultra-ultra-slow (50 mins) */
     }
 
     .marquee-content {
@@ -397,11 +400,11 @@
       <span class="text-orange">
        기온:
       </span>
-      -10.9°C /
+      -10.6°C /
       <span class="text-blue">
        습도:
       </span>
-      82%
+      79%
      </span>
     </div>
     <div class="time-display font-mono">
