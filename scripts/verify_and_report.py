@@ -30,8 +30,8 @@ def run():
 
     # 2. Send Telegram Report (STRICT)
     print("2. Sending Telegram Report...")
-    # "[Farmerstree 현황] 기온: -8°C / 습도: XX% / 할일: 자료정리 등"
-    msg = f"[Farmerstree 현황] 기온: {temp} / 습도: {humidity} / 할일: 자료정리 등"
+    # "[Farmerstree 현황] 진안군 진안읍 기온: -8.X°C / 습도: XX% / 할일: 5건"
+    msg = f"[Farmerstree 현황] 진안군 진안읍 기온: {temp} / 습도: {humidity} / 할일: 자료정리 등"
     
     send_telegram(msg)
     

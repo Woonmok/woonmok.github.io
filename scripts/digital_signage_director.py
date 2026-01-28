@@ -106,8 +106,8 @@ def send_regular_report(weather, news_data):
             todo_summary = first_task
             
     # Construct Single Line Message
-    # Format: [Farmerstree 현황] 기온: -8°C / 습도: XX% / 할일: 자료정리 등
-    full_message = f"[Farmerstree 현황] 기온: {temp} / 습도: {humidity} / 할일: {todo_summary}"
+    # Format: [Farmerstree 현황] 진안군 진안읍 기온: -8°C / 습도: XX% / 할일: 자료정리 등
+    full_message = f"[Farmerstree 현황] 진안군 진안읍 기온: {temp} / 습도: {humidity} / 할일: {todo_summary}"
     
     # Duplicate Check
     current_hash = hash(full_message)
@@ -127,7 +127,7 @@ def fetch_weather_serper():
     print(f"[{get_timestamp()}] Fetching weather via Serper API...")
     # Updated Query as requested
     url = "https://google.serper.dev/search"
-    query = "진안군 부귀면 현재 기온 습도 날씨"
+    query = "전북 진안군 진안읍 현재 기온 습도 날씨"
     
     try:
         payload = json.dumps({"q": query, "gl": "kr", "hl": "ko"})
@@ -199,7 +199,7 @@ def fetch_weather():
 
     print(f"[{get_timestamp()}] Falling back to Naver Scraping...")
     # ... Existing Naver Logic ...
-    url = "https://search.naver.com/search.naver?query=진안군+부귀면+날씨"
+    url = "https://search.naver.com/search.naver?query=전북+진안군+진안읍+날씨"
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
@@ -303,7 +303,7 @@ def update_html(weather, news_data):
         # Let's overwrite the content of weather-pill entirely using a marker or just replace the inner HTML structure
         # Since I am using regex on the *content*, I can replace the whole chunk.
         
-        weather_html = f'<span><span class="text-orange">기온:</span> {weather["temp"]} / <span class="text-blue">습도:</span> {weather["humidity"]}</span>'
+        weather_html = f'<span><span class="text-orange">진안읍 기온:</span> {weather["temp"]} / <span class="text-blue">습도:</span> {weather["humidity"]}</span>'
         
         # Replace the OLD structure (Temp ... Humidity ...) with NEW single line structure
         # Matches: <span>...기온...</span>...<span>...습도...</span>...
