@@ -646,8 +646,8 @@ def generate_news_html(items):
     return html_output
 
 def send_telegram_alert(message):
-    token = os.environ.get("TELEGRAM_BOT_TOKEN") or "8573370357:AAHW6ux03giBh6xa1oq0KvTbj8uE8H_bnE8"
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID") or "8556588810"
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     
     print(f"Telegram Config Check: Token={'Present' if token else 'Missing'}, ChatID={'Present' if chat_id else 'Missing'}")
     
