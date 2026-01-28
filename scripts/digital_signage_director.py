@@ -65,9 +65,10 @@ def send_telegram(message):
 
 def send_daily_briefing(weather, missions):
     temp = weather.get('temp', 'N/A')
+    humidity = weather.get('humidity', 'N/A')
 
-    # One-line report (Security Recovery Confirmation)
-    msg = f"[Farmerstree 보안 복구 완료] 현재 진안읍 기온: {temp}"
+    # One-line report (Regular Status)
+    msg = f"[Farmerstree] 진안읍 기온: {temp} / 습도: {humidity}"
     
     # Send
     send_telegram(msg)
