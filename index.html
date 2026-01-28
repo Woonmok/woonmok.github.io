@@ -289,6 +289,7 @@
       line-height: 1.6;
       display: -webkit-box;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       /* Reduced to 2 lines to fit better */
       -webkit-box-orient: vertical;
       overflow: hidden;
@@ -322,8 +323,8 @@
       /* GPU Acceleration */
       will-change: transform;
       transform: translate3d(0, 0, 0);
-      animation: marquee 1500s linear infinite;
-      /* Slow (25 mins) */
+      animation: marquee 1000s linear infinite;
+      /* Medium-Slow (16 mins) */
     }
 
     .marquee-content {
