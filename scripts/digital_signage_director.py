@@ -7,12 +7,7 @@ import json
 import xml.etree.ElementTree as ET
 import subprocess
 import sys
-# Google APIs (Removed to simplify dependencies for now)
-# from google.auth.transport.requests import Request
-# from google.oauth2.credentials import Credentials
-# from google_auth_oauthlib.flow import InstalledAppFlow
-# from googleapiclient.discovery import build
-import os.path
+from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -172,43 +167,46 @@ def fetch_news(keyword):
         print(f"  > News Error {keyword}: {e}")
         return []
 
-# --- 3. HTML UPDATER ---
+# --- 3. HTML UPDATER (Using BeautifulSoup) ---
 def update_html(weather, news_dict):
-    print(f"[{get_timestamp()}] Updating index.html...")
+    print(f"[{get_timestamp()}] Updating index.html with BeautifulSoup...")
     
     if not os.path.exists(HTML_PATH):
         print("Error: index.html not found.")
         return
 
     with open(HTML_PATH, 'r', encoding='utf-8') as f:
-        html = f.read()
+        soup = BeautifulSoup(f, 'html.parser')
 
-    # 1. Update Weather Display
-    # Pattern: match everything inside <div class="weather-pill"> ... </div>
-    # or match the specific span structure we saw earlier.
-    # Refined Regex: Look for 'weather-pill' and replace content inside.
-    # <div class="weather-pill">\s*(.*?)\s*</div>
-    
-    # Construct new content
-    w_str = f'<span><span class="text-orange">기온:</span> {weather["temp"]} / <span class="text-blue">습도:</span> {weather["humidity"]}</span>'
-    
-    # We'll try to replace the inner content of weather-pill using regex
-    # Be careful with greediness.
-    # <div class="weather-pill"> ... </div>
-    weather_pattern = r'(<div class="weather-pill">)(.*?)(</div>)'
-    html = re.sub(weather_pattern, f'\\1\n        {w_str}\n      \\3', html, flags=re.DOTALL)
+    # 1. Update Weather
+    # Find <div class="weather-pill">
+    w_div = soup.find('div', class_='weather-pill')
+    if w_div:
+        # Create new content: <span><span class="text-orange">기온:</span> {weather["temp"]} / <span class="text-blue">습도:</span> {weather["humidity"]}</span>
+        # We can just set innerHTML-like structure using soup
+        
+        # Clear existing
+        w_div.clear()
+        
+        new_span = soup.new_tag("span")
+        
+        # Temp
+        s_temp_label = soup.new_tag("span", attrs={"class": "text-orange"})
+        s_temp_label.string = "기온:"
+        new_span.append(s_temp_label)
+        new_span.append(f" {weather['temp']} / ")
+        
+        # Humidity
+        s_hum_label = soup.new_tag("span", attrs={"class": "text-blue"})
+        s_hum_label.string = "습도:"
+        new_span.append(s_hum_label)
+        new_span.append(f" {weather['humidity']}")
+        
+        w_div.append(new_span)
+    else:
+        print("Warning: weather-pill div not found.")
 
-    # 2. Update News Sections (Server Side Rendering style injection)
-    # We rely on simple placeholder replacement or regex replacement if placeholders are gone.
-    # The previous code used {news_listeria}. If that exists, good.
-    # If not, we need to find the <div class="news-list"> ... </div> inside each card.
-    
-    # Let's map keywords to Card Titles for regex finding
-    # LISTERIA FREE -> listeria items
-    # CULTURED MEAT -> meat items
-    # HIGH-END AUDIO -> audio items
-    # COMPUTER & AI -> ai items
-    
+    # 2. Update News Sections
     mappings = {
         "LISTERIA FREE": news_dict['listeria'],
         "CULTURED MEAT": news_dict['meat'],
@@ -216,55 +214,68 @@ def update_html(weather, news_dict):
         "COMPUTER & AI": news_dict['ai']
     }
     
-    for section_title, items in mappings.items():
-        # Find the card with this title
-        # <div class="card-title">TITLE</div> ... <div class="news-list"> ... </div>
-        # Regex is tricky across lines.
+    # We find cards by title text
+    cards = soup.find_all('div', class_='card')
+    for card in cards:
+        title_div = card.find('div', class_='card-title')
+        if not title_div: continue
         
-        # Build HTML for items
-        items_html = ""
-        for it in items:
-            items_html += f'''
-        <div class="news-item">
-            <div class="news-title">{it['title']}</div>
-            <div class="news-meta"><span>Read More →</span><span>{it['date']}</span></div>
-        </div>'''
-        
-        # Regex to inject. 
-        # Look for (card-title">TITLE</div>).*?(news-list">)(.*?)(</div>)
-        # Note: minimal match for middle part
-        escaped_title = re.escape(section_title)
-        pattern = f'(<div class="card-title">{escaped_title}</div>.*?<div class="news-list">)(.*?)(</div>)'
-        
-        # Check if we can find it
-        if re.search(pattern, html, re.DOTALL):
-            html = re.sub(pattern, f'\\1{items_html}\\3', html, flags=re.DOTALL, count=1)
-        else:
-            print(f"Warning: Could not find section {section_title} in HTML")
+        title_text = title_div.get_text(strip=True)
+        if title_text in mappings:
+            news_items = mappings[title_text]
+            list_div = card.find('div', class_='news-list')
+            
+            if list_div:
+                list_div.clear()
+                for item in news_items:
+                    # <div class="news-item">
+                    #   <div class="news-title">{title}</div>
+                    #   <div class="news-meta"><span>Read More →</span><span>{date}</span></div>
+                    # </div>
+                    item_div = soup.new_tag("div", attrs={"class": "news-item"})
+                    
+                    t_div = soup.new_tag("div", attrs={"class": "news-title"})
+                    t_div.string = item['title']
+                    item_div.append(t_div)
+                    
+                    m_div = soup.new_tag("div", attrs={"class": "news-meta"})
+                    sp1 = soup.new_tag("span")
+                    sp1.string = "Read More →"
+                    sp2 = soup.new_tag("span")
+                    sp2.string = item['date']
+                    m_div.append(sp1)
+                    m_div.append(sp2)
+                    item_div.append(m_div)
+                    
+                    list_div.append(item_div)
 
-    # 3. Update Marquee (Footer)
-    marquee_content = ""
+    # 3. Update Marquee
+    # Find .marquee-content (there are two)
+    marquees = soup.find_all('div', class_='marquee-content')
+    
+    # Generate items
+    new_marquee_items = []
     for cat, items in mappings.items():
         for it in items:
-            marquee_content += f'<div class="ticker-item"><div class="ticker-dot"></div>[{cat}] {it["title"]}</div>\n'
-    
-    # Provide duplicates for smooth scrolling?
-    # The HTML has two .marquee-content divs. We should update BOTH.
-    # <div class="marquee-content" ... > ... </div>
-    
-    # We can just replace all occurrences of content inside marquee-content
-    mq_pattern = r'(<div class="marquee-content".*?>)(.*?)(</div>)'
-    # This will match twice if we use subn or standard sub (replaces all non-overlapping)
-    # We want to put 'marquee_content' into both.
-    html = re.sub(mq_pattern, f'\\1{marquee_content}\\3', html, flags=re.DOTALL)
+            # <div class="ticker-item"><div class="ticker-dot"></div>[{cat}] {it["title"]}</div>
+            wrapper = soup.new_tag("div", attrs={"class": "ticker-item"})
+            dot = soup.new_tag("div", attrs={"class": "ticker-dot"})
+            wrapper.append(dot)
+            wrapper.append(f"[{cat}] {it['title']}")
+            new_marquee_items.append(wrapper)
 
-    # Save
+    for mq in marquees:
+        mq.clear()
+        for it in new_marquee_items:
+            # We must append a COPY of the tag for each marquee
+            mq.append(it.__copy__())
+
+    # Save formatted
     with open(HTML_PATH, 'w', encoding='utf-8') as f:
-        f.write(html)
-
+        f.write(str(soup.prettify()))
 
 def main():
-    print("--- Farmerstree Signage Director (One-Shot) ---")
+    print("--- Farmerstree Signage Director (One-Shot with BS4) ---")
     
     # 1. Fetch Data
     weather = fetch_weather()

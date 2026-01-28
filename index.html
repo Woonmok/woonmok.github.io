@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="120">
-  <title>The Wave Tree Project - Farmerstree Digital Signage</title>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="120" http-equiv="refresh"/>
+  <title>
+   The Wave Tree Project - Farmerstree Digital Signage
+  </title>
   <style>
-    /* Base Reset & Fonts */
+   /* Base Reset & Fonts */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -258,7 +259,8 @@
 
     .news-list {
       flex: 1;
-      overflow-y: hidden; /* Hide overflow for clean look, script limits items */
+      overflow-y: hidden;
+      /* Hide overflow for clean look, script limits items */
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -284,7 +286,10 @@
       color: #e5e7eb;
       margin-bottom: 0.5rem;
       line-height: 1.4;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .news-meta {
@@ -313,7 +318,8 @@
       /* GPU Acceleration */
       will-change: transform;
       transform: translate3d(0, 0, 0);
-      animation: marquee 1080s linear infinite; /* Ultra-slow (18 mins) */
+      animation: marquee 1080s linear infinite;
+      /* Ultra-slow (18 mins) */
     }
 
     .marquee-content {
@@ -370,416 +376,404 @@
       scrollbar-width: none;
     }
   </style>
-</head>
-
-<body>
-  <div class="bg-gradient"></div>
-
+ </head>
+ <body>
+  <div class="bg-gradient">
+  </div>
   <header>
-    <div class="brand">
-      <div class="dot"></div>
-      <div class="title">The Wave Tree Project</div>
-      <div class="subtitle">Farmerstree</div>
+   <div class="brand">
+    <div class="dot">
     </div>
-    <div class="header-info">
-      <div class="weather-pill">
-        <span><span class="text-orange">기온:</span> 1°C / <span class="text-blue">습도:</span> 47%</span>
-      </div>
-      <div class="time-display font-mono">
-        <div id="clock">--:--:--</div>
-        <div class="last-update">LIVE SYSTEM</div>
-      </div>
+    <div class="title">
+     The Wave Tree Project
     </div>
+    <div class="subtitle">
+     Farmerstree
+    </div>
+   </div>
+   <div class="header-info">
+    <div class="weather-pill">
+     <span>
+      <span class="text-orange">
+       기온:
+      </span>
+      -5°C /
+      <span class="text-blue">
+       습도:
+      </span>
+      55%
+     </span>
+    </div>
+    <div class="time-display font-mono">
+     <div id="clock">
+      --:--:--
+     </div>
+     <div class="last-update">
+      LIVE SYSTEM
+     </div>
+    </div>
+   </div>
   </header>
-
   <main>
-    <!-- Today's Mission -->
-    <div class="mission-section">
-      <div class="mission-label">TODAY'S MISSION</div>
-      <div class="mission-items">
-        <div class="mission-item">
-          <div class="mission-dot"></div>
-          지휘소 세팅 완료 기념 음악 감상
-        </div>
-        <div class="mission-item">
-          <div class="mission-dot"></div>
-          최소 장비 목록 만들기
-        </div>
-        <div class="mission-item">
-          <div class="mission-dot"></div>
-          자료정리
-        </div>
-      </div>
+   <!-- Today's Mission -->
+   <div class="mission-section">
+    <div class="mission-label">
+     TODAY'S MISSION
     </div>
-
-    <!-- Grid -->
-    <div class="grid">
-      <!-- 1. Listeria Free -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=2070&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Act</div>
-            <div class="card-title">LISTERIA FREE</div>
-          </div>
-          <div class="news-list"></div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 11. 18.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">팽이버섯 리스테리아 식중독 사건-하상도의 식품 바로보기(202)</div>
-            <div class="news-meta"><span>Read More →</span><span>2020. 3. 30.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">美CDC, 한국산 팽이버섯 4명 사망에 전량 회수</div>
-            <div class="news-meta"><span>Read More →</span><span>2020. 3. 12.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">한국산 팽이버섯, 미국서 식중독균 검출로 세 번째 리콜</div>
-            <div class="news-meta"><span>Read More →</span><span>2020. 4. 29.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">“한국산 팽이버섯 먹고 미국인 4명 사망보도는 오보”</div>
-            <div class="news-meta"><span>Read More →</span><span>2020. 3. 17.</span></div>
-        </div>
-        
-          </div>
-        </div>
+    <div class="mission-items">
+     <div class="mission-item">
+      <div class="mission-dot">
       </div>
-
-      <!-- 2. Cultured Meat -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Svr</div>
-            <div class="card-title">CULTURED MEAT</div>
-          </div>
-          <div class="news-list">
-        <div class="news-item">
-            <div class="news-title">「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div></div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div></div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 10. 17.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">미국의 세포배양육 규제 갈등, 혁신의 시험대에 서다-이주형의 글로벌 푸드트렌드(14)</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 9. 30.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">배양육 시장점유율 및 동향 [2034년]</div>
-            <div class="news-meta"><span>Read More →</span><span>1개월 전</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">배양육 대량 생산 가능해지나?</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 5. 25.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">국내외 전문들 지속가능한 미래식품 산업 육성 방안 모색하다</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 10. 23.</span></div>
-        </div>
-        
-          </div>
-        </div>
+      지휘소 세팅 완료 기념 음악 감상
+     </div>
+     <div class="mission-item">
+      <div class="mission-dot">
       </div>
-
-      <!-- 3. Audio -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?q=80&w=2535&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Mus</div>
-            <div class="card-title">HIGH-END AUDIO</div>
-          </div>
-          <div class="news-list">
-        <div class="news-item">
-            <div class="news-title">스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div></div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div></div>
-            <div class="news-meta"><span>Read More →</span><span>1개월 전</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">오디오엑스포서울 2025 w.전자랜드, 11월 개최…"국내외 하이엔드 오디오 총집결"</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 10. 22.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">JBL ‘서밋’ 3종·뱅앤올룹슨 ‘베오사운드 프리미어’ 공개…하이엔드 시장 공략 본격화</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 11. 27.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">아키사운드, 세계 최초 그래핀 CVD 악기 케이블과 하이엔드 이어폰 신제품 출시 - 조선비즈</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 10. 10.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">DALI, 신제품 칼리스토 출시</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 7. 20.</span></div>
-        </div>
-        
-          </div>
-        </div>
+      최소 장비 목록 만들기
+     </div>
+     <div class="mission-item">
+      <div class="mission-dot">
       </div>
-
-      <!-- 4. Computer -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Cpu</div>
-            <div class="card-title">COMPUTER & AI</div>
-          </div>
-          <div class="news-list">
-        <div class="news-item">
-            <div class="news-title">'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">링크드인, AI 기술 역량 인증 시스템 구축한다</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.28</span></div>
-        </div></div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">링크드인, AI 기술 역량 인증 시스템 구축한다</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.01.29</span></div>
-        </div></div>
-            <div class="news-meta"><span>Read More →</span><span>12시간 전</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">다섯 가지 키워드로 살펴보는 2026년 AI 트렌드 전망</div>
-            <div class="news-meta"><span>Read More →</span><span>3주 전</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">한국머크, AI 시대 소재 기술 트렌드 공유…미디어 간담회 열어</div>
-            <div class="news-meta"><span>Read More →</span><span>9시간 전</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">2025 AI 10대 핵심 트렌드</div>
-            <div class="news-meta"><span>Read More →</span><span>2025. 10. 17.</span></div>
-        </div>
-        
-        <div class="news-item">
-            <div class="news-title">2026년 주목해야 할 5대 AI 트렌드</div>
-            <div class="news-meta"><span>Read More →</span><span>2주 전</span></div>
-        </div>
-        
-          </div>
-        </div>
-      </div>
+      자료정리
+     </div>
     </div>
+   </div>
+   <!-- Grid -->
+   <div class="grid">
+    <!-- 1. Listeria Free -->
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&amp;w=2070&amp;auto=format&amp;fit=crop');">
+     <div class="card-overlay">
+     </div>
+     <div class="card-content">
+      <div class="card-header">
+       <div class="icon-box">
+        Act
+       </div>
+       <div class="card-title">
+        LISTERIA FREE
+       </div>
+      </div>
+      <div class="news-list">
+      </div>
+     </div>
+    </div>
+    <!-- 2. Cultured Meat -->
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&amp;w=2564&amp;auto=format&amp;fit=crop');">
+     <div class="card-overlay">
+     </div>
+     <div class="card-content">
+      <div class="card-header">
+       <div class="icon-box">
+        Svr
+       </div>
+       <div class="card-title">
+        CULTURED MEAT
+       </div>
+      </div>
+      <div class="news-list">
+       <div class="news-item">
+        <div class="news-title">
+         「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- 3. Audio -->
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?q=80&amp;w=2535&amp;auto=format&amp;fit=crop');">
+     <div class="card-overlay">
+     </div>
+     <div class="card-content">
+      <div class="card-header">
+       <div class="icon-box">
+        Mus
+       </div>
+       <div class="card-title">
+        HIGH-END AUDIO
+       </div>
+      </div>
+      <div class="news-list">
+       <div class="news-item">
+        <div class="news-title">
+         스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- 4. Computer -->
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&amp;w=2070&amp;auto=format&amp;fit=crop');">
+     <div class="card-overlay">
+     </div>
+     <div class="card-content">
+      <div class="card-header">
+       <div class="icon-box">
+        Cpu
+       </div>
+       <div class="card-title">
+        COMPUTER &amp; AI
+       </div>
+      </div>
+      <div class="news-list">
+       <div class="news-item">
+        <div class="news-title">
+         'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         링크드인, AI 기술 역량 인증 시스템 구축한다
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">
+         슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력
+        </div>
+        <div class="news-meta">
+         <span>
+          Read More →
+         </span>
+         <span>
+          2026.01.29
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
   </main>
-
   <footer>
-    <div class="marquee-container">
-      <div class="marquee-content"><div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 링크드인, AI 기술 역량 인증 시스템 구축한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력</div>
-</div>[CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 링크드인, AI 기술 역량 인증 시스템 구축한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력</div>
-</div>[LISTERIA FREE] [밴쿠버 조선일보]BC 유통 팽이버섯, 리스테리아 오염 리콜 | 밴쿠버 뉴스</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] 팽이버섯 리스테리아 식중독 사건-하상도의 식품 바로보기(202)</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] 美CDC, 한국산 팽이버섯 4명 사망에 전량 회수</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] 한국산 팽이버섯, 미국서 식중독균 검출로 세 번째 리콜</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] “한국산 팽이버섯 먹고 미국인 4명 사망보도는 오보”</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] [식물성 대체육③/경쟁재]저단백 단점 보완 위해 동물성 배양육 뜬다</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 미국의 세포배양육 규제 갈등, 혁신의 시험대에 서다-이주형의 글로벌 푸드트렌드(14)</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 배양육 시장점유율 및 동향 [2034년]</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 배양육 대량 생산 가능해지나?</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 국내외 전문들 지속가능한 미래식품 산업 육성 방안 모색하다</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 오디오엑스포서울 2025 w.전자랜드, 11월 개최…"국내외 하이엔드 오디오 총집결"</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] JBL ‘서밋’ 3종·뱅앤올룹슨 ‘베오사운드 프리미어’ 공개…하이엔드 시장 공략 본격화</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 아키사운드, 세계 최초 그래핀 CVD 악기 케이블과 하이엔드 이어폰 신제품 출시 - 조선비즈</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] DALI, 신제품 칼리스토 출시</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 유아이패스, 2026년 AI·에이전틱 자동화 트렌드 제시…아태지역 역할 부각</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 다섯 가지 키워드로 살펴보는 2026년 AI 트렌드 전망</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 한국머크, AI 시대 소재 기술 트렌드 공유…미디어 간담회 열어</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 2025 AI 10대 핵심 트렌드</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 2026년 주목해야 할 5대 AI 트렌드</div>
-        
+   <div class="marquee-container">
+    <div class="marquee-content">
+     <div class="ticker-item">
+      <div class="ticker-dot">
       </div>
-      <!-- Duplicate for loop seamlessness (content repeated in fetch) -->
-      <div class="marquee-content" aria-hidden="true"><div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 링크드인, AI 기술 역량 인증 시스템 구축한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력</div>
-</div>[CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 링크드인, AI 기술 역량 인증 시스템 구축한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다</div>
-<div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력</div>
-</div>[LISTERIA FREE] [밴쿠버 조선일보]BC 유통 팽이버섯, 리스테리아 오염 리콜 | 밴쿠버 뉴스</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] 팽이버섯 리스테리아 식중독 사건-하상도의 식품 바로보기(202)</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] 美CDC, 한국산 팽이버섯 4명 사망에 전량 회수</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] 한국산 팽이버섯, 미국서 식중독균 검출로 세 번째 리콜</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] “한국산 팽이버섯 먹고 미국인 4명 사망보도는 오보”</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] [식물성 대체육③/경쟁재]저단백 단점 보완 위해 동물성 배양육 뜬다</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 미국의 세포배양육 규제 갈등, 혁신의 시험대에 서다-이주형의 글로벌 푸드트렌드(14)</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 배양육 시장점유율 및 동향 [2034년]</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 배양육 대량 생산 가능해지나?</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] 국내외 전문들 지속가능한 미래식품 산업 육성 방안 모색하다</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 오디오엑스포서울 2025 w.전자랜드, 11월 개최…"국내외 하이엔드 오디오 총집결"</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] JBL ‘서밋’ 3종·뱅앤올룹슨 ‘베오사운드 프리미어’ 공개…하이엔드 시장 공략 본격화</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] 아키사운드, 세계 최초 그래핀 CVD 악기 케이블과 하이엔드 이어폰 신제품 출시 - 조선비즈</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] DALI, 신제품 칼리스토 출시</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 유아이패스, 2026년 AI·에이전틱 자동화 트렌드 제시…아태지역 역할 부각</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 다섯 가지 키워드로 살펴보는 2026년 AI 트렌드 전망</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 한국머크, AI 시대 소재 기술 트렌드 공유…미디어 간담회 열어</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 2025 AI 10대 핵심 트렌드</div>
-        
-        <div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] 2026년 주목해야 할 5대 AI 트렌드</div>
-        
+      [CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
       </div>
+      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 링크드인, AI 기술 역량 인증 시스템 구축한다
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력
+     </div>
     </div>
+    <!-- Duplicate for loop seamlessness (content repeated in fetch) -->
+    <div aria-hidden="true" class="marquee-content">
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 'AI 최신기술 한 곳에서 배운다'…광주AI교육원 개원
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 링크드인, AI 기술 역량 인증 시스템 구축한다
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 디지털 전환의 성패, ‘기술’이 아니라 ‘역량’에서 결정된다
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] AI 기반 신기술 복지용구 확대로 낙상 사고 막고 복약 누락 예방한다
+     </div>
+     <div class="ticker-item">
+      <div class="ticker-dot">
+      </div>
+      [COMPUTER &amp; AI] 슈퍼브에이아이, 포스텍과 피지컬 AI 기술 고도화 협력
+     </div>
+    </div>
+   </div>
   </footer>
-
   <script>
-    // System Clock
+   // System Clock
     function updateClock() {
       const now = new Date();
       const timeString = now.toLocaleTimeString('ko-KR', { hour12: false });
@@ -790,8 +784,8 @@
 
     // Auto Reload for Fresh Data
     setTimeout(() => {
-        window.location.reload();
+      window.location.reload();
     }, 120000); // 120s
   </script>
-</body>
+ </body>
 </html>
