@@ -67,8 +67,8 @@ def send_daily_briefing(weather, missions):
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
 
-    # One-line report (Final Security & Weather Verification)
-    msg = f"대표님, 진안읍 {temp}도 반영 완료 및 보안 봉인 성공했습니다."
+    # One-line report (Final Success Confirmation)
+    msg = f"대표님, 이제 진짜 반영됐습니다! 새로고침해 보세요. (진안읍: {temp})"
     
     # Send
     send_telegram(msg)
