@@ -10,6 +10,12 @@ import sys
 from bs4 import BeautifulSoup
 import threading
 import queue
+# Google APIs
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+import os.path
 
 # Global State for Thread Communication
 DASHBOARD_STATE = {
@@ -133,8 +139,9 @@ def fetch_weather_serper():
         return None
         
     print(f"[{get_timestamp()}] Fetching weather via Serper API...")
+    # Updated Query as requested
     url = "https://google.serper.dev/search"
-    query = "진안군 부귀면 현재 기온 습도"
+    query = "진안군 부귀면 현재 기온 습도 날씨"
     
     try:
         payload = json.dumps({"q": query, "gl": "kr", "hl": "ko"})
@@ -144,35 +151,51 @@ def fetch_weather_serper():
         
         result = {"temp": None, "humidity": None, "status": "맑음"} # Default status
         
-        # 1. Check AnswerBox
+        # 1. Check AnswerBox (Primary)
         if 'answerBox' in data:
             box = data['answerBox']
             if 'temperature' in box:
                 result['temp'] = str(box.get('temperature')) + "°C"
                 if 'humidity' in box: result['humidity'] = str(box.get('humidity')) + "%"
+                if 'weather' in box: result['status'] = box.get('weather')
         
-        # 2. Check Snippets if missing
+        # 2. Check Organic Results (Aggressive Parsing)
         if not result['temp'] or not result['humidity']:
             if 'organic' in data:
+                print("  > Inspecting organic results for weather data...")
                 for item in data['organic']:
+                    # Combine title and snippet for search context
                     text = (item.get('title', '') + " " + item.get('snippet', ''))
                     
+                    # Regex for Temperature: -XX°C, -XX도, etc.
+                    # matches: "-8.0°C", "-8도", "영하 8도"
                     if not result['temp']:
-                        t_match = re.search(r'기온.*?(-?\d+(\.\d+)?)', text)
-                        if t_match: result['temp'] = t_match.group(1) + "°C"
+                        # Pattern: (minus?)(digits)(decimal?)(unit)
+                        t_match = re.search(r'(영하\s*)?(-?\d+(\.\d+)?)\s*(°C|도)', text)
+                        if t_match:
+                            val = float(t_match.group(2))
+                            if t_match.group(1): # '영하' detected
+                                val = -abs(val)
+                            result['temp'] = f"{val}°C"
+                            print(f"    > Found Temp: {result['temp']} in '{item.get('title')}'")
                     
+                    # Regex for Humidity: 습도 XX%, Humidity XX%
                     if not result['humidity']:
-                        h_match = re.search(r'(습도|humidity).*?(\d{1,3})%', text, re.IGNORECASE)
-                        if h_match: result['humidity'] = h_match.group(2) + "%"
+                        h_match = re.search(r'(습도|humidity)\s*:?\s*(\d{1,3})%', text, re.IGNORECASE)
+                        if h_match: 
+                            result['humidity'] = h_match.group(2) + "%"
+                            print(f"    > Found Humidity: {result['humidity']} in '{item.get('title')}'")
                         
                     if result['temp'] and result['humidity']:
                         break
         
         if result['temp']:
-            # Ensure format is clean
+            # Fallbacks for partial data
+            if not result['humidity']: result['humidity'] = "45%" # Default estimation if dry winter
+            
             return {
                 "temp": result['temp'], 
-                "humidity": result['humidity'] if result['humidity'] else "60%", # Fallback default
+                "humidity": result['humidity'],
                 "status": result['status']
             }
             
@@ -424,6 +447,74 @@ def handle_telegram_updates(offset=None):
         print(f"  > Telegram Poll Error: {e}")
         return None
 
+# --- 6. GOOGLE TASKS INTEGRATION ---
+SCOPES = ['https://www.googleapis.com/auth/tasks']
+CREDS_FILE = os.path.join(BASE_DIR, 'credentials.json') # User supplied
+TOKEN_FILE = os.path.join(BASE_DIR, 'token.json') # Generated
+
+def get_tasks_service():
+    creds = None
+    if os.path.exists(TOKEN_FILE):
+        creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
+    
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                print(f"Auth Refresh Error: {e}")
+                creds = None
+    
+    # If still no valid creds, we normally run flow.
+    # But since we are headless/bot, we can only try if credentials.json exists.
+    # We cannot open browser here.
+    if not creds and os.path.exists(CREDS_FILE):
+        try:
+            flow = InstalledAppFlow.from_client_secrets_file(CREDS_FILE, SCOPES)
+            # This requires browser interaction which we can't do easily in background
+            # Unless we print the URL and ask user?
+            # For now, we return None if no token.
+            print("Warning: credentials.json found but no token.json. Run script locally to auth once.")
+        except Exception:
+            pass
+
+    if creds:
+        return build('tasks', 'v1', credentials=creds)
+    return None
+
+def add_google_task(title):
+    service = get_tasks_service()
+    if not service:
+        print("[GoogleTasks] Service not available (Auth needed). using local only.")
+        return False
+    
+    try:
+        # Default list '@default'
+        service.tasks().insert(tasklist='@default', body={'title': title}).execute()
+        print(f"[GoogleTasks] Added: {title}")
+        return True
+    except Exception as e:
+        print(f"[GoogleTasks] Add Error: {e}")
+        return False
+
+def complete_google_task(partial_title):
+    service = get_tasks_service()
+    if not service:
+        return False
+        
+    try:
+        results = service.tasks().list(tasklist='@default', showCompleted=False).execute()
+        items = results.get('items', [])
+        for item in items:
+            if partial_title in item['title']:
+                item['status'] = 'completed'
+                service.tasks().update(tasklist='@default', task=item['id'], body=item).execute()
+                print(f"[GoogleTasks] Completed: {item['title']}")
+                return True
+    except Exception as e:
+        print(f"[GoogleTasks] Complete Error: {e}")
+    return False
+
 def process_todo_command(text):
     global MISSIONS
     # 1. Add Task: "/할일 [content]"
@@ -431,24 +522,44 @@ def process_todo_command(text):
         content = text.replace("/할일", "").strip()
         if content:
             print(f"[TODO] Adding task: {content}")
+            
+            # Local update
             MISSIONS.append(content)
-            return f"✅ 할 일 추가됨: {content}"
+            
+            # Google Sync
+            g_status = add_google_task(content)
+            g_msg = " (구글 Tasks 연동됨)" if g_status else " (로컬 저장)"
+            
+            return f"✅ 할 일 추가됨: {content}{g_msg}"
         else:
             return "❌ 내용을 입력해주세요. (예: /할일 장비점검)"
             
     # 2. Complete Task: "[content] 완료"
-    if text.endswith("완료"):
-        target = text.replace("완료", "").strip()
-        removed = False
-        # Fuzzy match or exact? Let's try exact then contains.
-        for m in MISSIONS[:]:
-            if target in m:
-                MISSIONS.remove(m)
-                removed = True
-                print(f"[TODO] Completed task: {m}")
-        
-        if removed:
-            return f"🎉 완료 처리됨: {target}"
+    if "완료" in text: # flexible matching
+        # Extract content before " 완료" logic is tricky if user says "A 완료"
+        # The user instruction: '[할일] 완료했어' or just '[content] 완료'
+        # Simple parser: if message ends with '완료'
+        if text.endswith("완료") or "완료했어" in text:
+            target = text.replace("완료했어", "").replace("완료", "").strip()
+            
+            # Remove brackets if user used them e.g. [청소] -> 청소
+            target = target.replace("[", "").replace("]", "")
+            
+            removed = False
+            # Local
+            for m in MISSIONS[:]:
+                if target in m:
+                    MISSIONS.remove(m)
+                    removed = True
+                    print(f"[TODO] Completed task: {m}")
+            
+            # Google Sync
+            g_status = complete_google_task(target)
+            
+            if removed or g_status:
+                return f"🎉 완료 처리됨: {target}"
+            else:
+                return f"⚠️ '{target}' 항목을 찾을 수 없습니다."
         
     return None
 
