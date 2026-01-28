@@ -7,6 +7,8 @@ import datetime
 import html
 import sys
 import re
+import subprocess
+
 
 # =============================================================================
 # Configuration
@@ -442,6 +444,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
           <div class="mission-dot"></div>
           최소 장비 목록 만들기
         </div>
+        <div class="mission-item">
+          <div class="mission-dot"></div>
+          자료정리
+        </div>
       </div>
     </div>
 
@@ -540,7 +546,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-def fetch_weather_data(query="진안군 부귀면 날씨"):
+def fetch_weather_data(query="진안군 부귀면 현재 날씨 기온 습도"):
     """Fetch weather and return dict with temp/humidity."""
     api_key = os.environ.get("SERPER_API_KEY")
     data = {"temp": "-XX°C", "humidity": "XX%"}
@@ -576,8 +582,8 @@ def fetch_weather_data(query="진안군 부귀면 날씨"):
                         found_temp = True
                     
                     if found_temp:
-                        h_match = re.search(r'습도.*?(\d{1,3})%', text)
-                        if h_match: data['humidity'] = h_match.group(1) + "%"
+                        h_match = re.search(r'(습도|humidity).*?(\d{1,3})%', text, re.IGNORECASE)
+                        if h_match: data['humidity'] = h_match.group(2) + "%"
                         break
                         
         except Exception as e:
@@ -587,8 +593,7 @@ def fetch_weather_data(query="진안군 부귀면 날씨"):
 
 def format_weather_html(weather_data):
     return f"""
-        <span><span class="text-orange">기온</span> {weather_data['temp']}</span>
-        <span><span class="text-blue">습도</span> {weather_data['humidity']}</span>
+        <span><span class="text-orange">기온:</span> {weather_data['temp']} / <span class="text-blue">습도:</span> {weather_data['humidity']}</span>
     """
 
 def fetch_top_news_serper(query, count=5):
@@ -641,8 +646,8 @@ def generate_news_html(items):
     return html_output
 
 def send_telegram_alert(message):
-    token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    token = os.environ.get("TELEGRAM_BOT_TOKEN") or "8573370357:AAHW6ux03giBh6xa1oq0KvTbj8uE8H_bnE8"
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID") or "8556588810"
     
     print(f"Telegram Config Check: Token={'Present' if token else 'Missing'}, ChatID={'Present' if chat_id else 'Missing'}")
     
@@ -721,6 +726,16 @@ def update_signage():
     except Exception as e:
         print(f"Error writing file: {e}")
         sys.exit(1)
+
+    # 6. Git Push
+    try:
+        print("[System] Pushing to GitHub...")
+        subprocess.run("git add .", shell=True, check=True)
+        subprocess.run('git commit -m "Auto Update: Weather & Missions"', shell=True, check=True)
+        subprocess.run("git push", shell=True, check=True)
+        print("[System] Push Complete.")
+    except Exception as e:
+        print(f"[Warning] Git Push Failed: {e}")
 
 if __name__ == "__main__":
     update_signage()
