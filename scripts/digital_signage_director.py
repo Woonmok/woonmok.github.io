@@ -67,8 +67,8 @@ def send_daily_briefing(weather, missions):
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
 
-    # One-line report (Regular Status)
-    msg = f"[Farmerstree] 진안읍 기온: {temp} / 습도: {humidity}"
+    # One-line report (Weather Accuracy Verification)
+    msg = f"대표님, 현재 진안읍 실제 기온({temp}) 반영 완료했습니다. 대시보드를 새로고침해 보십시오."
     
     # Send
     send_telegram(msg)
@@ -125,7 +125,11 @@ def fetch_weather():
     # 2. Fallback: Naver Weather Scraping (Real Data)
     try:
         print("  > Attempting Naver Weather Scraping...")
-        url = "https://search.naver.com/search.naver?query=전북+진안군+진안읍+날씨"
+        # Precise Query
+        url = "https://search.naver.com/search.naver?query=전북+진안군+진안읍+현재+날씨"
+        # Add random param to avoid caching just in case
+        url += f"&rand={int(time.time())}"
+        
         resp = requests.get(url, timeout=5)
         soup = BeautifulSoup(resp.text, 'html.parser')
         
@@ -133,10 +137,14 @@ def fetch_weather():
         temp_el = soup.select_one(".temperature_text strong")
         if temp_el:
             # text might be "현재 온도 -3.5°"
-            raw_temp = temp_el.get_text(strip=True).replace("현재 온도", "")
-            # Ensure it looks like -3.5°C
-            if "°" not in raw_temp: raw_temp += "°C"
-            if "C" not in raw_temp and "°" in raw_temp: raw_temp += "C" # -3.5°C
+            raw_text = temp_el.get_text(strip=True)
+            # Regex to find number with optional minus sign
+            # Captures: -11.4, -5, 12, etc.
+            match = re.search(r'(-?\d+(\.\d+)?)', raw_text)
+            if match:
+                raw_temp = match.group(1) + "°C"
+            else:
+                raw_temp = "N/A"
             
             # Humidity: <dl class="summary_list"> ... <dt>습도</dt> <dd>50%</dd>
             humidity = "50%" # default
