@@ -67,8 +67,8 @@ def send_daily_briefing(weather, missions):
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
 
-    # One-line report (Weather Accuracy Verification)
-    msg = f"대표님, 현재 진안읍 실제 기온({temp}) 반영 완료했습니다. 대시보드를 새로고침해 보십시오."
+    # One-line report (Final Deployment)
+    msg = f"대표님, 뉴스 티커 속도 최적화 및 진안읍 정밀 기온({temp}) 반영 완료했습니다. 우측 상단 'LIVE SYSTEM' 확인 부탁드립니다."
     
     # Send
     send_telegram(msg)
@@ -136,13 +136,14 @@ def fetch_weather():
         # Temp: <div class="temperature_text"> <strong>... </strong> </div>
         temp_el = soup.select_one(".temperature_text strong")
         if temp_el:
-            # text might be "현재 온도 -3.5°"
+            # text might be "현재 온도 -3.5°" or "-3.5" or "−3.5" (unicode minus)
             raw_text = temp_el.get_text(strip=True)
-            # Regex to find number with optional minus sign
-            # Captures: -11.4, -5, 12, etc.
-            match = re.search(r'(-?\d+(\.\d+)?)', raw_text)
+            # Regex to find number with optional minus sign (hyphen or unicode minus)
+            # Captures: -11.4, −5, 12, etc.
+            match = re.search(r'([−-]?\d+(\.\d+)?)', raw_text)
             if match:
-                raw_temp = match.group(1) + "°C"
+                # Replace unicode minus with hyphen for standard display
+                raw_temp = match.group(1).replace("−", "-") + "°C"
             else:
                 raw_temp = "N/A"
             
