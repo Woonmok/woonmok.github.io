@@ -28,9 +28,10 @@ def run():
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
 
-    # 2. Send Telegram Report
+    # 2. Send Telegram Report (STRICT)
     print("2. Sending Telegram Report...")
-    msg = f"대표님, 현재 진안 기온: {temp} / 습도: {humidity} 로 교정 완료했습니다. 이제 텔레그램으로 할 일을 관리해 보세요."
+    # "[Farmerstree 현황] 기온: -8°C / 습도: XX% / 할일: 자료정리 등"
+    msg = f"[Farmerstree 현황] 기온: {temp} / 습도: {humidity} / 할일: 자료정리 등"
     
     send_telegram(msg)
     

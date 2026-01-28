@@ -90,38 +90,24 @@ def send_regular_report(weather, news_data):
     global LAST_REPORT_HASH
     print(f"[{get_timestamp()}] Checking for Regular Report updates...")
     
-    # 1. Weather Summary
+    # 1. Weather
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
     
-    # 2. News Headlines (Top 3 mixed)
-    headlines = []
-    
-    # Mix categories to get variety
-    sources = [
-        news_data.get('listeria', []),
-        news_data.get('meat', []),
-        news_data.get('audio', []),
-        news_data.get('ai', [])
-    ]
-    
-    count = 0
-    news_items = []
-    for source in sources:
-        if source:
-            item_title = source[0]['title']
-            news_items.append(f"- {item_title}")
-            count += 1
-            if count >= 3:
-                break
-                
-    news_text = "\n".join(news_items) if news_items else "뉴스 업데이트 없음"
-
-    # Construct Message
-    header = "[Farmerstree 지휘소 정기 보고]"
-    body = f"진안 부귀면 기온: {temp} / 습도: {humidity} / 최신 뉴스 {len(news_items)}건 요약"
-    
-    full_message = f"**{header}**\n\n{body}\n{news_text}"
+    # 2. Key Missions (To-Do)
+    # user asked for: "[Farmerstree 현황] 기온: -8°C / 습도: XX% / 할일: 자료정리 등"
+    # We need to access the global MISSIONS list.
+    todo_summary = "없음"
+    if MISSIONS:
+        first_task = MISSIONS[0]
+        if len(MISSIONS) > 1:
+            todo_summary = f"{first_task} 등 {len(MISSIONS)}건"
+        else:
+            todo_summary = first_task
+            
+    # Construct Single Line Message
+    # Format: [Farmerstree 현황] 기온: -8°C / 습도: XX% / 할일: 자료정리 등
+    full_message = f"[Farmerstree 현황] 기온: {temp} / 습도: {humidity} / 할일: {todo_summary}"
     
     # Duplicate Check
     current_hash = hash(full_message)

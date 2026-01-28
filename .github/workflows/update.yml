@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install requests google-api-python-client google-auth-oauthlib beautifulsoup4
 
       - name: Run update script
         env:
@@ -31,7 +31,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python update_signage_loop.py
+          python scripts/digital_signage_director.py
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5

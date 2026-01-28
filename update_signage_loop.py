@@ -720,8 +720,9 @@ def update_signage():
         print(f"Successfully updated: {OUTPUT_FILE}")
         
         # Telegram Report
-        msg = "대표님, 모든 수리가 완료되었습니다. 이제 안심하고 다녀오십시오!"
-        send_telegram_alert(msg)
+        # msg = "대표님, 모든 수리가 완료되었습니다. 이제 안심하고 다녀오십시오!"
+        # send_telegram_alert(msg)
+        pass
         
     except Exception as e:
         print(f"Error writing file: {e}")
