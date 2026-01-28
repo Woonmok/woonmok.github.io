@@ -10,8 +10,11 @@ import sys
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
-HTML_PATH = "/Users/seunghoonoh/Documents/digital_signage.html"
-JSON_PATH = "/Users/seunghoonoh/Desktop/farmerstree-dashboard/src/data/dashboardData.json"
+# Dynamic Paths
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HTML_PATH = os.path.join(BASE_DIR, "index.html")
+# JSON Path (Optional/Legacy support)
+JSON_PATH = os.path.join(BASE_DIR, "dashboardData.json") # Write to root if needed
 REFRESH_INTERVAL = 1800  # 30 minutes
 
 # Telegram Config
@@ -29,7 +32,7 @@ MISSIONS = [
 ]
 
 # Ensure we are in the correct directory for Git operations
-PROJECT_ROOT = "/Users/seunghoonoh/Desktop/farmerstree-dashboard"
+PROJECT_ROOT = BASE_DIR
 
 def get_timestamp():
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
