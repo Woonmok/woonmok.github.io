@@ -79,6 +79,7 @@
       display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s;
     }
+    .card:hover { border-color: rgba(255, 255, 255, 0.2); }
     .card-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
     .card-content { position: relative; z-index: 5; padding: 1.5rem; height: 100%; display: flex; flex-direction: column; }
     
@@ -96,6 +97,7 @@
       padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 0.5rem;
       border-left: 2px solid transparent; text-decoration: none; transition: all 0.2s;
     }
+    .news-item:hover { background: rgba(255, 255, 255, 0.1); border-left-color: #10b981; }
     .news-title {
       font-size: 1rem; font-weight: 600; color: #e5e7eb; margin-bottom: 0.75rem;
       line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
@@ -107,10 +109,10 @@
       height: 64px; background: rgba(6, 78, 59, 0.9); border-top: 1px solid rgba(16, 185, 129, 0.3);
       display: flex; align-items: center; overflow: hidden; position: relative; z-index: 20;
     }
-    /* FAST MARQUEE: 200s (2x faster than 400s) */
+    /* FAST MARQUEE: 400s */
     .marquee-container {
       display: flex; white-space: nowrap; will-change: transform;
-      transform: translate3d(0, 0, 0); animation: marquee 200s linear infinite;
+      transform: translate3d(0, 0, 0); animation: marquee 400s linear infinite;
     }
     .marquee-content { display: flex; gap: 3rem; padding: 0 1rem; font-size: 2rem; font-weight: 600; color: #d1fae5; }
     .ticker-item { display: flex; align-items: center; gap: 0.5rem; }
@@ -123,489 +125,299 @@
   </style>
  </head>
  <body>
-  <div class="bg-gradient">
-  </div>
+  <div class="bg-gradient"></div>
   <header>
    <div class="brand">
-    <div class="dot">
-    </div>
-    <div class="title">
-     The Wave Tree Project
-    </div>
-    <div class="subtitle">
-     Farmerstree
-    </div>
+    <div class="dot"></div>
+    <div class="title">The Wave Tree Project</div>
+    <div class="subtitle">Farmerstree</div>
    </div>
    <div class="header-info">
     <div class="weather-pill">
      <span>
-      <span class="text-orange">
-       기온:
-      </span>
-      -4.4°C /
-      <span class="text-blue">
-       습도:
-      </span>
-      62%
+      <span class="text-orange">기온:</span> -7.6°C / 
+      <span class="text-blue">습도:</span> 81%
      </span>
     </div>
     <div class="time-display font-mono">
-     <div id="clock">
-      --:--:--
-     </div>
-     <div class="last-update">
-      LIVE SYSTEM
-     </div>
+     <div id="clock">--:--:--</div>
+     <div class="last-update">LIVE SYSTEM</div>
     </div>
    </div>
   </header>
   <main>
    <!-- Today's Mission -->
    <div class="mission-section">
-    <div class="mission-label">
-     TODAY'S MISSION
-    </div>
+    <div class="mission-label">TODAY'S MISSION</div>
     <div class="mission-items">
      <div class="mission-item">
-      <div class="mission-dot">
-      </div>
+      <div class="mission-dot"></div>
       지휘소 세팅 완료 기념 음악 감상
      </div>
      <div class="mission-item">
-      <div class="mission-dot">
-      </div>
+      <div class="mission-dot"></div>
       최소 장비 목록 만들기
      </div>
     </div>
    </div>
    <!-- Grid -->
    <div class="grid">
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&amp;w=2070&amp;auto=format&amp;fit=crop');">
-     <div class="card-overlay">
-     </div>
+
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=2070&auto=format&fit=crop');">
+     <div class="card-overlay"></div>
      <div class="card-content">
       <div class="card-header">
-       <div class="icon-box">
-        Act
-       </div>
-       <div class="card-title">
-        LISTERIA FREE
-       </div>
+       <div class="icon-box">Act</div>
+       <div class="card-title">LISTERIA FREE</div>
       </div>
-      <div class="news-list" id="news-listeria">
-      </div>
-     </div>
-    </div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&amp;w=2564&amp;auto=format&amp;fit=crop');">
-     <div class="card-overlay">
-     </div>
-     <div class="card-content">
-      <div class="card-header">
-       <div class="icon-box">
-        Svr
-       </div>
-       <div class="card-title">
-        CULTURED MEAT
-       </div>
-      </div>
-      <div class="news-list" id="news-cultured_meat">
+      <div class="news-list">
+        
        <div class="news-item">
-        <div class="news-title">
-         이로운뉴스, 산업별 동향 (26/01/29)
-        </div>
+        <div class="news-title">미국서 ′즉석 조리 파스타′ 먹고 6명 식중독 사망…리스테리아 검출</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
        <div class="news-item">
-        <div class="news-title">
-         「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동
-        </div>
+        <div class="news-title">미국에서 '즉석 조리 파스타' 먹고 여섯 명 식중독 사망</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">온라인에서 판매되는 '연어장·게장', 식중독균 검출</div>
+        <div class="news-meta">
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
       </div>
      </div>
     </div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?q=80&amp;w=2535&amp;auto=format&amp;fit=crop');">
-     <div class="card-overlay">
-     </div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop');">
+     <div class="card-overlay"></div>
      <div class="card-content">
       <div class="card-header">
-       <div class="icon-box">
-        Mus
-       </div>
-       <div class="card-title">
-        HIGH-END AUDIO
-       </div>
+       <div class="icon-box">Svr</div>
+       <div class="card-title">CULTURED MEAT</div>
       </div>
-      <div class="news-list" id="news-audio">
+      <div class="news-list">
+        
        <div class="news-item">
-        <div class="news-title">
-         스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정
-        </div>
+        <div class="news-title">배양육 시장점유율 및 동향 [2034년]</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
        <div class="news-item">
-        <div class="news-title">
-         세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정
-        </div>
+        <div class="news-title">국내외 전문들 지속가능한 미래식품 산업 육성 방안 모색하다</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
        <div class="news-item">
-        <div class="news-title">
-         스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정
-        </div>
+        <div class="news-title">충북대 축산학과, 한·네덜란드 공동 세미나</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
-        </div>
-       </div>
-       <div class="news-item">
-        <div class="news-title">
-         스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정
-        </div>
-        <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
-        </div>
-       </div>
-       <div class="news-item">
-        <div class="news-title">
-         바디프랜드, 설 맞아 '선물의 정석' 행사…최대 252만원 할인
-        </div>
-        <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
       </div>
      </div>
     </div>
-    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&amp;w=2070&amp;auto=format&amp;fit=crop');">
-     <div class="card-overlay">
-     </div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?q=80&w=2535&auto=format&fit=crop');">
+     <div class="card-overlay"></div>
      <div class="card-content">
       <div class="card-header">
-       <div class="icon-box">
-        Cpu
-       </div>
-       <div class="card-title">
-        COMPUTER &amp; AI
-       </div>
+       <div class="icon-box">Mus</div>
+       <div class="card-title">HIGH-END AUDIO</div>
       </div>
-      <div class="news-list" id="news-computer_ai">
+      <div class="news-list">
+        
        <div class="news-item">
-        <div class="news-title">
-         2026 AI·디지털 분야 핵심기술 및 트렌드
-        </div>
+        <div class="news-title">셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
        <div class="news-item">
-        <div class="news-title">
-         전파진흥협회·전자신문, AI 테크 리더스 포럼 공동 추진
-        </div>
+        <div class="news-title">베트남 하이엔드 쇼 2025: 오디오 애호가들이 가장 기대하는 올해의 이벤트</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
        <div class="news-item">
-        <div class="news-title">
-         "AI 기술 이해가 경쟁력"…베스핀글로벌 '테크 딥 다이브 데이'
-        </div>
+        <div class="news-title">JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니</div>
         <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
-        </div>
-       </div>
-       <div class="news-item">
-        <div class="news-title">
-         유베이스-서울대, AI 상담 고도화 협력…한국어 맥락 읽는 자연어처리 기술 확보
-        </div>
-        <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
-        </div>
-       </div>
-       <div class="news-item">
-        <div class="news-title">
-         대구광역시, 지속 가능한 기업 성장 `AI 신기술`에 답있다
-        </div>
-        <div class="news-meta">
-         <span>
-          Read More →
-         </span>
-         <span>
-          2026.01.29
-         </span>
+         <span>Read More →</span>
+         <span>2026.01.29</span>
         </div>
        </div>
       </div>
      </div>
     </div>
-   </div>
+    <div class="card" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');">
+     <div class="card-overlay"></div>
+     <div class="card-content">
+      <div class="card-header">
+       <div class="icon-box">Cpu</div>
+       <div class="card-title">COMPUTER & AI</div>
+      </div>
+      <div class="news-list">
+        
+       <div class="news-item">
+        <div class="news-title">2026 AI·디지털 분야 핵심기술 및 트렌드</div>
+        <div class="news-meta">
+         <span>Read More →</span>
+         <span>2026.01.29</span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">"AI 기술 이해가 경쟁력"…베스핀글로벌 '테크 딥 다이브 데이'</div>
+        <div class="news-meta">
+         <span>Read More →</span>
+         <span>2026.01.29</span>
+        </div>
+       </div>
+       <div class="news-item">
+        <div class="news-title">2026년 AI·에이전틱 자동화 변화시킬 6대 트렌드는</div>
+        <div class="news-meta">
+         <span>Read More →</span>
+         <span>2026.01.29</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>   </div>
   </main>
   <footer>
    <div class="marquee-container">
-    <div class="marquee-content" id="marquee-1">
-     <div class="ticker-item">
-      <div class="ticker-dot">
+    <div class="marquee-content">
+     
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [LISTERIA FREE] 미국서 ′즉석 조리 파스타′ 먹고 6명 식중독 사망…리스테리아 검출
       </div>
-      [CULTURED MEAT] 이로운뉴스, 산업별 동향 (26/01/29)
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [LISTERIA FREE] 미국에서 '즉석 조리 파스타' 먹고 여섯 명 식중독 사망
       </div>
-      [CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [LISTERIA FREE] 온라인에서 판매되는 '연어장·게장', 식중독균 검출
       </div>
-      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [CULTURED MEAT] 배양육 시장점유율 및 동향 [2034년]
       </div>
-      [HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [CULTURED MEAT] 국내외 전문들 지속가능한 미래식품 산업 육성 방안 모색하다
       </div>
-      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [CULTURED MEAT] 충북대 축산학과, 한·네덜란드 공동 세미나
       </div>
-      [HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭
       </div>
-      [HIGH-END AUDIO] 바디프랜드, 설 맞아 '선물의 정석' 행사…최대 252만원 할인
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [HIGH-END AUDIO] 베트남 하이엔드 쇼 2025: 오디오 애호가들이 가장 기대하는 올해의 이벤트
       </div>
-      [COMPUTER &amp; AI] 2026 AI·디지털 분야 핵심기술 및 트렌드
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [HIGH-END AUDIO] JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니
       </div>
-      [COMPUTER &amp; AI] 전파진흥협회·전자신문, AI 테크 리더스 포럼 공동 추진
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [COMPUTER & AI] 2026 AI·디지털 분야 핵심기술 및 트렌드
       </div>
-      [COMPUTER &amp; AI] "AI 기술 이해가 경쟁력"…베스핀글로벌 '테크 딥 다이브 데이'
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [COMPUTER & AI] "AI 기술 이해가 경쟁력"…베스핀글로벌 '테크 딥 다이브 데이'
       </div>
-      [COMPUTER &amp; AI] 유베이스-서울대, AI 상담 고도화 협력…한국어 맥락 읽는 자연어처리 기술 확보
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [COMPUTER & AI] 2026년 AI·에이전틱 자동화 변화시킬 6대 트렌드는
       </div>
-      [COMPUTER &amp; AI] 대구광역시, 지속 가능한 기업 성장 `AI 신기술`에 답있다
-     </div>
     </div>
-    <div aria-hidden="true" class="marquee-content" id="marquee-2">
-     <div class="ticker-item">
-      <div class="ticker-dot">
+    <!-- Duplicate for loop -->
+    <div aria-hidden="true" class="marquee-content">
+     
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [LISTERIA FREE] 미국서 ′즉석 조리 파스타′ 먹고 6명 식중독 사망…리스테리아 검출
       </div>
-      [CULTURED MEAT] 이로운뉴스, 산업별 동향 (26/01/29)
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [LISTERIA FREE] 미국에서 '즉석 조리 파스타' 먹고 여섯 명 식중독 사망
       </div>
-      [CULTURED MEAT] 「푸드테크산업 육성에 관한 법률」 시행(‘25.12.21)에 따른 온라인 신고 시스템 본격 가동
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [LISTERIA FREE] 온라인에서 판매되는 '연어장·게장', 식중독균 검출
       </div>
-      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 2025 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [CULTURED MEAT] 배양육 시장점유율 및 동향 [2034년]
       </div>
-      [HIGH-END AUDIO] 세계 최초 Hi-Res 무선 인증 게이밍 헤드셋 '아크티스 노바 엘리트', 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [CULTURED MEAT] 국내외 전문들 지속가능한 미래식품 산업 육성 방안 모색하다
       </div>
-      [HIGH-END AUDIO] 스틸시리즈 ‘아크티스 노바 엘리트’, 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [CULTURED MEAT] 충북대 축산학과, 한·네덜란드 공동 세미나
       </div>
-      [HIGH-END AUDIO] 스틸시리즈, 무선 게이밍 헤드셋 '아크티스 노바 엘리트' 2025 씨넷코리아 에디터스 초이스 선정
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [HIGH-END AUDIO] 셰에라자드, 에이유엔이 하이엔드 인이어 모니터 이어폰 ‘IR300’ 공식 런칭
       </div>
-      [HIGH-END AUDIO] 바디프랜드, 설 맞아 '선물의 정석' 행사…최대 252만원 할인
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [HIGH-END AUDIO] 베트남 하이엔드 쇼 2025: 오디오 애호가들이 가장 기대하는 올해의 이벤트
       </div>
-      [COMPUTER &amp; AI] 2026 AI·디지털 분야 핵심기술 및 트렌드
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [HIGH-END AUDIO] JBL 하이엔드 제품군 확장…'서밋 시리즈' 3종 들어보니
       </div>
-      [COMPUTER &amp; AI] 전파진흥협회·전자신문, AI 테크 리더스 포럼 공동 추진
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [COMPUTER & AI] 2026 AI·디지털 분야 핵심기술 및 트렌드
       </div>
-      [COMPUTER &amp; AI] "AI 기술 이해가 경쟁력"…베스핀글로벌 '테크 딥 다이브 데이'
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [COMPUTER & AI] "AI 기술 이해가 경쟁력"…베스핀글로벌 '테크 딥 다이브 데이'
       </div>
-      [COMPUTER &amp; AI] 유베이스-서울대, AI 상담 고도화 협력…한국어 맥락 읽는 자연어처리 기술 확보
-     </div>
-     <div class="ticker-item">
-      <div class="ticker-dot">
+      <div class="ticker-item">
+       <div class="ticker-dot"></div>
+       [COMPUTER & AI] 2026년 AI·에이전틱 자동화 변화시킬 6대 트렌드는
       </div>
-      [COMPUTER &amp; AI] 대구광역시, 지속 가능한 기업 성장 `AI 신기술`에 답있다
-     </div>
     </div>
    </div>
   </footer>
   <script>
-   function updateTime() {{
+    function updateTime() {
         const now = new Date();
         const h = String(now.getHours()).padStart(2, '0');
         const m = String(now.getMinutes()).padStart(2, '0');
         const s = String(now.getSeconds()).padStart(2, '0');
-        const timeString = `${{h}}:${{m}}:${{s}}`;
+        const timeString = `${h}:${m}:${s}`;
         document.getElementById('clock').textContent = timeString;
-    }}
+    }
     setInterval(updateTime, 1000);
     updateTime();
     
-    // Fetch and Populate News
-    async function loadNews() {{
-        try {{
-            const response = await fetch('daily_news.json?t=' + new Date().getTime()); // Cache Busting
-            const data = await response.json();
-            
-            const mapping = {{
-                'listeria': 'news-listeria',
-                'cultured_meat': 'news-cultured_meat',
-                'audio': 'news-audio',
-                'computer_ai': 'news-computer_ai'
-            }};
-            
-            const sectionLabels = {{
-                'listeria': 'LISTERIA FREE',
-                'cultured_meat': 'CULTURED MEAT',
-                'audio': 'HIGH-END AUDIO',
-                'computer_ai': 'COMPUTER & AI'
-            }};
-
-            let marqueeHTML = '';
-
-            for (const [key, elementId] of Object.entries(mapping)) {{
-                const articles = data[key];
-                const container = document.getElementById(elementId);
-                if (articles && container) {{
-                    let html = '';
-                    articles.forEach(art => {{
-                        html += `
-                        <div class="news-item">
-                            <div class="news-title">${{art.title}}</div>
-                            <div class="news-meta">
-                                <span>Read More →</span>
-                                <span>${{art.date}}</span>
-                            </div>
-                        </div>
-                        `;
-                        
-                        // Add to marquee
-                        marqueeHTML += `
-                         <div class="ticker-item">
-                          <div class="ticker-dot"></div>
-                          [${{sectionLabels[key]}}] ${{art.title}}
-                         </div>
-                        `;
-                    }});
-                    container.innerHTML = html;
-                }}
-            }}
-            
-            // Update Marquee
-            document.getElementById('marquee-1').innerHTML = marqueeHTML;
-            document.getElementById('marquee-2').innerHTML = marqueeHTML;
-            
-        }} catch (e) {{
-            console.error('Failed to load news:', e);
-        }}
-    }}
-    
-    loadNews();
-    
-    setTimeout(() => {{
+    setTimeout(() => {
         window.location.reload();
-    }}, 120000);
+    }, 120000);
   </script>
  </body>
 </html>
