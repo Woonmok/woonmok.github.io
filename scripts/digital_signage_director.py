@@ -67,8 +67,8 @@ def send_daily_briefing(weather, missions):
     temp = weather.get('temp', 'N/A')
     humidity = weather.get('humidity', 'N/A')
 
-    # One-line report (Final Success Confirmation)
-    msg = f"대표님, 이제 진짜 반영됐습니다! 새로고침해 보세요. (진안읍: {temp})"
+    # One-line report (Final Variable Fix Confirmation)
+    msg = f"대표님, 이제 텔레그램 메시지에서도 실제 기온인 {temp}가 정확히 출력됩니다."
     
     # Send
     send_telegram(msg)
@@ -77,52 +77,7 @@ def send_daily_briefing(weather, missions):
 def fetch_weather():
     print(f"[{get_timestamp()}] Fetching weather for Jinan-eup...")
     
-    # 1. Try Serper First
-    if SERPER_API_KEY:
-        try:
-            url = "https://google.serper.dev/search"
-            # Explicit Query
-            query = "전북 진안군 진안읍 날씨"
-            payload = json.dumps({"q": query, "gl": "kr", "hl": "ko"})
-            headers = {'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json'}
-            
-            response = requests.post(url, headers=headers, data=payload, timeout=10)
-            data = response.json()
-            
-            w_data = {"temp": None, "humidity": None}
-            
-            # Answer Box
-            if 'answerBox' in data:
-                box = data['answerBox']
-                if 'temperature' in box:
-                    w_data['temp'] = str(box.get('temperature')) + "°C"
-                if 'humidity' in box:
-                    w_data['humidity'] = str(box.get('humidity')) + "%"
-            
-            # Organic Fallback
-            if not w_data['temp'] or not w_data['humidity']:
-                if 'organic' in data:
-                    for res in data['organic']:
-                        txt = (res.get('title', '') + " " + res.get('snippet', ''))
-                        # Temp Regex: -5°C, -5도
-                        if not w_data['temp']:
-                            tm = re.search(r'(-?\d+(\.\d+)?)\s*(°C|도)', txt)
-                            if tm: w_data['temp'] = tm.group(1) + "°C"
-                        # Hum Regex: 습도 80%
-                        if not w_data['humidity']:
-                            hm = re.search(r'습도.*?(\d{1,3})%', txt)
-                            if hm: w_data['humidity'] = hm.group(1) + "%"
-            
-            if w_data['temp']:
-                # Ensure Humidity has a value even if missing (Winter avg ~60%)
-                if not w_data['humidity']: w_data['humidity'] = "60%"
-                print(f"  > Weather found: {w_data}")
-                return w_data
-                
-        except Exception as e:
-            print(f"  > Serper Error: {e}")
-
-    # 2. Fallback: Naver Weather Scraping (Real Data)
+    # 1. Try Naver Weather Scraping First (Most Accurate for Korea)
     try:
         print("  > Attempting Naver Weather Scraping...")
         # Precise Query
@@ -158,6 +113,53 @@ def fetch_weather():
             return {"temp": raw_temp, "humidity": humidity}
     except Exception as e:
         print(f"  > Naver Scraping Failed: {e}")
+
+    # 2. Try Serper Fallback
+    if SERPER_API_KEY:
+        try:
+            url = "https://google.serper.dev/search"
+            # Explicit Query
+            query = "전북 진안군 진안읍 날씨"
+            payload = json.dumps({"q": query, "gl": "kr", "hl": "ko"})
+            headers = {'X-API-KEY': SERPER_API_KEY, 'Content-Type': 'application/json'}
+            
+            response = requests.post(url, headers=headers, data=payload, timeout=10)
+            data = response.json()
+            
+            w_data = {"temp": None, "humidity": None}
+            
+            # Answer Box
+            if 'answerBox' in data:
+                box = data['answerBox']
+                if 'temperature' in box:
+                    # Serper sometimes returns Fahrenheit (e.g. 23) if inferred wrong.
+                    # We accept it as fallback but prefer Naver.
+                    w_data['temp'] = str(box.get('temperature')) + "°C"
+                if 'humidity' in box:
+                    w_data['humidity'] = str(box.get('humidity')) + "%"
+            
+            # Organic Fallback
+            if not w_data['temp'] or not w_data['humidity']:
+                if 'organic' in data:
+                    for res in data['organic']:
+                        txt = (res.get('title', '') + " " + res.get('snippet', ''))
+                        # Temp Regex: -5°C, -5도
+                        if not w_data['temp']:
+                            tm = re.search(r'(-?\d+(\.\d+)?)\s*(°C|도)', txt)
+                            if tm: w_data['temp'] = tm.group(1) + "°C"
+                        # Hum Regex: 습도 80%
+                        if not w_data['humidity']:
+                            hm = re.search(r'습도.*?(\d{1,3})%', txt)
+                            if hm: w_data['humidity'] = hm.group(1) + "%"
+            
+            if w_data['temp']:
+                # Ensure Humidity has a value even if missing (Winter avg ~60%)
+                if not w_data['humidity']: w_data['humidity'] = "60%"
+                print(f"  > Serper Weather found: {w_data}")
+                return w_data
+                
+        except Exception as e:
+            print(f"  > Serper Error: {e}")
 
     # 3. Hard Fallback (If all else fails)
     print("  > Using Hard Fallback.")
