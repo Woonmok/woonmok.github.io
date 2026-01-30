@@ -138,61 +138,68 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1 style="color: var(--neon-green); margin: 0; font-size: 1.8rem;">THE WAVE TREE <span
-                style="font-weight: 200; font-size: 0.7em; color: #888;">Farmerstree</span></h1>
-        <div id="weather"
-            style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.7); padding: 8px 18px; border-radius: 20px;">
-            진안 본부 | 기온: -6.1°C | 습도: 65%</div>
+    <<header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background-color: #000;">
+        <div class="logo" style="font-weight: bold; color: #00ffcc; font-size: 1.2em; min-width: 200px;">
+            THE WAVE TREE <span style="font-size: 0.6em; color: #888; display: block;">Farmerstree</span>
+        </div>
+
         <div class="mission-control"
-            style="background: rgba(0, 255, 102, 0.1); border-left: 4px solid #00ff66; padding: 10px; margin: 10px 0; color: #00ff66; font-size: 0.9em;">
-            <strong>🚀 오늘의 전략 과제:</strong>
+            style="background: rgba(0, 255, 102, 0.1); border: 1px solid #00ff66; border-radius: 8px; padding: 10px 30px; color: #00ff66; font-size: 1em; flex-grow: 1; margin: 0 40px; text-align: center; box-shadow: 0 0 15px rgba(0, 255, 102, 0.1);">
+            <strong style="margin-right: 10px;">🚀 오늘의 전략 과제:</strong>
             <span>1. 자료정리 및 POM 프로젝트 도면 검토 | 2. 아내 병원 동행 (14:00)</span>
         </div>
-    </div>
-    <div class="container">
-        <div id="col_1" class="column">
-            <h2>Listeria Free</h2>
-            <div id="listeria_free"></div>
+
+        <div class="weather-info"
+            style="color: #ffcc00; font-size: 0.9em; text-align: right; min-width: 200px; line-height: 1.5;">
+            <div>진안 본부</div>
+            <div>기온: <span style="font-weight: bold;">-6.1°C</span> | 습도: <span style="font-weight: bold;">65%</span>
+            </div>
         </div>
-        <div id="col_2" class="column">
-            <h2>Cultured Meat</h2>
-            <div id="cultured_meat"></div>
+        </header>
+        <div class="container">
+            <div id="col_1" class="column">
+                <h2>Listeria Free</h2>
+                <div id="listeria_free"></div>
+            </div>
+            <div id="col_2" class="column">
+                <h2>Cultured Meat</h2>
+                <div id="cultured_meat"></div>
+            </div>
+            <div id="col_3" class="column">
+                <h2>High-End Audio</h2>
+                <div id="high_end_audio"></div>
+            </div>
+            <div id="col_4" class="column">
+                <h2>Computer & AI</h2>
+                <div id="computer_ai"></div>
+            </div>
         </div>
-        <div id="col_3" class="column">
-            <h2>High-End Audio</h2>
-            <div id="high_end_audio"></div>
+        <div class="ticker-wrap">
+            <div class="ticker-move" id="ticker-content"></div>
         </div>
-        <div id="col_4" class="column">
-            <h2>Computer & AI</h2>
-            <div id="computer_ai"></div>
-        </div>
-    </div>
-    <div class="ticker-wrap">
-        <div class="ticker-move" id="ticker-content"></div>
-    </div>
-    <script>
-        async function fetchNews() {
-            try {
-                const res = await fetch('news.json?v=' + Date.now());
-                const data = await res.json();
-                let tickerText = "";
-                const sections = ['listeria_free', 'cultured_meat', 'high_end_audio', 'computer_ai'];
-                sections.forEach(sec => {
-                    const cont = document.getElementById(sec);
-                    if (cont && data[sec]) {
-                        cont.innerHTML = "";
-                        data[sec].forEach(n => {
-                            cont.innerHTML += `<div class="news-item"><h3>${n.title}</h3><p>${n.summary}</p></div>`;
-                            tickerText += ` • [${sec.toUpperCase()}] ${n.title} `;
-                        });
-                    }
-                });
-                document.getElementById('ticker-content').innerHTML = `<div class="ticker-item">${tickerText}</div><div class="ticker-item">${tickerText}</div>`;
-            } catch (e) { console.error(e); }
-        }
-        fetchNews(); setInterval(fetchNews, 60000);
-    </script>
+        <script>
+            async function fetchNews() {
+                try {
+                    const res = await fetch('news.json?v=' + Date.now());
+                    const data = await res.json();
+                    let tickerText = "";
+                    const sections = ['listeria_free', 'cultured_meat', 'high_end_audio', 'computer_ai'];
+                    sections.forEach(sec => {
+                        const cont = document.getElementById(sec);
+                        if (cont && data[sec]) {
+                            cont.innerHTML = "";
+                            data[sec].forEach(n => {
+                                cont.innerHTML += `<div class="news-item"><h3>${n.title}</h3><p>${n.summary}</p></div>`;
+                                tickerText += ` • [${sec.toUpperCase()}] ${n.title} `;
+                            });
+                        }
+                    });
+                    document.getElementById('ticker-content').innerHTML = `<div class="ticker-item">${tickerText}</div><div class="ticker-item">${tickerText}</div>`;
+                } catch (e) { console.error(e); }
+            }
+            fetchNews(); setInterval(fetchNews, 60000);
+        </script>
 </body>
 
 </html>
