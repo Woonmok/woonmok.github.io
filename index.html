@@ -5,43 +5,43 @@
     <title>The Wave Tree Project - Command Center</title>
     <style>
         :root { --neon-green: #00ff9d; --bg-dark: #050505; }
-        body { 
-            background: var(--bg-dark);
-            color: white; font-family: 'Pretendard', sans-serif; margin: 0; overflow: hidden; height: 100vh;
-        }
+        body { background: var(--bg-dark); color: white; font-family: 'Pretendard', sans-serif; margin: 0; overflow: hidden; height: 100vh; }
+        
         .ticker-wrap { position: fixed; bottom: 0; width: 100%; background: rgba(0, 30, 20, 0.95); border-top: 2px solid var(--neon-green); padding: 15px 0; z-index: 100; overflow: hidden; }
         .ticker-move { display: flex; width: max-content; animation: loop 450s linear infinite; }
         .ticker-item { white-space: nowrap; font-size: 1.3rem; font-weight: bold; color: var(--neon-green); padding-right: 50px; }
         @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); }
+        .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
         .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; height: calc(100vh - 160px); }
         
-        /* 각 컬럼별 배경 이미지 설정 */
+        /* 챕터별 개별 배경 설정 */
         .column { 
-            border-radius: 12px; padding: 20px; border: 1px solid rgba(0,255,157,0.2); 
+            border-radius: 12px; padding: 20px; border: 1px solid rgba(0,255,157,0.3); 
             overflow-y: auto; background-size: cover; background-position: center; position: relative;
         }
-        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); z-index: 1; border-radius: 11px; }
+        /* 글자 가독성을 위한 어두운 오버레이 */
+        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1; border-radius: 11px; }
         .column > * { position: relative; z-index: 2; }
 
-        #col_listeria { background-image: url('https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?auto=format&fit=crop&w=600&q=80'); }
-        #col_cultured { background-image: url('https://images.unsplash.com/photo-1628548484584-9b27c30d9586?auto=format&fit=crop&w=600&q=80'); }
-        #col_audio { background-image: url('https://images.unsplash.com/photo-1461783470481-030231c45a7d?auto=format&fit=crop&w=600&q=80'); }
-        #col_ai { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80'); }
+        /* 이미지 주소 (Unsplash 고해상도 사용) */
+        #col_listeria { background-image: url('https://images.unsplash.com/photo-1579152276503-6050b86a8368?auto=format&fit=crop&w=600&q=80'); }
+        #col_cultured { background-image: url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=600&q=80'); }
+        #col_audio { background-image: url('https://images.unsplash.com/photo-1558444479-2706fa5d2893?auto=format&fit=crop&w=600&q=80'); }
+        #col_ai { background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80'); }
 
         .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 8px; font-size: 1.2rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; }
         .news-item { margin-bottom: 12px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; }
         .news-item h3 { font-size: 0.95rem; margin: 0 0 5px 0; color: #fff; line-height: 1.3; }
-        .news-item p { font-size: 0.8rem; color: #ccc; line-height: 1.4; margin: 0; }
+        .news-item p { font-size: 0.8rem; color: #ddd; line-height: 1.4; margin: 0; }
     </style>
 </head>
 <body>
     <div class="header">
         <h1 style="color: var(--neon-green); margin: 0; font-size: 1.8rem;">THE WAVE TREE <span style="font-weight: 200; font-size: 0.7em; color: #888;">Farmerstree</span></h1>
-        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.5); padding: 8px 15px; border-radius: 20px;">기온: -6.1°C | 습도: 61%</div>
+        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.6); padding: 8px 15px; border-radius: 20px;">기온: -6.1°C | 습도: 61%</div>
     </div>
-    <div class="container" id="news-container">
+    <div class="container">
         <div class="column" id="col_listeria"><h2>Listeria Free</h2><div id="listeria_free"></div></div>
         <div class="column" id="col_cultured"><h2>Cultured Meat</h2><div id="cultured_meat"></div></div>
         <div class="column" id="col_audio"><h2>High-End Audio</h2><div id="high_end_audio"></div></div>
