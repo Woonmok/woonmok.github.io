@@ -13,22 +13,22 @@
         .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
         .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; height: calc(100vh - 160px); }
         .column { border-radius: 12px; padding: 25px; border: 1px solid rgba(0,255,157,0.25); background-size: cover; background-position: center; position: relative; overflow: hidden; }
-        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.55); z-index: 1; }
+        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1; }
         .column > * { position: relative; z-index: 2; }
         .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; font-size: 1.3rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; }
         .news-item { margin-bottom: 15px; padding: 12px; background: rgba(255,255,255,0.06); border-radius: 8px; }
         
-        /* 안티그래비티가 엄선한 LP & 오디오 테마 배경 직접 삽입 */
-        #col_1 { background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800'); } /* Green Bio */
-        #col_2 { background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800'); } /* Lab */
-        #col_3 { background-image: url('https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=800'); } /* Classic LP Record */
-        #col_4 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800'); } /* Digital AI */
+        /* 안티그래비티가 선별한 LP & 클래식 오디오 배경 */
+        #col_1 { background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800'); } /* Listeria (Lab) */
+        #col_2 { background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800'); } /* Cultured Meat (Bio) */
+        #col_3 { background-image: url('https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=800'); } /* High-End Audio (LP Turntable) */
+        #col_4 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800'); } /* Computer & AI (Server) */
     </style>
 </head>
 <body>
     <div class="header">
         <h1 style="color: var(--neon-green); margin: 0; font-size: 1.8rem;">THE WAVE TREE <span style="font-weight: 200; font-size: 0.7em; color: #888;">Farmerstree</span></h1>
-        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.7); padding: 8px 18px; border-radius: 20px;">기온: -6.1°C | 진안 본부</div>
+        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.7); padding: 8px 18px; border-radius: 20px;">진안 본부 | 기온: -6.1°C</div>
     </div>
     <div class="container">
         <div id="col_1" class="column"><h2>Listeria Free</h2><div id="listeria_free"></div></div>
