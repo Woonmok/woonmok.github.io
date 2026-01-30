@@ -2,60 +2,64 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>The Wave Tree Project - Farmerstree</title>
+    <title>The Wave Tree Project - Command Center</title>
     <style>
-        :root { --neon-green: #00ff9d; --bg-dark: #0a0a0c; }
-        body { background: var(--bg-dark); color: white; font-family: 'Pretendard', sans-serif; margin: 0; overflow: hidden; }
-        /* 하단 스크롤 속도 상향 (40s) */
-        .ticker-wrap { position: fixed; bottom: 0; width: 100%; background: rgba(0, 40, 30, 0.9); border-top: 2px solid var(--neon-green); padding: 15px 0; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 40s linear infinite; font-size: 1.4rem; font-weight: bold; color: var(--neon-green); }
-        @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+        :root { --neon-green: #00ff9d; --bg-dark: #050505; }
+        body { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+            color: white; font-family: 'Pretendard', sans-serif; margin: 0; overflow: hidden; height: 100vh;
+        }
+        .ticker-wrap { position: fixed; bottom: 0; width: 100%; background: rgba(0, 30, 20, 0.95); border-top: 2px solid var(--neon-green); padding: 12px 0; z-index: 100; }
+        /* 스크롤 속도 60s로 조정 및 끊김 방지 */
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 60s linear infinite; font-size: 1.2rem; font-weight: bold; color: var(--neon-green); }
+        @keyframes scroll { from { transform: translateX(50%); } to { transform: translateX(-150%); } }
         
-        .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px; height: 80vh; }
-        .column { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; border: 1px solid rgba(0,255,157,0.2); overflow-y: auto; }
-        .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; font-size: 1.2rem; color: var(--neon-green); }
-        .news-item { margin-bottom: 20px; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px; }
-        .news-item h3 { font-size: 1rem; margin: 0 0 10px 0; color: #eee; }
-        .news-item p { font-size: 0.85rem; color: #aaa; line-height: 1.4; }
+        .header { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); }
+        .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; height: calc(100vh - 180px); }
+        .column { background: rgba(0,0,0,0.6); border-radius: 12px; padding: 15px; border: 1px solid rgba(0,255,157,0.15); overflow-y: auto; backdrop-filter: blur(10px); }
+        .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 8px; font-size: 1.1rem; color: var(--neon-green); text-transform: uppercase; letter-spacing: 1px; }
+        .news-item { margin-bottom: 12px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 3px solid transparent; transition: 0.3s; }
+        .news-item:hover { border-left: 3px solid var(--neon-green); background: rgba(255,255,255,0.08); }
+        .news-item h3 { font-size: 0.95rem; margin: 0 0 5px 0; color: #fff; line-height: 1.3; }
+        .news-item p { font-size: 0.8rem; color: #bbb; line-height: 1.4; margin: 0; }
     </style>
 </head>
 <body>
-    <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="color: var(--neon-green); margin: 0;">The Wave Tree Project <span style="font-weight: 200; font-size: 0.8em; color: #555;">Farmerstree</span></h1>
-        <div id="weather" style="font-size: 1.2rem; color: #ff9d00;">기온: -7.9°C | 습도: 61%</div>
+    <div class="header">
+        <h1 style="color: var(--neon-green); margin: 0; font-size: 1.8rem;">THE WAVE TREE <span style="font-weight: 200; font-size: 0.7em; color: #888;">Farmerstree</span></h1>
+        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.5); padding: 8px 15px; border-radius: 20px;">기온: -7.9°C | 습도: 61%</div>
     </div>
-
     <div class="container" id="news-container">
-        <div class="column"><h2>LISTERIA FREE</h2><div id="listeria_free"></div></div>
-        <div class="column"><h2>CULTURED MEAT</h2><div id="cultured_meat"></div></div>
-        <div class="column"><h2>HIGH-END AUDIO</h2><div id="high_end_audio"></div></div>
-        <div class="column"><h2>COMPUTER & AI</h2><div id="computer_ai"></div></div>
+        <div class="column"><h2>Listeria Free</h2><div id="listeria_free"></div></div>
+        <div class="column"><h2>Cultured Meat</h2><div id="cultured_meat"></div></div>
+        <div class="column"><h2>High-End Audio</h2><div id="high_end_audio"></div></div>
+        <div class="column"><h2>Computer & AI</h2><div id="computer_ai"></div></div>
     </div>
-
-    <div class="ticker-wrap"><div class="ticker" id="ticker-content">뉴스 로딩 중...</div></div>
-
+    <div class="ticker-wrap"><div class="ticker" id="ticker-content">Initializing Secure Data Stream...</div></div>
     <script>
         async function fetchNews() {
             try {
                 const res = await fetch('news.json?v=' + Date.now());
                 const data = await res.json();
-                
                 let tickerText = "";
                 const sections = ['listeria_free', 'cultured_meat', 'high_end_audio', 'computer_ai'];
-                
                 sections.forEach(section => {
                     const container = document.getElementById(section);
-                    container.innerHTML = "";
-                    data[section].forEach(news => {
-                        container.innerHTML += `<div class="news-item"><h3>${news.title}</h3><p>${news.summary}</p></div>`;
-                        tickerText += ` • [${section.toUpperCase()}] ${news.title} `;
-                    });
+                    if (container) {
+                        container.innerHTML = "";
+                        data[section].forEach(news => {
+                            container.innerHTML += `<div class="news-item"><h3>${news.title}</h3><p>${news.summary}</p></div>`;
+                            tickerText += ` • [${section.toUpperCase()}] ${news.title} `;
+                        });
+                    }
                 });
-                document.getElementById('ticker-content').innerText = tickerText;
-            } catch (e) { console.error("데이터 로드 실패", e); }
+                document.getElementById('ticker-content').innerText = tickerText + tickerText; // 텍스트 반복으로 끊김 방지
+            } catch (e) { console.error("Data Load Error", e); }
         }
         fetchNews();
-        setInterval(fetchNews, 60000); // 1분마다 갱신
+        setInterval(fetchNews, 60000);
     </script>
 </body>
 </html>
