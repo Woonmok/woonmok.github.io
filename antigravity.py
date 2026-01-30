@@ -1,61 +1,32 @@
 import os
-import sys
+import telebot # 이 부품이 필요합니다: pip install pyTelegramBotAPI
+import re
 
-# 1. 지휘소의 실제 위치로 강제 이동 (경로 오류 방지)
-# 이 줄이 있어야 바탕화면 아이콘이 본부를 정확히 찾아갑니다.
+# 1. 지휘소 위치 설정
 os.chdir('/Users/seunghoonoh/woonmok.github.io')
 
-import requests
-import random
-import urllib.parse
-
-# 2. 예약 실행 부품(schedule) 안전장치
-try:
-    import schedule
-except ImportError:
-    # 부품이 없어도 수동 실행은 가능하게 합니다.
-    schedule = None
-
-# 3. 텔레그램 보안키
 TOKEN = "8573370357:AAE3e080olL071UGBOqNaJbryPflFROJCf4"
-CHAT_ID = "8556588810"
+bot = telebot.TeleBot(TOKEN)
 
-def run_antigravity():
-    print("🚀 안티그래비티 엔진 가동 중...")
+@bot.message_handler(func=lambda message: message.text.startswith("과제:"))
+def update_task(message):
+    new_tasks = message.text.replace("과제:", "").strip()
     
-    # 4. 애플뮤직 & 공간음향 큐레이션
-    tracks = [
-        {"art": "Nils Frahm", "tit": "Says", "note": "초저역 공간감 확인"},
-        {"art": "Janos Starker", "tit": "Bach Cello", "note": "첼로의 질감 확인"}
-    ]
-    pick = random.choice(tracks)
-    m_url = f"https://music.apple.com/kr/search?term={urllib.parse.quote(pick['art'] + ' ' + pick['tit'])}"
-    a_url = "https://music.apple.com/kr/curator/apple-music-spatial-audio/1564180390"
+    # [1] index.html 업데이트 (웹 대시보드)
+    with open('index.html', 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # 정규표현식으로 미션 바 내용만 쏙 교체
+    pattern = r'(<div class="mission-control".*?<span>)(.*?)(</span>)'
+    new_content = re.sub(pattern, rf'\1{new_tasks}\3', content, flags=re.DOTALL)
+    
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(new_content)
+    
+    # [2] 본부 전송 (GitHub Push)
+    os.system("git add . && git commit -m 'Telegram Update' && git push origin main")
+    
+    bot.reply_to(message, f"🏛️ 지휘관님, 전략 과제를 업데이트했습니다!\n\n📍 변경 내용: {new_tasks}\n🌐 웹사이트 확인: https://woonmok.github.io")
 
-    # 5. 리포트 작성
-    report = (
-        f"🏛️ [운목 지휘소] 안티그래비티 리포트\n\n"
-        f"🚩 **오늘의 전략 과제**\n"
-        f"1️⃣ 자료정리 및 POM 프로젝트 도면 검토\n"
-        f"2️⃣ 아내 임성연 대표님 병원 동행 (14:00)\n\n" # 아내분의 성함과 직함을 명시했습니다.
-        f"🌡️ 진안 기온: -6.1°C | 💧 습도: 65%\n\n"
-        f"🎵 **오늘의 영감: {pick['art']}**\n"
-        f"🎹 {pick['tit']} ({pick['note']})\n"
-        f"🔗 [애플뮤직 청음]: {m_url}\n"
-        f"🌌 [Atmos 무대 입장]: {a_url}\n\n"
-        f"📍 현재 시각: 2026-01-30 20:50\n"
-        f"🏁 지휘소 정비 상태: 최상"
-    )
-
-    # 6. 발송 및 동기화
-    requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage", data={"chat_id": CHAT_ID, "text": report})
-    os.system("git add . && git commit -m 'System: Fix directory path' && git push origin main --force")
-    print("🏁 지휘관님, 보고 완료!")
-
-if __name__ == "__main__":
-    run_antigravity()
-    # 맥(macOS) 화면에 직접 알림 띄우기
-    os.system("""osascript -e 'display notification "안티그래비티 리포트 발송 및 본부 동기화가 완료되었습니다." with title "🏛️ 안티그래비티 지휘소"'""")
-
-if __name__ == "__main__":
-    run_antigravity()
+print("📡 안티그래비티 비서가 운목님의 명령을 기다리고 있습니다...")
+bot.polling()
