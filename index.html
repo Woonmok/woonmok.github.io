@@ -12,32 +12,33 @@
         .ticker-item { white-space: nowrap; font-size: 1.3rem; font-weight: bold; color: var(--neon-green); padding-right: 50px; }
         @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+        .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
         .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; height: calc(100vh - 160px); }
         
         .column { 
-            border-radius: 12px; padding: 20px; border: 1px solid rgba(0,255,157,0.3); 
+            border-radius: 12px; padding: 25px; border: 1px solid rgba(0,255,157,0.25); 
             overflow: hidden; background-size: cover; background-position: center; position: relative;
         }
-        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); z-index: 1; border-radius: 11px; }
+        /* 가독성을 위해 배경을 더 묵직하게 눌러줍니다 */
+        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7)); z-index: 1; border-radius: 11px; }
         .column > * { position: relative; z-index: 2; }
 
-        /* 챕터별로 가장 뚜렷한 이미지로 교체했습니다 */
-        #col_listeria { background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80'); }
-        #col_cultured { background-image: url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80'); }
-        #col_audio { background-image: url('https://images.unsplash.com/photo-1614149162883-504ce4d13909?auto=format&fit=crop&w=800&q=80'); } /* 진공관 앰프 느낌 */
-        #col_ai { background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80'); }
+        /* 운목님이 좋아하셨던 묵직한 테마들 */
+        #col_listeria { background-image: url('https://images.unsplash.com/photo-1579152276503-6050b86a8368?v=2'); } /* 정밀 실험실 */
+        #col_cultured { background-image: url('https://images.unsplash.com/photo-1551033406-611cf9a28f67?v=2'); } /* 바이오 테크 */
+        #col_audio { background-image: url('https://images.unsplash.com/photo-1590651812967-0ca979bc99c5?v=2'); } /* 진공관 앰프 광택 */
+        #col_ai { background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?v=2'); } /* 서버 회로 */
 
-        .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 8px; font-size: 1.2rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; }
-        .news-item { margin-bottom: 12px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; }
-        .news-item h3 { font-size: 0.95rem; margin: 0 0 5px 0; color: #fff; line-height: 1.3; }
-        .news-item p { font-size: 0.8rem; color: #ddd; line-height: 1.4; margin: 0; }
+        .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; font-size: 1.3rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; letter-spacing: 1px; }
+        .news-item { margin-bottom: 15px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+        .news-item h3 { font-size: 1rem; margin: 0 0 6px 0; color: #fff; line-height: 1.4; }
+        .news-item p { font-size: 0.85rem; color: #bbb; line-height: 1.5; margin: 0; }
     </style>
 </head>
 <body>
     <div class="header">
         <h1 style="color: var(--neon-green); margin: 0; font-size: 1.8rem;">THE WAVE TREE <span style="font-weight: 200; font-size: 0.7em; color: #888;">Farmerstree</span></h1>
-        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.6); padding: 8px 15px; border-radius: 20px;">기온: -6.1°C | 습도: 61%</div>
+        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.7); padding: 8px 18px; border-radius: 20px; border: 1px solid rgba(255,157,0,0.3);">기온: -6.1°C | 습도: 61%</div>
     </div>
     <div class="container">
         <div class="column" id="col_listeria"><h2>Listeria Free</h2><div id="listeria_free"></div></div>
