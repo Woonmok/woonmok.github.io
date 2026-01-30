@@ -49,3 +49,8 @@ def run_antigravity():
 
 if __name__ == "__main__":
     run_antigravity()
+    # 맥(macOS) 화면에 직접 알림 띄우기
+    os.system("""osascript -e 'display notification "안티그래비티 리포트 발송 및 본부 동기화가 완료되었습니다." with title "🏛️ 안티그래비티 지휘소"'""")
+
+if __name__ == "__main__":
+    run_antigravity()
