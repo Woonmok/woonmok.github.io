@@ -15,20 +15,18 @@
         .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
         .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; height: calc(100vh - 160px); }
         
-        /* 챕터별 개별 배경 설정 */
         .column { 
             border-radius: 12px; padding: 20px; border: 1px solid rgba(0,255,157,0.3); 
-            overflow-y: auto; background-size: cover; background-position: center; position: relative;
+            overflow: hidden; background-size: cover; background-position: center; position: relative;
         }
-        /* 글자 가독성을 위한 어두운 오버레이 */
-        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1; border-radius: 11px; }
+        .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); z-index: 1; border-radius: 11px; }
         .column > * { position: relative; z-index: 2; }
 
-        /* 이미지 주소 (Unsplash 고해상도 사용) */
-        #col_listeria { background-image: url('https://images.unsplash.com/photo-1579152276503-6050b86a8368?auto=format&fit=crop&w=600&q=80'); }
-        #col_cultured { background-image: url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=600&q=80'); }
-        #col_audio { background-image: url('https://images.unsplash.com/photo-1558444479-2706fa5d2893?auto=format&fit=crop&w=600&q=80'); }
-        #col_ai { background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80'); }
+        /* 챕터별로 가장 뚜렷한 이미지로 교체했습니다 */
+        #col_listeria { background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80'); }
+        #col_cultured { background-image: url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80'); }
+        #col_audio { background-image: url('https://images.unsplash.com/photo-1614149162883-504ce4d13909?auto=format&fit=crop&w=800&q=80'); } /* 진공관 앰프 느낌 */
+        #col_ai { background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80'); }
 
         .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 8px; font-size: 1.2rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; }
         .news-item { margin-bottom: 12px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; }
