@@ -33,7 +33,7 @@ def run():
     # "[Farmerstree 현황] 진안군 진안읍 기온: -8.X°C / 습도: XX% / 할일: 5건"
     msg = f"[Farmerstree 현황] 진안군 진안읍 기온: {temp} / 습도: {humidity} / 할일: 자료정리 등"
     
-    send_telegram(msg)
+   # send_telegram(msg)
     
     # 3. Push Code
     print("3. Pushing changes to GitHub...")
