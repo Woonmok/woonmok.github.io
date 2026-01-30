@@ -645,7 +645,7 @@ def generate_news_html(items):
         """
     return html_output
 
-def send_telegram_alert(message):
+def# send_telegram_alert(message):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     
