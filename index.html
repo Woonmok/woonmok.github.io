@@ -15,11 +15,11 @@
         .column { border-radius: 12px; padding: 25px; border: 1px solid rgba(0,255,157,0.25); overflow: hidden; background-size: cover; background-position: center; position: relative; }
         .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7)); z-index: 1; border-radius: 11px; }
         .column > * { position: relative; z-index: 2; }
-        /* 가장 확실하게 로드되는 배경 주소들 */
-        #col_listeria { background-image: url('https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?q=80&w=800'); }
-        #col_cultured { background-image: url('https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=800'); }
-        #col_audio { background-image: url('https://images.unsplash.com/photo-1558444479-2706fa5d2893?q=80&w=800'); }
-        #col_ai { background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800'); }
+        /* 배경 고정 주소 - 맥미니에서도 선명하게 로드됩니다 */
+        #col_listeria { background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800'); }
+        #col_cultured { background-image: url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=800'); }
+        #col_audio { background-image: url('https://images.unsplash.com/photo-1558444479-2706fa5d2893?w=800'); }
+        #col_ai { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800'); }
         .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; font-size: 1.3rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; }
         .news-item { margin-bottom: 15px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; }
         .news-item h3 { font-size: 1rem; margin: 0 0 6px 0; color: #fff; line-height: 1.4; }
