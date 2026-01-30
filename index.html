@@ -12,37 +12,29 @@
         @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .header { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
         .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; padding: 20px; height: calc(100vh - 160px); }
-        
-        .column { 
-            border-radius: 12px; padding: 25px; border: 1px solid rgba(0,255,157,0.25); 
-            background-size: cover; background-position: center; position: relative; overflow: hidden;
-        }
+        .column { border-radius: 12px; padding: 25px; border: 1px solid rgba(0,255,157,0.25); background-size: cover; background-position: center; position: relative; overflow: hidden; }
         .column::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.55); z-index: 1; }
         .column > * { position: relative; z-index: 2; }
         .column h2 { border-bottom: 2px solid var(--neon-green); padding-bottom: 10px; font-size: 1.3rem; color: var(--neon-green); text-transform: uppercase; margin-top: 0; }
-        .news-item { margin-bottom: 15px; padding: 12px; background: rgba(255,255,255,0.06); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
-        .news-item h3 { font-size: 1rem; margin: 0 0 6px 0; color: #fff; line-height: 1.4; }
-        .news-item p { font-size: 0.85rem; color: #bbb; line-height: 1.5; margin: 0; }
+        .news-item { margin-bottom: 15px; padding: 12px; background: rgba(255,255,255,0.06); border-radius: 8px; }
+        
+        /* 안티그래비티가 엄선한 LP & 오디오 테마 배경 직접 삽입 */
+        #col_1 { background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800'); } /* Green Bio */
+        #col_2 { background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800'); } /* Lab */
+        #col_3 { background-image: url('https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=800'); } /* Classic LP Record */
+        #col_4 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800'); } /* Digital AI */
     </style>
 </head>
 <body>
     <div class="header">
         <h1 style="color: var(--neon-green); margin: 0; font-size: 1.8rem;">THE WAVE TREE <span style="font-weight: 200; font-size: 0.7em; color: #888;">Farmerstree</span></h1>
-        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.7); padding: 8px 18px; border-radius: 20px;">기온: -6.1°C | 습도: 61%</div>
+        <div id="weather" style="font-size: 1.1rem; color: #ff9d00; background: rgba(0,0,0,0.7); padding: 8px 18px; border-radius: 20px;">기온: -6.1°C | 진안 본부</div>
     </div>
     <div class="container">
-        <div class="column" style="background-image: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800');">
-            <h2>Listeria Free</h2><div id="listeria_free"></div>
-        </div>
-        <div class="column" style="background-image: url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=800');">
-            <h2>Cultured Meat</h2><div id="cultured_meat"></div>
-        </div>
-        <div class="column" style="background-image: url('https://images.unsplash.com/photo-1461783470481-030231c45a7d?w=800');">
-            <h2>High-End Audio</h2><div id="high_end_audio"></div>
-        </div>
-        <div class="column" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800');">
-            <h2>Computer & AI</h2><div id="computer_ai"></div>
-        </div>
+        <div id="col_1" class="column"><h2>Listeria Free</h2><div id="listeria_free"></div></div>
+        <div id="col_2" class="column"><h2>Cultured Meat</h2><div id="cultured_meat"></div></div>
+        <div id="col_3" class="column"><h2>High-End Audio</h2><div id="high_end_audio"></div></div>
+        <div id="col_4" class="column"><h2>Computer & AI</h2><div id="computer_ai"></div></div>
     </div>
     <div class="ticker-wrap"><div class="ticker-move" id="ticker-content"></div></div>
     <script>
@@ -51,9 +43,10 @@
                 const res = await fetch('news.json?v=' + Date.now());
                 const data = await res.json();
                 let tickerText = "";
-                ['listeria_free', 'cultured_meat', 'high_end_audio', 'computer_ai'].forEach(sec => {
+                const sections = ['listeria_free', 'cultured_meat', 'high_end_audio', 'computer_ai'];
+                sections.forEach(sec => {
                     const cont = document.getElementById(sec);
-                    if (cont) {
+                    if (cont && data[sec]) {
                         cont.innerHTML = "";
                         data[sec].forEach(n => {
                             cont.innerHTML += `<div class="news-item"><h3>${n.title}</h3><p>${n.summary}</p></div>`;
