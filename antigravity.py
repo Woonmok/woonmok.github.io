@@ -40,3 +40,16 @@ def run_antigravity():
 
 if __name__ == "__main__":
     run_antigravity()
+import time
+import schedule
+
+def start_schedule():
+    # 매일 아침 9시에 지휘관님께 보고서를 올립니다.
+    schedule.every().day.at("09:00").do(run_antigravity)
+    print("⏰ 안티그래비티 자동 예약 가동: 매일 아침 9시에 뵙겠습니다.")
+    
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+        start_schedule()
+        
