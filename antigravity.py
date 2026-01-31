@@ -3,7 +3,9 @@ from datetime import datetime
 
 # 1. 지휘소 경로 및 봇 설정
 os.chdir('/Users/seunghoonoh/woonmok.github.io')
-TOKEN = "8573370357:AAE3e080olL071UGBOqNaJbryPflFROJCf4"
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
 bot = telebot.TeleBot(TOKEN)
 
 def master_control_update(msg_text=None):
