@@ -55,12 +55,14 @@
             font-size: 3em;
             font-weight: 800;
             background: linear-gradient(to right, #00ff9d, #00ccff);
-            /* 타이틀 그라데이션 효과 */
-            webkit-background-clip: text;
-            /* Safari, Chrome용 */
+
+            /* 아래 3줄이 핵심입니다 */
+            -webkit-background-clip: text;
+            /* 반드시 맨 앞에 '-'가 있어야 합니다 */
             background-clip: text;
-            /* 표준 규격 (추가된 줄) */
+            /* 표준 규격 (Warning 해결사) */
             -webkit-text-fill-color: transparent;
+
             letter-spacing: 2px;
         }
 
