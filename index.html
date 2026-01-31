@@ -255,12 +255,33 @@
 
             <div id="ai_infra" class="column glass-panel" style="border-color: #00ccff;">
                 <h2 style="color: #00ccff;">AI Infra Control</h2>
-                <div class="status-item"><span class="status-icon">🖥️</span>Server C <span id="srv_c"
-                        style="color: #00ccff;">Online</span></div>
-                <div class="status-item"><span class="status-icon">🧠</span>GPU (L40S) <span id="gpu_load"
-                        style="color: #00ccff;">Idle</span></div>
+                <div id="server_status">
+                    <div class="status-item">
+                        <span class="status-icon">🧠</span>
+                        <div style="display:flex; flex-direction:column;">
+                            <small style="font-size:0.6em; color:#00ccff; opacity:0.8;">Server A: THE BRAIN (A100
+                                x4)</small>
+                            <span>학습 엔진: <span id="srv_a_status" style="color: #00ccff;">연산 중...</span></span>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-icon">🏭</span>
+                        <div style="display:flex; flex-direction:column;">
+                            <small style="font-size:0.6em; color:#00ccff; opacity:0.8;">Server B: THE FACTORY (L40S
+                                x8)</small>
+                            <span>생산 공장: <span id="srv_b_status" style="color: #00ccff;">추론 가동</span></span>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-icon">👂</span>
+                        <div style="display:flex; flex-direction:column;">
+                            <small style="font-size:0.6em; color:#00ccff; opacity:0.8;">Server C: HANDS & EARS (6000
+                                Ada)</small>
+                            <span>창작 엔진: <span id="srv_c_status" style="color: #00ccff;">DSD 셋업</span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
     </main>
 
     <script>
