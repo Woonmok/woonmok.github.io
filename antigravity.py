@@ -10,12 +10,17 @@ bot = telebot.TeleBot(TOKEN)
 
 def master_control_update(msg_text=None):
     try:
-        # [A] 날씨 데이터 수집
+        # [A] 날씨 데이터 수집 (OpenWeatherMap API)
         raw_temp, raw_humi = "N/A", "N/A"
         try:
-            w_res = requests.get("https://wttr.in/Jinan,KR?format=%t|%h", timeout=10)
+            api_key = os.getenv("OPENWEATHER_API_KEY", "73522ad14e4276bdf715f0e796fc623f")
+            lat, lon = 35.8419, 127.1261  # 진안군 좌표
+            w_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
+            w_res = requests.get(w_url, timeout=10)
             if w_res.status_code == 200:
-                raw_temp, raw_humi = w_res.text.replace('+', '').split('|')
+                w_data = w_res.json()
+                raw_temp = f"{round(w_data['main']['temp'])}°C"
+                raw_humi = f"{w_data['main']['humidity']}%"
         except: pass
 
         with open('index.html', 'r', encoding='utf-8') as f:
