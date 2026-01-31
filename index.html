@@ -56,7 +56,10 @@
             font-weight: 800;
             background: linear-gradient(to right, #00ff9d, #00ccff);
             /* 타이틀 그라데이션 효과 */
-            -webkit-background-clip: text;
+            webkit-background-clip: text;
+            /* Safari, Chrome용 */
+            background-clip: text;
+            /* 표준 규격 (추가된 줄) */
             -webkit-text-fill-color: transparent;
             letter-spacing: 2px;
         }
