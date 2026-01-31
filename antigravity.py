@@ -8,64 +8,68 @@ bot = telebot.TeleBot(TOKEN)
 
 def master_control_update(msg_text=None):
     try:
-        # [A] 날씨 데이터 수집 (안정성 강화: 타임아웃 증가 및 예외 처리)
+        # [A] 날씨 수집
         raw_temp, raw_humi = "N/A", "N/A"
         try:
-            w_res = requests.get("https://wttr.in/Jinan,KR?format=%t|%h", timeout=15)
+            w_res = requests.get("https://wttr.in/Jinan,KR?format=%t|%h", timeout=10)
             if w_res.status_code == 200:
                 raw_temp, raw_humi = w_res.text.replace('+', '').split('|')
-        except Exception as net_err:
-            print(f"⚠️ 기상청 통신 지연 (할 일 업데이트는 계속 진행합니다): {net_err}")
+        except: pass
 
         with open('index.html', 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # [B] 기본 업데이트: 날씨 (데이터가 있을 때만 반영)
-        content = content.replace('<<header', '<header')
+        # [B] 날씨 업데이트
         if raw_temp != "N/A":
-            weather_regex = r'<div>기온:.*?</div>'
-            new_weather_div = f'<div>기온: {raw_temp} | 습도: {raw_humi}</div>'
-            content = re.sub(weather_regex, new_weather_div, content, flags=re.DOTALL)
+            new_weather = f'기온: {raw_temp} | 습도: {raw_humi} (진안군)'
+            content = re.sub(r'id="weather-info">.*?</div>', f'id="weather-info">{new_weather}</div>', content)
 
-        # [C] 지능형 명령 분석
+        # [C] 텔레그램 명령 처리 (To-Do 및 상태 제어)
         if msg_text:
-            if ":" in msg_text or "：" in msg_text:
-                sep = ":" if ":" in msg_text else "："
-                parts = msg_text.split(sep)
-                if len(parts) >= 2:
-                    category, value = parts[0].strip(), parts[1].strip()
-                    if "곡물차" in category:
-                        content = re.sub(r'<span id="tea_status">.*?</span>', f'<span id="tea_status">{value}</span>', content)
-                    elif "다이소" in category or "Pick" in category:
-                        content = re.sub(r'<span id="daiso_status">.*?</span>', f'<span id="daiso_status">{value}</span>', content)
-                    elif "서버" in category:
-                        content = re.sub(r'<span id="srv_c">.*?</span>', f'<span id="srv_c">{value}</span>', content)
-            else:
-                mission_regex = r'(<div class="mission-control".*?<span>)(.*?)(</span>)'
-                content = re.sub(mission_regex, r'\1' + msg_text + r'\3', content, flags=re.DOTALL)
+            # 1. To-Do 추가 (예: "추가: 시온마켓 샘플 챙기기")
+            if msg_text.startswith("추가:"):
+                task = msg_text.replace("추가:", "").strip()
+                new_li = f'<li class="todo-item">{task}</li>\n    '
+                content = content.replace('', new_li)
 
-        # [D] 파일 저장 및 전송
+            # 2. To-Do 완료 (예: "완료: 미국 출장 준비")
+            elif msg_text.startswith("완료:"):
+                task = msg_text.replace("완료:", "").strip()
+                content = content.replace(f'<li class="todo-item">{task}</li>', f'<li class="todo-item completed">{task}</li>')
+
+            # 3. To-Do 삭제 (예: "삭제: 옛날 과제")
+            elif msg_text.startswith("삭제:"):
+                task = msg_text.replace("삭제:", "").strip()
+                content = re.sub(rf'<li class="todo-item.*?">{task}</li>\n?', '', content)
+
+            # 4. To-Do 초기화 (예: "리스트 초기화")
+            elif msg_text == "리스트 초기화":
+                content = re.sub(r'.*?', 
+                                '\n    ', content, flags=re.DOTALL)
+
+            # 5. 기존 비즈니스 상태 업데이트 (예: "곡물차: 완료")
+            elif ":" in msg_text:
+                cat, val = [x.strip() for x in msg_text.split(":")]
+                if "곡물차" in cat:
+                    content = re.sub(r'id="tea_status".*?>.*?</span>', f'id="tea_status" style="color: #00ff9d;">{val}</span>', content)
+                elif "다이소" in cat or "Pick" in cat:
+                    content = re.sub(r'id="daiso_status".*?>.*?</span>', f'id="daiso_status" style="color: #00ff9d;">{val}</span>', content)
+                elif "서버" in cat:
+                    content = re.sub(r'id="srv_c".*?>.*?</span>', f'id="srv_c" style="color: #00ccff;">{val}</span>', content)
+
+        # [D] 저장 및 배포
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(content)
-        
-        os.system("git add . && git commit -m 'System Stability Update' && git push origin main")
-        print(f"✅ {datetime.now()} - 업데이트 성공")
-        return f"🌡️ 날씨: {raw_temp}/{raw_humi} (통신 상태에 따라 N/A 가능)"
-        
-    except Exception as e:
-        print(f"❌ 시스템 내부 오류: {e}")
-        return f"🚨 엔진 오류: {str(e)}"
+        os.system("git add . && git commit -m 'Tactical Update' && git push origin main")
+        return "🎯 명령이 전광판에 즉시 반영되었습니다."
 
-def heartbeat():
-    while True:
-        master_control_update()
-        time.sleep(1800)
+    except Exception as e:
+        return f"🚨 오류: {str(e)}"
 
 @bot.message_handler(func=lambda m: True)
 def handle_msg(message):
-    status = master_control_update(message.text)
-    bot.reply_to(message, f"🏛️ 전광판 반영 완료!\n🚩 명령: {message.text}\n{status}")
+    res = master_control_update(message.text)
+    bot.reply_to(message, res)
 
-print("📡 [Master Control System v2.1] 가동 중...")
-threading.Thread(target=heartbeat, daemon=True).start()
+threading.Thread(target=lambda: (time.sleep(1800) or master_control_update()) , daemon=True).start()
 bot.polling()
