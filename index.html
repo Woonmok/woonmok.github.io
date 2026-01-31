@@ -4,102 +4,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>운목 지휘소 (Jinan Command Center)</title>
+    <title>The Wave Tree Project</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     <style>
+        /* 전체 화면 설정 */
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            /* 스크롤바 완전 차단 */
-            background-color: #0a0a0a;
-            color: white;
+            /* 스크롤바 제거 */
             font-family: 'Pretendard', sans-serif;
+            color: white;
             height: 100vh;
-            /* 화면 높이를 100% 사용 */
+            /* 화면 전체 높이 사용 */
+            display: flex;
+            flex-direction: column;
+            /* 배경 이미지 설정 (Unsplash 고화질 이미지 사용) */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+        }
+
+        /* 공통 유리 효과 (Glassmorphism) 스타일 */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            /* 반투명 흰색 배경 */
+            backdrop-filter: blur(15px);
+            /* 배경 블러 처리 */
+            -webkit-backdrop-filter: blur(15px);
+            /* 사파리 브라우저 호환 */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* 반투명 테두리 */
+            border-radius: 20px;
+            /* 둥근 모서리 */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            /* 그림자 효과 */
+        }
+
+        /* 1. 상단 헤더 섹션 */
+        header {
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            /* 양 끝 정렬 */
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .project-title h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(to right, #00ff9d, #00ccff);
+            /* 타이틀 그라데이션 효과 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .system-info {
+            text-align: right;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .current-time {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .weather-info {
+            color: #ccc;
+        }
+
+        /* 2. 중앙 메인 콘텐츠 섹션 (할 일 목록) */
+        main {
+            flex: 1;
+            /* 남은 공간 차지 */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 40px 40px 40px;
+        }
+
+        .todo-section {
+            padding: 30px;
+            flex: 0.8;
+            /* 하단 박스보다 조금 더 많은 공간 차지 */
             display: flex;
             flex-direction: column;
         }
 
-        header {
-            padding: 15px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mission-control {
-            padding: 12px;
-            text-align: center;
-            background: rgba(255, 204, 0, 0.1);
+        .todo-section h2 {
+            margin-top: 0;
             color: #ffcc00;
-            font-weight: bold;
-            font-size: 1.1em;
+            border-bottom: 2px solid rgba(255, 204, 0, 0.3);
+            padding-bottom: 15px;
         }
 
+        .todo-list {
+            list-style: none;
+            /* 기본 목록 스타일 제거 */
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            /* 남은 공간 차지 */
+            overflow-y: auto;
+            /* 내용이 많으면 스크롤바 생성 */
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .todo-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        .todo-item::before {
+            content: '⬜';
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        /* 체크박스 아이콘 */
+        .todo-item.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .todo-item.completed::before {
+            content: '✅';
+        }
+
+        /* 3. 하단 비즈니스 현황 섹션 */
         .dashboard-container {
             display: flex;
+            gap: 30px;
             flex: 1;
-            /* 남은 화면 공간을 꽉 채움 */
-            gap: 20px;
-            padding: 20px;
             align-items: stretch;
-            /* 세 박스의 길이를 하단까지 강제 확장 */
         }
 
         .column {
             flex: 1;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 25px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            background: rgba(255, 255, 255, 0.02);
         }
 
         .column h2 {
             margin-top: 0;
-            font-size: 1.4em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 10px;
+            font-size: 1.6em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .status-item {
-            margin: 12px 0;
-            font-size: 1.1em;
+            margin: 15px 0;
+            font-size: 1.3em;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+        }
+
+        .status-icon {
+            margin-right: 15px;
+            font-size: 1.5em;
         }
 
         span {
-            font-weight: bold;
-            margin-left: 8px;
+            font-weight: 700;
+            margin-left: auto;
+            /* 상태값을 오른쪽 끝으로 밀기 */
+        }
+
+        /* 스크롤바 스타일링 (크롬, 사파리 등) */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h2 style="margin:0;">운목 프로젝트 통합 관제 시스템</h2>
-        <div id="weather" style="font-size:0.9em; margin-top:5px;">기온: -- | 습도: --</div>
+
+    <header class="glass-panel">
+        <div class="project-title">
+            <h1>The Wave Tree Project</h1>
+        </div>
+        <div class="system-info">
+            <div class="current-time" id="current-time">2026.01.31 | 17:30:00</div>
+            <div class="weather-info" id="weather-info">기온: 5°C | 습도: 37% (진안군)</div>
+        </div>
     </header>
-    <div class="mission-control">🚀 오늘의 전략 과제: <span>대기 중...</span></div>
-    <div class="dashboard-container">
-        <div id="global_biz" class="column" style="border-color: #00ff9d;">
-            <h2 style="color: #00ff9d;">Global Biz</h2>
-            <div class="status-item">📦 곡물차 OEM: <span id="tea_status" style="color: #00ff9d;">최종 오더 대기</span></div>
-            <div class="status-item">🛍️ Pick&Smile: <span id="daiso_status" style="color: #00ff9d;">출장 준비 중</span>
+
+    <main>
+        <section class="todo-section glass-panel">
+            <h2>✅ 전략 과제 (To-Do List)</h2>
+            <ul class="todo-list" id="todo-list">
+                <li class="todo-item completed">미국 출장 준비 완료</li>
+                <li class="todo-item">시온마켓 바이어 최종 미팅</li>
+                <li class="todo-item">다이소 1호점 계약 체결</li>
+                <li class="todo-item">진안 본부 서버 C 안정화 확인</li>
+            </ul>
+        </section>
+
+        <div class="dashboard-container">
+            <div id="global_biz" class="column glass-panel" style="border-color: #00ff9d;">
+                <h2 style="color: #00ff9d;">Global Biz Engine</h2>
+                <div class="status-item"><span class="status-icon">📦</span>곡물차 OEM <span id="tea_status"
+                        style="color: #00ff9d;">최종 오더 대기</span></div>
+                <div class="status-item"><span class="status-icon">🛍️</span>Pick&Smile <span id="daiso_status"
+                        style="color: #00ff9d;">출장 준비 중</span></div>
+            </div>
+
+            <div id="jinan_core" class="column glass-panel" style="border-color: #ffcc00;">
+                <h2 style="color: #ffcc00;">Jinan POM Core</h2>
+                <div class="status-item"><span class="status-icon">🧬</span>Bio-R&D <span id="bio_status"
+                        style="color: #ffcc00;">리스테리아 프리 가동</span></div>
+                <div class="status-item"><span class="status-icon">🎙️</span>DSD System <span id="audio_status"
+                        style="color: #ffcc00;">9.1.6 셋업 중</span></div>
+            </div>
+
+            <div id="ai_infra" class="column glass-panel" style="border-color: #00ccff;">
+                <h2 style="color: #00ccff;">AI Infra Control</h2>
+                <div class="status-item"><span class="status-icon">🖥️</span>Server C <span id="srv_c"
+                        style="color: #00ccff;">Online</span></div>
+                <div class="status-item"><span class="status-icon">🧠</span>GPU (L40S) <span id="gpu_load"
+                        style="color: #00ccff;">Idle</span></div>
             </div>
         </div>
-        <div id="jinan_core" class="column" style="border-color: #ffcc00;">
-            <h2 style="color: #ffcc00;">Jinan POM Core</h2>
-            <div class="status-item">🧬 Bio-R&D: <span id="bio_status" style="color: #ffcc00;">리스테리아 프리 가동</span></div>
-            <div class="status-item">🎙️ DSD System: <span id="audio_status" style="color: #ffcc00;">9.1.6 셋업 중</span>
-            </div>
-        </div>
-        <div id="ai_infra" class="column" style="border-color: #00ccff;">
-            <h2 style="color: #00ccff;">AI Infra</h2>
-            <div class="status-item">🖥️ Server C: <span id="srv_c" style="color: #00ccff;">Online</span></div>
-            <div class="status-item">🧠 GPU (L40S): <span id="gpu_load" style="color: #00ccff;">Idle</span></div>
-        </div>
-    </div>
+    </main>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').innerText = `${year}.${month}.${day} | ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateTime, 1000); // 1초마다 시간 업데이트
+        updateTime(); // 페이지 로드 시 즉시 실행
+    </script>
+
 </body>
 
 </html>
