@@ -1,53 +1,61 @@
 import os, requests, telebot, re, time, threading
 from datetime import datetime
 
-# [1] 지휘소 경로 설정
+# 1. 지휘소 경로 설정 (운목님의 맥미니 경로)
 os.chdir('/Users/seunghoonoh/woonmok.github.io')
 TOKEN = "8573370357:AAE3e080olL071UGBOqNaJbryPflFROJCf4"
 bot = telebot.TeleBot(TOKEN)
 
-# [2] 실시간 데이터 수집 엔진
-def update_system(news_text=None):
+def update_system(new_tasks=None):
     try:
-        # 날씨 수집 (진안군)
+        # [A] 날씨 정보 실시간 수집 (wttr.in 활용)
         w_res = requests.get("https://wttr.in/Jinan,KR?format=%t|%h", timeout=10)
-        temp, humi = w_res.text.replace('+', '').split('|')
+        raw_temp, raw_humi = w_res.text.replace('+', '').split('|')
         
         with open('index.html', 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # 전광판(날씨/습도) 교체
-        content = re.sub(r'기온: .*? \| 습도: .*?<', f'기온: {temp} | 습도: {humi}<', content)
+        # [B] 습도 중첩 버그 수정 (정규표현식 정밀 타격)
+        # "기온: ... | 습도: ..." 부분을 완전히 새로 써서 중첩 현상을 제거합니다.
+        content = re.sub(
+            r'기온: .*? \| 습도: .*?(?=<|</div>)', 
+            f'기온: {raw_temp} | 습도: {raw_humi}', 
+            content
+        )
 
-        # 지휘관님이 뉴스를 보냈을 경우에만 뉴스 섹션 업데이트
-        if news_text:
-            # 중앙 미션 바 업데이트
-            content = re.sub(r'(<div class="mission-control".*?<span>)(.*?)(</span>)', rf'\1{news_text}\3', content, flags=re.DOTALL)
-            # (추가: 필요시 여기서 뉴스 4개 구역을 순차적으로 교체하도록 확장 가능합니다)
+        # [C] 텔레그램 할 일 업데이트 (지휘관님이 메시지를 보냈을 때만)
+        if new_tasks:
+            # 오늘의 전략 과제 구역(span)을 찾아 내용을 통째로 교체합니다.
+            content = re.sub(
+                r'(<div class="mission-control".*?<span>)(.*?)(</span>)', 
+                rf'\1{new_tasks}\3', 
+                content, 
+                flags=re.DOTALL
+            )
 
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(content)
 
-        # 본부(GitHub) 자동 전송
-        os.system("git add . && git commit -m 'System Auto Sync' && git push origin main")
-        return f"🌡️ 진안 현재: {temp} / {humi} 반영 완료"
+        # [D] 본부(GitHub) 자동 전송
+        os.system("git add . && git commit -m 'Dashboard Auto-Update' && git push origin main")
+        return f"🌡️ 현재 진안: {raw_temp} / 💧 습도: {raw_humi} (반영 완료)"
+        
     except Exception as e:
-        return f"🚨 엔진 오류: {str(e)}"
+        return f"🚨 엔진 오류 발생: {str(e)}"
 
-# [3] 30분마다 스스로 돌아가는 '심장박동' 루프
+# 30분마다 스스로 날씨를 갱신하는 심장박동
 def heartbeat():
     while True:
-        print(f"⏰ {datetime.now()} - 정기 업데이트 시작")
         update_system()
-        time.sleep(1800) # 1800초 = 30분
+        print(f"⏰ {datetime.now()} - 정기 업데이트 완료")
+        time.sleep(1800)
 
-# [4] 텔레그램 명령 처리
+# 텔레그램 명령 처리 (모든 메시지를 '할 일'로 인식)
 @bot.message_handler(func=lambda m: True)
-def on_telegram_command(message):
+def on_telegram_message(message):
     res = update_system(message.text)
-    bot.reply_to(message, f"🏛️ 지휘관님, 즉시 반영했습니다!\n{res}")
+    bot.reply_to(message, f"🏛️ 지휘관님, 명을 받들었습니다!\n\n🚩 할 일 업데이트:\n{message.text}\n\n{res}")
 
-# 실행 시작
-print("📡 [Master Engine] 가동 시작... 이제 지휘소는 자동으로 움직입니다.")
+print("📡 [Master Engine 3.0] 가동... 이제 텔레그램으로 할 일을 말씀해 주세요.")
 threading.Thread(target=heartbeat, daemon=True).start()
 bot.polling()
