@@ -54,9 +54,12 @@ def master_control_update(msg_text=None):
                     content = re.sub(r'id="tea_status".*?>.*?</span>', f'id="tea_status" style="color: #00ff9d;">{val}</span>', content)
                 elif "다이소" in cat or "Pick" in cat:
                     content = re.sub(r'id="daiso_status".*?>.*?</span>', f'id="daiso_status" style="color: #00ff9d;">{val}</span>', content)
-                elif "서버" in cat:
-                    content = re.sub(r'id="srv_c".*?>.*?</span>', f'id="srv_c" style="color: #00ccff;">{val}</span>', content)
-
+                elif "브레인" in cat or "Brain" in cat:
+    content = re.sub(r'id="srv_a_status".*?>.*?</span>', f'id="srv_a_status" style="color: #00ccff;">{val}</span>', content)
+elif "팩토리" in cat or "Factory" in cat:
+    content = re.sub(r'id="srv_b_status".*?>.*?</span>', f'id="srv_b_status" style="color: #00ccff;">{val}</span>', content)
+elif "핸즈" in cat or "Hands" in cat or "서버C" in cat:
+    content = re.sub(r'id="srv_c_status".*?>.*?</span>', f'id="srv_c_status" style="color: #00ccff;">{val}</span>', content)
         # [D] 저장 및 배포
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(content)
