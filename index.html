@@ -253,31 +253,44 @@
                         style="color: #ffcc00;">9.1.6 셋업 중</span></div>
             </div>
 
+            운목 지휘관님, 요청하신 세부 명칭과 하드웨어 사양을 정확히 반영하여 AI Infra Control 구역을 다시 설계했습니다.
+
+            "Server A: THE BRAIN (A100 x4)", "Server B: THE FACTORY (L40S x8)", "Server C: HANDS & EARS (6000 Ada)"라는
+            명칭은 지휘관님의 인프라가 가진 강력한 성능을 가장 직관적으로 보여주는 지표가 될 것입니다.
+
+            🛠️ 1. index.html 수정 (AI Infra 구역 최종본)
+            index.html 파일에서 AI Infra Control 섹션을 아래 코드로 완전히 교체해 주세요. 시각적 가독성과 엔진 연동 편의성을 최적화했습니다.
+
+            HTML
+
             <div id="ai_infra" class="column glass-panel" style="border-color: #00ccff;">
                 <h2 style="color: #00ccff;">AI Infra Control</h2>
                 <div id="server_status">
                     <div class="status-item">
                         <span class="status-icon">🧠</span>
                         <div style="display:flex; flex-direction:column;">
-                            <small style="font-size:0.6em; color:#00ccff; opacity:0.8;">Server A: THE BRAIN (A100
+                            <small style="font-size:0.65em; color:#00ccff; opacity:0.8;">Server A: THE BRAIN (A100
                                 x4)</small>
-                            <span>학습 엔진: <span id="srv_a_status" style="color: #00ccff;">연산 중...</span></span>
+                            <div style="font-size:1.1em;">학습 엔진: <span id="srv_a_status"
+                                    style="color: #00ccff; font-weight:bold;">연산 중...</span></div>
                         </div>
                     </div>
                     <div class="status-item">
                         <span class="status-icon">🏭</span>
                         <div style="display:flex; flex-direction:column;">
-                            <small style="font-size:0.6em; color:#00ccff; opacity:0.8;">Server B: THE FACTORY (L40S
+                            <small style="font-size:0.65em; color:#00ccff; opacity:0.8;">Server B: THE FACTORY (L40S
                                 x8)</small>
-                            <span>생산 공장: <span id="srv_b_status" style="color: #00ccff;">추론 가동</span></span>
+                            <div style="font-size:1.1em;">생산 공장: <span id="srv_b_status"
+                                    style="color: #00ccff; font-weight:bold;">추론 가동</span></div>
                         </div>
                     </div>
                     <div class="status-item">
                         <span class="status-icon">👂</span>
                         <div style="display:flex; flex-direction:column;">
-                            <small style="font-size:0.6em; color:#00ccff; opacity:0.8;">Server C: HANDS & EARS (6000
+                            <small style="font-size:0.65em; color:#00ccff; opacity:0.8;">Server C: HANDS & EARS (6000
                                 Ada)</small>
-                            <span>창작 엔진: <span id="srv_c_status" style="color: #00ccff;">DSD 셋업</span></span>
+                            <div style="font-size:1.1em;">창작 엔진: <span id="srv_c_status"
+                                    style="color: #00ccff; font-weight:bold;">DSD 셋업</span></div>
                         </div>
                     </div>
                 </div>
