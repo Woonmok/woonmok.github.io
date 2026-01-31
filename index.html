@@ -156,22 +156,30 @@
             <div>기온: -0°C | 습도: 37% </div>
         </div>
     </header>
-    <div class="container">
-        <div id="col_1" class="column">
-            <h2>Listeria Free</h2>
-            <div id="listeria_free"></div>
+    <div class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px;">
+
+        <div id="global_biz" class="column" style="border: 1px solid #00ff9d; background: rgba(0, 255, 157, 0.05);">
+            <h2>Global Biz: Zion Bridge</h2>
+            <div id="biz_status" style="color: #00ff9d; font-size: 0.9em;">
+                <div class="status-item">📦 곡물차 OEM: <span id="tea_status">최종 오더 대기</span></div>
+                <div class="status-item">🛍️ Pick&Smile: <span id="daiso_status">출장 준비 중</span></div>
+            </div>
         </div>
-        <div id="col_2" class="column">
-            <h2>Cultured Meat</h2>
-            <div id="cultured_meat"></div>
+
+        <div id="jinan_core" class="column" style="border: 1px solid #ffcc00; background: rgba(255, 204, 0, 0.05);">
+            <h2>Jinan POM Core</h2>
+            <div id="core_status" style="color: #ffcc00; font-size: 0.9em;">
+                <div class="status-item">🧬 Bio-R&D: <span id="bio_status">리스테리아 프리 가동</span></div>
+                <div class="status-item">🎙️ DSD System: <span id="audio_status">9.1.6 셋업 중</span></div>
+            </div>
         </div>
-        <div id="col_3" class="column">
-            <h2>High-End Audio</h2>
-            <div id="high_end_audio"></div>
-        </div>
-        <div id="col_4" class="column">
-            <h2>Computer & AI</h2>
-            <div id="computer_ai"></div>
+
+        <div id="ai_infra" class="column" style="border: 1px solid #00ccff; background: rgba(0, 204, 255, 0.05);">
+            <h2>AI Infra Status</h2>
+            <div id="server_status" style="color: #00ccff; font-size: 0.9em;">
+                <div class="status-item">🖥️ Server C: <span id="srv_c">Online</span></div>
+                <div class="status-item">🧠 GPU (L40S): <span id="gpu_load">Idle</span></div>
+            </div>
         </div>
     </div>
     <div class="ticker-wrap">
