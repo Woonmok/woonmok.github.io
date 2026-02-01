@@ -19,14 +19,17 @@ function App() {
           </div>
         </header>
 
-        <main className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1 space-y-8">
+        <div className="mb-8">
+          <ActionPanel />
+        </div>
+
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-8">
             <RadarStatus />
           </div>
 
-          <div className="lg:col-span-2 space-y-8">
+          <div className="space-y-8">
             <ServerMonitor />
-            <ActionPanel />
           </div>
         </main>
       </div>
