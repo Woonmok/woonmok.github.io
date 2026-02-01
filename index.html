@@ -76,15 +76,9 @@
             overflow-y: auto;
         }
 
-        .top-row {
-            display: flex;
-            gap: 20px;
-            flex: 0 0 auto;
-        }
-
         .section {
-            flex: 1;
-            height: 160px;
+            width: 100%;
+            height: 180px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -188,15 +182,15 @@
         .dashboard {
             display: flex;
             gap: 20px;
-            flex: 1 1 auto;
+            height: 280px;
         }
 
         .column {
             flex: 1;
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             overflow-y: auto;
         }
 
@@ -309,40 +303,38 @@
     </header>
 
     <main>
-        <div class="top-row">
-            <section class="section glass intelligence-hub">
-                <h2>🔥 Intelligence Hub</h2>
-                <div class="section-content" id="intelligence-hub-content">
-                <div class="news-item">
-                        <div class="news-title">🦠 미국 RTE 파스타 리스테리아 사망 사고, 6명 사망·27명 입원 등 최종 집계 발표</div>
-                        <div class="news-summary">미국 전역으로 확산된 RTE 파스타 관련 리스테리아 집단감염이 6명 사망, 27명 환자 발생으로 마무리됐으며 당국이 추가 제품 섭취 자제를 경고함. [web:44][web:45]</div>
-                        <div class="news-meta">
-                            <span>listeria_free</span>
-                            <span>Score: 0.90</span>
-                        </div>
-                        <a href="https://example.com/listeria-outbreak-final" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>
+        <section class="section glass intelligence-hub">
+            <h2>🔥 Intelligence Hub</h2>
+            <div class="section-content" id="intelligence-hub-content">
+            <div class="news-item">
+                    <div class="news-title">🦠 미국 RTE 파스타 리스테리아 사망 사고, 6명 사망·27명 입원 등 최종 집계 발표</div>
+                    <div class="news-summary">미국 전역으로 확산된 RTE 파스타 관련 리스테리아 집단감염이 6명 사망, 27명 환자 발생으로 마무리됐으며 당국이 추가 제품 섭취 자제를 경고함. [web:44][web:45]</div>
+                    <div class="news-meta">
+                        <span>listeria_free</span>
+                        <span>Score: 0.90</span>
                     </div>
-                    <div class="news-item">
-                        <div class="news-title">🌍 유럽 식품안전청, 배양육 규제 프레임워크 최종안 발표</div>
-                        <div class="news-summary">위험평가 절차와 라벨링·추적관리 기준을 포함한 통합 지침을 내며 EU 내 배양육 제품 심사 기준을 구체화함. [web:6]</div>
-                        <div class="news-meta">
-                            <span>global_biz</span>
-                            <span>Score: 0.90</span>
-                        </div>
-                        <a href="https://example.com/efsa-cultured-framework-2026" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>
-                    </div></div>
-            </section>
+                    <a href="https://example.com/listeria-outbreak-final" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">🌍 유럽 식품안전청, 배양육 규제 프레임워크 최종안 발표</div>
+                    <div class="news-summary">위험평가 절차와 라벨링·추적관리 기준을 포함한 통합 지침을 내며 EU 내 배양육 제품 심사 기준을 구체화함. [web:6]</div>
+                    <div class="news-meta">
+                        <span>global_biz</span>
+                        <span>Score: 0.90</span>
+                    </div>
+                    <a href="https://example.com/efsa-cultured-framework-2026" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>
+                </div></div>
+        </section>
 
-            <section class="section glass todo-section">
-                <h2>✅ 전략 과제 (To-Do List)</h2>
-                <ul class="todo-list" id="todo-list">
-                    <li class="todo-item completed">미국 출장 준비 완료</li>
-                    <li class="todo-item">시온마켓 바이어 최종 미팅</li>
-                    <li class="todo-item">다이소 1호점 계약 체결</li>
-                    <li class="todo-item">진안 본부 서버 C 안정화 확인</li>
-                </ul>
-            </section>
-        </div>
+        <section class="section glass todo-section">
+            <h2>✅ 전략 과제 (To-Do List)</h2>
+            <ul class="todo-list" id="todo-list">
+                <li class="todo-item completed">미국 출장 준비 완료</li>
+                <li class="todo-item">시온마켓 바이어 최종 미팅</li>
+                <li class="todo-item">다이소 1호점 계약 체결</li>
+                <li class="todo-item">진안 본부 서버 C 안정화 확인</li>
+            </ul>
+        </section>
 
         <div class="dashboard">
             <div class="column glass column-green">
