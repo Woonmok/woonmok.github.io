@@ -107,5 +107,12 @@ def update_dashboard_data(entries):
     print(f"Dashboard updated. Status: {data['system_status']}")
 
 if __name__ == "__main__":
+    try:
+        from sync_news_to_log import sync_news
+        print("Syncing news to intelligence log...")
+        sync_news()
+    except Exception as e:
+        print(f"Failed to sync news: {e}")
+
     entries = parse_log()
     update_dashboard_data(entries)
