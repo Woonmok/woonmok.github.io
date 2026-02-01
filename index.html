@@ -488,8 +488,9 @@
                 // Update Intelligence Hub
                 const hubContent = document.getElementById('intelligence-hub-content');
                 if (data.intelligence && data.intelligence.length > 0) {
-                    const news = data.intelligence[0];
-                    hubContent.innerHTML = `
+                    let html = '';
+                    data.intelligence.forEach(news => {
+                        html += `
                         <div class="news-item">
                             <div class="news-title">${news.tag === '긴급' ? '🚨 ' : ''}${news.title}</div>
                             <div class="news-summary">${news.summary}</div>
@@ -498,7 +499,9 @@
                                 <span>Score: ${news.score}</span>
                             </div>
                         </div>
-                    `;
+                        `;
+                    });
+                    hubContent.innerHTML = html;
                 }
 
                 // Update Servers

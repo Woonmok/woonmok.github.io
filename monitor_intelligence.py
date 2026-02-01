@@ -62,16 +62,22 @@ def update_dashboard_data(entries):
             json.dump(data, f, ensure_ascii=False, indent=2)
         return
 
-    # Check latest entry
-    latest = entries[-1]
-    data["intelligence"] = [{
-        "title": latest["title"],
-        "summary": latest["summary"],
-        "tag": latest["tag"],
-        "score": "0.95" if latest["tag"] == "긴급" else "0.85"
-    }]
+    # Check latest entries (up to 3)
+    recent_entries = entries[-3:] if len(entries) >= 3 else entries
+    # Reverse to show newest first
+    recent_entries.reverse()
     
-    # Logic for Priority
+    data["intelligence"] = []
+    for entry in recent_entries:
+        data["intelligence"].append({
+            "title": entry["title"],
+            "summary": entry["summary"],
+            "tag": entry["tag"],
+            "score": "0.95" if entry["tag"] == "긴급" else ("0.90" if entry["tag"] == "중요" else "0.85")
+        })
+    
+    # Logic for Priority (based on the very latest entry)
+    latest = recent_entries[0]
     if "긴급" in latest["tag"]:
         data["system_status"] = "EMERGENCY"
         # Reallocate resources for Emergency
@@ -85,6 +91,15 @@ def update_dashboard_data(entries):
         data["system_status"] = "HIGH_PRIORITY"
         data["servers"]["A"]["status"] = "집중 학습"
         data["servers"]["A"]["load"] = 95
+    else:
+        # Restore Normal State
+        data["system_status"] = "NORMAL"
+        data["servers"]["A"]["status"] = "연산 중"
+        data["servers"]["A"]["load"] = 85
+        data["servers"]["B"]["status"] = "추론 가동"
+        data["servers"]["B"]["load"] = 60
+        data["servers"]["C"]["status"] = "DSD 셋업"
+        data["servers"]["C"]["load"] = 30
         
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
