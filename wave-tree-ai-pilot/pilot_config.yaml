@@ -1,0 +1,34 @@
+project:
+  name: Wave Tree AI Infra Pilot
+  timezone: Asia/Seoul
+
+kpi:
+  target_mape_baseline: 0.18
+  target_speedup_blackwell: 1.30
+  target_cost_efficiency: 1.15
+
+servers:
+  A:
+    role: baseline_training
+    gpu: A100x4
+    rate_gpu_hours_per_min: 0.25
+  B:
+    role: optimization_sweeps
+    gpu: L40Sx8
+    rate_gpu_hours_per_min: 0.35
+  C:
+    role: inference_reporting
+    gpu: RTX6000Ada x4
+    rate_gpu_hours_per_min: 0.10
+  BW:
+    role: blackwell_benchmark
+    gpu: Blackwell (pilot)
+    rate_gpu_hours_per_min: 0.22
+
+data:
+  growth_csv: data/growth.csv
+  seed: 42
+
+runs:
+  dir: runs
+  reports_dir: reports
