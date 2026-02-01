@@ -100,7 +100,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .intelligence-hub {
@@ -112,11 +112,14 @@
         }
 
         .news-item {
+            flex: 1;
             background: rgba(255, 255, 255, 0.05);
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             border-left: 3px solid #ff3366;
             font-size: 0.85em;
+            display: flex;
+            flex-direction: column;
         }
 
         .news-title {
@@ -150,13 +153,14 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 10px;
         }
 
         .todo-item {
+            flex: 1;
             display: flex;
             align-items: center;
-            padding: 6px 10px;
+            padding: 10px 12px;
             background: rgba(255, 255, 255, 0.06);
             border-radius: 10px;
             font-size: 0.95em;
@@ -417,8 +421,33 @@
             const seconds = String(now.getSeconds()).padStart(2, '0');
             document.getElementById('current-time').innerText = year + '.' + month + '.' + day + ' | ' + hours + ':' + minutes + ':' + seconds;
         }
+
+        function updateWeather() {
+            // OpenWeather API - 진안군 좌표 (35.9, 127.15)
+            const API_KEY = 'd6e0ceec3cf5f5fbf49ae8ee86e3c0e3'; // OpenWeather free tier API key
+            const lat = 35.9;
+            const lon = 127.15;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const temp = Math.round(data.main.temp);
+                    const humidity = data.main.humidity;
+                    document.getElementById('weather-info').innerText = `기온: ${temp}°C | 습도: ${humidity}% (진안군)`;
+                })
+                .catch(error => {
+                    console.log('날씨 정보 로드 실패:', error);
+                });
+        }
+
         setInterval(updateTime, 1000);
         updateTime();
+        
+        // 초기 날씨 정보 로드
+        updateWeather();
+        // 30분마다 날씨 업데이트
+        setInterval(updateWeather, 30 * 60 * 1000);
     </script>
 </body>
 
