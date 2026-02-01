@@ -1,9 +1,37 @@
 #root {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
+}
+
+.app-container {
+  /* Scale entire dashboard based on viewport */
+  transform-origin: top center;
+}
+
+@media (max-width: 1440px) {
+  .app-container {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    transform: scale(0.75);
+  }
 }
 
 .logo {
@@ -40,17 +68,4 @@
 
 .read-the-docs {
   color: #888;
-}
-
-/* Responsive scaling */
-@media (max-width: 640px) {
-  * {
-    font-size: calc(1em * 0.9);
-  }
-}
-
-@media (max-width: 480px) {
-  * {
-    font-size: calc(1em * 0.85);
-  }
 }
