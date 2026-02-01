@@ -2,7 +2,7 @@ import json, requests
 
 def send_real_briefing():
     # 1. 텔레그램 전용 주소 (운목님 고유 주소)
-    TOKEN = "8573370357:AAE3e080olL071UGBOqNaJbryPflFROJCf4"
+    TOKEN = "8573370357:AAG7vOSA4sdC4hwynoHsWdSD5Omqk4ME--o"
     CHAT_ID = "8556588810"
     
     # 2. 안티그래비티가 동기화한 운목님의 진짜 할 일

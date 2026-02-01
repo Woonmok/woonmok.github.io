@@ -356,8 +356,10 @@
         <section class="section glass todo-section">
             <h2>✅ 전략 과제 (To-Do List)</h2>
             <ul class="todo-list" id="todo-list">
-                <!-- Dynamic Content Loading -->
-                <li class="todo-item">데이터 로딩 중...</li>
+                <li class="todo-item completed">미국 중단-준비-완료</li>
+                <li class="todo-item">사문패 바이어 최종 미팅</li>
+                <li class="todo-item">다이소 1중점 자격 제경</li>
+                <li class="todo-item">진안 브랜드 서버 C 인정작 위안</li>
             </ul>
         </section>
 
@@ -369,14 +371,14 @@
                         <div class="status-icon">📦</div>
                         <div class="status-info">
                             <div class="status-label">곡물차 OEM</div>
-                            <div class="status-value">최종 오더 대기</div>
+                            <div class="status-value" id="tea_status">최종 오더 대기</div>
                         </div>
                     </div>
                     <div class="status-item">
                         <div class="status-icon">🛍️</div>
                         <div class="status-info">
                             <div class="status-label">Pick&Smile</div>
-                            <div class="status-value">출장 준비 중</div>
+                            <div class="status-value" id="daiso_status">승급 준비 중</div>
                         </div>
                     </div>
                 </div>
@@ -409,8 +411,8 @@
                         <div class="status-icon">🧠</div>
                         <div class="status-info">
                             <span class="status-label-small">Server A: THE BRAIN (A100 x4)</span>
-                            <div class="status-label">학습 엔진</div>
-                            <div class="status-value">연산 중</div>
+                            <div class="status-label">학승 엔진</div>
+                            <div class="status-value" id="srv_a_status">연산 중</div>
                         </div>
                     </div>
                     <div class="status-item">
@@ -418,7 +420,7 @@
                         <div class="status-info">
                             <span class="status-label-small">Server B: THE FACTORY (L40S x8)</span>
                             <div class="status-label">생산 공장</div>
-                            <div class="status-value">추론 가동</div>
+                            <div class="status-value" id="srv_b_status">추론 가능</div>
                         </div>
                     </div>
                     <div class="status-item">
@@ -426,7 +428,7 @@
                         <div class="status-info">
                             <span class="status-label-small">Server C: HANDS & EARS (6000 Ada)</span>
                             <div class="status-label">창작 엔진</div>
-                            <div class="status-value">DSD 셋업</div>
+                            <div class="status-value" id="srv_c_status">DSD 정의</div>
                         </div>
                     </div>
                 </div>

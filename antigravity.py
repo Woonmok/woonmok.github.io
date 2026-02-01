@@ -1,4 +1,4 @@
-import os, requests, telebot, re, time, threading
+import os, requests, telebot, re, time, threading, fcntl
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -41,7 +41,7 @@ def master_control_update(msg_text=None):
             if msg_text.startswith("추가:"):
                 task = msg_text.replace("추가:", "").strip()
                 new_li = f'<li class="todo-item">{task}</li>\n            '
-                content = content.replace('', new_li)
+                content = re.sub(r'(<ul[^>]*id="todo-list"[^>]*>)', rf'\1\n            {new_li}', content)
             elif msg_text.startswith("완료:"):
                 task = msg_text.replace("완료:", "").strip()
                 content = content.replace(f'<li class="todo-item">{task}</li>', f'<li class="todo-item completed">{task}</li>')
@@ -56,21 +56,25 @@ def master_control_update(msg_text=None):
                 
                 # Global Biz
                 if "곡물차" in cat:
-                    content = re.sub(r'id="tea_status".*?>.*?</span>', f'id="tea_status" style="color: #00ff9d; font-weight:bold;">{val}</span>', content)
+                    content = re.sub(r'id="tea_status".*?>.*?</span>', f'id="tea_status" style="color: #00ff9d; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
                 elif "다이소" in cat or "Pick" in cat:
-                    content = re.sub(r'id="daiso_status".*?>.*?</span>', f'id="daiso_status" style="color: #00ff9d; font-weight:bold;">{val}</span>', content)
+                    content = re.sub(r'id="daiso_status".*?>.*?</span>', f'id="daiso_status" style="color: #00ff9d; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
                 
                 # AI Infra (브레인/팩토리/핸즈)
                 elif "브레인" in cat or "Brain" in cat or "A100" in cat:
-                    content = re.sub(r'id="srv_a_status".*?>.*?</span>', f'id="srv_a_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content)
+                    content = re.sub(r'id="srv_a_status".*?>.*?</span>', f'id="srv_a_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
                 elif "팩토리" in cat or "Factory" in cat or "L40S" in cat:
-                    content = re.sub(r'id="srv_b_status".*?>.*?</span>', f'id="srv_b_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content)
+                    content = re.sub(r'id="srv_b_status".*?>.*?</span>', f'id="srv_b_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
                 elif "핸즈" in cat or "Hands" in cat or "6000" in cat:
-                    content = re.sub(r'id="srv_c_status".*?>.*?</span>', f'id="srv_c_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content)
+                    content = re.sub(r'id="srv_c_status".*?>.*?</span>', f'id="srv_c_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
 
-        # [D] 저장 및 배포
+        # [D] 저장 및 배포 (파일 잠금으로 race condition 방지)
         with open('index.html', 'w', encoding='utf-8') as f:
-            f.write(content)
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+            try:
+                f.write(content)
+            finally:
+                fcntl.flock(f.fileno(), fcntl.LOCK_UN)
         os.system("git add . && git commit -m 'AI Infra hardware spec update' && git push origin main")
         return "🎯 지휘관님, 하드웨어 사양이 반영된 최신 전광판으로 업데이트했습니다."
 
