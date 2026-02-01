@@ -78,7 +78,7 @@
 
         .section {
             width: 100%;
-            height: 160px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -190,7 +190,7 @@
         .dashboard {
             display: flex;
             gap: 15px;
-            height: 240px;
+            height: 200px;
         }
 
         .column {
@@ -198,6 +198,8 @@
             padding: 18px;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+        }
             gap: 10px;
             overflow: hidden;
         }
@@ -208,6 +210,14 @@
             margin-bottom: 6px;
             padding-bottom: 8px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .status-items-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 10px;
+            flex: 1;
         }
 
         .status-item {
@@ -347,6 +357,7 @@
         <div class="dashboard">
             <div class="column glass column-green">
                 <h2>Global Biz Engine</h2>
+                <div class="status-items-container">
                 <div class="status-item">
                     <div class="status-icon">📦</div>
                     <div class="status-info">
@@ -361,10 +372,12 @@
                         <div class="status-value">출장 준비 중</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <div class="column glass column-yellow">
                 <h2>Jinan POM Core</h2>
+                <div class="status-items-container">
                 <div class="status-item">
                     <div class="status-icon">🧬</div>
                     <div class="status-info">
@@ -379,10 +392,12 @@
                         <div class="status-value">9.1.6 셋업</div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <div class="column glass column-cyan">
                 <h2>AI Infra Control</h2>
+                <div class="status-items-container">
                 <div class="status-item">
                     <div class="status-icon">🧠</div>
                     <div class="status-info">
@@ -406,6 +421,7 @@
                         <div class="status-label">창작 엔진</div>
                         <div class="status-value">DSD 셋업</div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
