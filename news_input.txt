@@ -1,29 +1,33 @@
-{
-  "last_updated": "2026-01-30T10:00:00+09:00",
-  "listeria_free": [
-    {"title": "EU, 2026년 7월 RTE 식품 리스테리아 기준 강화", "summary": "기업들은 포뮬러 변경 및 공정 재설계 등 대응 전략 수립이 시급합니다."},
-    {"title": "미국 Ambriola사 치즈 리스테리아 양성으로 리콜", "summary": "Boar's Head 제품 포함 1만 1천 개 제품 오염 가능성 경고."},
-    {"title": "리스테리아 집단감염 관련 제조사 대상 소송 증가", "summary": "검사 미흡 등 규제기관의 관리 강화 요구가 커지고 있습니다."},
-    {"title": "EFSA, 냉장·냉동 육류 병원성 미생물 성장 재평가", "summary": "저장 조건에 따른 리스테리아 리스크 관리 가이드라인 제시."}
-  ],
-  "cultured_meat": [
-    {"title": "2026년 배양육 시장 '대규모 성장' 원년 전망", "summary": "지속적인 규제 승인과 투자 확대로 상업화 가속화 예상."},
-    {"title": "미국 Believer Meats, 판매 승인 획득", "summary": "UPSIDE, GOOD Meat에 이어 세 번째 주요 승인 기업 등장."},
-    {"title": "싱가포르, 배양육 규제 선도국 위치 강화", "summary": "닭, 메추라기, 연어 등 다양한 제품군 단계적 허용 중."},
-    {"title": "텍사스주, 배양 단백질 제조·판매 전면 금지 시행", "summary": "2025년 9월부터 시행된 SB 261 법안으로 주별 규제 격차 심화."},
-    {"title": "배양육 이원 규제 체계(FDA·USDA) 안착", "summary": "시설 인스펙션과 라벨링 관리가 엄격하게 진행 중입니다."}
-  ],
-  "high_end_audio": [
-    {"title": "CES 2026: 온쿄 Muse 시리즈 Y-50·Y-40 공개", "summary": "네트워크 중심의 올인원 현대형 시스템 허브 포지셔닝."},
-    {"title": "온쿄 80주년 한정판 Muse 인티앰프 출시", "summary": "샴페인 골드 섀시와 월넛 패널 등 컬렉터 지향 외관 강조."},
-    {"title": "LG Sound Suite: 최대 27개 스피커 구성 지원", "summary": "Dolby Atmos FlexConnect 기반 유연한 룸 셋업 특징."},
-    {"title": "삼성전자 2026 사운드바 및 Wi-Fi 스피커 공개", "summary": "공간 몰입형 사운드와 멀티 디바이스 연동성 강화."}
-  ],
-  "computer_ai": [
-    {"title": "2026년 빅테크 5개사 AI 설비 투자 6,000억 달러", "summary": "이 중 4,500억 달러가 GPU 인프라에 집중 투입 전망."},
-    {"title": "데이터센터 GPU 시장 2030년 2,655억 달러 성장", "summary": "AI 수요 폭증으로 인한 하드웨어 시장의 구조적 성장세 확인."},
-    {"title": "NVIDIA, AI 가속기 시장 점유율 90% 유지", "summary": "데이터센터 매출 분기 356억 달러 도달, GPU 골드러시 지속."},
-    {"title": "IEA: 데이터센터 전력 수요 선진국 증가분 20% 차지", "summary": "전력 인프라와 그리드 업그레이드가 정책 주요 이슈로 부상."},
-    {"title": "반도체 칩 메이커, AI 수요로 2026년 실적 견인", "summary": "TI, ASML 등 HPC용 칩 수요의 강력한 성장세 확인."}
-  ]
-}
+News Intelligence Dump [2026-02-01 20:44:12]
+==================================================
+
+1. [ScienceDaily - Technology] A hidden magnetic order could unlock superconductivity
+   summary: Physicists have discovered that hidden magnetic order plays a key role in the pseudogap, a puzzling state of matter that appears just before certain materials become superconductors. Using an ultra-co...
+
+2. [ScienceDaily - Technology] Scientists twist tiny crystals to control electricity
+   summary: Researchers have developed a technique that allows them to carve complex three dimensional nanodevices directly from single crystals. To demonstrate its power, they sculpted microscopic helices from a...
+
+3. [ScienceDaily - Technology] Researchers unlocked a new shortcut to quantum materials
+   summary: Scientists are learning how to temporarily reshape materials by nudging their internal quantum rhythms instead of blasting them with extreme lasers. By harnessing excitons, short-lived energy pairs th...
+
+4. [ScienceDaily - Technology] This tiny power module could change how the world uses energy
+   summary: As global energy demand surges—driven by AI-hungry data centers, advanced manufacturing, and electrified transportation—researchers at the National Renewable Energy Laboratory have unveiled a breakthr...
+
+5. [ScienceDaily - Technology] Engineers just created a “phonon laser” that could shrink your next smartphone
+   summary: Engineers have created a device that generates incredibly tiny, earthquake-like vibrations on a microchip—and it could transform future electronics. Using a new kind of “phonon laser,” the team can pr...
+
+6. [TechCrunch] Meet the new European unicorns of 2026
+   summary: From Belgium to Ukraine, five fresh European unicorns were minted this January.
+
+7. [TechCrunch] Waymo reportedly raising a $16B funding round
+   summary: Waymo is reportedly finalizing a new funding round that will value the robotaxi company at $110 billion.
+
+8. [TechCrunch] SpaceX seeks federal approval to launch 1 million solar-powered satellite data centers
+   summary: SpaceX's filing claims these satellites will be “a first step towards becoming a Kardashev II-level civilization — one that can harness the Sun’s full power."
+
+9. [TechCrunch] Nvidia CEO pushes back against report that his company’s $100B OpenAI investment has stalled
+   summary: Nvidia CEO Jensen Huang said that a recent report of friction between his company and OpenAI was “nonsense.”
+
+10. [TechCrunch] HomeBoost’s app will show you where to save on your utility bills
+   summary: The startup is partnering with utilities to help homeowners determine the best upgrades to cut their energy use.
+

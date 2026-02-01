@@ -356,10 +356,8 @@
         <section class="section glass todo-section">
             <h2>✅ 전략 과제 (To-Do List)</h2>
             <ul class="todo-list" id="todo-list">
-                <li class="todo-item completed">미국 출장 준비 완료</li>
-                <li class="todo-item">시온마켓 바이어 최종 미팅</li>
-                <li class="todo-item">다이소 1호점 계약 체결</li>
-                <li class="todo-item">진안 본부 서버 C 안정화 확인</li>
+                <!-- Dynamic Content Loading -->
+                <li class="todo-item">데이터 로딩 중...</li>
             </ul>
         </section>
 
@@ -502,6 +500,21 @@
                         `;
                     });
                     hubContent.innerHTML = html;
+                }
+
+                // Update To-Do List
+                const todoList = document.getElementById('todo-list');
+                if (data.todo_list && data.todo_list.length > 0) {
+                    let todoHtml = '';
+                    data.todo_list.forEach(item => {
+                        const completedClass = item.completed ? 'completed' : '';
+                        todoHtml += `
+                        <li class="todo-item ${completedClass}">
+                            ${item.text}
+                        </li>
+                        `;
+                    });
+                    todoList.innerHTML = todoHtml;
                 }
 
                 // Update Servers

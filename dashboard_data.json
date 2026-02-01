@@ -21,6 +21,18 @@
       "score": "0.85"
     }
   ],
+  "todo_list": [
+    {
+      "text": "Verify News Hub",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "text": "Verify Dashboard",
+      "completed": false,
+      "id": 6
+    }
+  ],
   "servers": {
     "A": {
       "name": "Server A: THE BRAIN",
