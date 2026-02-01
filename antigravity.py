@@ -1,5 +1,9 @@
 import os, requests, telebot, re, time, threading
 from datetime import datetime
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 # 1. 지휘소 경로 및 봇 설정
 os.chdir('/Users/seunghoonoh/woonmok.github.io')
