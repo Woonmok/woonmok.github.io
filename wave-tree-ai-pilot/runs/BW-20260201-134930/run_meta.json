@@ -1,0 +1,9 @@
+{
+  "run_id": "BW-20260201-134930",
+  "timestamp_utc": "2026-02-01 13:49:30 UTC",
+  "server": "BW",
+  "label": "DESIGN→RUNNING→REVIEW",
+  "gpu": "Blackwell (pilot)",
+  "gpu_hours": 0.044000000000000004,
+  "notes": "Toy benchmark. Replace with actual Blackwell run later."
+}

@@ -1,0 +1,9 @@
+{
+  "run_id": "B-20260201-134853",
+  "timestamp_utc": "2026-02-01 13:48:54 UTC",
+  "server": "B",
+  "label": "QUEUE→RUNNING→OPTIMIZING",
+  "gpu": "L40Sx8",
+  "gpu_hours": 0.105,
+  "notes": "Optimization sweeps (toy). Replace with Bayesian optimization later."
+}

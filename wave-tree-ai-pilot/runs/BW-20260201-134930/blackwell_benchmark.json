@@ -1,0 +1,14 @@
+{
+  "run_id": "BW-20260201-134930",
+  "server": "BW",
+  "gpu": "Blackwell (pilot)",
+  "baseline_anchor": "A-20260201-134834",
+  "baseline_elapsed_sec": 0.7149438858032227,
+  "blackwell_elapsed_sec": 0.48263535550656594,
+  "speedup": 1.4813334283246398,
+  "baseline_gpu_hours": 0.05,
+  "blackwell_gpu_hours": 0.044000000000000004,
+  "baseline_mape": 7639652623766.074,
+  "blackwell_mape": 1.0,
+  "toy_cost_efficiency_ratio": 1.1363636363636362
+}

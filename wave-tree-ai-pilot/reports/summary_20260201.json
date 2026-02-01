@@ -1,0 +1,11 @@
+{
+  "baseline_run": "A-20260201-134834",
+  "optimize_run": "B-20260201-134853",
+  "best_pred_growth_index": 0.7877728404585576,
+  "toy_cost_efficiency": 7.502598480557691,
+  "labels": {
+    "Global Biz": "PIPELINE",
+    "POM Core": "DESIGN",
+    "AI Infra": "RUNNING→REVIEW"
+  }
+}

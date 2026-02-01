@@ -1,0 +1,18 @@
+{
+  "run_id": "A-20260201-134834",
+  "server": "A",
+  "gpu": "A100x4",
+  "elapsed_sec": 0.7149438858032227,
+  "estimated_gpu_hours": 0.05,
+  "mape": 7639652623766.074,
+  "rmse": 0.061654318444790246,
+  "rows": 2500,
+  "features": [
+    "temp_c",
+    "humidity_pct",
+    "nutrient_g_l",
+    "ph",
+    "time_hr",
+    "agitation_rpm"
+  ]
+}
