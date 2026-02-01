@@ -471,9 +471,10 @@
 
         async function updateDashboard() {
             try {
+                const cacheBust = `ts=${Date.now()}`;
                 const [dashboardRes, statusRes] = await Promise.all([
-                    fetch('dashboard_data.json', { cache: 'no-store' }),
-                    fetch('WaveTree_status.json', { cache: 'no-store' })
+                    fetch(`dashboard_data.json?${cacheBust}`, { cache: 'no-store' }),
+                    fetch(`WaveTree_status.json?${cacheBust}`, { cache: 'no-store' })
                 ]);
                 const data = await dashboardRes.json();
                 const statusData = statusRes.ok ? await statusRes.json() : null;
@@ -511,15 +512,23 @@
 
                 // Update To-Do List (WaveTree_status.json 우선)
                 const todoList = document.getElementById('todo-list');
-                if (statusData && Array.isArray(statusData.approved_tickets) && statusData.approved_tickets.length > 0) {
+                if (statusData && Array.isArray(statusData.approved_tickets)) {
                     let todoHtml = '';
-                    statusData.approved_tickets.forEach(text => {
-                        todoHtml += `
-                        <li class="todo-item completed">
-                            ${text}
+                    if (statusData.approved_tickets.length > 0) {
+                        statusData.approved_tickets.forEach(text => {
+                            todoHtml += `
+                            <li class="todo-item completed">
+                                ${text}
+                            </li>
+                            `;
+                        });
+                    } else {
+                        todoHtml = `
+                        <li class="todo-item">
+                            승인된 항목 없음
                         </li>
                         `;
-                    });
+                    }
                     todoList.innerHTML = todoHtml;
                 } else if (data.todo_list && data.todo_list.length > 0) {
                     let todoHtml = '';
