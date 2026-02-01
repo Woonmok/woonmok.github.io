@@ -11,9 +11,9 @@ from datetime import datetime
 import json
 
 # Gemini API 설정
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyBTXs3p__VnyIpYPIY9u3SUJyaoHitnDWU")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 genai.configure(api_key=GOOGLE_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-pro')
 
 RADAR_FILE = "/Users/seunghoonoh/woonmok.github.io/Project_Radar.md"
 OUTPUT_FILE = "/Users/seunghoonoh/woonmok.github.io/Radar_Insights.md"
