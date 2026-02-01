@@ -437,6 +437,7 @@
     </main>
 
     <script>
+
         function updateTime() {
             const now = new Date();
             const year = now.getFullYear();
@@ -467,6 +468,62 @@
                 });
         }
 
+        async function updateDashboard() {
+            try {
+                const response = await fetch('dashboard_data.json');
+                const data = await response.json();
+
+                // Update System Status Visuals
+                if (data.system_status === 'EMERGENCY') {
+                    document.body.style.border = "5px solid red";
+                    document.querySelector('.project-title h1').innerText = "🚨 EMERGENCY MODE 🚨";
+                } else if (data.system_status === 'HIGH_PRIORITY') {
+                    document.querySelector('.project-title h1').style.color = "#ffcc00";
+                    document.querySelector('.project-title h1').innerText = "⚡ High Priority Mode";
+                } else {
+                    document.body.style.border = "none";
+                    document.querySelector('.project-title h1').innerText = "The Wave Tree Project";
+                }
+
+                // Update Intelligence Hub
+                const hubContent = document.getElementById('intelligence-hub-content');
+                if (data.intelligence && data.intelligence.length > 0) {
+                    const news = data.intelligence[0];
+                    hubContent.innerHTML = `
+                        <div class="news-item">
+                            <div class="news-title">${news.tag === '긴급' ? '🚨 ' : ''}${news.title}</div>
+                            <div class="news-summary">${news.summary}</div>
+                            <div class="news-meta">
+                                <span>Tag: ${news.tag}</span>
+                                <span>Score: ${news.score}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Update Servers
+                const servers = data.servers;
+
+                // Server A
+                updateServerStatus('.column-cyan .status-items-container .status-item:nth-child(1)', servers.A);
+                // Server B
+                updateServerStatus('.column-cyan .status-items-container .status-item:nth-child(2)', servers.B);
+                // Server C
+                updateServerStatus('.column-cyan .status-items-container .status-item:nth-child(3)', servers.C);
+
+            } catch (error) {
+                console.error("Dashboard update failed:", error);
+            }
+        }
+
+        function updateServerStatus(selector, serverData) {
+            const el = document.querySelector(selector);
+            if (el) {
+                el.querySelector('.status-value').innerText = serverData.status;
+                // Add some visual indication of load if needed
+            }
+        }
+
         setInterval(updateTime, 1000);
         updateTime();
 
@@ -474,6 +531,10 @@
         updateWeather();
         // 30분마다 날씨 업데이트
         setInterval(updateWeather, 30 * 60 * 1000);
+
+        // Dashboard Update every 5 seconds
+        updateDashboard();
+        setInterval(updateDashboard, 5000);
     </script>
 </body>
 
