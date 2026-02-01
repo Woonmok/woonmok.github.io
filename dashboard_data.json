@@ -1,0 +1,35 @@
+{
+    "system_status": "NORMAL",
+    "last_updated": "2026-02-01 19:30:00",
+    "intelligence": [
+        {
+            "title": "시스템 초기화",
+            "summary": "Intelligence Log 모니터링 시스템이 시작되었습니다.",
+            "tag": "일반",
+            "score": "1.0"
+        }
+    ],
+    "servers": {
+        "A": {
+            "name": "Server A: THE BRAIN",
+            "param": "A100 x4",
+            "role": "학습 엔진",
+            "status": "연산 중",
+            "load": 85
+        },
+        "B": {
+            "name": "Server B: THE FACTORY",
+            "param": "L40S x8",
+            "role": "생산 공장",
+            "status": "추론 가동",
+            "load": 60
+        },
+        "C": {
+            "name": "Server C: HANDS & EARS",
+            "param": "6000 Ada",
+            "role": "창작 엔진",
+            "status": "DSD 셋업",
+            "load": 30
+        }
+    }
+}
