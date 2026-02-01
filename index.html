@@ -471,8 +471,12 @@
 
         async function updateDashboard() {
             try {
-                const response = await fetch('dashboard_data.json');
-                const data = await response.json();
+                const [dashboardRes, statusRes] = await Promise.all([
+                    fetch('dashboard_data.json', { cache: 'no-store' }),
+                    fetch('WaveTree_status.json', { cache: 'no-store' })
+                ]);
+                const data = await dashboardRes.json();
+                const statusData = statusRes.ok ? await statusRes.json() : null;
 
                 // Update System Status Visuals
                 if (data.system_status === 'EMERGENCY') {
@@ -505,9 +509,19 @@
                     hubContent.innerHTML = html;
                 }
 
-                // Update To-Do List
+                // Update To-Do List (WaveTree_status.json 우선)
                 const todoList = document.getElementById('todo-list');
-                if (data.todo_list && data.todo_list.length > 0) {
+                if (statusData && Array.isArray(statusData.approved_tickets) && statusData.approved_tickets.length > 0) {
+                    let todoHtml = '';
+                    statusData.approved_tickets.forEach(text => {
+                        todoHtml += `
+                        <li class="todo-item completed">
+                            ${text}
+                        </li>
+                        `;
+                    });
+                    todoList.innerHTML = todoHtml;
+                } else if (data.todo_list && data.todo_list.length > 0) {
                     let todoHtml = '';
                     data.todo_list.forEach(item => {
                         const completedClass = item.completed ? 'completed' : '';
