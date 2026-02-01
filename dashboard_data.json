@@ -1,12 +1,12 @@
 {
-  "system_status": "EMERGENCY",
-  "last_updated": "2026-02-01 19:34:59",
+  "system_status": "NORMAL",
+  "last_updated": "2026-02-01 19:46:46",
   "intelligence": [
     {
-      "title": "리스테리아균 확산 경보",
-      "summary": "미국 전역에 리스테리아균 확산 경보 발령. 즉시 대응 태세 전환 요망.",
-      "tag": "긴급",
-      "score": "0.95"
+      "title": "시스템 정상화",
+      "summary": "시스템 테스트 완료. 정상 운영 모드로 복귀합니다.",
+      "tag": "일반",
+      "score": "0.85"
     }
   ],
   "servers": {
@@ -14,22 +14,22 @@
       "name": "Server A: THE BRAIN",
       "param": "A100 x4",
       "role": "학습 엔진",
-      "status": "긴급 분석",
-      "load": 98
+      "status": "연산 중",
+      "load": 85
     },
     "B": {
       "name": "Server B: THE FACTORY",
       "param": "L40S x8",
       "role": "생산 공장",
-      "status": "긴급 대기",
-      "load": 20
+      "status": "추론 가동",
+      "load": 60
     },
     "C": {
       "name": "Server C: HANDS & EARS",
       "param": "6000 Ada",
       "role": "창작 엔진",
-      "status": "모니터링",
-      "load": 90
+      "status": "DSD 셋업",
+      "load": 30
     }
   }
 }
