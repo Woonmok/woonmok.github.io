@@ -268,30 +268,7 @@
         }
         setInterval(updateTime, 1000); updateTime();
 
-        // 실시간 날씨 업데이트 함수 (OpenWeatherMap API)
-        async function updateWeather() {
-            try {
-                // 진안군 좌표: 35.8419°N, 127.1261°E
-                const apiKey = '73522ad14e4276bdf715f0e796fc623f';
-                const lat = 35.8419;
-                const lon = 127.1261;
-                const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=kr`;
 
-                const response = await fetch(url);
-                if (response.ok) {
-                    const data = await response.json();
-                    const temp = Math.round(data.main.temp);
-                    const humidity = data.main.humidity;
-                    document.getElementById('weather-info').innerText = `기온: ${temp}°C | 습도: ${humidity}% (진안군)`;
-                }
-            } catch (error) {
-                console.error('날씨 정보를 가져오는데 실패했습니다:', error);
-            }
-        }
-
-        // 페이지 로드 시 즉시 실행 및 10분마다 업데이트
-        updateWeather();
-        setInterval(updateWeather, 600000); // 10분 = 600000ms
     </script>
 </body>
 
