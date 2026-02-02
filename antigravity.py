@@ -85,14 +85,35 @@ def handle_telegram_command(msg_text):
             save_dashboard_data(data)
             return f"📊 대시보드 상태: {status_msg}"
         
-        # 6️⃣ 할일 추가: "할일: 작업명"
-        elif msg_text.startswith("할일:"):
-            task = msg_text.replace("할일:", "").strip()
+        # 6️⃣ 할일 추가: "할일: 작업명" 또는 "할일: 1. xxx, 2. yyy"
+        elif msg_text.startswith("할일"):
+            # "할일:" 또는 "할일 :" 모두 처리
+            task_text = msg_text.replace("할일:", "").replace("할일 :", "").strip()
+            
+            if not task_text:
+                return "❌ 할일을 입력해주세요! 예) 할일: 회의 준비"
+            
+            # 콤마로 구분된 여러 항목 처리
+            tasks = [t.strip() for t in task_text.split(",")]
             max_id = max([item.get("id", 0) for item in data.get("todo_list", [])] or [0])
-            new_todo = {"text": task, "completed": False, "id": max_id + 1}
-            data["todo_list"].append(new_todo)
-            save_dashboard_data(data)
-            return f"✅ '{task}' 이 오늘의 할일에 추가되었습니다!"
+            
+            added_count = 0
+            added_tasks = []
+            
+            for task in tasks:
+                if task:  # 빈 항목 제외
+                    max_id += 1
+                    new_todo = {"text": task, "completed": False, "id": max_id}
+                    data["todo_list"].append(new_todo)
+                    added_tasks.append(task)
+                    added_count += 1
+            
+            if added_count > 0:
+                save_dashboard_data(data)
+                task_list = "\n".join([f"✓ {t}" for t in added_tasks])
+                return f"✅ {added_count}개의 할일이 추가되었습니다!\n\n{task_list}"
+            else:
+                return "❌ 유효한 할일이 없습니다."
         
         return None  # 처리되지 않은 명령
 
