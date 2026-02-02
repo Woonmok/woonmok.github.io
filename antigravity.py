@@ -85,35 +85,56 @@ def handle_telegram_command(msg_text):
             save_dashboard_data(data)
             return f"📊 대시보드 상태: {status_msg}"
         
-        # 6️⃣ 할일 추가: "할일: 작업명" 또는 "할일: 1. xxx, 2. yyy"
+        # 6️⃣ 할일 추가/덮어쓰기: "할일: 1. xxx, 2. yyy"
         elif msg_text.startswith("할일"):
             # "할일:" 또는 "할일 :" 모두 처리
             task_text = msg_text.replace("할일:", "").replace("할일 :", "").strip()
             
             if not task_text:
-                return "❌ 할일을 입력해주세요! 예) 할일: 회의 준비"
+                bot.send_message(message.chat.id, "❌ 할일을 입력해주세요! 예) 할일: 1. 회의 준비")
+                return None
             
             # 콤마로 구분된 여러 항목 처리
             tasks = [t.strip() for t in task_text.split(",")]
-            max_id = max([item.get("id", 0) for item in data.get("todo_list", [])] or [0])
             
-            added_count = 0
-            added_tasks = []
-            
+            # 입력된 항목들 파싱 (번호 추출)
+            parsed_tasks = []
             for task in tasks:
-                if task:  # 빈 항목 제외
-                    max_id += 1
-                    new_todo = {"text": task, "completed": False, "id": max_id}
-                    data["todo_list"].append(new_todo)
-                    added_tasks.append(task)
-                    added_count += 1
+                if task:
+                    # "1. xxx" 형식에서 번호 추출
+                    parts = task.split(".", 1)
+                    if len(parts) == 2 and parts[0].strip().isdigit():
+                        task_id = int(parts[0].strip())
+                        task_text_content = parts[1].strip()
+                        if 1 <= task_id <= 3:  # 최대 3개까지만
+                            parsed_tasks.append({"id": task_id, "text": task})
             
-            if added_count > 0:
-                save_dashboard_data(data)
-                task_list = "\n".join([f"✓ {t}" for t in added_tasks])
-                return f"✅ {added_count}개의 할일이 추가되었습니다!\n\n{task_list}"
-            else:
-                return "❌ 유효한 할일이 없습니다."
+            if not parsed_tasks:
+                bot.send_message(message.chat.id, "❌ 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리스트")
+                return None
+            
+            # 기존 todo_list에서 번호에 맞게 덮어쓰기
+            current_todo = {item["id"]: item for item in data.get("todo_list", [])}
+            
+            for new_item in parsed_tasks:
+                task_id = new_item["id"]
+                if task_id in current_todo:
+                    # 기존 항목 덮어쓰기
+                    current_todo[task_id]["text"] = new_item["text"]
+                else:
+                    # 새 항목 추가
+                    current_todo[task_id] = {"text": new_item["text"], "completed": False, "id": task_id}
+            
+            # 최종 todo_list 정렬 (ID 순서대로)
+            data["todo_list"] = sorted(current_todo.values(), key=lambda x: x["id"])
+            data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            save_dashboard_data(data)
+            
+            # 현재 상태 출력
+            task_list = "\n".join([f"✓ {item['text']}" for item in data["todo_list"]])
+            response = f"✅ 할일이 업데이트되었습니다!\n\n현재 할일 목록:\n{task_list}"
+            bot.send_message(message.chat.id, response)
+            return None
         
         return None  # 처리되지 않은 명령
 
