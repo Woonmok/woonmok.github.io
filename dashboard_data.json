@@ -1,6 +1,6 @@
 {
   "system_status": "NORMAL",
-  "last_updated": "2026-02-01 20:26:37",
+  "last_updated": "2026-02-02 13:46:42",
   "intelligence": [
     {
       "title": "반도체 칩 메이커, AI 수요로 2026년 실적 견인",
@@ -23,7 +23,7 @@
   ],
   "todo_list": [
     {
-      "text": "1. 대시보드_키오스크 완료하기",
+      "text": "1. 대시보드_자동화 완료 하기",
       "completed": false,
       "id": 1
     },

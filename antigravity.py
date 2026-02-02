@@ -29,7 +29,7 @@ def save_dashboard_data(data):
         finally:
             fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
-def handle_telegram_command(msg_text):
+def handle_telegram_command(msg_text, message):
     """텔레그램 명령 처리"""
     try:
         data = load_dashboard_data()
@@ -143,7 +143,7 @@ def handle_telegram_command(msg_text):
 
 @bot.message_handler(func=lambda m: True)
 def handle_msg(message):
-    result = handle_telegram_command(message.text)
+    result = handle_telegram_command(message.text, message)
     
     if result:
         # 마크다운 포맷 해제 (텔레그램 마크다운 지원)
