@@ -85,6 +85,15 @@ def handle_telegram_command(msg_text):
             save_dashboard_data(data)
             return f"📊 대시보드 상태: {status_msg}"
         
+        # 6️⃣ 할일 추가: "할일: 작업명"
+        elif msg_text.startswith("할일:"):
+            task = msg_text.replace("할일:", "").strip()
+            max_id = max([item.get("id", 0) for item in data.get("todo_list", [])] or [0])
+            new_todo = {"text": task, "completed": False, "id": max_id + 1}
+            data["todo_list"].append(new_todo)
+            save_dashboard_data(data)
+            return f"✅ '{task}' 이 오늘의 할일에 추가되었습니다!"
+        
         return None  # 처리되지 않은 명령
 
     except Exception as e:
