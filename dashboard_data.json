@@ -23,14 +23,14 @@
   ],
   "todo_list": [
     {
-      "text": "Verify News Hub",
+      "text": "1. 대시보드_키오스크 완료하기",
       "completed": false,
-      "id": 5
+      "id": 1
     },
     {
-      "text": "Verify Dashboard",
+      "text": "2. 최소장비리스트 만들기",
       "completed": false,
-      "id": 6
+      "id": 2
     }
   ],
   "servers": {

@@ -517,9 +517,22 @@
                     hubContent.innerHTML = html;
                 }
 
-                // Update To-Do List (WaveTree_status.json 우선)
+                // Update To-Do List (dashboard_data.json 우선)
                 const todoList = document.getElementById('todo-list');
-                if (statusData && Array.isArray(statusData.approved_tickets)) {
+                
+                // dashboard_data.json에서 todo_list 읽기
+                if (data.todo_list && data.todo_list.length > 0) {
+                    let todoHtml = '';
+                    data.todo_list.forEach(item => {
+                        const completedClass = item.completed ? 'completed' : '';
+                        todoHtml += `
+                        <li class="todo-item ${completedClass}">
+                            ${item.text}
+                        </li>
+                        `;
+                    });
+                    todoList.innerHTML = todoHtml;
+                } else if (statusData && Array.isArray(statusData.approved_tickets)) {
                     let todoHtml = '';
                     if (statusData.approved_tickets.length > 0) {
                         statusData.approved_tickets.forEach(text => {
@@ -532,22 +545,13 @@
                     } else {
                         todoHtml = `
                         <li class="todo-item">
-                            승인된 항목 없음
+                            할일 없음
                         </li>
                         `;
                     }
                     todoList.innerHTML = todoHtml;
-                } else if (data.todo_list && data.todo_list.length > 0) {
-                    let todoHtml = '';
-                    data.todo_list.forEach(item => {
-                        const completedClass = item.completed ? 'completed' : '';
-                        todoHtml += `
-                        <li class="todo-item ${completedClass}">
-                            ${item.text}
-                        </li>
-                        `;
-                    });
-                    todoList.innerHTML = todoHtml;
+                } else {
+                    todoList.innerHTML = '<li class="todo-item">할일 없음</li>';
                 }
 
                 // Update Servers
