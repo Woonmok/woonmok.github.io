@@ -31,6 +31,16 @@
       "text": "2. 최소장비리스트 만들기",
       "completed": false,
       "id": 2
+    },
+    {
+      "text": "1. 대시보드_자동화 완료 하기",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "text": "2. 최소장비리스트 만들기",
+      "completed": false,
+      "id": 4
     }
   ],
   "servers": {
