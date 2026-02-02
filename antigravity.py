@@ -1,4 +1,4 @@
-import os, requests, telebot, re, time, threading, fcntl
+import os, requests, telebot, re, time, threading, fcntl, json
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -12,79 +12,92 @@ if not TOKEN:
     raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
 bot = telebot.TeleBot(TOKEN)
 
-def master_control_update(msg_text=None):
+def load_dashboard_data():
+    """dashboard_data.json 읽기"""
     try:
-        # [A] 날씨 데이터 수집 (OpenWeatherMap API)
-        raw_temp, raw_humi = "N/A", "N/A"
+        with open('dashboard_data.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return {"todo_list": [], "system_status": "NORMAL"}
+
+def save_dashboard_data(data):
+    """dashboard_data.json 저장 (파일 잠금)"""
+    with open('dashboard_data.json', 'w', encoding='utf-8') as f:
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
         try:
-            api_key = os.getenv("OPENWEATHER_API_KEY")
-            lat, lon = 35.8419, 127.1261  # 진안군 좌표
-            w_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
-            w_res = requests.get(w_url, timeout=10)
-            if w_res.status_code == 200:
-                w_data = w_res.json()
-                raw_temp = f"{round(w_data['main']['temp'])}°C"
-                raw_humi = f"{w_data['main']['humidity']}%"
-        except: pass
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
-        with open('index.html', 'r', encoding='utf-8') as f:
-            content = f.read()
-
-        # [B] 날씨 업데이트
-        if raw_temp != "N/A":
-            new_weather = f'기온: {raw_temp} | 습도: {raw_humi} (진안군)'
-            content = re.sub(r'id="weather-info">.*?</div>', f'id="weather-info">{new_weather}</div>', content)
-
-        # [C] 텔레그램 명령 처리
-        if msg_text:
-            # 1. To-Do 제어
-            if msg_text.startswith("추가:"):
-                task = msg_text.replace("추가:", "").strip()
-                new_li = f'<li class="todo-item">{task}</li>\n            '
-                content = re.sub(r'(<ul[^>]*id="todo-list"[^>]*>)', rf'\1\n            {new_li}', content)
-            elif msg_text.startswith("완료:"):
-                task = msg_text.replace("완료:", "").strip()
-                content = content.replace(f'<li class="todo-item">{task}</li>', f'<li class="todo-item completed">{task}</li>')
-            elif msg_text.startswith("삭제:"):
-                task = msg_text.replace("삭제:", "").strip()
-                content = re.sub(rf'<li class="todo-item.*?">{re.escape(task)}</li>\n?', '', content)
+def handle_telegram_command(msg_text):
+    """텔레그램 명령 처리"""
+    try:
+        data = load_dashboard_data()
+        
+        # 1️⃣ 할일 추가: "추가: 작업명"
+        if msg_text.startswith("추가:"):
+            task = msg_text.replace("추가:", "").strip()
+            max_id = max([item.get("id", 0) for item in data.get("todo_list", [])] or [0])
+            new_todo = {"text": task, "completed": False, "id": max_id + 1}
+            data["todo_list"].append(new_todo)
+            save_dashboard_data(data)
+            return f"✅ '{task}' 이 오늘의 할일에 추가되었습니다! (ID: {max_id + 1})"
+        
+        # 2️⃣ 할일 완료: "완료: 작업명" 또는 "완료: ID"
+        elif msg_text.startswith("완료:"):
+            target = msg_text.replace("완료:", "").strip()
+            for item in data.get("todo_list", []):
+                if item["text"] == target or str(item["id"]) == target:
+                    item["completed"] = True
+                    save_dashboard_data(data)
+                    return f"🎉 '{item['text']}' 완료했습니다!"
+            return "❌ 해당 할일을 찾을 수 없습니다."
+        
+        # 3️⃣ 할일 삭제: "삭제: 작업명" 또는 "삭제: ID"
+        elif msg_text.startswith("삭제:"):
+            target = msg_text.replace("삭제:", "").strip()
+            original_len = len(data["todo_list"])
+            data["todo_list"] = [
+                item for item in data["todo_list"] 
+                if item["text"] != target and str(item["id"]) != target
+            ]
+            if len(data["todo_list"]) < original_len:
+                save_dashboard_data(data)
+                return f"🗑️ 할일이 삭제되었습니다."
+            return "❌ 해당 할일을 찾을 수 없습니다."
+        
+        # 4️⃣ 할일 목록 조회: "목록"
+        elif msg_text in ["목록", "오늘", "할일"]:
+            todos = data.get("todo_list", [])
+            if not todos:
+                return "📋 오늘의 할일이 없습니다."
             
-            # 2. 상태 업데이트 (카테고리:값)
-            elif ":" in msg_text or "：" in msg_text:
-                sep = ":" if ":" in msg_text else "："
-                cat, val = [x.strip() for x in msg_text.split(sep, 1)]
-                
-                # Global Biz
-                if "곡물차" in cat:
-                    content = re.sub(r'id="tea_status".*?>.*?</span>', f'id="tea_status" style="color: #00ff9d; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
-                elif "다이소" in cat or "Pick" in cat:
-                    content = re.sub(r'id="daiso_status".*?>.*?</span>', f'id="daiso_status" style="color: #00ff9d; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
-                
-                # AI Infra (브레인/팩토리/핸즈)
-                elif "브레인" in cat or "Brain" in cat or "A100" in cat:
-                    content = re.sub(r'id="srv_a_status".*?>.*?</span>', f'id="srv_a_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
-                elif "팩토리" in cat or "Factory" in cat or "L40S" in cat:
-                    content = re.sub(r'id="srv_b_status".*?>.*?</span>', f'id="srv_b_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
-                elif "핸즈" in cat or "Hands" in cat or "6000" in cat:
-                    content = re.sub(r'id="srv_c_status".*?>.*?</span>', f'id="srv_c_status" style="color: #00ccff; font-weight:bold;">{val}</span>', content, flags=re.DOTALL)
-
-        # [D] 저장 및 배포 (파일 잠금으로 race condition 방지)
-        with open('index.html', 'w', encoding='utf-8') as f:
-            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
-            try:
-                f.write(content)
-            finally:
-                fcntl.flock(f.fileno(), fcntl.LOCK_UN)
-        os.system("git add . && git commit -m 'AI Infra hardware spec update' && git push origin main")
-        return "🎯 지휘관님, 하드웨어 사양이 반영된 최신 전광판으로 업데이트했습니다."
+            msg = "📋 **오늘의 할일**\n\n"
+            for item in todos:
+                status = "✅" if item["completed"] else "⭕"
+                msg += f"{status} [{item['id']}] {item['text']}\n"
+            return msg
+        
+        # 5️⃣ 상태 업데이트: "상태: 메시지"
+        elif msg_text.startswith("상태:"):
+            status_msg = msg_text.replace("상태:", "").strip()
+            data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            save_dashboard_data(data)
+            return f"📊 대시보드 상태: {status_msg}"
+        
+        return None  # 처리되지 않은 명령
 
     except Exception as e:
-        return f"🚨 엔진 노이즈 발생: {str(e)}"
+        return f"🚨 에러 발생: {str(e)}"
 
 @bot.message_handler(func=lambda m: True)
 def handle_msg(message):
-    res = master_control_update(message.text)
-    bot.reply_to(message, res)
+    result = handle_telegram_command(message.text)
+    
+    if result:
+        # 마크다운 포맷 해제 (텔레그램 마크다운 지원)
+        bot.reply_to(message, result, parse_mode="markdown")
 
-print("📡 [The Wave Tree Project] 고성능 인프라 모드 가동...")
+print("📡 [Wave Tree 오늘의 할일 관리 봇] 가동 중...")
+print("✅ 명령어: 추가/완료/삭제/목록/상태")
 bot.polling()
