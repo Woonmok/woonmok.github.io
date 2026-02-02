@@ -1,6 +1,7 @@
 import RadarStatus from './components/RadarStatus';
 import ServerMonitor from './components/ServerMonitor';
 import ActionPanel from './components/ActionPanel';
+import ToDoList from './components/ToDoList';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </div>
 
           <div className="space-y-8">
+            <ToDoList />
             <ServerMonitor />
           </div>
         </main>
