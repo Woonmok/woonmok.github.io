@@ -43,7 +43,7 @@ def handle_telegram_command(msg_text, message):
             if not todos:
                 return "📋 오늘의 할일이 없습니다."
             
-            msg = "📋 **오늘의 할일**\n\n"
+            msg = "📋 오늘의 할일\n\n"
             for item in todos:
                 status = "✅" if item["completed"] else "⭕"
                 msg += f"{status} [{item['id']}] {item['text']}\n"
@@ -164,8 +164,8 @@ def handle_msg(message):
     result = handle_telegram_command(message.text, message)
     
     if result:
-        # 마크다운 포맷 해제 (텔레그램 마크다운 지원)
-        bot.reply_to(message, result, parse_mode="markdown")
+        # 마크다운 없이 일반 텍스트로 전송
+        bot.reply_to(message, result)
 
 print("📡 [Wave Tree 오늘의 할일 관리 봇] 가동 중...")
 print("✅ 명령어: 추가/완료/삭제/목록/상태")

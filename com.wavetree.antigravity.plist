@@ -6,7 +6,7 @@
 	<string>com.wavetree.antigravity</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/bin/python3</string>
+		<string>/Users/seunghoonoh/woonmok.github.io/.venv/bin/python3</string>
 		<string>/Users/seunghoonoh/woonmok.github.io/antigravity.py</string>
 	</array>
 	<key>WorkingDirectory</key>
