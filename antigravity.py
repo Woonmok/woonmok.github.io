@@ -34,6 +34,24 @@ def handle_telegram_command(msg_text, message):
     try:
         data = load_dashboard_data()
         
+        # 0️⃣ 슬래시 명령어
+        if msg_text == "/start":
+            return "👋 안녕하세요! Wave Tree 할일 관리 봇입니다.\n\n사용 가능한 명령어:\n- /todo 또는 '목록' - 할일 목록\n- 추가: 작업명 - 할일 추가\n- 완료: ID - 할일 완료\n- 삭제: ID - 할일 삭제\n- 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
+        
+        elif msg_text in ["/todo", "/목록", "/list"]:
+            todos = data.get("todo_list", [])
+            if not todos:
+                return "📋 오늘의 할일이 없습니다."
+            
+            msg = "📋 **오늘의 할일**\n\n"
+            for item in todos:
+                status = "✅" if item["completed"] else "⭕"
+                msg += f"{status} [{item['id']}] {item['text']}\n"
+            return msg
+        
+        elif msg_text in ["/help", "/도움말"]:
+            return "📚 **명령어 도움말**\n\n▪️ /todo - 할일 목록 보기\n▪️ 추가: 작업명 - 새 할일 추가\n▪️ 완료: 1 - ID로 완료 처리\n▪️ 삭제: 1 - ID로 삭제\n▪️ 목록 - 할일 목록 보기\n▪️ 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
+        
         # 1️⃣ 할일 추가: "추가: 작업명"
         if msg_text.startswith("추가:"):
             task = msg_text.replace("추가:", "").strip()
