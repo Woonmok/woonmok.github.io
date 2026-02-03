@@ -499,11 +499,11 @@
                     document.querySelector('.project-title h1').innerText = "The Wave Tree Project";
                 }
 
-                // Update Intelligence Hub
+                // Update Intelligence Hub (최대 2개만 표시)
                 const hubContent = document.getElementById('intelligence-hub-content');
                 if (data.intelligence && data.intelligence.length > 0) {
                     let html = '';
-                    data.intelligence.forEach(news => {
+                    data.intelligence.slice(0, 2).forEach(news => {
                         html += `
                         <div class="news-item">
                             <div class="news-title">${news.tag === '긴급' ? '🚨 ' : ''}${news.title}</div>
