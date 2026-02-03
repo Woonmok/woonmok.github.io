@@ -1,10 +1,14 @@
 {
-  "system_status": "NORMAL",
-  "last_updated": "2026-02-02 13:48:15",
-  "intelligence": [
+  "todo_list": [
     {
-      "title": "반도체 칩 메이커, AI 수요로 2026년 실적 견인",
-      "summary": "TI, ASML 등 HPC용 칩 수요의 강력한 성장세 확인.",
+      "text": "3. Ferment_MVP 체크하기",
+      "completed": false,
+      "id": 3
+    }
+  ],
+  "system_status": "NORMAL",
+  "last_updated": "2026-02-03 14:26:46"
+}: "TI, ASML 등 HPC용 칩 수요의 강력한 성장세 확인.",
       "tag": "정보",
       "score": "0.85"
     },
@@ -31,6 +35,11 @@
       "text": "2. 최소장비리스트 만들기",
       "completed": false,
       "id": 2
+    },
+    {
+      "text": "3. Ferment_MVP 체크하기",
+      "completed": false,
+      "id": 3
     }
   ],
   "servers": {
