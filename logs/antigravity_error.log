@@ -2498,3 +2498,158 @@ Traceback (most recent call last):
 /Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
   warnings.warn(
 [get_weather] 2026-02-04 17:37:15.212010 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:37:25.412490 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:37:35.562980 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:37:45.778050 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:37:55.991990 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:38:06.204924 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:38:16.432656 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:40:25.018061 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:40:35.292106 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:40:45.637638 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:40:55.921067 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:41:06.225617 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:41:16.540766 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:41:26.887824 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:41:37.179835 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:41:47.516741 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:41:57.758223 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:42:08.042417 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:42:18.272942 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:42:28.636637 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:42:39.201116 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:42:49.596998 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:42:59.744369 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:43:10.093162 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:43:20.416831 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:43:30.739401 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:43:41.052684 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:43:51.348665 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:44:01.676866 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:44:11.996427 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:44:22.162543 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:44:32.474958 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:44:42.799477 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:44:53.147571 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:45:03.473707 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:45:13.783682 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:45:24.094087 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:45:34.419165 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:45:44.723029 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:45:54.898890 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:46:05.192932 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:46:15.528035 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:46:25.693614 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:46:35.973268 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:46:46.323210 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[get_weather] 2026-02-04 17:46:56.584540 {'text': '진안 실시간 날씨: 구름조금, 온도 0.14°C, 습도 73%', 'temp': 0.14, 'humidity': 73, 'desc': '구름조금'}
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
