@@ -2653,3 +2653,15 @@ Traceback (most recent call last):
   File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
     from urllib3.exceptions import NotOpenSSLWarning
 ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/antigravity.py", line 2, in <module>
+    from urllib3.exceptions import NotOpenSSLWarning
+ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/urllib3/exceptions.py)
