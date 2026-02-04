@@ -152,7 +152,7 @@ def handle_telegram_command(msg_text, message):
             task_text = msg_text.replace("할일:", "").replace("할일 :", "").strip()
             
             if not task_text:
-                bot.send_message(message.chat.id, "❌ 할일을 입력해주세요! 예) 할일: 1. 회의 준비")
+                bot.send_message(message.chat.id, "❌ 할일을 입력해주세요! 예) 할일: 1. 회의 준비", parse_mode=None)
                 return None
             
             # 콤마로 구분된 여러 항목 처리
@@ -171,7 +171,7 @@ def handle_telegram_command(msg_text, message):
                             parsed_tasks.append({"id": task_id, "text": task})
             
             if not parsed_tasks:
-                bot.send_message(message.chat.id, "❌ 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리스트")
+                bot.send_message(message.chat.id, "❌ 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리스트", parse_mode=None)
                 return None
             
             # 기존 todo_list에서 번호에 맞게 덮어쓰기
@@ -194,7 +194,7 @@ def handle_telegram_command(msg_text, message):
             # 현재 상태 출력
             task_list = "\n".join([f"✓ {item['text']}" for item in data["todo_list"]])
             response = f"✅ 할일이 업데이트되었습니다!\n\n현재 할일 목록:\n{task_list}"
-            bot.send_message(message.chat.id, response)
+            bot.send_message(message.chat.id, response, parse_mode=None)
             return None
         
         return None  # 처리되지 않은 명령
@@ -208,7 +208,7 @@ def handle_msg(message):
     
     if result:
         # parse_mode 인자 없이 일반 텍스트로 전송 (마크다운 파싱 오류 방지)
-        bot.reply_to(message, result)
+        bot.reply_to(message, result, parse_mode=None)
 
 print("📡 [Wave Tree 오늘의 할일 관리 봇] 가동 중...")
 print("✅ 명령어: 추가/완료/삭제/목록/상태")
