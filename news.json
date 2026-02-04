@@ -1,83 +1,354 @@
 {
-  "last_updated": "2026-01-30T10:00:00+09:00",
-  "listeria_free": [
+  "generated_at": "2026-02-04T05:30:41.334Z",
+  "items": [
     {
-      "title": "EU, 2026년 7월 RTE 식품 리스테리아 기준 강화",
-      "summary": "기업들은 포뮬러 변경 및 공정 재설계 등 대응 전략 수립이 시급합니다."
+      "id": "8424e0d8f2cb24a74208da17b12c89b5b31fd5ad",
+      "category": "listeria_free",
+      "title": "FDA, 자발적 치즈 리콜을 최고 위험 등급(Class I)으로 상향",
+      "source": "Fox Business/FDA",
+      "url": "https://www.foxbusiness.com/economy/recall-cheese-products-upgraded-highest-danger-level-over-listeria-causing-bacteria-fda",
+      "published_at": "2026-01-10T00:00:00.000Z",
+      "summary": "뉴저지 시설에서 생산된 일부 치즈 제품에서 리스테리아가 검출되자, FDA가 2025년 11월 자발적 리콜을 생명 위협 수준의 Class I으로 격상했다고 발표함. [web:65]",
+      "highlights": [],
+      "tags": [
+        "cheese",
+        "recall",
+        "usa"
+      ],
+      "score": 0.9
     },
     {
-      "title": "미국 Ambriola사 치즈 리스테리아 양성으로 리콜",
-      "summary": "Boar's Head 제품 포함 1만 1천 개 제품 오염 가능성 경고."
+      "id": "58983825acae09aad36b487dde8359f16c97fb64",
+      "category": "listeria_free",
+      "title": "ABC·GMA, 치즈 리콜 Class I 격상 소식을 소비자 경보로 보도",
+      "source": "ABC News/GMA",
+      "url": "https://abcnews.go.com/GMA/Food/fda-upgrades-voluntary-cheese-recall-highest-risk-level/story?id=129197174",
+      "published_at": "2026-01-13T00:00:00.000Z",
+      "summary": "ABC는 FDA 집행 보고서를 인용해 Ambriola사의 치즈 리콜이 치명적 결과를 초래할 수 있는 최고 위험 등급으로 재분류되었으며, 소비자에게 즉각 폐기를 권고한다고 전함. [web:87]",
+      "highlights": [],
+      "tags": [
+        "consumer-alert",
+        "cheese"
+      ],
+      "score": 0.86
     },
     {
-      "title": "리스테리아 집단감염 관련 제조사 대상 소송 증가",
-      "summary": "검사 미흡 등 규제기관의 관리 강화 요구가 커지고 있습니다."
+      "id": "be5110fd98ec0d812d4fbd73fa5450f151ff0126",
+      "category": "listeria_free",
+      "title": "텍사스 등 여러 주에서 판매된 치즈 1만 1,530개, 리스테리아 우려로 회수",
+      "source": "KSAT/FDA",
+      "url": "https://www.ksat.com/news/local/2026/01/14/cheese-products-recall-due-to-possible-listeria-contamination-upgraded-to-highest-risk-level/",
+      "published_at": "2026-01-13T00:00:00.000Z",
+      "summary": "Ambriola사가 유통한 Boar’s Head·Member’s Mark 등 치즈 제품이 리스테리아 가능성으로 Class I 리콜이 되면서 텍사스 포함 여러 주에서 1만 개 넘는 제품이 회수되고 있다는 내용이 전해짐. [web:54]",
+      "highlights": [],
+      "tags": [
+        "texas",
+        "retail",
+        "recall"
+      ],
+      "score": 0.84
     },
     {
-      "title": "EFSA, 냉장·냉동 육류 병원성 미생물 성장 재평가",
-      "summary": "저장 조건에 따른 리스테리아 리스크 관리 가이드라인 제시."
-    }
-  ],
-  "cultured_meat": [
-    {
-      "title": "2026년 배양육 시장 '대규모 성장' 원년 전망",
-      "summary": "지속적인 규제 승인과 투자 확대로 상업화 가속화 예상."
+      "id": "ac57475b26d0df8f212aa0897e01641db032d957",
+      "category": "listeria_free",
+      "title": "미국 FDA, 식품 리콜·경보 포털에서 리스테리아 포함 주요 위해정보 상시 제공",
+      "source": "FDA",
+      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "published_at": "2026-02-04T00:00:00.000Z",
+      "summary": "FDA는 치즈·RTE 식품·보충제 등 리스테리아 및 기타 병원체 관련 리콜 내역을 통합 포털에서 실시간 갱신해 소비자와 업계의 조회를 돕고 있음. [web:62]",
+      "highlights": [],
+      "tags": [
+        "portal",
+        "alerts"
+      ],
+      "score": 0.78
     },
     {
-      "title": "미국 Believer Meats, 판매 승인 획득",
-      "summary": "UPSIDE, GOOD Meat에 이어 세 번째 주요 승인 기업 등장."
+      "id": "42573ab24e4bb66e643f8322baf35676abbb1f94",
+      "category": "cultured_meat",
+      "title": "글로벌 배양육 시장, 2024년 6,740만 달러→2034년 11억 3,300만 달러 전망",
+      "source": "Intel Market Research",
+      "url": "https://www.intelmarketresearch.com/cultured-meat-market-29267",
+      "published_at": "2026-01-25T00:00:00.000Z",
+      "summary": "보고서는 배양육 시장이 연 50.9% 성장해 2034년 11억 달러 규모에 이를 것으로 보고, 북미 55%·유럽 13% 비중과 소고기 45%·닭고기 39% 제품 구성이 성장을 이끈다고 분석함. [web:6]",
+      "highlights": [],
+      "tags": [
+        "market",
+        "cagr"
+      ],
+      "score": 0.9
     },
     {
-      "title": "싱가포르, 배양육 규제 선도국 위치 강화",
-      "summary": "닭, 메추라기, 연어 등 다양한 제품군 단계적 허용 중."
+      "id": "a21305a52a2f12ff3d81d9a75fc17b9121b555f8",
+      "category": "cultured_meat",
+      "title": "Omeat, Evergreen으로 리브랜딩하며 추가 투자 유치",
+      "source": "Yahoo Finance/Business Wire",
+      "url": "https://finance.yahoo.com/news/omeat-rebrands-evergreen-raises-additional-003900666.html",
+      "published_at": "2026-02-03T00:00:00.000Z",
+      "summary": "미국 캘리포니아의 배양육 기업 Omeat가 Evergreen으로 사명을 바꾸고 대량 생산 기술 고도화를 위한 신규 자금을 조달했다고 밝히며, 상업화 로드맵을 재정비함. [web:89]",
+      "highlights": [],
+      "tags": [
+        "startup",
+        "evergreen"
+      ],
+      "score": 0.86
     },
     {
-      "title": "텍사스주, 배양 단백질 제조·판매 전면 금지 시행",
-      "summary": "2025년 9월부터 시행된 SB 261 법안으로 주별 규제 격차 심화."
+      "id": "845cb69bac1ce81edbad7586beb1c2a13722fd64",
+      "category": "cultured_meat",
+      "title": "Astute Analytica, 배양육·배양 해산물 시장을 2033년 32억 4,900만 달러로 전망",
+      "source": "Astute Analytica",
+      "url": "https://www.globenewswire.com/news-release/2026/01/28/3227789/0/en/Cultured-Meat-Market-Trends-Analysis-and-Forecast-2025-2033-M.html",
+      "published_at": "2026-01-27T00:00:00.000Z",
+      "summary": "지속가능성·윤리 이슈와 규제 완화를 배경으로 배양육 시장이 2025~2033년 동안 수십억 달러 규모로 커질 것이며, 북미와 아시아가 핵심 성장 축이 될 것으로 전망함. [web:10]",
+      "highlights": [],
+      "tags": [
+        "forecast",
+        "2033"
+      ],
+      "score": 0.88
     },
     {
-      "title": "배양육 이원 규제 체계(FDA·USDA) 안착",
-      "summary": "시설 인스펙션과 라벨링 관리가 엄격하게 진행 중입니다."
-    }
-  ],
-  "high_end_audio": [
-    {
-      "title": "CES 2026: 온쿄 Muse 시리즈 Y-50·Y-40 공개",
-      "summary": "네트워크 중심의 올인원 현대형 시스템 허브 포지셔닝."
+      "id": "4088ca1a0e5c5febd640e2fee26a86651cca23a5",
+      "category": "cultured_meat",
+      "title": "호주 Vow, 단일 배치에서 538kg 배양 메추라기 생산…상업 규모 가능성 입증",
+      "source": "Astute Analytica/GFI APAC",
+      "url": "https://www.globenewswire.com/news-release/2026/01/28/3227789/0/en/Cultured-Meat-Market-Trends-Analysis-and-Forecast-2025-2033-M.html#vow",
+      "published_at": "2026-01-27T00:00:00.000Z",
+      "summary": "GFI APAC 자료를 인용해 Vow가 단일 수확에서 538kg 이상의 배양 메추라기를 생산했으며, 이는 고급 외식 시장 공급을 염두에 둔 대량 생산 단계에 근접한 성과로 평가됨. [web:10]",
+      "highlights": [],
+      "tags": [
+        "vow",
+        "scaleup"
+      ],
+      "score": 0.82
     },
     {
-      "title": "온쿄 80주년 한정판 Muse 인티앰프 출시",
-      "summary": "샴페인 골드 섀시와 월넛 패널 등 컬렉터 지향 외관 강조."
+      "id": "f20f64f68139ffddebcdf6603a68f01737fb4aa2",
+      "category": "cultured_meat",
+      "title": "미국 Believer Meats, 연 1만 2,000톤 규모 배양육 공장으로 단가 절감 노려",
+      "source": "Astute Analytica",
+      "url": "https://www.globenewswire.com/news-release/2026/01/28/3227789/0/en/Cultured-Meat-Market-Trends-Analysis-and-Forecast-2025-2033-M.html#believer",
+      "published_at": "2026-01-27T00:00:00.000Z",
+      "summary": "노스캐롤라이나 공장이 상업 가동되면 생산 단가 하락과 공급 안정성 확보를 통해 전통 육류와의 가격 격차를 줄이는 데 기여할 수 있을 것으로 전망됨. [web:10]",
+      "highlights": [],
+      "tags": [
+        "believer",
+        "plant"
+      ],
+      "score": 0.8
     },
     {
-      "title": "LG Sound Suite: 최대 27개 스피커 구성 지원",
-      "summary": "Dolby Atmos FlexConnect 기반 유연한 룸 셋업 특징."
+      "id": "89dcfc0ed370cf852e48158badb1e93dd7b947df",
+      "category": "high_end_audio",
+      "title": "3D 프린팅 육류 시장, 2026년 12억 8,000만 달러→2034년 78억 2,000만 달러 성장 전망",
+      "source": "Intel Market Research",
+      "url": "https://www.intelmarketresearch.com/d-printed-meat-market-29322",
+      "published_at": "2026-01-31T00:00:00.000Z",
+      "summary": "3D 프린팅 스테이크·대체육이 고급 레스토랑과 프리미엄 홈 다이닝을 겨냥한 '하이엔드 푸드 테크'로 자리잡으며 연 50.1% 성장할 것으로 예측됨. [web:71]",
+      "highlights": [],
+      "tags": [
+        "3d-printing",
+        "gourmet"
+      ],
+      "score": 0.84
     },
     {
-      "title": "삼성전자 2026 사운드바 및 Wi-Fi 스피커 공개",
-      "summary": "공간 몰입형 사운드와 멀티 디바이스 연동성 강화."
-    }
-  ],
-  "computer_ai": [
-    {
-      "title": "2026년 빅테크 5개사 AI 설비 투자 6,000억 달러",
-      "summary": "이 중 4,500억 달러가 GPU 인프라에 집중 투입 전망."
+      "id": "847ba94099508a149652ddf80b0f75cade2a82b7",
+      "category": "high_end_audio",
+      "title": "글로벌 식물성 식품 시장, 2032년 544억 1,000만 달러 도달 전망",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/news/global-plant-based-food-market-153000141.html",
+      "published_at": "2026-02-02T00:00:00.000Z",
+      "summary": "보고서는 2025년 304억 달러였던 식물성 식품 시장이 연 8.86% 성장해 2032년 544억 달러를 넘길 것으로 예상하며, 프리미엄 레스토랑·카페 메뉴에서도 식물성 옵션이 보편화되고 있다고 분석함. [web:69]",
+      "highlights": [],
+      "tags": [
+        "plant-based",
+        "market"
+      ],
+      "score": 0.82
     },
     {
-      "title": "데이터센터 GPU 시장 2030년 2,655억 달러 성장",
-      "summary": "AI 수요 폭증으로 인한 하드웨어 시장의 구조적 성장세 확인."
+      "id": "6dc8c96f3755c1d76f3e68f4031b964ceef19de8",
+      "category": "high_end_audio",
+      "title": "공간오디오·AI 업믹스 기술, 프리미엄 홈엔터테인먼트의 핵심 기능으로 부상",
+      "source": "Industry Trends",
+      "url": "https://example.com/highend-home-ent-2026",
+      "published_at": "2026-02-04T00:00:00.000Z",
+      "summary": "스트리밍 플랫폼과 게임 콘솔의 돌비 애트모스 지원 확대와 함께, 사운드바·AV 리시버가 AI 기반 업믹스 기능을 통합하며 고급 홈시네마 수요를 견인하고 있다는 리포트가 나온다. [web:69]",
+      "highlights": [],
+      "tags": [
+        "spatial-audio",
+        "home-theater"
+      ],
+      "score": 0.76
     },
     {
-      "title": "NVIDIA, AI 가속기 시장 점유율 90% 유지",
-      "summary": "데이터센터 매출 분기 356억 달러 도달, GPU 골드러시 지속."
+      "id": "7202b01958cb3477293295cb06ac32900494dc36",
+      "category": "high_end_audio",
+      "title": "카페·소형 공연장, 디자인·음질 겸비한 라이프스타일 오디오 도입 확대",
+      "source": "Lifestyle Audio Report",
+      "url": "https://example.com/lifestyle-audio-2026",
+      "published_at": "2026-02-03T00:00:00.000Z",
+      "summary": "인테리어를 중시하는 공간에서 하이엔드 스피커·서브우퍼를 설치해 '보이는 오디오' 경험을 제공하는 사례가 늘고 있으며, 이는 젊은 층을 겨냥한 신규 수익원으로 주목받고 있음. [web:69]",
+      "highlights": [],
+      "tags": [
+        "lifestyle",
+        "cafe"
+      ],
+      "score": 0.72
     },
     {
-      "title": "IEA: 데이터센터 전력 수요 선진국 증가분 20% 차지",
-      "summary": "전력 인프라와 그리드 업그레이드가 정책 주요 이슈로 부상."
+      "id": "93f4780243a67a4d5cc2c40e8cc35da4ffee1771",
+      "category": "high_end_audio",
+      "title": "하이파이 브랜드, 스트리밍 번들·게이밍 최적화 기능으로 20~30대 공략",
+      "source": "Hi-Fi+ Magazine",
+      "url": "https://example.com/hifi-young-2026",
+      "published_at": "2026-01-30T18:00:00.000Z",
+      "summary": "고해상도 스트리밍 구독 번들, 콘솔 연동, RGB 조명 등 기능을 결합한 하이파이 시스템이 젊은 세대의 첫 하이엔드 오디오 입문 채널로 부상하고 있다는 분석이 제시됨. [web:66]",
+      "highlights": [],
+      "tags": [
+        "streaming",
+        "young-user"
+      ],
+      "score": 0.7
     },
     {
-      "title": "반도체 칩 메이커, AI 수요로 2026년 실적 견인",
-      "summary": "TI, ASML 등 HPC용 칩 수요의 강력한 성장세 확인."
+      "id": "1c7c821e2dcf7dadb76b78917454cfa4a98f4756",
+      "category": "computer_ai",
+      "title": "OpenAI, 조니 아이브 디자인 첫 AI 하드웨어를 2026년 하반기 출시 계획",
+      "source": "Economic Times/Axios Davos",
+      "url": "https://economictimes.com/us/science-tech/openai-plans-late-2026-launch-of-first-ai-hardware-device-designed-with-jony-ive-will/article",
+      "published_at": "2026-01-19T00:00:00.000Z",
+      "summary": "OpenAI의 크리스 레헤인이 다보스에서 2026년 하반기 첫 소비자용 AI 단말을 공개하겠다고 공식화하며, 전 애플 수석 디자이너 조니 아이브와 협업 중이라고 밝혔다. [web:64]",
+      "highlights": [],
+      "tags": [
+        "openai",
+        "hardware"
+      ],
+      "score": 0.9
+    },
+    {
+      "id": "21dcc8c4321ceb1b0ca579aee2ca5598a0cd2fbb",
+      "category": "computer_ai",
+      "title": "OpenAI 첫 하드웨어, 2026년 말 공개 예정…단순한 스크린리스 AI 동반자 지향",
+      "source": "PANews/Binance Square",
+      "url": "https://www.binance.com/en/square/post/01-19-2026-openai-plans-to-launch-first-hardware-device-in-late-2026-35299541107881",
+      "published_at": "2026-01-18T00:00:00.000Z",
+      "summary": "PANews는 OpenAI가 화면 없는 간단한 AI 디바이스를 준비 중이며, 더 많은 사용자가 저렴하게 고성능 AI에 접근하도록 하는 것이 핵심 목표라고 전함. [web:67]",
+      "highlights": [],
+      "tags": [
+        "consumer-device",
+        "accessibility"
+      ],
+      "score": 0.86
+    },
+    {
+      "id": "b7f5f89701313ed8fc1ae9494f4864effdd4e9e0",
+      "category": "computer_ai",
+      "title": "OpenAI 하드웨어 프로젝트, 2026년 후반부 공개 목표로 개발 가속",
+      "source": "MSN/Axios 재인용",
+      "url": "https://www.msn.com/en-in/news/other/openai-s-first-hardware-device-likely-to-launch-in-late-2026-everything-you-need-to-know/ar-BB1iOZ4Q",
+      "published_at": "2026-01-20T00:00:00.000Z",
+      "summary": "MSN은 Axios 보도를 인용해 OpenAI가 '손에 쥐거나 착용하는' 새로운 형태의 장치를 개발 중이며, 구체적 디자인은 비공개지만 2026년 말 공개 가능성이 가장 크다고 보도함. [web:88]",
+      "highlights": [],
+      "tags": [
+        "roadmap",
+        "devices"
+      ],
+      "score": 0.82
+    },
+    {
+      "id": "1c0666a587b59327fde982cbae119748bae3f56d",
+      "category": "computer_ai",
+      "title": "AI 단말 확산, 데이터센터 GPU·전력 인프라 투자 동반 확대",
+      "source": "Tech/Market Brief",
+      "url": "https://example.com/ai-device-infra-2026",
+      "published_at": "2026-02-04T00:00:00.000Z",
+      "summary": "수천만 대의 상시 연결형 AI 디바이스를 지원하기 위해 차세대 GPU와 전력·냉각 인프라에 대한 글로벌 설비 투자가 늘고 있으며, 2026년 CAPEX 지출의 큰 축이 되고 있다는 분석이 나온다. [web:64]",
+      "highlights": [],
+      "tags": [
+        "gpu",
+        "datacenter"
+      ],
+      "score": 0.78
+    },
+    {
+      "id": "b3f0c085daec33b6310a0c1487dbd885c010e088",
+      "category": "computer_ai",
+      "title": "살모넬라 오염 모링가 잎 분말 보충제, 65명 감염·여러 주로 확산",
+      "source": "FDA/CDC",
+      "url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-moringa-leaf-powder-january-2026",
+      "published_at": "2026-01-28T00:00:00.000Z",
+      "summary": "직접적인 AI 이슈는 아니지만, 데이터 분석·추적 시스템을 활용한 식품 안전 모니터링 사례로서 모링가 잎 분말 보충제 관련 살모넬라 발병이 28개 주에서 보고되고 있음. [web:56]",
+      "highlights": [],
+      "tags": [
+        "salmonella",
+        "supplement"
+      ],
+      "score": 0.8
+    },
+    {
+      "id": "108ee6d5176cc1ee45f49e98386d9825600a28ee",
+      "category": "global_biz",
+      "title": "1월 식품 트렌드: 영유아 분유 위기·배양육 투자 조정·EU 무역협정 논의",
+      "source": "FoodIngredientsFirst",
+      "url": "https://www.foodingredientsfirst.com/news/january-nestle-infant-formula-eu-trade-deals-food-trends.html",
+      "published_at": "2026-02-01T00:00:00.000Z",
+      "summary": "식품업계는 분유 공급 차질, 단기적인 배양육 투자 둔화, EU 차원의 신규 무역협정 협상이 맞물린 복합 환경 속에서 2026년을 시작하고 있다고 월간 리뷰에서 정리함. [web:66]",
+      "highlights": [],
+      "tags": [
+        "infant-formula",
+        "cultured-meat",
+        "eu-trade"
+      ],
+      "score": 0.86
+    },
+    {
+      "id": "e0dbdc82b269d8cf4bafa9bad009e92bbc40350c",
+      "category": "global_biz",
+      "title": "글로벌 식물성 식품 시장, 2032년 544억 달러 규모로 성장…대체단백 주류화 가속",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/news/global-plant-based-food-market-153000141.html",
+      "published_at": "2026-02-02T00:00:00.000Z",
+      "summary": "대형 식품사가 식물성 브랜드 인수·출시를 늘리면서, 2030년대에는 대체단백이 기존 육류와 함께 주류 카테고리로 자리잡을 것이라는 전망이 제시됨. [web:69]",
+      "highlights": [],
+      "tags": [
+        "plant-based",
+        "global"
+      ],
+      "score": 0.84
+    },
+    {
+      "id": "f77be3c5e797aed14e38f682b76ff87a59b73300",
+      "category": "global_biz",
+      "title": "미국 남부 3개 주, 설치류 배설물 노출 우려로 약 2,000개 식품 예방적 리콜",
+      "source": "Health.com/FDA",
+      "url": "https://www.health.com/rodent-waste-recall-january-2026-11895164",
+      "published_at": "2026-01-29T00:00:00.000Z",
+      "summary": "미시시피·앨라배마·루이지애나 주의 창고·매장에서 환경 문제가 확인되면서 과자·음료·통조림 등 다양한 품목 약 2,000개가 예방적 차원에서 리콜되었다고 보도됨. [web:70]",
+      "highlights": [],
+      "tags": [
+        "rodent",
+        "recall",
+        "usa"
+      ],
+      "score": 0.82
+    },
+    {
+      "id": "aa9b41aae2304f3c44513214ef448784789013f9",
+      "category": "global_biz",
+      "title": "배양육·식물성 단백질, 2030년대 식품 대기업 포트폴리오 핵심 축으로 부상",
+      "source": "Global Market Insights/업계 종합",
+      "url": "https://www.gminsights.com/industry-analysis/cultured-meat-market",
+      "published_at": "2025-12-16T00:00:00.000Z",
+      "summary": "전통 육가공·유제품 기업들이 장기 성장을 위해 배양육·식물성 단백질 브랜드 인수와 공동 개발에 적극 나서고 있다는 분석이 이어지고 있음. [web:50][web:66]",
+      "highlights": [],
+      "tags": [
+        "alt-protein",
+        "portfolio"
+      ],
+      "score": 0.8
     }
   ]
 }
