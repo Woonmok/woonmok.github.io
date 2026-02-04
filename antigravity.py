@@ -125,7 +125,8 @@ if __name__ == "__main__":
     print("antigravity.py main started")
     t = threading.Thread(target=weather_updater, daemon=True)
     t.start()
-    t.join()  # 메인 스레드는 날씨 스레드가 종료될 때까지 대기 (실제 서비스용)
+    # 텔레그램 봇 polling 추가
+    bot.infinity_polling()
 
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
 OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
