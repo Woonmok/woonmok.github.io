@@ -3,16 +3,24 @@ from urllib3.exceptions import NotOpenSSLWarning
 warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 def weather_updater():
     while True:
-        weather = get_weather()
-        if isinstance(weather, dict) and "temp" in weather:
+        try:
+            weather = get_weather()
             data = load_dashboard_data()
-            data["weather"] = {
-                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "temp": weather["temp"],
-                "humidity": weather["humidity"],
-                "desc": weather["desc"]
-            }
+            if isinstance(weather, dict) and "temp" in weather:
+                data["weather"] = {
+                    "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "temp": weather["temp"],
+                    "humidity": weather["humidity"],
+                    "desc": weather["desc"]
+                }
+            else:
+                # API 오류 등일 때도 weather 필드에 에러 메시지 기록
+                data["weather"] = {"updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "error": str(weather)}
             save_dashboard_data(data)
+        except Exception as e:
+            # 에러 발생 시 로그 파일에 기록
+            with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+                logf.write(f"[weather_updater] {datetime.now()} {e}\n")
         time.sleep(600)  # 10분마다 갱신
 
 # --- 모든 import를 맨 위로 이동 ---
