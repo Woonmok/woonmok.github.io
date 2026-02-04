@@ -202,9 +202,9 @@ def handle_telegram_command(msg_text, message):
     except Exception as e:
         return f"🚨 에러 발생: {str(e)}"
 
+
 @bot.message_handler(func=lambda m: True)
 def handle_msg(message):
     result = handle_telegram_command(message.text, message)
     if result:
-        # parse_mode 인자 없이 일반 텍스트로 전송 (마크다운 파싱 오류 방지)
         bot.reply_to(message, result, parse_mode=None)
