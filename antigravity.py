@@ -1,3 +1,6 @@
+import warnings
+from urllib3.exceptions import NotOpenSSLWarning
+warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 def weather_updater():
     while True:
         weather = get_weather()
