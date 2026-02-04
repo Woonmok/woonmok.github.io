@@ -3,11 +3,17 @@ from urllib3.exceptions import NotOpenSSLWarning
 warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 
 # --- 모든 import를 맨 위로 이동 ---
+
+
 import os, requests, telebot, re, time, threading, fcntl, json, warnings
 from datetime import datetime
 from dotenv import load_dotenv
+import urllib3
 from urllib3.exceptions import NotOpenSSLWarning
-warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
+# 모든 경고 완전 억제 (환경변수 + 코드)
+os.environ['PYTHONWARNINGS'] = 'ignore'
+warnings.filterwarnings('ignore')
+urllib3.disable_warnings(urllib3.exceptions.NotOpenSSLWarning)
 
 # --- 환경 변수 및 상수 ---
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
@@ -46,23 +52,30 @@ def get_weather():
             temp = data['main']['temp']
             humidity = data['main']['humidity']
             desc = data['weather'][0]['description']
-            return {
+            result = {
                 "text": f"진안 실시간 날씨: {desc}, 온도 {temp}°C, 습도 {humidity}%",
                 "temp": temp,
                 "humidity": humidity,
                 "desc": desc
             }
         else:
-            return {"text": f"[날씨] API 오류: {resp.status_code}"}
+            result = {"text": f"[날씨] API 오류: {resp.status_code}"}
+        with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+            logf.write(f"[get_weather] {datetime.now()} {result}\n")
+        return result
     except Exception as e:
-        return {"text": f"[날씨] 연결 오류: {e}"}
+        err = {"text": f"[날씨] 연결 오류: {e}"}
+        with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+            logf.write(f"[get_weather][EXCEPTION] {datetime.now()} {e}\n")
+        return err
 
 # --- 날씨 자동 업데이트 스레드 ---
 def weather_updater():
-    while True:
+    def update_once():
         try:
             weather = get_weather()
             data = load_dashboard_data()
+            # weather dict에 temp가 없더라도 반드시 weather 필드 기록
             if isinstance(weather, dict) and "temp" in weather:
                 data["weather"] = {
                     "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -71,12 +84,26 @@ def weather_updater():
                     "desc": weather["desc"]
                 }
             else:
-                data["weather"] = {"updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "error": str(weather)}
+                data["weather"] = {
+                    "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "error": str(weather.get('text', weather))
+                }
             save_dashboard_data(data)
         except Exception as e:
+            # 예외 발생 시에도 weather 필드에 에러 메시지 강제 기록
+            data = load_dashboard_data()
+            data["weather"] = {
+                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "error": f"weather_updater exception: {e}"
+            }
+            save_dashboard_data(data)
             with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
-                logf.write(f"[weather_updater] {datetime.now()} {e}\n")
+                logf.write(f"[weather_updater][EXCEPTION] {datetime.now()} {e}\n")
+    # 최초 1회 즉시 실행
+    update_once()
+    while True:
         time.sleep(600)
+        update_once()
 
 threading.Thread(target=weather_updater, daemon=True).start()
 threading.Thread(target=weather_updater, daemon=True).start()
