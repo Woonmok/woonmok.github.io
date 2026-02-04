@@ -35,7 +35,8 @@ def load_dashboard_data():
         return {"todo_list": [], "system_status": "NORMAL"}
 
 def save_dashboard_data(data):
-    path = 'dashboard_data.json'
+    path = '/Users/seunghoonoh/woonmok.github.io/dashboard_data.json'
+    print(f"[save_dashboard_data] 진입: {path}")
     try:
         with open(path, 'w', encoding='utf-8') as f:
             fcntl.flock(f.fileno(), fcntl.LOCK_EX)
@@ -47,8 +48,9 @@ def save_dashboard_data(data):
                 fcntl.flock(f.fileno(), fcntl.LOCK_UN)
     except Exception as e:
         print(f"[save_dashboard_data] 기록 실패: {path}, 에러: {e}")
-        with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+        with open("/Users/seunghoonoh/woonmok.github.io/logs/antigravity_error.log", "a", encoding="utf-8") as logf:
             logf.write(f"[save_dashboard_data][EXCEPTION] {datetime.now()} {e}\n")
+    print(f"[save_dashboard_data] 종료: {path}")
 
 # --- 날씨 API ---
 def get_weather():
@@ -91,7 +93,6 @@ def weather_updater():
             print("weather_updater: update_once called")
             weather = get_weather()
             data = load_dashboard_data()
-            # weather dict에 temp가 없더라도 반드시 weather 필드 기록
             if isinstance(weather, dict) and "temp" in weather:
                 data["weather"] = {
                     "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -114,9 +115,8 @@ def weather_updater():
                 "error": f"weather_updater exception: {e}"
             }
             save_dashboard_data(data)
-            with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+            with open("/Users/seunghoonoh/woonmok.github.io/logs/antigravity_error.log", "a", encoding="utf-8") as logf:
                 logf.write(f"[weather_updater][EXCEPTION] {datetime.now()} {e}\n")
-    # 최초 1회 즉시 실행
     update_once()
     while True:
         time.sleep(600)
@@ -124,7 +124,9 @@ def weather_updater():
 
 if __name__ == "__main__":
     print("antigravity.py main started")
-    threading.Thread(target=weather_updater, daemon=True).start()
+    t = threading.Thread(target=weather_updater, daemon=True)
+    t.start()
+    t.join(10)  # 10초만 대기 후 종료(테스트 목적)
 threading.Thread(target=weather_updater, daemon=True).start()
 
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
