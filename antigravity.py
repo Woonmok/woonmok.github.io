@@ -1,3 +1,19 @@
+def weather_updater():
+    while True:
+        weather = get_weather()
+        if isinstance(weather, dict) and "temp" in weather:
+            data = load_dashboard_data()
+            data["weather"] = {
+                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "temp": weather["temp"],
+                "humidity": weather["humidity"],
+                "desc": weather["desc"]
+            }
+            save_dashboard_data(data)
+        time.sleep(600)  # 10분마다 갱신
+
+# 날씨 자동 업데이트 스레드 시작
+threading.Thread(target=weather_updater, daemon=True).start()
 import os, requests, telebot, re, time, threading, fcntl, json
 from datetime import datetime
 from dotenv import load_dotenv
