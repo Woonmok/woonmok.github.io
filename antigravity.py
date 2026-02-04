@@ -184,7 +184,7 @@ def handle_msg(message):
     result = handle_telegram_command(message.text, message)
     
     if result:
-        # 마크다운 없이 일반 텍스트로 전송
+        # parse_mode 인자 없이 일반 텍스트로 전송 (마크다운 파싱 오류 방지)
         bot.reply_to(message, result)
 
 print("📡 [Wave Tree 오늘의 할일 관리 봇] 가동 중...")
