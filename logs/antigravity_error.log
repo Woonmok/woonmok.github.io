@@ -3344,3 +3344,7 @@ ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/
 [get_weather] 2026-02-04 19:38:05.313006 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
 [get_weather] 2026-02-04 19:38:15.484943 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
 [get_weather] 2026-02-04 19:38:25.655025 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[get_weather] 2026-02-04 19:38:35.861264 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[get_weather] 2026-02-04 19:38:46.052777 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[get_weather] 2026-02-04 19:38:56.274469 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[get_weather] 2026-02-04 19:39:06.482180 {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
