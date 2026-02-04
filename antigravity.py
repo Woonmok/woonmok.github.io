@@ -1,40 +1,31 @@
 import warnings
 from urllib3.exceptions import NotOpenSSLWarning
 warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
-def weather_updater():
-    while True:
-        try:
-            weather = get_weather()
-            data = load_dashboard_data()
-            if isinstance(weather, dict) and "temp" in weather:
-                data["weather"] = {
-                    "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "temp": weather["temp"],
-                    "humidity": weather["humidity"],
-                    "desc": weather["desc"]
-                }
-            else:
-                # API 오류 등일 때도 weather 필드에 에러 메시지 기록
-                data["weather"] = {"updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "error": str(weather)}
-            save_dashboard_data(data)
-        except Exception as e:
-            # 에러 발생 시 로그 파일에 기록
-            with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
-                logf.write(f"[weather_updater] {datetime.now()} {e}\n")
-        time.sleep(600)  # 10분마다 갱신
 
 # --- 모든 import를 맨 위로 이동 ---
-import os, requests, telebot, re, time, threading, fcntl, json
+import os, requests, telebot, re, time, threading, fcntl, json, warnings
 from datetime import datetime
 from dotenv import load_dotenv
+from urllib3.exceptions import NotOpenSSLWarning
+warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 
+# --- 환경 변수 및 상수 ---
+OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
+OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
 
-# --- 함수 정의 순서 정정: get_weather, load_dashboard_data, save_dashboard_data 먼저 ---
+load_dotenv()
+os.chdir('/Users/seunghoonoh/woonmok.github.io')
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
+bot = telebot.TeleBot(TOKEN)
+
+# --- 파일 입출력 함수 ---
 def load_dashboard_data():
     try:
         with open('dashboard_data.json', 'r', encoding='utf-8') as f:
             return json.load(f)
-    except:
+    except Exception:
         return {"todo_list": [], "system_status": "NORMAL"}
 
 def save_dashboard_data(data):
@@ -45,10 +36,11 @@ def save_dashboard_data(data):
         finally:
             fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
+# --- 날씨 API ---
 def get_weather():
     try:
         url = f"https://api.openweathermap.org/data/2.5/weather?q={OPENWEATHER_CITY}&appid={OPENWEATHER_API_KEY}&units=metric&lang=kr"
-        resp = requests.get(url, timeout=5)
+        resp = requests.get(url, timeout=10)
         if resp.status_code == 200:
             data = resp.json()
             temp = data['main']['temp']
@@ -65,20 +57,28 @@ def get_weather():
     except Exception as e:
         return {"text": f"[날씨] 연결 오류: {e}"}
 
+# --- 날씨 자동 업데이트 스레드 ---
 def weather_updater():
     while True:
-        weather = get_weather()
-        if isinstance(weather, dict) and "temp" in weather:
+        try:
+            weather = get_weather()
             data = load_dashboard_data()
-            data["weather"] = {
-                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "temp": weather["temp"],
-                "humidity": weather["humidity"],
-                "desc": weather["desc"]
-            }
+            if isinstance(weather, dict) and "temp" in weather:
+                data["weather"] = {
+                    "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "temp": weather["temp"],
+                    "humidity": weather["humidity"],
+                    "desc": weather["desc"]
+                }
+            else:
+                data["weather"] = {"updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "error": str(weather)}
             save_dashboard_data(data)
-        time.sleep(600)  # 10분마다 갱신
+        except Exception as e:
+            with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+                logf.write(f"[weather_updater] {datetime.now()} {e}\n")
+        time.sleep(600)
 
+threading.Thread(target=weather_updater, daemon=True).start()
 threading.Thread(target=weather_updater, daemon=True).start()
 
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
@@ -126,6 +126,8 @@ def get_weather():
     except Exception as e:
         return {"text": f"[날씨] 연결 오류: {e}"}
 
+
+# --- 텔레그램 명령 처리 ---
 def handle_telegram_command(msg_text, message):
     try:
         if msg_text.strip() in ["/날씨", "날씨", "/weather"]:
@@ -229,10 +231,14 @@ def handle_telegram_command(msg_text, message):
             return None
         return None
     except Exception as e:
+        # 모든 예외를 로그에 남김
+        with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+            logf.write(f"[telegram_command] {datetime.now()} {e}\n")
         return f"🚨 에러 발생: {str(e)}"
 
 @bot.message_handler(func=lambda m: True)
 def handle_msg(message):
     result = handle_telegram_command(message.text, message)
     if result:
+        # parse_mode 제거 (마크다운 파싱 오류 방지)
         bot.reply_to(message, result)
