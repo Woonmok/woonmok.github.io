@@ -119,7 +119,7 @@ def handle_telegram_command(msg_text, message):
         elif msg_text.startswith("할일"):
             task_text = msg_text.replace("할일:", "").replace("할일 :", "").strip()
             if not task_text:
-                bot.send_message(message.chat.id, "❌ 할일을 입력해주세요! 예) 할일: 1. 회의 준비", parse_mode=None)
+                bot.send_message(message.chat.id, "❌ 할일을 입력해주세요! 예) 할일: 1. 회의 준비")
                 return None
             tasks = [t.strip() for t in task_text.split(",")]
             parsed_tasks = []
@@ -132,7 +132,7 @@ def handle_telegram_command(msg_text, message):
                         if 1 <= task_id <= 3:
                             parsed_tasks.append({"id": task_id, "text": task})
             if not parsed_tasks:
-                bot.send_message(message.chat.id, "❌ 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리스트", parse_mode=None)
+                bot.send_message(message.chat.id, "❌ 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리스트")
                 return None
             current_todo = {item["id"]: item for item in data.get("todo_list", [])}
             for new_item in parsed_tasks:
@@ -146,7 +146,7 @@ def handle_telegram_command(msg_text, message):
             save_dashboard_data(data)
             task_list = "\n".join([f"✓ {item['text']}" for item in data["todo_list"]])
             response = f"✅ 할일이 업데이트되었습니다!\n\n현재 할일 목록:\n{task_list}"
-            bot.send_message(message.chat.id, response, parse_mode=None)
+            bot.send_message(message.chat.id, response)
             return None
         return None
     except Exception as e:
@@ -156,4 +156,4 @@ def handle_telegram_command(msg_text, message):
 def handle_msg(message):
     result = handle_telegram_command(message.text, message)
     if result:
-        bot.reply_to(message, result, parse_mode=None)
+        bot.reply_to(message, result)
