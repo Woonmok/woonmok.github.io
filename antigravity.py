@@ -35,12 +35,20 @@ def load_dashboard_data():
         return {"todo_list": [], "system_status": "NORMAL"}
 
 def save_dashboard_data(data):
-    with open('dashboard_data.json', 'w', encoding='utf-8') as f:
-        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
-        try:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        finally:
-            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+    path = 'dashboard_data.json'
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+            try:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+                print(f"[save_dashboard_data] 기록 성공: {path}")
+                print(f"[save_dashboard_data] 데이터: {data}")
+            finally:
+                fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+    except Exception as e:
+        print(f"[save_dashboard_data] 기록 실패: {path}, 에러: {e}")
+        with open("logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+            logf.write(f"[save_dashboard_data][EXCEPTION] {datetime.now()} {e}\n")
 
 # --- 날씨 API ---
 def get_weather():
