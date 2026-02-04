@@ -120,12 +120,12 @@ def weather_updater():
         time.sleep(600)
         update_once()
 
+
 if __name__ == "__main__":
     print("antigravity.py main started")
     t = threading.Thread(target=weather_updater, daemon=True)
     t.start()
-    t.join(10)  # 10초만 대기 후 종료(테스트 목적)
-threading.Thread(target=weather_updater, daemon=True).start()
+    t.join()  # 메인 스레드는 날씨 스레드가 종료될 때까지 대기 (실제 서비스용)
 
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
 OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
