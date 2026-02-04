@@ -1,6 +1,31 @@
 import os, requests, telebot, re, time, threading, fcntl, json
+from datetime import datetime
+from dotenv import load_dotenv
+
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
 OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
+
+load_dotenv()
+os.chdir('/Users/seunghoonoh/woonmok.github.io')
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
+bot = telebot.TeleBot(TOKEN)
+
+def load_dashboard_data():
+    try:
+        with open('dashboard_data.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return {"todo_list": [], "system_status": "NORMAL"}
+
+def save_dashboard_data(data):
+    with open('dashboard_data.json', 'w', encoding='utf-8') as f:
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        try:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
 def get_weather():
     try:
@@ -22,80 +47,30 @@ def get_weather():
     except Exception as e:
         return {"text": f"[날씨] 연결 오류: {e}"}
 
-# 10분마다 날씨 정보 저장 스레드
-def weather_updater():
-    while True:
-        weather = get_weather()
-        if isinstance(weather, dict) and "temp" in weather:
-            data = load_dashboard_data()
-            data["weather"] = {
-                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "temp": weather["temp"],
-                "humidity": weather["humidity"],
-                "desc": weather["desc"]
-            }
-            save_dashboard_data(data)
-        time.sleep(600)  # 10분
-
-threading.Thread(target=weather_updater, daemon=True).start()
-from datetime import datetime
-from dotenv import load_dotenv
-
-# .env 파일 로드
-load_dotenv()
-
-# 1. 지휘소 경로 및 봇 설정
-os.chdir('/Users/seunghoonoh/woonmok.github.io')
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-if not TOKEN:
-    raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
-bot = telebot.TeleBot(TOKEN)
-
-def load_dashboard_data():
-    """dashboard_data.json 읽기"""
-    try:
-        with open('dashboard_data.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except:
-        return {"todo_list": [], "system_status": "NORMAL"}
-
-def save_dashboard_data(data):
-    """dashboard_data.json 저장 (파일 잠금)"""
-    with open('dashboard_data.json', 'w', encoding='utf-8') as f:
-        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
-        try:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        finally:
-            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
-
 def handle_telegram_command(msg_text, message):
-        # /날씨 명령 처리
+    try:
         if msg_text.strip() in ["/날씨", "날씨", "/weather"]:
             weather = get_weather()
             return weather["text"] if isinstance(weather, dict) else str(weather)
-    """텔레그램 명령 처리"""
-    try:
+
         data = load_dashboard_data()
-        
-        # 0️⃣ 슬래시 명령어
+
         if msg_text == "/start":
             return "👋 안녕하세요! Wave Tree 할일 관리 봇입니다.\n\n사용 가능한 명령어:\n- /todo 또는 '목록' - 할일 목록\n- 추가: 작업명 - 할일 추가\n- 완료: ID - 할일 완료\n- 삭제: ID - 할일 삭제\n- 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
-        
+
         elif msg_text in ["/todo", "/목록", "/list"]:
             todos = data.get("todo_list", [])
             if not todos:
                 return "📋 오늘의 할일이 없습니다."
-            
             msg = "📋 오늘의 할일\n\n"
             for item in todos:
                 status = "✅" if item["completed"] else "⭕"
                 msg += f"{status} [{item['id']}] {item['text']}\n"
             return msg
-        
+
         elif msg_text in ["/help", "/도움말"]:
             return "📚 **명령어 도움말**\n\n▪️ /todo - 할일 목록 보기\n▪️ 추가: 작업명 - 새 할일 추가\n▪️ 완료: 1 - ID로 완료 처리\n▪️ 삭제: 1 - ID로 삭제\n▪️ 목록 - 할일 목록 보기\n▪️ 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
-        
-        # 1️⃣ 할일 추가: "추가: 작업명"
+
         if msg_text.startswith("추가:"):
             task = msg_text.replace("추가:", "").strip()
             max_id = max([item.get("id", 0) for item in data.get("todo_list", [])] or [0])
@@ -103,8 +78,7 @@ def handle_telegram_command(msg_text, message):
             data["todo_list"].append(new_todo)
             save_dashboard_data(data)
             return f"✅ '{task}' 이 오늘의 할일에 추가되었습니다! (ID: {max_id + 1})"
-        
-        # 2️⃣ 할일 완료: "완료: 작업명" 또는 "완료: ID"
+
         elif msg_text.startswith("완료:"):
             target = msg_text.replace("완료:", "").strip()
             for item in data.get("todo_list", []):
@@ -113,8 +87,7 @@ def handle_telegram_command(msg_text, message):
                     save_dashboard_data(data)
                     return f"🎉 '{item['text']}' 완료했습니다!"
             return "❌ 해당 할일을 찾을 수 없습니다."
-        
-        # 3️⃣ 할일 삭제: "삭제: 작업명" 또는 "삭제: ID"
+
         elif msg_text.startswith("삭제:"):
             target = msg_text.replace("삭제:", "").strip()
             original_len = len(data["todo_list"])
@@ -126,82 +99,58 @@ def handle_telegram_command(msg_text, message):
                 save_dashboard_data(data)
                 return f"🗑️ 할일이 삭제되었습니다."
             return "❌ 해당 할일을 찾을 수 없습니다."
-        
-        # 4️⃣ 할일 목록 조회: "목록"
+
         elif msg_text in ["목록", "오늘", "할일"]:
             todos = data.get("todo_list", [])
             if not todos:
                 return "📋 오늘의 할일이 없습니다."
-            
             msg = "📋 **오늘의 할일**\n\n"
             for item in todos:
                 status = "✅" if item["completed"] else "⭕"
                 msg += f"{status} [{item['id']}] {item['text']}\n"
             return msg
-        
-        # 5️⃣ 상태 업데이트: "상태: 메시지"
+
         elif msg_text.startswith("상태:"):
             status_msg = msg_text.replace("상태:", "").strip()
             data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             save_dashboard_data(data)
             return f"📊 대시보드 상태: {status_msg}"
-        
-        # 6️⃣ 할일 추가/덮어쓰기: "할일: 1. xxx, 2. yyy"
+
         elif msg_text.startswith("할일"):
-            # "할일:" 또는 "할일 :" 모두 처리
             task_text = msg_text.replace("할일:", "").replace("할일 :", "").strip()
-            
             if not task_text:
                 bot.send_message(message.chat.id, "❌ 할일을 입력해주세요! 예) 할일: 1. 회의 준비", parse_mode=None)
                 return None
-            
-            # 콤마로 구분된 여러 항목 처리
             tasks = [t.strip() for t in task_text.split(",")]
-            
-            # 입력된 항목들 파싱 (번호 추출)
             parsed_tasks = []
             for task in tasks:
                 if task:
-                    # "1. xxx" 형식에서 번호 추출
                     parts = task.split(".", 1)
                     if len(parts) == 2 and parts[0].strip().isdigit():
                         task_id = int(parts[0].strip())
                         task_text_content = parts[1].strip()
-                        if 1 <= task_id <= 3:  # 최대 3개까지만
+                        if 1 <= task_id <= 3:
                             parsed_tasks.append({"id": task_id, "text": task})
-            
             if not parsed_tasks:
                 bot.send_message(message.chat.id, "❌ 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리스트", parse_mode=None)
                 return None
-            
-            # 기존 todo_list에서 번호에 맞게 덮어쓰기
             current_todo = {item["id"]: item for item in data.get("todo_list", [])}
-            
             for new_item in parsed_tasks:
                 task_id = new_item["id"]
                 if task_id in current_todo:
-                    # 기존 항목 덮어쓰기
                     current_todo[task_id]["text"] = new_item["text"]
                 else:
-                    # 새 항목 추가
                     current_todo[task_id] = {"text": new_item["text"], "completed": False, "id": task_id}
-            
-            # 최종 todo_list 정렬 (ID 순서대로)
             data["todo_list"] = sorted(current_todo.values(), key=lambda x: x["id"])
             data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             save_dashboard_data(data)
-            
-            # 현재 상태 출력
             task_list = "\n".join([f"✓ {item['text']}" for item in data["todo_list"]])
             response = f"✅ 할일이 업데이트되었습니다!\n\n현재 할일 목록:\n{task_list}"
             bot.send_message(message.chat.id, response, parse_mode=None)
             return None
-        
-        return None  # 처리되지 않은 명령
-
+        return None
     except Exception as e:
         return f"🚨 에러 발생: {str(e)}"
-
 
 @bot.message_handler(func=lambda m: True)
 def handle_msg(message):
