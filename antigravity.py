@@ -1,3 +1,8 @@
+
+import os, requests, telebot, re, time, threading, fcntl, json
+from datetime import datetime
+from dotenv import load_dotenv
+
 def weather_updater():
     while True:
         weather = get_weather()
@@ -14,9 +19,6 @@ def weather_updater():
 
 # 날씨 자동 업데이트 스레드 시작
 threading.Thread(target=weather_updater, daemon=True).start()
-import os, requests, telebot, re, time, threading, fcntl, json
-from datetime import datetime
-from dotenv import load_dotenv
 
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
 OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
