@@ -3529,3 +3529,5 @@ ImportError: cannot import name 'NotOpenSSLWarning' from 'urllib3.exceptions' (/
 [get_weather] 2026-02-05 01:38:32.836052 {'text': '진안 실시간 날씨: 튼구름, 온도 -0.87°C, 습도 79%', 'temp': -0.87, 'humidity': 79, 'desc': '튼구름'}
 [get_weather] 2026-02-05 01:48:33.478900 {'text': '진안 실시간 날씨: 튼구름, 온도 -0.87°C, 습도 79%', 'temp': -0.87, 'humidity': 79, 'desc': '튼구름'}
 [get_weather] 2026-02-05 01:58:34.013669 {'text': '진안 실시간 날씨: 튼구름, 온도 -0.87°C, 습도 79%', 'temp': -0.87, 'humidity': 79, 'desc': '튼구름'}
+[get_weather] 2026-02-05 02:04:49.249177 {'text': '진안 실시간 날씨: 튼구름, 온도 -0.87°C, 습도 79%', 'temp': -0.87, 'humidity': 79, 'desc': '튼구름'}
+[get_weather] 2026-02-05 02:04:50.525557 {'text': '진안 실시간 날씨: 튼구름, 온도 -0.87°C, 습도 79%', 'temp': -0.87, 'humidity': 79, 'desc': '튼구름'}
