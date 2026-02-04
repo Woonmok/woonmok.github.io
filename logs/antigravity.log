@@ -12594,3 +12594,275 @@ weather_updater thread started
 weather_updater: update_once called
 get_weather() called
 Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:35:42', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:35:42', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:35:52', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:35:52', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:36:02', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:36:02', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:36:12', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:36:12', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:36:23', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:36:23', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:36:33', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:36:33', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:36:43', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:36:43', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:36:53', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:36:53', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:37:04', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:37:04', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:37:14', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:37:14', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:37:24', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:37:24', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:37:34', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:37:34', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:37:44', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:37:44', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:37:55', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:37:55', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:38:05', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:38:05', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+antigravity.py main started
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
+Response status: 200
+Weather data: {'coord': {'lon': 127.4248, 'lat': 35.7917}, 'weather': [{'id': 802, 'main': 'Clouds', 'description': '구름조금', 'icon': '03n'}], 'base': 'stations', 'main': {'temp': -1.18, 'feels_like': -1.18, 'temp_min': -1.18, 'temp_max': -1.18, 'pressure': 1022, 'humidity': 79, 'sea_level': 1022, 'grnd_level': 973}, 'visibility': 10000, 'wind': {'speed': 0.77, 'deg': 139, 'gust': 0.42}, 'clouds': {'all': 29}, 'dt': 1770201077, 'sys': {'country': 'KR', 'sunrise': 1770157719, 'sunset': 1770195580}, 'timezone': 32400, 'id': 1845457, 'name': 'Jinan', 'cod': 200}
+get_weather result: {'text': '진안 실시간 날씨: 구름조금, 온도 -1.18°C, 습도 79%', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+[save_dashboard_data] 진입: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 기록 성공: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+[save_dashboard_data] 데이터: {'todo_list': [{'text': '1. 대시보드_자동화 완료 하기', 'completed': False, 'id': 1}, {'text': '2. 최소장비리스트 만들기', 'completed': False, 'id': 2}, {'text': '3. DSP 플러그인 제작하기', 'completed': False, 'id': 3}], 'system_status': 'NORMAL', 'last_updated': '2026-02-04 14:49:47', 'intelligence': [{'title': '미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중', 'summary': "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵", 'tag': '중요', 'score': '0.85'}, {'title': "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상", 'summary': "[10/10] | 핵심 기술 및 시장 트렌드 직접 일치\n분석: 본 뉴스는 '진안 Farmerstree' 프로젝트의 핵심 축인 '균사체 배양육' 부문에 대한 시장의 강력한 지지와 미래 트렌드를 명확히 보여줍니다", 'tag': '중요', 'score': '0.85'}, {'title': 'FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련', 'summary': "[10/10] | FDA 리스테리아 경고, 배양육 식품 안전 및 AI 역할 강조\n분석: 이번 FDA의 리스테리아 긴급 알림은 '진안 Farmerstree' 프로젝트의 핵심 축인 균사체 배양육의 식품 안전성에 대한 중요성을 최고 수준으로 강조합니다", 'tag': '긴급', 'score': '0.95'}], 'weather': {'updated': '2026-02-04 19:38:15', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}}
+[save_dashboard_data] 종료: /Users/seunghoonoh/woonmok.github.io/dashboard_data.json
+weather field written: {'updated': '2026-02-04 19:38:15', 'temp': -1.18, 'humidity': 79, 'desc': '구름조금'}
+weather_updater thread started
+weather_updater: update_once called
+get_weather() called
+Requesting: https://api.openweathermap.org/data/2.5/weather?q=Jinan,KR&appid=73522ad14e4276bdf715f0e796fc623f&units=metric&lang=kr
