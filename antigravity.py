@@ -1,6 +1,4 @@
-import warnings
-from urllib3.exceptions import NotOpenSSLWarning
-warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
+
 
 # --- 모든 import를 맨 위로 이동 ---
 
@@ -9,11 +7,11 @@ import os, requests, telebot, re, time, threading, fcntl, json, warnings
 from datetime import datetime
 from dotenv import load_dotenv
 import urllib3
-from urllib3.exceptions import NotOpenSSLWarning
+
 # 모든 경고 완전 억제 (환경변수 + 코드)
 os.environ['PYTHONWARNINGS'] = 'ignore'
 warnings.filterwarnings('ignore')
-urllib3.disable_warnings(urllib3.exceptions.NotOpenSSLWarning)
+
 
 # --- 환경 변수 및 상수 ---
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
