@@ -1,4 +1,21 @@
 import os, requests, telebot, re, time, threading, fcntl, json
+OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
+OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
+
+def get_weather():
+    try:
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={OPENWEATHER_CITY}&appid={OPENWEATHER_API_KEY}&units=metric&lang=kr"
+        resp = requests.get(url, timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            temp = data['main']['temp']
+            humidity = data['main']['humidity']
+            desc = data['weather'][0]['description']
+            return f"진안 실시간 날씨: {desc}, 온도 {temp}°C, 습도 {humidity}%"
+        else:
+            return f"[날씨] API 오류: {resp.status_code}"
+    except Exception as e:
+        return f"[날씨] 연결 오류: {e}"
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -30,6 +47,9 @@ def save_dashboard_data(data):
             fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
 def handle_telegram_command(msg_text, message):
+            # /날씨 명령 처리
+            if msg_text.strip() in ["/날씨", "날씨", "/weather"]:
+                return get_weather()
     """텔레그램 명령 처리"""
     try:
         data = load_dashboard_data()
