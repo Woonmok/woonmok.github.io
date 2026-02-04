@@ -1,3 +1,6 @@
 .env
 .venv/
 wave-tree-ai-pilot/.venv/
+# Ignore log files
+logs/antigravity_error.log
+logs/*.log
