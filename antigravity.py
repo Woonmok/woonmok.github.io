@@ -11,11 +11,33 @@ def get_weather():
             temp = data['main']['temp']
             humidity = data['main']['humidity']
             desc = data['weather'][0]['description']
-            return f"진안 실시간 날씨: {desc}, 온도 {temp}°C, 습도 {humidity}%"
+            return {
+                "text": f"진안 실시간 날씨: {desc}, 온도 {temp}°C, 습도 {humidity}%",
+                "temp": temp,
+                "humidity": humidity,
+                "desc": desc
+            }
         else:
-            return f"[날씨] API 오류: {resp.status_code}"
+            return {"text": f"[날씨] API 오류: {resp.status_code}"}
     except Exception as e:
-        return f"[날씨] 연결 오류: {e}"
+        return {"text": f"[날씨] 연결 오류: {e}"}
+
+# 10분마다 날씨 정보 저장 스레드
+def weather_updater():
+    while True:
+        weather = get_weather()
+        if isinstance(weather, dict) and "temp" in weather:
+            data = load_dashboard_data()
+            data["weather"] = {
+                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "temp": weather["temp"],
+                "humidity": weather["humidity"],
+                "desc": weather["desc"]
+            }
+            save_dashboard_data(data)
+        time.sleep(600)  # 10분
+
+threading.Thread(target=weather_updater, daemon=True).start()
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -47,9 +69,10 @@ def save_dashboard_data(data):
             fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
 def handle_telegram_command(msg_text, message):
-            # /날씨 명령 처리
-            if msg_text.strip() in ["/날씨", "날씨", "/weather"]:
-                return get_weather()
+        # /날씨 명령 처리
+        if msg_text.strip() in ["/날씨", "날씨", "/weather"]:
+            weather = get_weather()
+            return weather["text"] if isinstance(weather, dict) else str(weather)
     """텔레그램 명령 처리"""
     try:
         data = load_dashboard_data()
