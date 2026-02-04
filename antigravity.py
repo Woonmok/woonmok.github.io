@@ -1,8 +1,3 @@
-
-import os, requests, telebot, re, time, threading, fcntl, json
-from datetime import datetime
-from dotenv import load_dotenv
-
 def weather_updater():
     while True:
         weather = get_weather()
@@ -17,7 +12,26 @@ def weather_updater():
             save_dashboard_data(data)
         time.sleep(600)  # 10분마다 갱신
 
-# 날씨 자동 업데이트 스레드 시작
+# --- 모든 import를 맨 위로 이동 ---
+import os, requests, telebot, re, time, threading, fcntl, json
+from datetime import datetime
+from dotenv import load_dotenv
+
+# --- 날씨 자동 업데이트 스레드 정의 및 시작 ---
+def weather_updater():
+    while True:
+        weather = get_weather()
+        if isinstance(weather, dict) and "temp" in weather:
+            data = load_dashboard_data()
+            data["weather"] = {
+                "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "temp": weather["temp"],
+                "humidity": weather["humidity"],
+                "desc": weather["desc"]
+            }
+            save_dashboard_data(data)
+        time.sleep(600)  # 10분마다 갱신
+
 threading.Thread(target=weather_updater, daemon=True).start()
 
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
