@@ -17,7 +17,43 @@ import os, requests, telebot, re, time, threading, fcntl, json
 from datetime import datetime
 from dotenv import load_dotenv
 
-# --- 날씨 자동 업데이트 스레드 정의 및 시작 ---
+
+# --- 함수 정의 순서 정정: get_weather, load_dashboard_data, save_dashboard_data 먼저 ---
+def load_dashboard_data():
+    try:
+        with open('dashboard_data.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except:
+        return {"todo_list": [], "system_status": "NORMAL"}
+
+def save_dashboard_data(data):
+    with open('dashboard_data.json', 'w', encoding='utf-8') as f:
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        try:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+
+def get_weather():
+    try:
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={OPENWEATHER_CITY}&appid={OPENWEATHER_API_KEY}&units=metric&lang=kr"
+        resp = requests.get(url, timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            temp = data['main']['temp']
+            humidity = data['main']['humidity']
+            desc = data['weather'][0]['description']
+            return {
+                "text": f"진안 실시간 날씨: {desc}, 온도 {temp}°C, 습도 {humidity}%",
+                "temp": temp,
+                "humidity": humidity,
+                "desc": desc
+            }
+        else:
+            return {"text": f"[날씨] API 오류: {resp.status_code}"}
+    except Exception as e:
+        return {"text": f"[날씨] 연결 오류: {e}"}
+
 def weather_updater():
     while True:
         weather = get_weather()
