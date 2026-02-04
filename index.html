@@ -470,6 +470,7 @@
                 const data = await dashboardRes.json();
                 const statusData = statusRes.ok ? await statusRes.json() : null;
 
+
                 // Update System Status Visuals
                 if (data.system_status === 'EMERGENCY') {
                     document.body.style.border = "5px solid red";
@@ -480,6 +481,14 @@
                 } else {
                     document.body.style.border = "none";
                     document.querySelector('.project-title h1').innerText = "The Wave Tree Project";
+                }
+
+                // Update Weather Info from dashboard_data.json
+                if (data.weather) {
+                    const temp = typeof data.weather.temp === 'number' ? data.weather.temp : '-';
+                    const humidity = typeof data.weather.humidity === 'number' ? data.weather.humidity : '-';
+                    const desc = data.weather.desc || '';
+                    document.getElementById('weather-info').innerText = `기온: ${temp}°C | 습도: ${humidity}% (${desc})`;
                 }
 
                 // Update Intelligence Hub (최대 2개만 표시)

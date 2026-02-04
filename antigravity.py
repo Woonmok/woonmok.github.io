@@ -145,7 +145,8 @@ def load_dashboard_data():
         return {"todo_list": [], "system_status": "NORMAL"}
 
 def save_dashboard_data(data):
-    with open('dashboard_data.json', 'w', encoding='utf-8') as f:
+    path = '/Users/seunghoonoh/woonmok.github.io/dashboard_data.json'
+    with open(path, 'w', encoding='utf-8') as f:
         fcntl.flock(f.fileno(), fcntl.LOCK_EX)
         try:
             json.dump(data, f, ensure_ascii=False, indent=2)
@@ -274,7 +275,7 @@ def handle_telegram_command(msg_text, message):
             task_list = "\n".join([f"✓ {item['text']}" for item in data["todo_list"]])
             response = f"✅ 할일이 업데이트되었습니다!\n\n현재 할일 목록:\n{task_list}"
             bot.send_message(message.chat.id, response)
-            return None
+            return response
         return None
     except Exception as e:
         # 모든 예외를 로그에 남김
