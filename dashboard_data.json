@@ -17,8 +17,30 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-04 14:49:47",
+  "last_updated": "2026-02-05 14:34:11",
   "intelligence": [
+    {
+      "title": "OpenAI, 조니 아이브와 협업한 첫 AI 하드웨어를 2026년 하반기 공개 예정",
+      "summary": "다보스포럼에서 OpenAI의 크리스 레헤인이 2026년 하반기 첫 소비자용 AI 단말을 선보일 계획이라며, 전 애플 디자인 수장 조니 아이브와 함께 새로운 폼팩터를 개발 중이라고 밝혔다. [web:64]",
+      "tag": "computer_ai",
+      "score": "0.91",
+      "url": "https://economictimes.com/us/science-tech/openai-plans-late-2026-launch-of-first-ai-hardware-device-designed-with-jony-ive-will/article"
+    },
+    {
+      "title": "앰브리올라 치즈, 리스테리아 검출로 수만 개 제품 리콜",
+      "summary": "앰브리올라사가 제조한 페코리노 로마노 치즈가 20개 주에서 판매된 뒤 리스테리아 오염 가능성이 확인되면서 수천 개 용기가 리콜 대상이 되었다고 전함. [web:97]",
+      "tag": "listeria_free",
+      "score": "0.91",
+      "url": "https://www.usatoday.com/story/grocery/2026/01/13/cheese-recall-listeria-product-list/88157637007/"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-05 17:46:44",
+    "temp": 3.35,
+    "humidity": 87,
+    "desc": "구름조금"
+  },
+  "intelligence_backup": [
     {
       "title": "미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중",
       "summary": "[9/10] | 미국 배양육 시장의 균사체 전환, Farmerstree 전략의 강력한 검증\n분석: 미국 배양육 시장이 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격히 이동 중이라는 뉴스는 '진안 Farmerstree' 프로젝트의 핵",
@@ -37,11 +59,5 @@
       "tag": "긴급",
       "score": "0.95"
     }
-  ],
-  "weather": {
-    "updated": "2026-02-05 17:46:44",
-    "temp": 3.35,
-    "humidity": 87,
-    "desc": "구름조금"
-  }
+  ]
 }
