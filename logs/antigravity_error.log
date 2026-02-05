@@ -3890,3 +3890,107 @@ Traceback (most recent call last):
     raise ApiTelegramException(method_name, result, result_json)
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
 "
+[get_weather] 2026-02-05 14:32:01.546554 {'text': '진안 실시간 날씨: 온흐림, 온도 8.7°C, 습도 56%', 'temp': 8.7, 'humidity': 56, 'desc': '온흐림'}
+2026-02-05 14:34:15,208 (__init__.py:1241 MainThread) ERROR - TeleBot: "Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2026-02-05 14:34:15,208 (__init__.py:1243 MainThread) ERROR - TeleBot: "Exception traceback:
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 97, in run
+    task(*args, **kwargs)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+"
+2026-02-05 14:37:56,076 (__init__.py:1241 MainThread) ERROR - TeleBot: "Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2026-02-05 14:37:56,076 (__init__.py:1243 MainThread) ERROR - TeleBot: "Exception traceback:
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 97, in run
+    task(*args, **kwargs)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+"
+[get_weather] 2026-02-05 14:42:02.000319 {'text': '진안 실시간 날씨: 온흐림, 온도 8.7°C, 습도 56%', 'temp': 8.7, 'humidity': 56, 'desc': '온흐림'}
+2026-02-05 14:42:39,736 (__init__.py:1241 MainThread) ERROR - TeleBot: "Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2026-02-05 14:42:39,737 (__init__.py:1243 MainThread) ERROR - TeleBot: "Exception traceback:
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 97, in run
+    task(*args, **kwargs)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+"
+2026-02-05 14:47:16,482 (__init__.py:1241 MainThread) ERROR - TeleBot: "Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2026-02-05 14:47:16,482 (__init__.py:1243 MainThread) ERROR - TeleBot: "Exception traceback:
+Traceback (most recent call last):
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/util.py", line 97, in run
+    task(*args, **kwargs)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "/Users/seunghoonoh/woonmok.github.io/.venv/lib/python3.9/site-packages/telebot/apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+"
+[get_weather] 2026-02-05 14:52:02.440488 {'text': '진안 실시간 날씨: 온흐림, 온도 8.7°C, 습도 56%', 'temp': 8.7, 'humidity': 56, 'desc': '온흐림'}
+[get_weather] 2026-02-05 15:02:03.400208 {'text': '진안 실시간 날씨: 튼구름, 온도 8.7°C, 습도 56%', 'temp': 8.7, 'humidity': 56, 'desc': '튼구름'}
+[get_weather] 2026-02-05 15:12:04.227896 {'text': '진안 실시간 날씨: 튼구름, 온도 8.7°C, 습도 56%', 'temp': 8.7, 'humidity': 56, 'desc': '튼구름'}
+[get_weather] 2026-02-05 15:22:04.639204 {'text': '진안 실시간 날씨: 튼구름, 온도 8.7°C, 습도 56%', 'temp': 8.7, 'humidity': 56, 'desc': '튼구름'}
+[get_weather] 2026-02-05 15:32:05.300673 {'text': '진안 실시간 날씨: 약간의 구름이 낀 하늘, 온도 7.77°C, 습도 59%', 'temp': 7.77, 'humidity': 59, 'desc': '약간의 구름이 낀 하늘'}
+[get_weather] 2026-02-05 15:42:05.659040 {'text': '진안 실시간 날씨: 약간의 구름이 낀 하늘, 온도 7.77°C, 습도 59%', 'temp': 7.77, 'humidity': 59, 'desc': '약간의 구름이 낀 하늘'}
+[get_weather] 2026-02-05 15:52:06.276391 {'text': '진안 실시간 날씨: 약간의 구름이 낀 하늘, 온도 7.77°C, 습도 59%', 'temp': 7.77, 'humidity': 59, 'desc': '약간의 구름이 낀 하늘'}
+[get_weather] 2026-02-05 16:02:06.706222 {'text': '진안 실시간 날씨: 약간의 구름이 낀 하늘, 온도 7.77°C, 습도 59%', 'temp': 7.77, 'humidity': 59, 'desc': '약간의 구름이 낀 하늘'}
+[get_weather] 2026-02-05 16:12:07.318832 {'text': '진안 실시간 날씨: 약간의 구름이 낀 하늘, 온도 7.77°C, 습도 59%', 'temp': 7.77, 'humidity': 59, 'desc': '약간의 구름이 낀 하늘'}
+[get_weather] 2026-02-05 16:22:07.763034 {'text': '진안 실시간 날씨: 약간의 구름이 낀 하늘, 온도 7.77°C, 습도 59%', 'temp': 7.77, 'humidity': 59, 'desc': '약간의 구름이 낀 하늘'}
+[get_weather] 2026-02-05 16:32:08.382157 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 68%', 'temp': 6.55, 'humidity': 68, 'desc': '구름조금'}
+[get_weather] 2026-02-05 16:42:08.805617 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 68%', 'temp': 6.55, 'humidity': 68, 'desc': '구름조금'}
+[get_weather] 2026-02-05 16:52:09.320722 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 68%', 'temp': 6.55, 'humidity': 68, 'desc': '구름조금'}
+[get_weather] 2026-02-05 17:06:42.364487 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 66%', 'temp': 6.55, 'humidity': 66, 'desc': '구름조금'}
+[get_weather] 2026-02-05 17:16:42.851534 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 66%', 'temp': 6.55, 'humidity': 66, 'desc': '구름조금'}
+[get_weather] 2026-02-05 17:26:43.364759 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 66%', 'temp': 6.55, 'humidity': 66, 'desc': '구름조금'}
+[get_weather] 2026-02-05 17:36:43.805691 {'text': '진안 실시간 날씨: 구름조금, 온도 3.35°C, 습도 87%', 'temp': 3.35, 'humidity': 87, 'desc': '구름조금'}
+[get_weather] 2026-02-05 17:46:44.281031 {'text': '진안 실시간 날씨: 구름조금, 온도 3.35°C, 습도 87%', 'temp': 3.35, 'humidity': 87, 'desc': '구름조금'}
