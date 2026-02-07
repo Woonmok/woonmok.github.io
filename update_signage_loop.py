@@ -45,71 +45,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <meta http-equiv="refresh" content="120">
   <title>The Wave Tree Project - Farmerstree Digital Signage</title>
   <style>
-    /* Base Reset & Fonts */
-    * {{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }}
-
-    body {{
-      background-color: #000;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      overflow: hidden;
-      /* Prevent scroll */
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }}
-
-    /* Utilities */
-    .glass {{
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }}
-
-    .text-emerald {{
-      color: #34d399;
-    }}
-
-    .text-orange {{
-      color: #fb923c;
-    }}
-
-    .text-blue {{
-      color: #60a5fa;
-    }}
-
-    .font-mono {{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }}
-
-    /* Background Ambience */
-    .bg-gradient {{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(ellipse at top, #0f172a, #000);
-      z-index: -1;
-    }}
-
-    /* Header */
-    header {{
-      height: 100px;
-      padding: 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(0, 0, 0, 0.4);
-    }}
-
-    .brand {{
-      display: flex;
       align-items: center;
       gap: 1rem;
     }}
@@ -645,63 +580,60 @@ def generate_news_html(items):
         """
     return html_output
 
-def# send_telegram_alert(message):
+def send_telegram_alert(message):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    
+
     print(f"Telegram Config Check: Token={'Present' if token else 'Missing'}, ChatID={'Present' if chat_id else 'Missing'}")
-    
+
     if not token or not chat_id:
-        print("Telegram Config Missing. Skipping alert.")
-        return
+      print("Telegram Config Missing. Skipping alert.")
+      return
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {
-        "chat_id": chat_id,
-        "text": message
+      "chat_id": chat_id,
+      "text": message
     }
-    
+
     try:
-        resp = requests.post(url, json=payload, timeout=10)
-        if resp.status_code == 200:
-            print("Telegram notification sent successfully.")
-        else:
-            print(f"Telegram API Error: {resp.status_code} - {resp.text}")
+      resp = requests.post(url, json=payload, timeout=10)
+      if resp.status_code == 200:
+        print("Telegram notification sent successfully.")
+      else:
+        print(f"Telegram API Error: {resp.status_code} - {resp.text}")
     except Exception as e:
-        print(f"Failed to send Telegram alert: {e}")
+      print(f"Failed to send Telegram alert: {e}")
 
 def update_signage():
-    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Update...")
+  print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Update...")
 
-    # 1. Fetch Weather (Robust)
-    print("Fetching Weather...")
-    weather_data = fetch_weather_data()
-    weather_html = format_weather_html(weather_data)
+  # 1. Fetch Weather (Robust)
+  print("Fetching Weather...")
+  weather_data = fetch_weather_data()
+  weather_html = format_weather_html(weather_data)
 
-    # 2. Fetch News
-    news_content = {}
-    all_headlines = []
+  # 2. Fetch News
+  news_content = {}
+  all_headlines = []
     
-    news_summary_msg = "News Updated: "
+  news_summary_msg = "News Updated: "
 
-    for key, config in TOPICS_CONFIG.items():
-        print(f"Fetching {key}...")
-        items = fetch_top_news_serper(config['query'], count=5)
-        news_content[key] = generate_news_html(items)
-        if items: news_summary_msg += f"{config['label']}({len(items)}) "
-        
-        for item in items:
-            all_headlines.append(f"[{config['label']}] {item['title']}")
+  for key, config in TOPICS_CONFIG.items():
+    print(f"Fetching {key}...")
+    items = fetch_top_news_serper(config['query'], count=5)
+    news_content[key] = generate_news_html(items)
+    if items:
+      news_summary_msg += f"{config['label']}({len(items)}) "
+    for item in items:
+      all_headlines.append(f"[{config['label']}] {item['title']}")
 
     # 3. Build Marquee HTML
     marquee_html = ""
     if not all_headlines:
         all_headlines = ["THE WAVE TREE PROJECT - SYSTEM ONLINE"]
-    
     for hl in all_headlines:
-        marquee_html += f"""
-        <div class="ticker-item"><div class="ticker-dot"></div>{hl}</div>
-        """
+        marquee_html += f"<div class=\"ticker-item\"><div class=\"ticker-dot\"></div>{hl}</div>"
 
     # 4. Generate Final HTML
     final_html = HTML_TEMPLATE.format(
@@ -718,25 +650,23 @@ def update_signage():
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write(final_html)
         print(f"Successfully updated: {OUTPUT_FILE}")
-        
+
         # Telegram Report
         # msg = "대표님, 모든 수리가 완료되었습니다. 이제 안심하고 다녀오십시오!"
         # send_telegram_alert(msg)
-        pass
-        
     except Exception as e:
-        print(f"Error writing file: {e}")
-        sys.exit(1)
+      print(f"Error writing file: {e}")
+      sys.exit(1)
 
     # 6. Git Push
     try:
-        print("[System] Pushing to GitHub...")
-        subprocess.run("git add .", shell=True, check=True)
-        subprocess.run('git commit -m "Auto Update: Weather & Missions"', shell=True, check=True)
-        subprocess.run("git push", shell=True, check=True)
-        print("[System] Push Complete.")
+      print("[System] Pushing to GitHub...")
+      subprocess.run("git add .", shell=True, check=True)
+      subprocess.run('git commit -m "Auto Update: Weather & Missions"', shell=True, check=True)
+      subprocess.run("git push", shell=True, check=True)
+      print("[System] Push Complete.")
     except Exception as e:
-        print(f"[Warning] Git Push Failed: {e}")
+      print(f"[Warning] Git Push Failed: {e}")
 
 if __name__ == "__main__":
     update_signage()
