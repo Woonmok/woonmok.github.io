@@ -1,128 +1,114 @@
 import time
-import random
-import requests
 import json
 import os
 import datetime
-import html
 import sys
 import re
 import subprocess
+import html
 
 
-# =============================================================================
-# Configuration
-# =============================================================================
 OUTPUT_FILE = 'index.html'
+NEWS_FILE = 'news.json'
+DASHBOARD_FILE = 'dashboard_data.json'
 
-# Topic Configuration
-TOPICS_CONFIG = {
-    'listeria': {
-        'query': '리스테리아 팽이버섯 뉴스',  # Updated
-        'label': 'LISTERIA FREE'
-    },
-    'meat': {
-        'query': '배양육 최신 동향',
-        'label': 'CULTURED MEAT'
-    },
-    'audio': {
-        'query': '하이엔드 오디오 신제품',
-        'label': 'HIGH-END AUDIO'
-    },
-    'computer': {
-        'query': 'AI 기술 트렌드',
-        'label': 'COMPUTER & AI'
-    }
-}
-
-# HTML Template (Based on digital_signage.html)
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="refresh" content="120">
   <title>The Wave Tree Project - Farmerstree Digital Signage</title>
   <style>
-      align-items: center;
-      gap: 1rem;
+    /* ... 기존 CSS ... */
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <header>
+    <div class="brand">
+      <div class="dot"></div>
+      <div class="title">The Wave Tree Project</div>
+      <div class="subtitle">Farmerstree</div>
+    </div>
+    <div class="header-info">
+      <div class="weather-pill">{weather_html}</div>
+      <div class="time-display font-mono">
+        <div id="clock">--:--:--</div>
+        <div class="last-update">LIVE SYSTEM</div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="mission-section">
+      <div class="mission-label">TODAY'S MISSION</div>
+      <div class="mission-items">{mission_items_html}</div>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="card-overlay"></div><div class="card-content"><div class="card-header"><div class="icon-box">Act</div><div class="card-title">LISTERIA FREE</div></div><div class="news-list">{news_listeria}</div></div></div>
+      <div class="card"><div class="card-overlay"></div><div class="card-content"><div class="card-header"><div class="icon-box">Svr</div><div class="card-title">CULTURED MEAT</div></div><div class="news-list">{news_meat}</div></div></div>
+      <div class="card"><div class="card-overlay"></div><div class="card-content"><div class="card-header"><div class="icon-box">Mus</div><div class="card-title">HIGH-END AUDIO</div></div><div class="news-list">{news_audio}</div></div></div>
+      <div class="card"><div class="card-overlay"></div><div class="card-content"><div class="card-header"><div class="icon-box">Cpu</div><div class="card-title">COMPUTER & AI</div></div><div class="news-list">{news_computer}</div></div></div>
+    </div>
+  </main>
+  <footer>
+    <div class="marquee-container"><div class="marquee-content">{marquee_items}</div><div class="marquee-content" aria-hidden="true">{marquee_items}</div></div>
+  </footer>
+  <script>
+    function updateClock() {{
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('ko-KR', {{ hour12: false }});
+      document.getElementById('clock').innerText = timeString;
     }}
+    setInterval(updateClock, 1000);
+    updateClock();
+    setTimeout(() => {{ window.location.reload(); }}, 120000);
+  </script>
+</body>
+</html>
+        # 5. Marquee (all headlines)
+        all_headlines = []
+        for item in news_data.get('items', []):
+          all_headlines.append(f"[{item.get('category', '')}] {item.get('title', '')}")
+        if not all_headlines:
+          all_headlines = ["THE WAVE TREE PROJECT - SYSTEM ONLINE"]
+        marquee_html = "".join([f"<div class='ticker-item'><div class='ticker-dot'></div>{hl}</div>" for hl in all_headlines])
 
-    .dot {{
-      width: 12px;
-      height: 12px;
-      background-color: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #10b981;
-      animation: pulse 2s infinite;
-    }}
+        # 6. Mission (todo_list)
+        todo_list = get_todo_list(dashboard_data)
+        mission_items_html = "".join([
+          f"<div class='mission-item'><div class='mission-dot'></div>{html.escape(item['text'])}</div>" for item in todo_list[:3]
+        ])
 
-    .title {{
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      background: linear-gradient(to right, #34d399, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }}
+        # 7. Render HTML_TEMPLATE with dynamic mission_items
+        final_html = HTML_TEMPLATE.replace(
+          '<div class="mission-items">\n        <div class="mission-item">\n          <div class="mission-dot"></div>\n          지휘소 세팅 완료 기념 음악 감상\n        </div>\n        <div class="mission-item">\n          <div class="mission-dot"></div>\n          최소 장비 목록 만들기\n        </div>\n        <div class="mission-item">\n          <div class="mission-dot"></div>\n          자료정리\n        </div>\n      </div>',
+          f'<div class="mission-items">{mission_items_html}</div>'
+        )
+        final_html = final_html.format(
+          weather_html=weather_html,
+          news_listeria=news_listeria,
+          news_meat=news_meat,
+          news_audio=news_audio,
+          news_computer=news_computer,
+          marquee_items=marquee_html
+        )
 
-    .subtitle {{
-      font-size: 1.125rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.3);
-      margin-left: 0.5rem;
-    }}
+        # 8. Save & Git Push
+        try:
+          with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write(final_html)
+          print(f"Successfully updated: {OUTPUT_FILE}")
+          subprocess.run("git add .", shell=True, check=True)
+          subprocess.run('git commit -m "Auto Update: Weather, News, Todo"', shell=True, check=True)
+          subprocess.run("git push", shell=True, check=True)
+          print("[System] Push Complete.")
+        except Exception as e:
+          print(f"Error writing file: {e}")
+          sys.exit(1)
 
-    .header-info {{
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }}
-
-    .weather-pill {{
-      display: flex;
-      gap: 1.5rem;
-      padding: 0.5rem 1.5rem;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.875rem;
-      color: #d1d5db;
-    }}
-
-    .time-display {{
-      text-align: right;
-    }}
-
-    #clock {{
-      font-size: 1.5rem;
-      font-weight: 700;
-      min-width: 120px;
-      min-height: 29px;
-    }}
-
-    /* Min dimensions to prevent shift */
-    .last-update {{
-      font-size: 0.75rem;
-      color: #6b7280;
-      letter-spacing: 0.05em;
-      margin-top: 4px;
-    }}
-
-    /* Main Content */
-    main {{
-      flex: 1;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      overflow: hidden;
-    }}
-
-    /* Mission Section */
-    .mission-section {{
-      padding: 1.5rem;
+      if __name__ == "__main__":
+        update_signage()
       border-radius: 0.75rem;
       background: linear-gradient(to right, rgba(6, 78, 59, 0.4), rgba(0, 0, 0, 0.4));
       border: 1px solid rgba(16, 185, 129, 0.3);
@@ -481,104 +467,29 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-def fetch_weather_data(query="진안군 부귀면 현재 날씨 기온 습도"):
-    """Fetch weather and return dict with temp/humidity."""
-    api_key = os.environ.get("SERPER_API_KEY")
-    data = {"temp": "-XX°C", "humidity": "XX%"}
-    
-    if api_key:
-        url = "https://google.serper.dev/search"
-        payload = json.dumps({
-            "q": query, "gl": "kr", "hl": "ko"
-        })
-        headers = { 'X-API-KEY': api_key, 'Content-Type': 'application/json' }
-        
-        try:
-            response = requests.request("POST", url, headers=headers, data=payload, timeout=10)
-            res_json = response.json()
-            
-            # Strategy 1: AnswerBox
-            if 'answerBox' in res_json:
-                box = res_json['answerBox']
-                if 'temperature' in box:
-                    data['temp'] = str(box.get('temperature')) + "°C"
-                    if 'humidity' in box: data['humidity'] = str(box.get('humidity')) + "%"
-                    return data
-            
-            # Strategy 2: Content Snippet parsing (Strict)
-            if 'organic' in res_json:
-                found_temp = False
-                for res in res_json['organic']:
-                    text = (res.get('title', '') + " " + res.get('snippet', ''))
-                    # Regex for "기온: -5°C" or "-5도" context
-                    t_match = re.search(r'기온.*?(-?\d{1,2})\s*(°C|도)', text)
-                    if t_match:
-                        data['temp'] = t_match.group(1) + "°C"
-                        found_temp = True
-                    
-                    if found_temp:
-                        h_match = re.search(r'(습도|humidity).*?(\d{1,3})%', text, re.IGNORECASE)
-                        if h_match: data['humidity'] = h_match.group(2) + "%"
-                        break
-                        
-        except Exception as e:
-            print(f"Weather Fetch Error: {e}")
-            
-    return data
-
 def format_weather_html(weather_data):
-    return f"""
-        <span><span class="text-orange">기온:</span> {weather_data['temp']} / <span class="text-blue">습도:</span> {weather_data['humidity']}</span>
-    """
-
-def fetch_top_news_serper(query, count=5):
-    """Fetch news items list. Limit to 5."""
-    api_key = os.environ.get("SERPER_API_KEY")
-    if not api_key:
-        return [
-            {'title': f'Data Pending for {query}', 'date': datetime.datetime.now().strftime('%Y.%m.%d')}
-        ]
-    
-    url = "https://google.serper.dev/news"
-    payload = json.dumps({
-        "q": query, "gl": "kr", "hl": "ko", "num": 10
-    })
-    headers = { 'X-API-KEY': api_key, 'Content-Type': 'application/json' }
-
-    items = []
-    try:
-        response = requests.request("POST", url, headers=headers, data=payload, timeout=10)
-        data = response.json()
-        
-        if 'news' in data:
-            for news in data['news']:
-                if len(items) >= count: break
-                title = news.get('title', 'No Title')
-                if re.search(r'[가-힣]', title):
-                    items.append({
-                        'title': title, 'date': news.get('date', 'Today')
-                    })
-            if len(items) < count:
-                 for news in data['news']:
-                    if len(items) >= count: break
-                    if not any(x['title'] == news.get('title') for x in items):
-                        items.append({
-                            'title': news.get('title', 'No Title'), 'date': news.get('date', 'Today')
-                        })
-    except Exception as e:
-        print(f"News Fetch Error {query}: {e}")
-    return items
+  temp = weather_data.get('temp', '-XX°C')
+  humidity = weather_data.get('humidity', 'XX%')
+  return f"<span><span class='text-orange'>기온:</span> {temp} / <span class='text-blue'>습도:</span> {humidity}</span>"
 
 def generate_news_html(items):
-    html_output = ""
-    for item in items:
-        html_output += f"""
-        <div class="news-item">
-            <div class="news-title">{item['title']}</div>
-            <div class="news-meta"><span>Read More →</span><span>{item['date']}</span></div>
-        </div>
-        """
-    return html_output
+  html_output = ""
+  for item in items:
+    html_output += f"""
+    <div class='news-item'>
+      <div class='news-title'>{item['title']}</div>
+      <div class='news-meta'><span>Read More →</span><span>{item.get('published_at', item.get('date', 'Today'))}</span></div>
+    </div>
+    """
+  return html_output
+
+def get_top_news_by_category(news_data, category, count=2):
+  items = [item for item in news_data.get('items', []) if item.get('category') == category]
+  items = sorted(items, key=lambda x: x.get('published_at', ''), reverse=True)
+  return items[:count]
+
+def get_todo_list(dashboard_data):
+  return dashboard_data.get('todo_list', [])
 
 def send_telegram_alert(message):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -586,87 +497,77 @@ def send_telegram_alert(message):
 
     print(f"Telegram Config Check: Token={'Present' if token else 'Missing'}, ChatID={'Present' if chat_id else 'Missing'}")
 
-    if not token or not chat_id:
-      print("Telegram Config Missing. Skipping alert.")
-      return
-
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
-      "chat_id": chat_id,
-      "text": message
-    }
-
-    try:
-      resp = requests.post(url, json=payload, timeout=10)
-      if resp.status_code == 200:
-        print("Telegram notification sent successfully.")
-      else:
-        print(f"Telegram API Error: {resp.status_code} - {resp.text}")
-    except Exception as e:
-      print(f"Failed to send Telegram alert: {e}")
 
 def update_signage():
-  print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Update...")
+    print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] Starting Update...")
 
-  # 1. Fetch Weather (Robust)
-  print("Fetching Weather...")
-  weather_data = fetch_weather_data()
-  weather_html = format_weather_html(weather_data)
+    # 1. Load dashboard_data.json
+    try:
+        with open(DASHBOARD_FILE, 'r', encoding='utf-8') as f:
+            dashboard_data = json.load(f)
+    except Exception as e:
+        print(f"Error loading dashboard_data.json: {e}")
+        dashboard_data = {}
 
-  # 2. Fetch News
-  news_content = {}
-  all_headlines = []
-    
-  news_summary_msg = "News Updated: "
+    # 2. Load news.json
+    try:
+        with open(NEWS_FILE, 'r', encoding='utf-8') as f:
+            news_data = json.load(f)
+    except Exception as e:
+        print(f"Error loading news.json: {e}")
+        news_data = {"items": []}
 
-  for key, config in TOPICS_CONFIG.items():
-    print(f"Fetching {key}...")
-    items = fetch_top_news_serper(config['query'], count=5)
-    news_content[key] = generate_news_html(items)
-    if items:
-      news_summary_msg += f"{config['label']}({len(items)}) "
-    for item in items:
-      all_headlines.append(f"[{config['label']}] {item['title']}")
+    # 3. Weather
+    weather_html = format_weather_html(dashboard_data.get('weather', {}))
 
-    # 3. Build Marquee HTML
-    marquee_html = ""
+    # 4. News (top 2 per category)
+    news_listeria = generate_news_html(get_top_news_by_category(news_data, 'listeria_free', 2))
+    news_meat = generate_news_html(get_top_news_by_category(news_data, 'cultured_meat', 2))
+    news_audio = generate_news_html(get_top_news_by_category(news_data, 'high_end_audio', 2))
+    news_computer = generate_news_html(get_top_news_by_category(news_data, 'computer_ai', 2))
+
+    # 5. Marquee (all headlines)
+    all_headlines = []
+    for item in news_data.get('items', []):
+        all_headlines.append(f"[{item.get('category', '')}] {item.get('title', '')}")
     if not all_headlines:
         all_headlines = ["THE WAVE TREE PROJECT - SYSTEM ONLINE"]
-    for hl in all_headlines:
-        marquee_html += f"<div class=\"ticker-item\"><div class=\"ticker-dot\"></div>{hl}</div>"
+    marquee_html = "".join([f"<div class='ticker-item'><div class='ticker-dot'></div>{hl}</div>" for hl in all_headlines])
 
-    # 4. Generate Final HTML
-    final_html = HTML_TEMPLATE.format(
+    # 6. Mission (todo_list)
+    todo_list = get_todo_list(dashboard_data)
+    mission_items_html = "".join([
+        f"<div class='mission-item'><div class='mission-dot'></div>{html.escape(item['text'])}</div>" for item in todo_list[:3]
+    ])
+
+    # 7. Render HTML_TEMPLATE with dynamic mission_items
+    final_html = HTML_TEMPLATE.replace(
+        '<div class="mission-items">\n        <div class="mission-item">\n          <div class="mission-dot"></div>\n          지휘소 세팅 완료 기념 음악 감상\n        </div>\n        <div class="mission-item">\n          <div class="mission-dot"></div>\n          최소 장비 목록 만들기\n        </div>\n        <div class="mission-item">\n          <div class="mission-dot"></div>\n          자료정리\n        </div>\n      </div>',
+        f'<div class="mission-items">{mission_items_html}</div>'
+    )
+    final_html = final_html.format(
         weather_html=weather_html,
-        news_listeria=news_content.get('listeria', ''),
-        news_meat=news_content.get('meat', ''),
-        news_audio=news_content.get('audio', ''),
-        news_computer=news_content.get('computer', ''),
+        news_listeria=news_listeria,
+        news_meat=news_meat,
+        news_audio=news_audio,
+        news_computer=news_computer,
         marquee_items=marquee_html
     )
 
-    # 5. Save & Alert
+    # 8. Save & Git Push
     try:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write(final_html)
         print(f"Successfully updated: {OUTPUT_FILE}")
-
-        # Telegram Report
-        # msg = "대표님, 모든 수리가 완료되었습니다. 이제 안심하고 다녀오십시오!"
-        # send_telegram_alert(msg)
+        subprocess.run("git add .", shell=True, check=True)
+        subprocess.run('git commit -m "Auto Update: Weather, News, Todo"', shell=True, check=True)
+        subprocess.run("git push", shell=True, check=True)
+        print("[System] Push Complete.")
     except Exception as e:
-      print(f"Error writing file: {e}")
-      sys.exit(1)
-
-    # 6. Git Push
-    try:
-      print("[System] Pushing to GitHub...")
-      subprocess.run("git add .", shell=True, check=True)
-      subprocess.run('git commit -m "Auto Update: Weather & Missions"', shell=True, check=True)
-      subprocess.run("git push", shell=True, check=True)
-      print("[System] Push Complete.")
-    except Exception as e:
-      print(f"[Warning] Git Push Failed: {e}")
+        print(f"Error writing file: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     update_signage()
+        # msg = "대표님, 모든 수리가 완료되었습니다. 이제 안심하고 다녀오십시오!"
+        # send_telegram_alert(msg)
