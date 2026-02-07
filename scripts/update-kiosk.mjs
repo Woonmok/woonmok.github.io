@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 // --- CONFIGURATION ---
 const TARGET_HTML_PATH = '/Users/seunghoonoh/Documents/digital_signage.html';
-const TODO_FILE_PATH = path.join(__dirname, 'todo_storage.json');
+const TODO_FILE_PATH = path.join(__dirname, '..', 'todo_storage.json');
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
