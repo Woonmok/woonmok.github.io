@@ -102,22 +102,116 @@ async function checkTelegramUpdates() {
         // We'll treat all messages as potential TODOs or simplified commands.
         // For better UX, let's look for intentions or just add everything for now as strict "Secretary" mode.
 
-        // Filter out system commands if any
-        if (text.startsWith('/')) continue;
+        // 명령어 파싱
+        if (text.startsWith('/')) {
+          // 슬래시 명령어 처리
+          if (text === '/start') {
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `👋 안녕하세요!\n\n*할일 관리 명령어 안내*\n\n* /start - 시작 메시지 및 명령어 안내\n* /todo 또는 /목록 - 할일 목록 보기\n* /help - 도움말\n\n*추가 명령어*\n- 추가: 작업명  → 할일 추가\n- 목록  → 할일 목록 보기\n- 완료: 1  → ID로 완료 처리\n- 삭제: 1  → ID로 삭제\n- 할일: 1. xxx, 2. yyy  → 할일 전체 덮어쓰기\n\n메시지로 바로 할일을 보내도 추가됩니다!`,
+              parse_mode: 'Markdown'
+            });
+            continue;
+          }
+          if (text === '/todo' || text === '/목록') {
+            const list = todoData.tasks.length === 0 ? '할일이 없습니다.' : todoData.tasks.map((t, i) => `${i+1}. ${t.text}`).join('\n');
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `*할일 목록*\n${list}`,
+              parse_mode: 'Markdown'
+            });
+            continue;
+          }
+          if (text === '/help') {
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `*도움말*\n\n- 할일 추가: 아무 메시지나 보내기\n- "추가: 작업명"\n- "목록"\n- "완료: 1"\n- "삭제: 1"\n- "할일: 1. xxx, 2. yyy" (전체 덮어쓰기)\n\n* /start - 안내\n* /todo 또는 /목록 - 할일 목록\n* /help - 도움말`,
+              parse_mode: 'Markdown'
+            });
+            continue;
+          }
+          // 기타 슬래시 명령 무시
+          continue;
+        }
 
-        // Add to TODO
+        // 기존 텍스트 명령어 처리
+        if (/^추가[:：]/.test(text)) {
+          // 추가: 작업명
+          const todoText = text.replace(/^추가[:：]/, '').trim();
+          if (todoText) {
+            todoData.tasks.unshift({ id: Date.now(), text: todoText, date: new Date().toISOString() });
+            if (todoData.tasks.length > 5) todoData.tasks = todoData.tasks.slice(0, 5);
+            tasksChanged = true;
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `✅ 할일 추가: ${todoText}`
+            });
+          }
+          continue;
+        }
+        if (/^목록$/.test(text)) {
+          const list = todoData.tasks.length === 0 ? '할일이 없습니다.' : todoData.tasks.map((t, i) => `${i+1}. ${t.text}`).join('\n');
+          await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            chat_id: TELEGRAM_CHAT_ID,
+            text: `*할일 목록*\n${list}`,
+            parse_mode: 'Markdown'
+          });
+          continue;
+        }
+        if (/^완료[:：]\s*([0-9]+)$/.test(text)) {
+          const idx = parseInt(text.match(/^완료[:：]\s*([0-9]+)$/)[1], 10) - 1;
+          if (todoData.tasks[idx]) {
+            const done = todoData.tasks.splice(idx, 1)[0];
+            tasksChanged = true;
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `✅ 완료 처리: ${done.text}`
+            });
+          } else {
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `해당 번호의 할일이 없습니다.`
+            });
+          }
+          continue;
+        }
+        if (/^삭제[:：]\s*([0-9]+)$/.test(text)) {
+          const idx = parseInt(text.match(/^삭제[:：]\s*([0-9]+)$/)[1], 10) - 1;
+          if (todoData.tasks[idx]) {
+            const del = todoData.tasks.splice(idx, 1)[0];
+            tasksChanged = true;
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `🗑️ 삭제 완료: ${del.text}`
+            });
+          } else {
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `해당 번호의 할일이 없습니다.`
+            });
+          }
+          continue;
+        }
+        if (/^할일[:：]/.test(text)) {
+          // 할일: 1. xxx, 2. yyy
+          const items = text.replace(/^할일[:：]/, '').split(/,|\n/).map(s => s.replace(/^[0-9]+\.?\s*/, '').trim()).filter(Boolean);
+          todoData.tasks = items.map((t, i) => ({ id: Date.now() + i, text: t, date: new Date().toISOString() })).slice(0, 5);
+          tasksChanged = true;
+          await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            chat_id: TELEGRAM_CHAT_ID,
+            text: `✅ 할일 목록이 새로 저장되었습니다.`
+          });
+          continue;
+        }
+
+        // 그 외 메시지는 할일로 추가
         todoData.tasks.unshift({
           id: Date.now(),
           text: text,
           date: new Date().toISOString()
         });
-
-        // Keep only top 5 tasks
         if (todoData.tasks.length > 5) todoData.tasks = todoData.tasks.slice(0, 5);
-
         tasksChanged = true;
-
-        // Reply to user
         await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
           chat_id: TELEGRAM_CHAT_ID,
           text: `✅ 접수했습니다. 대시보드에 반영 완료!\n("${text}")`
