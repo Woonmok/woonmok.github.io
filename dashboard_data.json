@@ -1,17 +1,17 @@
 {
   "todo_list": [
     {
-      "text": "1. 대시보드_자동화 완료 하기",
+      "text": "1. 대시보드_자동화 완료하기",
       "completed": false,
       "id": 1
     },
     {
-      "text": "2. 최소장비리스트 만들기",
+      "text": "2. 버섯특허관련 시스템 허브 제작 하기",
       "completed": false,
       "id": 2
     },
     {
-      "text": "3. DSP 플러그인 제작하기",
+      "text": "3. DSP_Plugins 만들기",
       "completed": false,
       "id": 3
     }
