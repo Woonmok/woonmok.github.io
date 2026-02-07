@@ -2,464 +2,315 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="120">
-  <title>The Wave Tree Project - Farmerstree Digital Signage</title>
-  <style>
-      align-items: center;
-      gap: 1rem;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wave Tree Project</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Pretendard', sans-serif;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+        }
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      background-color: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #10b981;
-      animation: pulse 2s infinite;
-    }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+        }
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      background: linear-gradient(to right, #34d399, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        header {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .subtitle {
-      font-size: 1.125rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.3);
-      margin-left: 0.5rem;
-    }
+        .project-title h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(to right, #00ff9d, #00ccff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .header-info {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+        .system-info {
+            text-align: right;
+        }
 
-    .weather-pill {
-      display: flex;
-      gap: 1.5rem;
-      padding: 0.5rem 1.5rem;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.875rem;
-      color: #d1d5db;
-    }
+        .current-time {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #fff;
+        }
 
-    .time-display {
-      text-align: right;
-    }
+        .weather-info {
+            color: #00ff9d;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 8px;
+        }
 
-    #clock {
-      font-size: 1.5rem;
-      font-weight: 700;
-      min-width: 120px;
-      min-height: 29px;
-    }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 50px 40px 50px;
+        }
 
-    /* Min dimensions to prevent shift */
-    .last-update {
-      font-size: 0.75rem;
-      color: #6b7280;
-      letter-spacing: 0.05em;
-      margin-top: 4px;
-    }
+        .proposal-section {
+            padding: 25px;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-    /* Main Content */
-    main {
-      flex: 1;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      overflow: hidden;
-    }
+        .todo-section {
+            padding: 25px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-    /* Mission Section */
-    .mission-section {
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      background: linear-gradient(to right, rgba(6, 78, 59, 0.4), rgba(0, 0, 0, 0.4));
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+        .todo-section h2 {
+            margin: 0 0 20px 0;
+            color: #ffcc00;
+            font-size: 1.6em;
+            border-bottom: 2px solid rgba(255, 204, 0, 0.4);
+            padding-bottom: 15px;
+        }
 
-    .mission-label {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #34d399;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
+        .todo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            overflow-y: auto;
+        }
 
-    .mission-items {
-      display: flex;
-      gap: 2rem;
-      font-size: 1.125rem;
-      font-weight: 500;
-    }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            font-size: 1.1em;
+        }
 
-    .mission-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .todo-item::before {
+            content: '⬜';
+            margin-right: 20px;
+            font-size: 1.2em;
+            opacity: 0.7;
+        }
 
-    .mission-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #10b981;
-      border-radius: 50%;
-      opacity: 0.8;
-    }
+        .todo-item.completed {
+            text-decoration: line-through;
+            color: #888;
+            background: rgba(255, 255, 255, 0.02);
+        }
 
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      flex: 1;
-      min-height: 0;
-      /* Fix for overflow in flex item */
-    }
+        .todo-item.completed::before {
+            content: '✅';
+            opacity: 1;
+        }
 
-    .card {
-      background-color: #111827;
-      /* Dark gray fallback */
-      background-size: cover;
-      background-position: center;
-      border-radius: 0.75rem;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s;
-    }
+        .dashboard-container {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+            align-items: stretch;
+        }
 
-    .card:hover {
-      border-color: rgba(255, 255, 255, 0.2);
-    }
+        .column {
+            flex: 1;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            justify-content: space-between;
+        }
 
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
+        .column h2 {
+            margin: 0 0 25px 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 20px;
+            letter-spacing: 1px;
+        }
 
-    .card-content {
-      position: relative;
-      z-index: 5;
-      padding: 1.5rem;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
+        .status-item {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      margin-bottom: 1rem;
-    }
+        .status-icon {
+            font-size: 2.2em;
+            min-width: 50px;
+            text-align: center;
+        }
 
-    .icon-box {
-      padding: 0.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 0.5rem;
-      color: #34d399;
-    }
+        .status-label {
+            font-size: 1.3em;
+            flex: 1;
+            font-weight: 500;
+        }
 
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      font-family: monospace;
-      text-transform: uppercase;
-    }
+        .status-label small {
+            display: block;
+            font-size: 0.65em;
+            opacity: 0.7;
+            margin-bottom: 5px;
+            color: #fff;
+        }
 
-    .news-list {
-      flex: 1;
-      overflow-y: hidden; /* Hide overflow for clean look, script limits items */
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .news-item {
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 0.5rem;
-      border-left: 2px solid transparent;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .news-item:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-left-color: #10b981;
-    }
-
-    .news-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #e5e7eb;
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-    }
-
-    .news-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: #9ca3af;
-    }
-
-    /* Footer Ticker */
-    footer {
-      height: 64px;
-      /* h-16 */
-      background: rgba(6, 78, 59, 0.9);
-      border-top: 1px solid rgba(16, 185, 129, 0.3);
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-      z-index: 20;
-    }
-
-    .marquee-container {
-      display: flex;
-      white-space: nowrap;
-      /* GPU Acceleration */
-      will-change: transform;
-      transform: translate3d(0, 0, 0);
-      animation: marquee 360s linear infinite; /* Ultra-slow (6 mins) */
-    }
-
-    .marquee-content {
-      display: flex;
-      gap: 3rem;
-      padding: 0 1rem;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #d1fae5;
-    }
-
-    .ticker-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .ticker-dot {
-      width: 6px;
-      height: 6px;
-      background-color: #34d399;
-      border-radius: 50%;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.5;
-      }
-    }
-
-    /* Scrollbar Hide */
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    * {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
+        .status-value {
+            font-weight: 800;
+            font-size: 1.4em;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="bg-gradient"></div>
+    <header class="glass">
+        <div class="project-title">
+            <h1>The Wave Tree Project</h1>
+        </div>
+        <div class="system-info">
+            <div class="current-time" id="current-time">2026.01.31 | 18:24:49</div>
+            <div id="weather-info" class="weather-info">기온: -1°C | 습도: 37% (진안군)</div>
+        </div>
+    </header>
 
-  <header>
-    <div class="brand">
-      <div class="dot"></div>
-      <div class="title">The Wave Tree Project</div>
-      <div class="subtitle">Farmerstree</div>
+    <main>
+        <section class="proposal-section glass" style="border-color: #ff3366; margin-top: 0; margin-bottom: 30px;">
+    <h2 style="color: #ff3366; font-size: 1.3em;">🔥 Intelligence Hub</h2>
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 4px solid #ff3366;">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div style="flex: 1;">
+                    <div style="font-size: 1.3em; font-weight: 600; margin-bottom: 8px;">
+                        🦠 1. 미국 RTE 파스타 리스테리아 사망 사고, 6명 사망·27명 입원 등 최종 집계 발표
+                    </div>
+                    <p style='font-size: 0.95em; opacity: 0.8; margin: 8px 0;'>미국 전역으로 확산된 RTE 파스타 관련 리스테리아 집단감염이 6명 사망, 27명 환자 발생으로 마무리됐으며 당국이 추가 제품 섭취 자제를 경고함. [web:44][web:45]</p>
+                </div>
+                <div style='color: #00ff9d; font-weight: 600; margin-left: 15px;'>Score: 0.90</div>
+            </div>
+            <a href='https://example.com/listeria-outbreak-final' target='_blank' style='color: #00ccff; text-decoration: none; font-size: 0.9em;'>🔗 원문 보기</a>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 4px solid #ff3366;">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div style="flex: 1;">
+                    <div style="font-size: 1.3em; font-weight: 600; margin-bottom: 8px;">
+                        🌍 2. 유럽 식품안전청, 배양육 규제 프레임워크 최종안 발표
+                    </div>
+                    <p style='font-size: 0.95em; opacity: 0.8; margin: 8px 0;'>위험평가 절차와 라벨링·추적관리 기준을 포함한 통합 지침을 내며 EU 내 배양육 제품 심사 기준을 구체화함. [web:6]</p>
+                </div>
+                <div style='color: #00ff9d; font-weight: 600; margin-left: 15px;'>Score: 0.90</div>
+            </div>
+            <a href='https://example.com/efsa-cultured-framework-2026' target='_blank' style='color: #00ccff; text-decoration: none; font-size: 0.9em;'>🔗 원문 보기</a>
+        </div>
     </div>
-    <div class="header-info">
-      <div class="weather-pill">
-        <!-- Weather Data Injected Here -->
-        
-        <span><span class="text-orange">기온:</span> -XX°C / <span class="text-blue">습도:</span> XX%</span>
-    
-      </div>
-      <div class="time-display font-mono">
-        <div id="clock">--:--:--</div>
-        <div class="last-update">LIVE SYSTEM</div>
-      </div>
-    </div>
-  </header>
+</section>
 
-  <main>
-    <!-- Today's Mission -->
-    <div class="mission-section">
-      <div class="mission-label">TODAY'S MISSION</div>
-      <div class="mission-items">
-        <div class="mission-item">
-          <div class="mission-dot"></div>
-          지휘소 세팅 완료 기념 음악 감상
-        </div>
-        <div class="mission-item">
-          <div class="mission-dot"></div>
-          최소 장비 목록 만들기
-        </div>
-        <div class="mission-item">
-          <div class="mission-dot"></div>
-          자료정리
-        </div>
-      </div>
-    </div>
+        <section class="todo-section glass">
+            <h2 style="font-size: 1.3em;">✅ 전략 과제 (To-Do List)</h2>
+            <ul class="todo-list" id="todo-list">
+                <li class="todo-item completed">미국 출장 준비 완료</li>
+                <li class="todo-item">시온마켓 바이어 최종 미팅</li>
+                <li class="todo-item">다이소 1호점 계약 체결</li>
+                <li class="todo-item">진안 본부 서버 C 안정화 확인</li>
+            </ul>
+        </section>
 
-    <!-- Grid -->
-    <div class="grid">
-      <!-- 1. Listeria Free -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=2070&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Act</div>
-            <div class="card-title">LISTERIA FREE</div>
-          </div>
-          <div class="news-list">
-            
-        <div class="news-item">
-            <div class="news-title">Data Pending for 리스테리아 팽이버섯 뉴스</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.02.08</span></div>
-        </div>
-        
-          </div>
-        </div>
-      </div>
+        <div class="dashboard-container">
+            <div id="global_biz" class="column glass" style="border-color: #00ff9d;">
+                <h2 style="color: #00ff9d;">Global Biz Engine</h2>
+                <div class="status-item">
+                    <div class="status-icon">📦</div>
+                    <div class="status-label">곡물차 OEM</div>
+                    <div class="status-value" id="tea_status" style="color: #00ff9d;">최종 오더 대기</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">🛍️</div>
+                    <div class="status-label">Pick&Smile</div>
+                    <div class="status-value" id="daiso_status" style="color: #00ff9d;">출장 준비 중</div>
+                </div>
+            </div>
 
-      <!-- 2. Cultured Meat -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Svr</div>
-            <div class="card-title">CULTURED MEAT</div>
-          </div>
-          <div class="news-list">
-             
-        <div class="news-item">
-            <div class="news-title">Data Pending for 배양육 최신 동향</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.02.08</span></div>
-        </div>
-        
-          </div>
-        </div>
-      </div>
+            <div id="jinan_core" class="column glass" style="border-color: #ffcc00;">
+                <h2 style="color: #ffcc00;">Jinan POM Core</h2>
+                <div class="status-item">
+                    <div class="status-icon">🧬</div>
+                    <div class="status-label">Bio-R&D</div>
+                    <div class="status-value" id="bio_status" style="color: #ffcc00;">가동 중</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">🎙️</div>
+                    <div class="status-label">DSD System</div>
+                    <div class="status-value" id="audio_status" style="color: #ffcc00;">9.1.6 셋업</div>
+                </div>
+            </div>
 
-      <!-- 3. Audio -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?q=80&w=2535&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Mus</div>
-            <div class="card-title">HIGH-END AUDIO</div>
-          </div>
-          <div class="news-list">
-             
-        <div class="news-item">
-            <div class="news-title">Data Pending for 하이엔드 오디오 신제품</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.02.08</span></div>
+            <div id="ai_infra" class="column glass" style="border-color: #00ccff;">
+                <h2 style="color: #00ccff;">AI Infra Control</h2>
+                <div class="status-item">
+                    <div class="status-icon">🧠</div>
+                    <div class="status-label"><small>Server A: THE BRAIN (A100 x4)</small>학습 엔진</div>
+                    <div class="status-value" id="srv_a_status" style="color: #00ccff;">연산 중</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">🏭</div>
+                    <div class="status-label"><small>Server B: THE FACTORY (L40S x8)</small>생산 공장</div>
+                    <div class="status-value" id="srv_b_status" style="color: #00ccff;">추론 가동</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">👂</div>
+                    <div class="status-label"><small>Server C: HANDS & EARS (6000 Ada)</small>창작 엔진</div>
+                    <div class="status-value" id="srv_c_status" style="color: #00ccff;">DSD 셋업</div>
+                </div>
+            </div>
         </div>
-        
-          </div>
-        </div>
-      </div>
+    </main>
 
-      <!-- 4. Computer -->
-      <div class="card"
-        style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');">
-        <div class="card-overlay"></div>
-        <div class="card-content">
-          <div class="card-header">
-            <div class="icon-box">Cpu</div>
-            <div class="card-title">COMPUTER & AI</div>
-          </div>
-          <div class="news-list">
-             
-        <div class="news-item">
-            <div class="news-title">Data Pending for AI 기술 트렌드</div>
-            <div class="news-meta"><span>Read More →</span><span>2026.02.08</span></div>
-        </div>
-        
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').innerText = year + '.' + month + '.' + day + ' | ' + hours + ':' + minutes + ':' + seconds;
+        }
+        setInterval(updateTime, 1000); updateTime();
 
-  <footer>
-    <div class="marquee-container">
-      <div class="marquee-content">
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] Data Pending for 리스테리아 팽이버섯 뉴스</div><div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] Data Pending for 배양육 최신 동향</div><div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] Data Pending for 하이엔드 오디오 신제품</div><div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] Data Pending for AI 기술 트렌드</div>
-      </div>
-      <!-- Duplicate for loop seamlessness (content repeated in fetch) -->
-      <div class="marquee-content" aria-hidden="true">
-        <div class="ticker-item"><div class="ticker-dot"></div>[LISTERIA FREE] Data Pending for 리스테리아 팽이버섯 뉴스</div><div class="ticker-item"><div class="ticker-dot"></div>[CULTURED MEAT] Data Pending for 배양육 최신 동향</div><div class="ticker-item"><div class="ticker-dot"></div>[HIGH-END AUDIO] Data Pending for 하이엔드 오디오 신제품</div><div class="ticker-item"><div class="ticker-dot"></div>[COMPUTER & AI] Data Pending for AI 기술 트렌드</div>
-      </div>
-    </div>
-  </footer>
 
-  <script>
-    // System Clock
-    function updateClock() {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString('ko-KR', { hour12: false });
-      document.getElementById('clock').innerText = timeString;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    // Auto Reload for Fresh Data
-    setTimeout(() => {
-        window.location.reload();
-    }, 120000); // 120s
-  </script>
+    </script>
 </body>
+
 </html>
