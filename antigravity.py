@@ -17,8 +17,9 @@ warnings.filterwarnings('ignore')
 OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
 OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
 
-load_dotenv()
-os.chdir('/Users/seunghoonoh/woonmok.github.io')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+os.chdir(BASE_DIR)
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 if not TOKEN:
     raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
@@ -33,7 +34,7 @@ def load_dashboard_data():
         return {"todo_list": [], "system_status": "NORMAL"}
 
 def save_dashboard_data(data):
-    path = '/Users/seunghoonoh/woonmok.github.io/dashboard_data.json'
+    path = os.path.join(BASE_DIR, "dashboard_data.json")
     print(f"[save_dashboard_data] 진입: {path}")
     try:
         with open(path, 'w', encoding='utf-8') as f:
@@ -46,7 +47,7 @@ def save_dashboard_data(data):
                 fcntl.flock(f.fileno(), fcntl.LOCK_UN)
     except Exception as e:
         print(f"[save_dashboard_data] 기록 실패: {path}, 에러: {e}")
-        with open("/Users/seunghoonoh/woonmok.github.io/logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+        with open(os.path.join(BASE_DIR, "logs", "antigravity_error.log"), "a", encoding="utf-8") as logf:
             logf.write(f"[save_dashboard_data][EXCEPTION] {datetime.now()} {e}\n")
     print(f"[save_dashboard_data] 종료: {path}")
 
@@ -113,7 +114,7 @@ def weather_updater():
                 "error": f"weather_updater exception: {e}"
             }
             save_dashboard_data(data)
-            with open("/Users/seunghoonoh/woonmok.github.io/logs/antigravity_error.log", "a", encoding="utf-8") as logf:
+            with open(os.path.join(BASE_DIR, "logs", "antigravity_error.log"), "a", encoding="utf-8") as logf:
                 logf.write(f"[weather_updater][EXCEPTION] {datetime.now()} {e}\n")
     update_once()
     while True:
