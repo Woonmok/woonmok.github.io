@@ -121,60 +121,6 @@ def weather_updater():
         update_once()
 
 
-if __name__ == "__main__":
-    print("antigravity.py main started")
-    t = threading.Thread(target=weather_updater, daemon=True)
-    t.start()
-    # 텔레그램 봇 polling 추가
-    bot.infinity_polling()
-
-OPENWEATHER_API_KEY = "73522ad14e4276bdf715f0e796fc623f"
-OPENWEATHER_CITY = "Jinan,KR"  # 진안, 대한민국
-
-load_dotenv()
-os.chdir('/Users/seunghoonoh/woonmok.github.io')
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-if not TOKEN:
-    raise ValueError("⚠️ TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
-bot = telebot.TeleBot(TOKEN)
-
-def load_dashboard_data():
-    try:
-        with open('dashboard_data.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except:
-        return {"todo_list": [], "system_status": "NORMAL"}
-
-def save_dashboard_data(data):
-    path = '/Users/seunghoonoh/woonmok.github.io/dashboard_data.json'
-    with open(path, 'w', encoding='utf-8') as f:
-        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
-        try:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        finally:
-            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
-
-def get_weather():
-    try:
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={OPENWEATHER_CITY}&appid={OPENWEATHER_API_KEY}&units=metric&lang=kr"
-        resp = requests.get(url, timeout=5)
-        if resp.status_code == 200:
-            data = resp.json()
-            temp = data['main']['temp']
-            humidity = data['main']['humidity']
-            desc = data['weather'][0]['description']
-            return {
-                "text": f"진안 실시간 날씨: {desc}, 온도 {temp}°C, 습도 {humidity}%",
-                "temp": temp,
-                "humidity": humidity,
-                "desc": desc
-            }
-        else:
-            return {"text": f"[날씨] API 오류: {resp.status_code}"}
-    except Exception as e:
-        return {"text": f"[날씨] 연결 오류: {e}"}
-
-
 # --- 텔레그램 명령 처리 ---
 def handle_telegram_command(msg_text, message):
     try:
@@ -314,3 +260,14 @@ def handle_msg(message):
     if result:
         # parse_mode 제거 (마크다운 파싱 오류 방지)
         bot.reply_to(message, result)
+
+
+def main():
+    print("antigravity.py main started")
+    t = threading.Thread(target=weather_updater, daemon=True)
+    t.start()
+    bot.infinity_polling()
+
+
+if __name__ == "__main__":
+    main()
