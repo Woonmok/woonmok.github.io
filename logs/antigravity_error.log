@@ -3994,3 +3994,4 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 [get_weather] 2026-02-05 17:26:43.364759 {'text': '진안 실시간 날씨: 구름조금, 온도 6.55°C, 습도 66%', 'temp': 6.55, 'humidity': 66, 'desc': '구름조금'}
 [get_weather] 2026-02-05 17:36:43.805691 {'text': '진안 실시간 날씨: 구름조금, 온도 3.35°C, 습도 87%', 'temp': 3.35, 'humidity': 87, 'desc': '구름조금'}
 [get_weather] 2026-02-05 17:46:44.281031 {'text': '진안 실시간 날씨: 구름조금, 온도 3.35°C, 습도 87%', 'temp': 3.35, 'humidity': 87, 'desc': '구름조금'}
+[get_weather] 2026-02-09 17:58:48.454640 {'text': '진안 실시간 날씨: 구름조금, 온도 -2.01°C, 습도 51%', 'temp': -2.01, 'humidity': 51, 'desc': '구름조금'}
