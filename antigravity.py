@@ -185,7 +185,19 @@ def handle_telegram_command(msg_text, message):
         data = load_dashboard_data()
 
         if msg_text == "/start":
-            return "👋 안녕하세요! Wave Tree 할일 관리 봇입니다.\n\n사용 가능한 명령어:\n- /todo 또는 '목록' - 할일 목록\n- 추가: 작업명 - 할일 추가\n- 완료: ID - 할일 완료\n- 삭제: ID - 할일 삭제\n- 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
+            return (
+                "👋 안녕하세요! Wave Tree 할일 관리 봇입니다.\n\n"
+                "슬래시 명령어:\n"
+                "- /start - 시작 메시지 & 명령어 안내\n"
+                "- /todo 또는 /목록 - 할일 목록 보기\n"
+                "- /help - 도움말\n\n"
+                "기존 명령어:\n"
+                "- 추가: 작업명 - 할일 추가\n"
+                "- 목록 - 할일 보기\n"
+                "- 완료: ID - ID로 완료 처리\n"
+                "- 삭제: ID - ID로 삭제\n"
+                "- 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
+            )
 
         elif msg_text in ["/todo", "/목록", "/list"]:
             todos = data.get("todo_list", [])
@@ -198,7 +210,19 @@ def handle_telegram_command(msg_text, message):
             return msg
 
         elif msg_text in ["/help", "/도움말"]:
-            return "📚 **명령어 도움말**\n\n▪️ /todo - 할일 목록 보기\n▪️ 추가: 작업명 - 새 할일 추가\n▪️ 완료: 1 - ID로 완료 처리\n▪️ 삭제: 1 - ID로 삭제\n▪️ 목록 - 할일 목록 보기\n▪️ 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
+            return (
+                "📚 명령어 도움말\n\n"
+                "슬래시 명령어:\n"
+                "- /start - 시작 메시지 & 명령어 안내\n"
+                "- /todo 또는 /목록 - 할일 목록 보기\n"
+                "- /help - 도움말\n\n"
+                "기존 명령어:\n"
+                "- 추가: 작업명 - 새 할일 추가\n"
+                "- 목록 - 할일 목록 보기\n"
+                "- 완료: ID - ID로 완료 처리\n"
+                "- 삭제: ID - ID로 삭제\n"
+                "- 할일: 1. xxx, 2. yyy - 할일 덮어쓰기"
+            )
 
         if msg_text.startswith("추가:"):
             task = msg_text.replace("추가:", "").strip()
