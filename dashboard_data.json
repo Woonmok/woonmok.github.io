@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-10 23:13:52",
+  "last_updated": "2026-02-10 14:27:59",
   "intelligence": [
     {
       "title": "Ambriola 치즈 리콜, FDA가 최고 위험 등급(Class I)으로 격상",
@@ -35,7 +35,7 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-10 23:13:50",
+    "updated": "2026-02-10 23:23:51",
     "temp": -0.03,
     "humidity": 99,
     "desc": "온흐림"
@@ -43,7 +43,7 @@
   "intelligence_backup": [
     {
       "title": "미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중",
-      "summary": "[점수/10] | [제목 한줄]\n분석: 미국 배양육 시장의 균사체 기반 발효 방식으로의 급격한 전환은 '진안 Farmerstree' 프로젝트의 균사체 배양육 핵심 전략이 시장의 니즈와 비용 효율성 요구에 부합함을 강력히 검증합니다",
+      "summary": "[분석 불가] 균사체, mycelium, 배양육, 배양 포함",
       "tag": "중요",
       "score": "0.85"
     },
