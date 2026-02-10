@@ -1,11 +1,17 @@
 {
-  "lastUpdate": "2026. 2. 5. 오후 9:00:35",
+  "lastUpdate": "2026. 2. 10. 오후 5:17:53",
   "weather": {
-    "temp": "0.3°",
-    "humidity": "87%",
+    "temp": "1.4°",
+    "humidity": "93%",
     "status": "Clear"
   },
   "news": [
+    {
+      "category": "리스테리아",
+      "title": "임신 중 ‘이 우유’ 마셨다 신생아 숨져... 美 보건당국 “주의 당부” - 코메디닷컴",
+      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1VNk5jSGc4V2p3MlEyZWloYVlkdFdzN0ZrdldMYW8wZ0VxWkE1ZE1ETUpvU1pMS1F0U1VZcUg1SHN0dw?oc=5",
+      "pubDate": "Fri, 06 Feb 2026 11:37:00 GMT"
+    },
     {
       "category": "리스테리아",
       "title": "우유 마셨다 뱃속 아이 잃은 산모…美 발칵 - 지디넷코리아",
@@ -20,14 +26,26 @@
     },
     {
       "category": "리스테리아",
+      "title": "임신 중 생우유 한잔 마셨다가 태아 사망…美 보건당국 \"절대 먹지 마세요\" - 네이트",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE56M0hpT0tmRXJSekV2amlFZ3hoUTNwSllpWmdWbDVIUm1ZRVdNeWVjVy02Wlo0bzhhY0VOa2owbHg1aHNfOWxWZ0UycmtCWVhTd1Jj?oc=5",
+      "pubDate": "Mon, 09 Feb 2026 15:47:00 GMT"
+    },
+    {
+      "category": "리스테리아",
       "title": "EU, RTE 리스테리아 기준 대폭 강화…한국 수출기업 제대로 준비해야 - 식품음료신문",
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9ETFBEdVBvQXJ1Y2E5dmxYa0QzQzVhbElkdzh1dndCLW9CLXFOUFJzM2VoSlJVUmZMeWJ4V2hqVWpFSGlRSDJlX1JyMWlFbFh2MENLclczenQ3cS11WGNYZDg3Q0lfM3RTUjF1akFvQQ?oc=5",
       "pubDate": "Fri, 18 Jul 2025 07:00:00 GMT"
     },
     {
       "category": "리스테리아",
-      "title": "미국서 ′즉석 조리 파스타′ 먹고 6명 식중독 사망…리스테리아 검출 - 연합뉴스TV",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5YODRQMUU5UGlGRlV0MHB5VV9hdzVxUjZfZW1SOGpCNzVyYUhTSTJ3UEtNRnBKazZvUGgzZDF2TUIwb1JVTWUyU0JJRjl0TUQ2TTNmSUpXSXlGWEN2QVNUSmtCb3c?oc=5",
+      "title": "생우유 마신 임신부, 태아 숨졌다…美 보건당국 “마시지 마세요” 경고 - twig24.com",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9mM2loZkEwaTQ5UVJwNVpvcDlZclhWa3dFMjk5ZXI2aHZYVDhNemY0aWxHZ3pjaDdtZkZBSlh0WkRhaWZ0dXlMdTh4SUdSUUJVMW0xV3ZCZ203Zm90X0hzbzdlVmVqNlhVajFTMWN6WW55X290SWhIWWNMSVZlOEE?oc=5",
+      "pubDate": "Thu, 05 Feb 2026 21:00:00 GMT"
+    },
+    {
+      "category": "리스테리아",
+      "title": "미국서 '즉석 조리 파스타' 먹고 6명 식중독 사망…리스테리아 검출 - 연합뉴스TV",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9UOE40ZndtUlQ3V3NnS0xLSVQ1NUprWmF4RURGNVM5eEtIOFJya2d6WlphcnlFZElVZ2FDYl96aGs0UDF6TkRJbzRuMzVfajdEbzQyMlVDVVhDUnlqVFE4cmdn?oc=5",
       "pubDate": "Tue, 04 Nov 2025 08:00:00 GMT"
     },
     {
@@ -38,33 +56,21 @@
     },
     {
       "category": "리스테리아",
-      "title": "미국 리스테리아 식중독균 의심 칠면조베이컨 36만8천 파운드 리콜 - MSN",
-      "link": "https://news.google.com/rss/articles/CBMivARBVV95cUxPaW14UzJjNzMzZmQwLU9RczNadW93RWdFWWIxeFU1TC1haF9pbVpVV1V0N0N3dVlQZnZzZW9PNlhRSFJ2RldTR1hpVzQyM0EwbHZIZnVRVDlhODZKbGkwWUJ4elBRWFNhV0QyWDdHMkRhZ0QtWmp0M3RPeVRIRFE4TWRCV2pDMjg1TlExeTQ5azMwRnRySWZWNGZFOHNJejZXNWJmbVFHTHlrWnh0cy05ckxURHJuMFV2NVdtYlVTdFk3QVVncDFLMXVhdU5mUkZDNzI4YWRzbmFYLUtkVkl1X1NkWFBQRnBFVzZ4TzBndy1yTDlaR0xpa1FTci1PYmkyZkxWZjEyZm8wVG1lRXo0LWE4NjRKY2Vlb2FPS2tzMkZNQTR4MWlscHVVR3VxcngyWF90aVdZT1g2YXVDdlBnbHE5SEdkVXAzNzlYZ2NWOTFGT3NXekZINEQzZUdORmdGRFhyUmFfbGlQdjB6Zk1XaWZmY0cteEZaWUxWMlhYSmY1NlphLWlPQ0pRLXRCLUxaTEtFVXJjcUVGQVhIVFVvemFHVEZ4M3hFdHgwVDNfNUdkQkNoa09wREkxSHFmUmlvZkhXR3NPVUkxZ01SQWQ3ZnlIZURVR2NMRkY1NDZsWXRac0FEbnhwaHVuVXlYY0NiOFpHWVN4TGhaVm9ab2RIOEJjaFRVcGNFSkNlNl9QSWhSS1piSk9xVWdxM0R3SGxQQ0FmMWJDV1UtYmJobmJZMnp6X2VEVGpFVVZBNw?oc=5",
-      "pubDate": "Thu, 05 Feb 2026 00:59:08 GMT"
-    },
-    {
-      "category": "리스테리아",
       "title": "세니젠, 리스테리아균 검출키트 미국 AOAC 국제 인증 획득…해외시장 진출 박차 - 헬스경향",
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA4NlA3b3F5LW9RdzdMdFBRelR1cEZyWmUzZWw3UzRCTUxTRVlQenI2anZxNjVSbTFDUmFyNENRaTFmNmw2UFRxQl8xQWpOOWFaLXhodTY1aExQRUU4NVhYaEZQUzI?oc=5",
       "pubDate": "Wed, 23 Jul 2025 07:00:00 GMT"
     },
     {
       "category": "리스테리아",
-      "title": "美 주요 마트서 팔던 즉석 파스타 먹고 6명 사망, 이유는? - 한국일보",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1OZE9CVEZONW41RVR2WXhIR2NTUG5LbWhJVnNwam5UaXV2Mzd2Y01pdjlINzBrMGdrLTNseFlVbGNDM1dmSXB6TFVadXQ0Q2RZekdBOE82TWdQd0JlZVVOTjQ2amdVa3hlNGc?oc=5",
-      "pubDate": "Wed, 05 Nov 2025 08:00:00 GMT"
+      "title": "美 뉴멕시코 보건부, “생우유 마시지 마세요” - 밴쿠버 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE4zUlBJV2pXeDRGRXhLakZqWWlzaUVUMzlkRVExdzMxdC1UREJ3dHIwYk1MLVZoWVhPeWFEa2paR0ZmVTNBYzFGMDBn?oc=5",
+      "pubDate": "Wed, 04 Feb 2026 14:15:09 GMT"
     },
     {
       "category": "리스테리아",
       "title": "살모넬라·리스테리아 전처리 시간을 97.9% 단축한 신속 검출법 개발 - knongnews.com",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0wanI1X1piQklWdmhXS0lKWTEweTl2SWw0ZGIweEllc2V0OXhNMkhhQXhPY003Z1hMN2tfTnNJV3ZRYVdReG5Ic0thMi13V2tBWEtpTi1kdDRFcHZFRGRCdFhaZVBuUEZWbG1B?oc=5",
       "pubDate": "Mon, 29 Dec 2025 08:00:00 GMT"
-    },
-    {
-      "category": "리스테리아",
-      "title": "프랑스 치즈 식중독 비상…샤브그랑 제품에 사망자까지 발생 - 연합뉴스",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1GTklNVnBTYXN1LVlXdWhQZDVmaU13TlJBc0hWMmtVQ1VSMEVxaWNLcW94NV96QVJWYkFxUVNwajdzaDhyVTQyODhZVGVoZE50anlQZVEwR3F3ejjSAWBBVV95cUxPNlBmMS1EQUR6Qkd3X1BwcFd5bFVZZi1qUlRGR2d1emxMNldSYU5KMlF3dFd5aFNCM1JKRjk1bGF4UEFPSTFoZG1LcjBmamZnSWNJWVFpd3NBRWNDdnVFclc?oc=5",
-      "pubDate": "Thu, 14 Aug 2025 07:00:00 GMT"
     },
     {
       "category": "리스테리아",
@@ -80,25 +86,25 @@
     },
     {
       "category": "리스테리아",
-      "title": "제멋대로 약 먹은 고혈압·천식 50세男, 뇌수막염으로 죽을 뻔, 왜? - 코메디닷컴",
-      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1XNmVKTWN2ZVF4YWhfeGNJeTVLaDRmU3Z4YUQxb19qLWt1ZU54QzM0bDRJV0w0NHBERG02UHlRWkl0QQ?oc=5",
-      "pubDate": "Mon, 21 Jul 2025 07:00:00 GMT"
+      "title": "미국 리스테리아 식중독균 의심 칠면조베이컨 36만8천 파운드 리콜 - 뉴시스",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9OUG1jV3ZvY1JOUnR0Wnd2N1JpMXhzVEpGM3BHdi02UWYyT2xtM1ZPdEZJSUhvOGhXUHprTk16TFA3c0l4Nl9CckhCUll2Yl9LNVFLRjQ0X01qRGxzRjN1aNIBeEFVX3lxTFBiR2djNzc1SmNrOWdKblIwcExnREtEZ0h5TjRUUUZKb2pwWWQwbldaTlc2VDlmSmxkTnVfMXlRT1NPVlBsdE9TTXg2MTBPNFYxZGswelhpMVBpUnVsemxyY1ZUT2NhNVlacXk4SkF6WmYwTGEtUGtkQg?oc=5",
+      "pubDate": "Thu, 03 Jul 2025 07:00:00 GMT"
     },
     {
       "category": "리스테리아",
-      "title": "미국에서 '즉석 조리 파스타' 먹고 여섯 명 식중독 사망 - 한국경제",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iTHYtTkE3SFFjU1Z3OTdpRS1CU1M5Rmw5TllfejZYdlpHRjItaUNLNFRraUZfZmNQODh4WEprT3FpcDBfRWdPd2Via2Jka1hJN0t5ckxneXBuUdIBVEFVX3lxTFA5bUwxcmVqUnlpMm5Mbm9XX3R2ZXltdWhmUkY3Y1JsY0hYY3FBeHE2emRBVEhfZzhuU0ljVVFDUm9HUU4wZTNzS3dWQ2JzRFhXTnFMZg?oc=5",
-      "pubDate": "Tue, 04 Nov 2025 08:00:00 GMT"
-    },
-    {
-      "category": "리스테리아",
-      "title": "식약처 '순살족발'서 리스테리아 식중독균 검출 - 세이프타임즈",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5HbXdXUzU2NG1sLUFaQW1PaWJyUDdvS0ZydllkYWxTLVRtVkRjTWUxdVc3ZFM5TVJneWYwZGxFWV9USUxCbU13ZVFqclJVOERxV2lVUWYxMEs4S2tqU3JVWWJkT1hWeVZXYzFpbERTQdIBc0FVX3lxTE84V25abjkzN1NoY0UwTzlpV29RdlFsMXQ5RWM3ckdXYlFfUmlsZ0dBSHlkU0dmWU1UNXNDUTNUUG1xMGxQTFdzamFSUTdkTV9MRWtsTUpZU1o1Vmt2YUlLeWhUZE43bFUyZmowM1V2ajZkZU0?oc=5",
-      "pubDate": "Tue, 21 Oct 2025 07:00:00 GMT"
+      "title": "농관원, 식중독균 '살모넬라·리스테리아' 신속 검사 분석법 개발 - 한국식품의약신문",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5vVnBFc2drRFJ1U29NMUl6VmgzMnE4SXlnZUc4NE9EV1VGMVVYYmdMbHhWYTkxaFRHSEJHd05xcVhrdU5mNWtMTEhfU2JxRmQ4MTBOVDNPMjR6enB5WDlLd0F1UGJ5d0U?oc=5",
+      "pubDate": "Tue, 30 Dec 2025 08:00:00 GMT"
     }
   ],
   "sections": {
     "listeria": [
+      {
+        "category": "리스테리아",
+        "title": "임신 중 ‘이 우유’ 마셨다 신생아 숨져... 美 보건당국 “주의 당부” - 코메디닷컴",
+        "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1VNk5jSGc4V2p3MlEyZWloYVlkdFdzN0ZrdldMYW8wZ0VxWkE1ZE1ETUpvU1pMS1F0U1VZcUg1SHN0dw?oc=5",
+        "pubDate": "Fri, 06 Feb 2026 11:37:00 GMT"
+      },
       {
         "category": "리스테리아",
         "title": "우유 마셨다 뱃속 아이 잃은 산모…美 발칵 - 지디넷코리아",
@@ -113,21 +119,15 @@
       },
       {
         "category": "리스테리아",
+        "title": "임신 중 생우유 한잔 마셨다가 태아 사망…美 보건당국 \"절대 먹지 마세요\" - 네이트",
+        "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE56M0hpT0tmRXJSekV2amlFZ3hoUTNwSllpWmdWbDVIUm1ZRVdNeWVjVy02Wlo0bzhhY0VOa2owbHg1aHNfOWxWZ0UycmtCWVhTd1Jj?oc=5",
+        "pubDate": "Mon, 09 Feb 2026 15:47:00 GMT"
+      },
+      {
+        "category": "리스테리아",
         "title": "EU, RTE 리스테리아 기준 대폭 강화…한국 수출기업 제대로 준비해야 - 식품음료신문",
         "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9ETFBEdVBvQXJ1Y2E5dmxYa0QzQzVhbElkdzh1dndCLW9CLXFOUFJzM2VoSlJVUmZMeWJ4V2hqVWpFSGlRSDJlX1JyMWlFbFh2MENLclczenQ3cS11WGNYZDg3Q0lfM3RTUjF1akFvQQ?oc=5",
         "pubDate": "Fri, 18 Jul 2025 07:00:00 GMT"
-      },
-      {
-        "category": "리스테리아",
-        "title": "미국서 ′즉석 조리 파스타′ 먹고 6명 식중독 사망…리스테리아 검출 - 연합뉴스TV",
-        "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5YODRQMUU5UGlGRlV0MHB5VV9hdzVxUjZfZW1SOGpCNzVyYUhTSTJ3UEtNRnBKazZvUGgzZDF2TUIwb1JVTWUyU0JJRjl0TUQ2TTNmSUpXSXlGWEN2QVNUSmtCb3c?oc=5",
-        "pubDate": "Tue, 04 Nov 2025 08:00:00 GMT"
-      },
-      {
-        "category": "리스테리아",
-        "title": "“마트 파스타 먹고 6명 사망”… 식중독 확산 우려에 발칵 뒤집힌 美 - 조선일보",
-        "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1RZVluM3ZEOHBqYmY4Uk9DcmhwWlhUTXZwZ0pQa013eHR6SHNpVjN3b2t2OHNnR25NU25TZkt1dnExT0RXMHZRSUhScHZnbU9HaVRLS0NyQno5cUoyMEdkOGJRYTR5cnZxeFF4WjZCbmpzbTRqU1E?oc=5",
-        "pubDate": "Wed, 05 Nov 2025 08:00:00 GMT"
       }
     ],
     "culturedMeat": [
@@ -145,21 +145,21 @@
       },
       {
         "category": "배양육",
-        "title": "의성 배양육 배지 연구, 식품 허가 넘어 국가성과 선정 - 경북일보",
-        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ILV9aWXBYX3pFZGQyRVlnM2JDTmY3eTZEVE5TWjkzeGFmbV9VYkZudFNTVGo4Z2J5S2hnT1dhWHd3SnkyNnd6dE5mb0JxdzlSMzFYRGVLQUNIUHNnQ0J4SzVXNkpZd3JmM1o1R19FTQ?oc=5",
-        "pubDate": "Wed, 04 Feb 2026 09:23:09 GMT"
+        "title": "의성군 바이오산업단지, 국가가 인정한 연구 혁신 거점으로 도약 - 경북매일",
+        "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1fSXNBOHJVM0VFaGVnd1lQRWIzMi1TbmJaVHVnOURrNHFVc1l6Slc0TTRldTR0RmppLUZmT01Rcl95Wjd4VFJaZXp5OHd5b2FFYWNaeF9UR3JoZw?oc=5",
+        "pubDate": "Mon, 09 Feb 2026 02:22:00 GMT"
       },
       {
         "category": "배양육",
-        "title": "의성 배양육 기술 ‘국가 연구성과’ 인정 - 대구신문",
-        "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5SWWpfbFJaM0xwejBoaFpxREJvaGpRVUcwTjc1c3NsTkJZX1BaLXJiY2JwLUNFRS12cDNzNVB2WktWUjhfZ0hMNE84U3BCUjItcUVYRVJNeERaTzhiOG16NEEza0tsV0Z5b2Fv?oc=5",
-        "pubDate": "Tue, 03 Feb 2026 12:20:00 GMT"
+        "title": "“아버지는 돼지 키우고 아들은 배양육 만들어야” - 돼지와사람",
+        "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9XdjZuSVBKNTBEOW5odEd1akRHRVlaQzhmWjBrYTYxSHBlbnJOZ242WHgyRG9Zc2pRdVJzTHVGUDg0YlZEUGtpdWV2eFlJX0d5LWdwcWdhQnl4dTVHTkxMMjJB?oc=5",
+        "pubDate": "Mon, 08 Sep 2025 07:00:00 GMT"
       },
       {
         "category": "배양육",
-        "title": "의성, 배양육 배지 기술로 국가가 주목한 바이오 거점 도약 - 한스경제",
-        "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1Ja0VVT2lKOWVwVTJfWEplcEhPRHVZZFNWeWRRMnV6TVcwOHpiQmpFWEFPZDhHLWdVN25YUGpweFZBRmhjdWdCQldvTWc0bk40cmtGcHo2TGZjX1doZ2pfUUhYT0FyY3REWUhJ0gFvQVVfeXFMTU9yNzNJWnhObUp2TlBpU2tpOWdRZXhRb3dVaUluSUU4cnRzRnBHNUFTWU9ycE1Kd2FxYnN2QTJaV1lqY1NjMjRIUlZxUThCbXdPY09EUWFYV042Z1prei1XMEk2RG1QYW8xNjN5RnNj?oc=5",
-        "pubDate": "Tue, 03 Feb 2026 04:57:20 GMT"
+        "title": "[글로벌 리포트] 배양육, ‘미래’ 넘어 ‘시장’으로 … 2026년 상업화 골든타임 도래 - 헬스코리아뉴스",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE55TTF2Z19mZXN3a0VHYW9fRWZ5Z3FPUmZKMmtDYzBqcUM3WjBoT3NJdG00TkxjR1VKV1NLWEhjUDZhNmxTM09YaHRIV01iQkZnekt6VlF3bEJFcWNQbWdlbGRmTEFJa0E?oc=5",
+        "pubDate": "Wed, 07 Jan 2026 08:00:00 GMT"
       }
     ],
     "audio": [
@@ -183,47 +183,47 @@
       },
       {
         "category": "Linn Audio",
-        "title": "피시를 오디오로…고음질 ‘피시파이’ 도전! - 한겨레",
-        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB0OTU2SF9HaHlRR2Etc2NheGlmTGNOeS1BQjE2N2hlQ25rOTZ1X0FWeEtDaC1vMnRTWWwtVE1BZVFlSFRXc3ROMnVyQ0dZY290dlQxcDdFc3kzRnZwdDJmay1sRm0yZnk0QW5MZWU0c1Q1dTJL?oc=5",
-        "pubDate": "Wed, 29 May 2019 19:55:48 GMT"
+        "title": "UNIST \"어디든 붙이고 모양도 바꿀 수 있는 스피커 개발\" - 부산일보",
+        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1LNkhTOXdzUW01WW9LZUcwX0xLUXJ1aURjbWRRWHpfZEVNZmpGMEV0WnJxOUVRa1FlMTIwVEF3SGRYSGxlUHBWR19fRy1HTDVUY05uT29BX2I2cmM1Wkx6QXN0YVk4YU1Lb1o3Vmg4QTFNbW9L?oc=5",
+        "pubDate": "Tue, 28 Nov 2023 08:00:00 GMT"
       },
       {
         "category": "Linn Audio",
-        "title": "‘결혼 10주년’ 린·이수, 첫 부부 듀엣 ‘음’ 발매 - 스타투데이 - 매일경제",
-        "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5BZTBLMXczRXJYS1FaOWZwOUxMT21NX3ljQmJpOEJaWUw3Y2JjVUZKZENCcVZhNS1kTkhJSFB3bmNRV1BRQVBSR19LaGp2ZVg2Q1JjR0JPeFg?oc=5",
-        "pubDate": "Mon, 07 Oct 2024 07:00:00 GMT"
+        "title": "로이코, 역대급 규모로 ‘2023 서울국제오디오쇼’ 참가 - betanews.net",
+        "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9WVUhtYzhtckNsNVlxRl9kM2w5d1RIamc3dlI3M1J0eHd2bVYzVGdxWVhlSzdLZ0I1UU4tU0dVdGNGWGhVTFlMQS1HdzdyWVlKMWtXOVdiRThtUDdGY0VScEpSRlQ?oc=5",
+        "pubDate": "Fri, 03 Mar 2023 08:00:00 GMT"
       }
     ],
     "computer": [
       {
         "category": "인공지능 기술",
-        "title": "\"한국에서 개발했다고?\"…엔비디아보다 2.1배 빠른 AI 반도체 기술 나왔다 - v.daum.net",
-        "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBjTV8xMmlnbFFKSVV2U2xrVFF3Z1RTZE1NTkVnTGtvNTNDbm9PeXlJQUNxaU9WSzFHc0psMkJOanE4SWRaUkp1T21jVUNEdTg?oc=5",
-        "pubDate": "Wed, 04 Feb 2026 22:59:24 GMT"
+        "title": "행안부, 공공부문 인공지능 도입·확산 지원... ‘AI 민주정부 실현’ 속도 높인다 - 인공지능신문",
+        "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBlMWtzOENuNlMxbFlJcWlDMnZ3eFZzZERqN1ZMOHVENkFtdUNZc3B2dGtPQ3ZYMzl5Zk5ZVnZYWTNTYXlYTDRNSElvTXZWYzVTcXhWam04UmpuTURVTmdIZEIxclJ4V0U?oc=5",
+        "pubDate": "Tue, 10 Feb 2026 03:40:47 GMT"
       },
       {
         "category": "인공지능 기술",
-        "title": "\"AI, 더이상 미래기술 아냐…韓, 산업특화·물리적 AI분야서 주도권 확보해야\" - 마켓인",
-        "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE40YmhLQk9lbGYzV25tWHp1OUdSbWpPazhMa2Zza0hINGtzaHZJd0J4V1dWajJ5VlFXdFp0T1hfUlFxT1lhNG9QNDRlcEVNTGJjOVJ3eUc5VnFxYTFSSjV5c1Q1cXZRZU9Lc2pfUlM4VS1YYTQ?oc=5",
-        "pubDate": "Thu, 05 Feb 2026 06:57:07 GMT"
+        "title": "[이희정 교수 AI 칼럼-9] 기술과 AI: 중국 AI가 그리는 거대한 설계도- 딥시크를 넘어 하드웨어 자립으로의 대전환 - 데일리시큐",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9kOVI0Yk1PRUhza2xzbk9lTUxIaHZZV256YUxEVlAwWlo5clRpYkVKSC1ZU1otOXNGeTdzUDQ1MlhjaHJoelBnRXk0M052MEdBYmpKTGRoVlg0bTRXdW85S28tYmVfRTBMWUNRVg?oc=5",
+        "pubDate": "Tue, 10 Feb 2026 05:20:21 GMT"
       },
       {
         "category": "인공지능 기술",
-        "title": "연구실선 우등생, 병동선 낙제생… AI 자해 감지 기술, 상용화 벽 높다-라이프ㅣ한국일보 - 한국일보",
-        "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9pUWR5MVFyVUthLWlxUHdxOWdkcUV5bGRfVndmd3hCSk9hMnJFVzFxaDBBM2I2MjRQSVdkcVkwYWxtYjVLRGFVRHluWkhPOHhpNnhMRVQ0blA1N0JNR0s4T2hkZ3F5NERiRUx5S01n?oc=5",
-        "pubDate": "Thu, 05 Feb 2026 02:29:00 GMT"
+        "title": "“인공지능 시대를 떠받치는 기술인프라, 반도체” - 무진장뉴스i",
+        "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9XRlV6LUhmU2h5SHZmRzQ3RkVVTVdmc2VnNmlveXltblpMcXUyVGdCNnp5YXBOSnpuajl5SkNVd0Q2TUd4cFFPdGk4djNJUGkzMUJPU2tFUE9CQQ?oc=5",
+        "pubDate": "Tue, 10 Feb 2026 06:11:58 GMT"
       },
       {
         "category": "인공지능 기술",
-        "title": "뉴로메카, '피지컬AI' 중심으로 사업구조 전환…\"기술경쟁력 강화\" - 네이트",
-        "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBxLVN6ZHJ2bDdHc2tiSTEtX2ZhaWtfSVN0S21jbnFEUm9Fa0YyMjFuUVFRWXFBcmVRUkJZOW9pcHhid1BObE9TMmI0ODlaSW5xV2dJ?oc=5",
-        "pubDate": "Thu, 05 Feb 2026 02:07:00 GMT"
+        "title": "인공지능산업법학회, 신년정기학술대회 - 법률신문",
+        "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE93SG8xaFJfX3dRYTNRdmRaUHJTT3J3Rkd5VXgxX2pDeTdUZjZXOXBzVldrM0VXVjlZYjZXdzY5SlV1VHJwQWF1SGhLYTRDMlM1UGdOcU53aFJxaU13Q3N2cnRnSEg1anBnY1V1djhR0gFyQVVfeXFMTWVOWGI4NFZ2TEFreG5JUnB5MEdSQTNWeTBhT1EtTldDaWZqOFRFaGstZXRzX0NqekhmckxOc3JYZVQwRXUzUERwZWNmcG9sYTJ3Zy1kYmpNOWJXZWxBblVPN0p5aDc4SHJRR3BrWnA1c1ZB?oc=5",
+        "pubDate": "Tue, 10 Feb 2026 04:08:03 GMT"
       },
       {
         "category": "인공지능 기술",
-        "title": "AI 추론 속도 높인 기술 개발…\"엔비디아 GPU보다 2배 빨라\" - science.ytn.co.kr",
-        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPNlVBcWNEeHJidldINmliamMzMXl2ZlhVUGhTZXFRT2pJTDhrZ1R0Nzg4SV9lYkJvRDB2dDJPQmlKa2F1QUZueGRlV0d3dXRQekp0Q3FqZENpdTdwa092VXQxcFpSRmtfLTJpaGRKdUJoVFVJeTNIemwwcW1EUGQtb2VxUXd3Y3JrS2pseA?oc=5",
-        "pubDate": "Thu, 05 Feb 2026 00:00:00 GMT"
+        "title": "슈퍼플래닛, AI 기술 접목한 퍼즐 신작 'K-푸드 스낵바' 출시 - 전자신문",
+        "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5BUXJMaXJxb01FdFVqRnkzY01zaGM2Y3lZRGJ4a3FMV3lRNW1wdkp3Z2EwbndyRVhDbjRlS3VMNHlTU1lvdEh2YV9QdUFIQQ?oc=5",
+        "pubDate": "Tue, 10 Feb 2026 05:11:45 GMT"
       }
     ]
   }
