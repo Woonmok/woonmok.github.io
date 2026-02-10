@@ -35,10 +35,10 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-10 23:23:51",
-    "temp": -0.03,
-    "humidity": 99,
-    "desc": "온흐림"
+    "updated": "2026-02-10 23:43:52",
+    "temp": -0.04,
+    "humidity": 100,
+    "desc": "가벼운 눈"
   },
   "intelligence_backup": [
     {
