@@ -1,7 +1,7 @@
 {
   "todo_list": [
     {
-      "text": "1. 맥미니 서버 완성 하기",
+      "text": "1. 목요일까지 군의원 자료 보내기",
       "completed": false,
       "id": 1
     },
@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-10 13:37:34",
+  "last_updated": "2026-02-10 23:13:52",
   "intelligence": [
     {
       "title": "Ambriola 치즈 리콜, FDA가 최고 위험 등급(Class I)으로 격상",
@@ -35,10 +35,10 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-09 18:08:48",
-    "temp": -2.01,
-    "humidity": 51,
-    "desc": "구름조금"
+    "updated": "2026-02-10 23:13:50",
+    "temp": -0.03,
+    "humidity": 99,
+    "desc": "온흐림"
   },
   "intelligence_backup": [
     {
