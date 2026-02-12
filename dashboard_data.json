@@ -17,8 +17,30 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-10 14:27:59",
+  "last_updated": "2026-02-12 03:11:10",
   "intelligence": [
+    {
+      "title": "캐나다, Mushmoshi 팽이버섯 리스테리아 가능성으로 리콜",
+      "summary": "캐나다 Longsheng Agricultural Products가 판매한 Mushmoshi 브랜드 팽이버섯(200g, 2026-03-08 표기)이 리스테리아 가능성으로 리콜되었으며, 전국 유통분이 대상이라고 eFoodAlert가 전함. [web:166]",
+      "tag": "listeria_free",
+      "score": "0.9",
+      "url": "https://efoodalert.com/2026/02/02/recalls-and-alerts-february-1-2-2026/"
+    },
+    {
+      "title": "뉴멕시코 보건부, 신생아 리스테리아 사망 후 생유(생우유) 섭취 자제 경고",
+      "summary": "뉴멕시코 보건부는 임신 중 생유를 마신 산모의 신생아가 리스테리아 감염으로 사망한 뒤, 모든 생유·비살균 유제품 섭취를 피하라고 주민에게 경고했다고 보도됨. [web:107]",
+      "tag": "listeria_free",
+      "score": "0.88",
+      "url": "https://efoodalert.com/2026/02/05/recalls-and-alerts-february-5-2026/"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-11 00:13:53",
+    "temp": -0.04,
+    "humidity": 100,
+    "desc": "가벼운 눈"
+  },
+  "intelligence_backup": [
     {
       "title": "Ambriola 치즈 리콜, FDA가 최고 위험 등급(Class I)으로 격상",
       "summary": "FDA는 2025년 11월 자발적 리콜이었던 Ambriola 치즈 제품을 Class I 리콜로 재분류하며, 섭취 시 심각한 건강 피해나 사망 위험이 있을 수 있다고 경고했다고 보도함. [web:87][web:53]",
@@ -32,32 +54,6 @@
       "tag": "listeria_free",
       "score": "0.88",
       "url": "https://www.ksat.com/news/local/2026/01/09/more-than-11000-cheese-products-recalled-due-to-possible-listeria-contamination/"
-    }
-  ],
-  "weather": {
-    "updated": "2026-02-11 00:13:53",
-    "temp": -0.04,
-    "humidity": 100,
-    "desc": "가벼운 눈"
-  },
-  "intelligence_backup": [
-    {
-      "title": "미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중",
-      "summary": "[분석 불가] 균사체, mycelium, 배양육, 배양 포함",
-      "tag": "중요",
-      "score": "0.85"
-    },
-    {
-      "title": "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상",
-      "summary": "[분석 불가] 균사체, fermentation 포함",
-      "tag": "중요",
-      "score": "0.85"
-    },
-    {
-      "title": "FDA 리스테리아 긴급 알림 발표 - 냉장 식품 관련",
-      "summary": "[분석 불가] 리스테리아 포함",
-      "tag": "긴급",
-      "score": "0.95"
     }
   ]
 }
