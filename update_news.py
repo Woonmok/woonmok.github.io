@@ -1,8 +1,13 @@
 import json, requests
 
 def send_real_briefing():
-    # 1. 텔레그램 전용 주소 (운목님 고유 주소)
-    TOKEN = "8573370357:AAG7vOSA4sdC4hwynoHsWdSD5Omqk4ME--o"
+    # ⛔ 이전 봇 토큰 비활성화됨 (2026-02-12)
+    # 새 봇은 antigravity.py에서 관리합니다.
+    print("⛔ 이 스크립트는 비활성화되었습니다. antigravity.py를 사용하세요.")
+    return
+
+    # 1. 텔레그램 전용 주소 (운목님 고유 주소) — 비활성화됨
+    TOKEN = "REVOKED"
     CHAT_ID = "8556588810"
     
     # 2. 안티그래비티가 동기화한 운목님의 진짜 할 일
