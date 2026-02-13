@@ -171,12 +171,17 @@
         .todo-item {
             flex: 1;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 10px 15px;
             background: rgba(255, 255, 255, 0.06);
             border-radius: 10px;
             font-size: 1.2em;
             white-space: pre-line;
+        }
+
+        .todo-text {
+            display: block;
+            line-height: 1.35;
         }
 
         .todo-item::before {
@@ -539,7 +544,7 @@
                         const todoText = String(item.text || '').replace(/\n/g, '<br>');
                         todoHtml += `
                         <li class="todo-item ${completedClass}">
-                            ${todoText}
+                            <span class="todo-text">${todoText}</span>
                         </li>
                         `;
                     });
@@ -551,7 +556,7 @@
                             const todoText = String(text || '').replace(/\n/g, '<br>');
                             todoHtml += `
                             <li class="todo-item">
-                                ${todoText}
+                                <span class="todo-text">${todoText}</span>
                             </li>
                             `;
                         });

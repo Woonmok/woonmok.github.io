@@ -2,7 +2,17 @@
   "todo_list": [
     {
       "id": 1,
-      "text": "1. 다음주 금요일까지 출마선언문 작성하기.\n2. 버섯특허관련 시스템 허브 제작 하기.\n3. SoundSource_AU 만들기.",
+      "text": "1. 다음주 금요일까지 출마선언문 작성하기.",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "2. 버섯특허관련 시스템 허브 제작 하기.",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "3. SoundSource_AU 만들기.",
       "completed": false
     }
   ],
