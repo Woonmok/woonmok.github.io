@@ -2,7 +2,7 @@
   "todo_list": [
     {
       "id": 1,
-      "text": "1. 다음주 금요일까지 출마선언문 작성하기. 2. 버섯특허관련 시스템 허브 제작 하기. 3. SoundSource_AU 만들기.",
+      "text": "1. 다음주 금요일까지 출마선언문 작성하기.\n2. 버섯특허관련 시스템 허브 제작 하기.\n3. SoundSource_AU 만들기.",
       "completed": false
     }
   ],
@@ -25,10 +25,10 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-13 18:50:57",
-    "temp": 2.52,
-    "humidity": 73,
-    "desc": "맑음"
+    "updated": "2026-02-13 20:41:02",
+    "temp": 1.68,
+    "humidity": 76,
+    "desc": "약간의 구름이 낀 하늘"
   },
   "intelligence_backup": [
     {
