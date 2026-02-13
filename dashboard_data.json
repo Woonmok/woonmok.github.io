@@ -2,22 +2,12 @@
   "todo_list": [
     {
       "id": 1,
-      "text": "1. 다음주 금요일까지 출마선언문 작성하기",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "text": "2. 버섯특허관련 시스템 허브 제작 하기",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "text": "3. SoundSource_AU 만들기",
+      "text": "1. 다음주 금요일까지 출마선언문 작성하기. 2. 버섯특허관련 시스템 허브 제작 하기. 3. SoundSource_AU 만들기.",
       "completed": false
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-13 18:40:58",
+  "last_updated": "2026-02-13 18:54:39",
   "intelligence": [
     {
       "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
