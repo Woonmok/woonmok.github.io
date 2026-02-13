@@ -17,8 +17,30 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-12 03:11:10",
+  "last_updated": "2026-02-13 02:12:53",
   "intelligence": [
+    {
+      "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
+      "summary": "FDA 발표를 인용한 기사에 따르면 BJ’s Wholesale Club 7개 주 매장에서 판매된 Wellsley Farms 냉동 연어에서 리스테리아가 검출돼 소비자에게 섭취 중단 및 환불 안내가 이뤄졌으며, 현재까지 관련 환자는 보고되지 않았다고 전함. [web:36]",
+      "tag": "listeria_free",
+      "score": "0.9",
+      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+    },
+    {
+      "title": "Frozen Salmon Recalled in 7 States Over Listeria Risk",
+      "summary": "Parade는 Wellsley Farms 대서양 연어 리콜의 대상 주, 판매 기간, 소비자가 확인해야 할 UPC·로트 번호를 정리하며, 해당 제품을 발견할 경우 매장 환불 또는 폐기를 권고한다고 설명함. [web:57]",
+      "tag": "listeria_free",
+      "score": "0.82",
+      "url": "https://parade.com/food/wellsley-farms-atlantic-salmon-recall-february-2026"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-11 00:13:53",
+    "temp": -0.04,
+    "humidity": 100,
+    "desc": "가벼운 눈"
+  },
+  "intelligence_backup": [
     {
       "title": "캐나다, Mushmoshi 팽이버섯 리스테리아 가능성으로 리콜",
       "summary": "캐나다 Longsheng Agricultural Products가 판매한 Mushmoshi 브랜드 팽이버섯(200g, 2026-03-08 표기)이 리스테리아 가능성으로 리콜되었으며, 전국 유통분이 대상이라고 eFoodAlert가 전함. [web:166]",
@@ -32,28 +54,6 @@
       "tag": "listeria_free",
       "score": "0.88",
       "url": "https://efoodalert.com/2026/02/05/recalls-and-alerts-february-5-2026/"
-    }
-  ],
-  "weather": {
-    "updated": "2026-02-11 00:13:53",
-    "temp": -0.04,
-    "humidity": 100,
-    "desc": "가벼운 눈"
-  },
-  "intelligence_backup": [
-    {
-      "title": "Ambriola 치즈 리콜, FDA가 최고 위험 등급(Class I)으로 격상",
-      "summary": "FDA는 2025년 11월 자발적 리콜이었던 Ambriola 치즈 제품을 Class I 리콜로 재분류하며, 섭취 시 심각한 건강 피해나 사망 위험이 있을 수 있다고 경고했다고 보도함. [web:87][web:53]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.goodmorningamerica.com/food/story/fda-upgrades-voluntary-cheese-recall-highest-risk-level-129197174"
-    },
-    {
-      "title": "Boar’s Head·Member’s Mark 등 1만1,530개 치즈, 리스테리아 가능성으로 회수",
-      "summary": "Ambriola가 제조한 Boar’s Head·Member’s Mark 치즈 제품 1만1,530개가 리스테리아 가능성으로 여러 주에서 리콜되고 있으며, FDA는 소비자에게 즉시 폐기 또는 환불을 권고하고 있다고 전함. [web:95]",
-      "tag": "listeria_free",
-      "score": "0.88",
-      "url": "https://www.ksat.com/news/local/2026/01/09/more-than-11000-cheese-products-recalled-due-to-possible-listeria-contamination/"
     }
   ]
 }
