@@ -176,6 +176,7 @@
             background: rgba(255, 255, 255, 0.06);
             border-radius: 10px;
             font-size: 1.2em;
+            white-space: pre-line;
         }
 
         .todo-item::before {
@@ -535,9 +536,10 @@
                     let todoHtml = '';
                     data.todo_list.forEach(item => {
                         const completedClass = item.completed ? 'completed' : '';
+                        const todoText = String(item.text || '').replace(/\n/g, '<br>');
                         todoHtml += `
                         <li class="todo-item ${completedClass}">
-                            ${item.text}
+                            ${todoText}
                         </li>
                         `;
                     });
@@ -546,9 +548,10 @@
                     let todoHtml = '';
                     if (statusData.approved_tickets.length > 0) {
                         statusData.approved_tickets.forEach(text => {
+                            const todoText = String(text || '').replace(/\n/g, '<br>');
                             todoHtml += `
                             <li class="todo-item">
-                                ${text}
+                                ${todoText}
                             </li>
                             `;
                         });
