@@ -17,8 +17,30 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-14 11:57:00",
+  "last_updated": "2026-02-14 03:25:50",
   "intelligence": [
+    {
+      "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
+      "summary": "FDA 발표를 인용한 기사에 따르면 BJ’s Wholesale Club 7개 주 매장에서 판매된 Wellsley Farms 냉동 연어에서 리스테리아가 검출돼 소비자에게 섭취 중단 및 환불 안내가 이뤄졌으며, 현재까지 관련 환자는 보고되지 않았다고 전함. [web:36]",
+      "tag": "listeria_free",
+      "score": "0.9",
+      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+    },
+    {
+      "title": "Frozen Salmon Recalled in 7 States Over Listeria Risk",
+      "summary": "Parade는 Wellsley Farms 대서양 연어 리콜의 대상 주, 판매 기간, 소비자가 확인해야 할 UPC·로트 번호를 정리하며, 해당 제품을 발견할 경우 매장 환불 또는 폐기를 권고한다고 설명함. [web:57]",
+      "tag": "listeria_free",
+      "score": "0.82",
+      "url": "https://parade.com/food/wellsley-farms-atlantic-salmon-recall-february-2026"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-14 11:55:27",
+    "temp": 10.16,
+    "humidity": 57,
+    "desc": "온흐림"
+  },
+  "intelligence_backup": [
     {
       "title": "Slade Gorton, BJ's 전용 냉동 연어 리스테리아 가능성으로 리콜",
       "summary": "BJ's Wholesale Club에서 판매된 Slade Gorton 냉동 연어가 리스테리아 오염 가능성으로 전격 리콜됐으며, 소비자에게 즉시 섭취 중단 및 환불 조치가 권고됨",
@@ -53,28 +75,6 @@
       "tag": "global_biz",
       "score": "0.90",
       "date": "2026-02-13"
-    }
-  ],
-  "weather": {
-    "updated": "2026-02-14 11:55:27",
-    "temp": 10.16,
-    "humidity": 57,
-    "desc": "온흐림"
-  },
-  "intelligence_backup": [
-    {
-      "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
-      "summary": "FDA 발표를 인용한 기사에 따르면 BJ’s Wholesale Club 7개 주 매장에서 판매된 Wellsley Farms 냉동 연어에서 리스테리아가 검출돼 소비자에게 섭취 중단 및 환불 안내가 이뤄졌으며, 현재까지 관련 환자는 보고되지 않았다고 전함. [web:36]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
-    },
-    {
-      "title": "Frozen Salmon Recalled in 7 States Over Listeria Risk",
-      "summary": "Parade는 Wellsley Farms 대서양 연어 리콜의 대상 주, 판매 기간, 소비자가 확인해야 할 UPC·로트 번호를 정리하며, 해당 제품을 발견할 경우 매장 환불 또는 폐기를 권고한다고 설명함. [web:57]",
-      "tag": "listeria_free",
-      "score": "0.82",
-      "url": "https://parade.com/food/wellsley-farms-atlantic-salmon-recall-february-2026"
     }
   ]
 }
