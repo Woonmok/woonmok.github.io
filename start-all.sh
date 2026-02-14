@@ -6,11 +6,20 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WORKSPACE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+JINAN_DIR="$SCRIPT_DIR/jinan-dashboard"
+NEWS_HUB_DIR="/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub"
+
+if [ ! -d "$NEWS_HUB_DIR" ]; then
+	NEWS_HUB_DIR="$WORKSPACE_ROOT/wave-tree-news-hub"
+fi
+
 echo "🚀 Starting Wave Tree Dashboards..."
 echo ""
 
 # Start jinan-dashboard (Vite dev server)
-cd /Users/seunghoonoh/woonmok.github.io/jinan-dashboard
+cd "$JINAN_DIR"
 npm run dev -- --host 127.0.0.1 &
 JINAN_PID=$!
 echo "✅ jinan-dashboard started (PID: $JINAN_PID)"
@@ -18,7 +27,7 @@ echo "   🔗 http://127.0.0.1:5173/"
 echo ""
 
 # Start wave-tree-news-hub (Python HTTP server)
-cd /Users/seunghoonoh/Desktop/wave-tree-news-hub
+cd "$NEWS_HUB_DIR"
 python3 -m http.server 8000 &
 WAVE_PID=$!
 echo "✅ wave-tree-news-hub started (PID: $WAVE_PID)"
