@@ -486,12 +486,14 @@
         async function updateDashboard() {
             try {
                 const cacheBust = `ts=${Date.now()}`;
-                const [dashboardRes, statusRes] = await Promise.all([
+                const [dashboardRes, statusRes, newsRes] = await Promise.all([
                     fetch(`dashboard_data.json?${cacheBust}`, { cache: 'no-store' }),
-                    fetch(`WaveTree_status.json?${cacheBust}`, { cache: 'no-store' })
+                    fetch(`WaveTree_status.json?${cacheBust}`, { cache: 'no-store' }),
+                    fetch(`news.json?${cacheBust}`, { cache: 'no-store' })
                 ]);
                 const data = await dashboardRes.json();
                 const statusData = statusRes.ok ? await statusRes.json() : null;
+                const newsData = newsRes.ok ? await newsRes.json() : null;
 
 
                 // Update System Status Visuals
@@ -514,11 +516,38 @@
                     document.getElementById('weather-info').innerText = `기온: ${temp}°C | 습도: ${humidity}% (${desc})`;
                 }
 
-                // Update Intelligence Hub (최대 2개만 표시)
+                // Update Intelligence Hub (dashboard_data 우선 + news.json fallback)
                 const hubContent = document.getElementById('intelligence-hub-content');
-                if (data.intelligence && data.intelligence.length > 0) {
+                const iconByCategory = {
+                    listeria_free: '🦠',
+                    cultured_meat: '🥩',
+                    high_end_audio: '🎵',
+                    computer_ai: '🤖',
+                    global_biz: '🌍'
+                };
+
+                let hubItems = Array.isArray(data.intelligence) ? data.intelligence.slice(0, 2) : [];
+
+                if (newsData && Array.isArray(newsData.items) && newsData.items.length > 0) {
+                    const topFromNews = [...newsData.items]
+                        .sort((a, b) => String(b.published_at || '').localeCompare(String(a.published_at || '')))
+                        .slice(0, 2)
+                        .map(item => ({
+                            title: `${iconByCategory[item.category] || '📰'} ${item.title || ''}`,
+                            summary: item.summary || '',
+                            tag: item.category || '-',
+                            score: item.score ?? '-',
+                            url: item.url || ''
+                        }));
+
+                    if (topFromNews.length > 0) {
+                        hubItems = topFromNews;
+                    }
+                }
+
+                if (hubItems.length > 0) {
                     let html = '';
-                    data.intelligence.slice(0, 2).forEach(news => {
+                    hubItems.forEach(news => {
                         html += `
                         <div class="news-item">
                             <div class="news-title">${news.tag === '긴급' ? '🚨 ' : ''}${news.title}</div>
@@ -527,6 +556,7 @@
                                 <span>Tag: ${news.tag}</span>
                                 <span>Score: ${news.score}</span>
                             </div>
+                            ${news.url ? `<a href="${news.url}" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>` : ''}
                         </div>
                         `;
                     });

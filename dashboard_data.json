@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-14 03:25:50",
+  "last_updated": "2026-02-14 03:37:11",
   "intelligence": [
     {
       "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
@@ -42,39 +42,18 @@
   },
   "intelligence_backup": [
     {
-      "title": "Slade Gorton, BJ's 전용 냉동 연어 리스테리아 가능성으로 리콜",
-      "summary": "BJ's Wholesale Club에서 판매된 Slade Gorton 냉동 연어가 리스테리아 오염 가능성으로 전격 리콜됐으며, 소비자에게 즉시 섭취 중단 및 환불 조치가 권고됨",
+      "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
+      "summary": "FDA 발표를 인용한 기사에 따르면 BJ’s Wholesale Club 7개 주 매장에서 판매된 Wellsley Farms 냉동 연어에서 리스테리아가 검출돼 소비자에게 섭취 중단 및 환불 안내가 이뤄졌으며, 현재까지 관련 환자는 보고되지 않았다고 전함. [web:36]",
       "tag": "listeria_free",
-      "score": "0.95",
-      "date": "2026-02-13"
+      "score": "0.9",
+      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
     },
     {
-      "title": "호주 Vow, 배양 메추리 규제 승인 후 수십 개 레스토랑에 첫 상업 공급 준비",
-      "summary": "호주 배양육 기업 Vow가 규제 승인을 받은 배양 메추리 제품을 수십 개 레스토랑에 상업 공급할 준비를 완료하며, 배양육의 본격적인 시장 진입을 알림",
-      "tag": "cultured_meat",
-      "score": "0.92",
-      "date": "2026-02-13"
-    },
-    {
-      "title": "2026년형 하이엔드 AV 리시버, AI 룸 보정·업믹스가 표준 기능으로 자리잡아",
-      "summary": "최신 하이엔드 AV 리시버에 AI 기반 룸 보정과 업믹스 기능이 표준으로 탑재되며, 홈시네마 음향의 새로운 기준을 제시",
-      "tag": "high_end_audio",
-      "score": "0.88",
-      "date": "2026-02-13"
-    },
-    {
-      "title": "OpenAI, 조니 아이브와 설계한 첫 AI 하드웨어 2026년 하반기 출시 준비",
-      "summary": "OpenAI가 애플의 전설적 디자이너 조니 아이브와 협력해 설계한 첫 AI 전용 하드웨어 디바이스를 2026년 하반기 출시 예정",
-      "tag": "computer_ai",
-      "score": "0.94",
-      "date": "2026-02-13"
-    },
-    {
-      "title": "유럽 대체단백 산업, 2040년까지 와인 산업 규모에 필적할 잠재력",
-      "summary": "유럽의 대체단백질 산업이 급성장하며 2040년까지 전통적인 와인 산업과 맞먹는 시장 규모로 성장할 것으로 전망됨",
-      "tag": "global_biz",
-      "score": "0.90",
-      "date": "2026-02-13"
+      "title": "Frozen Salmon Recalled in 7 States Over Listeria Risk",
+      "summary": "Parade는 Wellsley Farms 대서양 연어 리콜의 대상 주, 판매 기간, 소비자가 확인해야 할 UPC·로트 번호를 정리하며, 해당 제품을 발견할 경우 매장 환불 또는 폐기를 권고한다고 설명함. [web:57]",
+      "tag": "listeria_free",
+      "score": "0.82",
+      "url": "https://parade.com/food/wellsley-farms-atlantic-salmon-recall-february-2026"
     }
   ]
 }
