@@ -17,13 +17,43 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-16 13:20:11",
-  "intelligence": [],
+  "last_updated": "2026-02-16 13:22:15",
+  "intelligence": [
+    {
+      "title": "Daily Bridge 2026-02-16",
+      "summary": "이 파일은 VS Code와 Antigravity를 연결하는 인사이트 브릿지입니다.**",
+      "tag": "global_biz",
+      "score": "0.95",
+      "url": null
+    },
+    {
+      "title": "FDA Announces Salmon Recall in 7 States Due to Listeria Contamination",
+      "summary": "Health.com은 해당 연어가 1월 31일부터 2월 7일까지 델라웨어·뉴저지·뉴욕·노스캐롤라이나·펜실베이니아·버지니아 등에서 판매됐으며, 냉동고에 보관 중인 소비자는 제품을 폐기하거나 환불 받아야 한다고 안내함. [web:36]",
+      "tag": "listeria_free",
+      "score": "0.9",
+      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+    }
+  ],
   "weather": {
     "updated": "2026-02-14 11:55:27",
     "temp": 10.16,
     "humidity": 57,
     "desc": "온흐림"
   },
-  "intelligence_backup": []
+  "intelligence_backup": [
+    {
+      "title": "Daily Bridge 2026-02-16",
+      "summary": "이 파일은 VS Code와 Antigravity를 연결하는 인사이트 브릿지입니다.**",
+      "tag": "global_biz",
+      "score": "0.95",
+      "url": null
+    },
+    {
+      "title": "FDA Announces Salmon Recall in 7 States Due to Listeria Contamination",
+      "summary": "Health.com은 해당 연어가 1월 31일부터 2월 7일까지 델라웨어·뉴저지·뉴욕·노스캐롤라이나·펜실베이니아·버지니아 등에서 판매됐으며, 냉동고에 보관 중인 소비자는 제품을 폐기하거나 환불 받아야 한다고 안내함. [web:36]",
+      "tag": "listeria_free",
+      "score": "0.9",
+      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+    }
+  ]
 }
