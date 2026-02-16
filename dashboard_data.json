@@ -17,8 +17,30 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-15 00:26:03",
+  "last_updated": "2026-02-16 03:59:25",
   "intelligence": [
+    {
+      "title": "FDA Announces Salmon Recall in 7 States Due to Listeria Contamination",
+      "summary": "Health.com은 해당 연어가 1월 31일부터 2월 7일까지 델라웨어·뉴저지·뉴욕·노스캐롤라이나·펜실베이니아·버지니아 등에서 판매됐으며, 냉동고에 보관 중인 소비자는 제품을 폐기하거나 환불 받아야 한다고 안내함. [web:36]",
+      "tag": "listeria_free",
+      "score": "0.9",
+      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+    },
+    {
+      "title": "Salmon Is Being Recalled Right Now for Listeria Risk—Here’s What to Know",
+      "summary": "EatingWell은 리콜 대상이 Wellsley Farms Farm-Raised Atlantic Salmon 2lb 봉지·UPC 888670025963·로트 3896·유통기한 2026-06-07인 제품이라고 구체적으로 짚으며, 냉동 상태라도 섭취하면 안 된다고 강조함. [web:76]",
+      "tag": "listeria_free",
+      "score": "0.84",
+      "url": "https://www.eatingwell.com/salmon-recall-listeria-11905912"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-14 11:55:27",
+    "temp": 10.16,
+    "humidity": 57,
+    "desc": "온흐림"
+  },
+  "intelligence_backup": [
     {
       "title": "Ambriola 치즈 리콜, FDA가 최고 위험 등급(Class I)으로 격상",
       "summary": "FDA는 2025년 11월 자발적 리콜이었던 Ambriola 치즈 제품을 Class I 리콜로 재분류하며, 섭취 시 심각한 건강 피해나 사망 위험이 있을 수 있다고 경고했다고 보도함. [web:87][web:53]",
@@ -32,28 +54,6 @@
       "tag": "listeria_free",
       "score": "0.88",
       "url": "https://www.ksat.com/news/local/2026/01/09/more-than-11000-cheese-products-recalled-due-to-possible-listeria-contamination/"
-    }
-  ],
-  "weather": {
-    "updated": "2026-02-14 11:55:27",
-    "temp": 10.16,
-    "humidity": 57,
-    "desc": "온흐림"
-  },
-  "intelligence_backup": [
-    {
-      "title": "FDA, 7개 주에서 판매된 Wellsley Farms 냉동 연어 리스테리아 오염 가능성 경고",
-      "summary": "FDA 발표를 인용한 기사에 따르면 BJ’s Wholesale Club 7개 주 매장에서 판매된 Wellsley Farms 냉동 연어에서 리스테리아가 검출돼 소비자에게 섭취 중단 및 환불 안내가 이뤄졌으며, 현재까지 관련 환자는 보고되지 않았다고 전함. [web:36]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
-    },
-    {
-      "title": "Frozen Salmon Recalled in 7 States Over Listeria Risk",
-      "summary": "Parade는 Wellsley Farms 대서양 연어 리콜의 대상 주, 판매 기간, 소비자가 확인해야 할 UPC·로트 번호를 정리하며, 해당 제품을 발견할 경우 매장 환불 또는 폐기를 권고한다고 설명함. [web:57]",
-      "tag": "listeria_free",
-      "score": "0.82",
-      "url": "https://parade.com/food/wellsley-farms-atlantic-salmon-recall-february-2026"
     }
   ]
 }

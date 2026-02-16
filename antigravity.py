@@ -33,6 +33,7 @@ TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "")
 OPENWEATHER_CITY = "Jinan,KR"
+AUTO_BRIEFING_ENABLED = os.getenv("ANTIGRAVITY_AUTO_BRIEFING", "false").strip().lower() in {"1", "true", "yes", "on"}
 
 if not TOKEN:
     raise ValueError("TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
@@ -395,10 +396,13 @@ def main():
     t1.start()
     log("날씨 업데이터 스레드 시작")
 
-    # 2) 아침 9시 브리핑 스케줄러 스레드
-    t2 = threading.Thread(target=briefing_scheduler, daemon=True)
-    t2.start()
-    log("브리핑 스케줄러 스레드 시작")
+    # 2) 아침 9시 브리핑 스케줄러 스레드 (기본 비활성화)
+    if AUTO_BRIEFING_ENABLED:
+        t2 = threading.Thread(target=briefing_scheduler, daemon=True)
+        t2.start()
+        log("브리핑 스케줄러 스레드 시작")
+    else:
+        log("브리핑 스케줄러 비활성화 (ANTIGRAVITY_AUTO_BRIEFING=false)")
 
     # 3) 텔레그램 폴링
     log("텔레그램 폴링 시작")
