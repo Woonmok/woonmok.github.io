@@ -17,43 +17,13 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-16 03:59:25",
-  "intelligence": [
-    {
-      "title": "FDA Announces Salmon Recall in 7 States Due to Listeria Contamination",
-      "summary": "Health.com은 해당 연어가 1월 31일부터 2월 7일까지 델라웨어·뉴저지·뉴욕·노스캐롤라이나·펜실베이니아·버지니아 등에서 판매됐으며, 냉동고에 보관 중인 소비자는 제품을 폐기하거나 환불 받아야 한다고 안내함. [web:36]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
-    },
-    {
-      "title": "Salmon Is Being Recalled Right Now for Listeria Risk—Here’s What to Know",
-      "summary": "EatingWell은 리콜 대상이 Wellsley Farms Farm-Raised Atlantic Salmon 2lb 봉지·UPC 888670025963·로트 3896·유통기한 2026-06-07인 제품이라고 구체적으로 짚으며, 냉동 상태라도 섭취하면 안 된다고 강조함. [web:76]",
-      "tag": "listeria_free",
-      "score": "0.84",
-      "url": "https://www.eatingwell.com/salmon-recall-listeria-11905912"
-    }
-  ],
+  "last_updated": "2026-02-16 13:20:11",
+  "intelligence": [],
   "weather": {
     "updated": "2026-02-14 11:55:27",
     "temp": 10.16,
     "humidity": 57,
     "desc": "온흐림"
   },
-  "intelligence_backup": [
-    {
-      "title": "Ambriola 치즈 리콜, FDA가 최고 위험 등급(Class I)으로 격상",
-      "summary": "FDA는 2025년 11월 자발적 리콜이었던 Ambriola 치즈 제품을 Class I 리콜로 재분류하며, 섭취 시 심각한 건강 피해나 사망 위험이 있을 수 있다고 경고했다고 보도함. [web:87][web:53]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.goodmorningamerica.com/food/story/fda-upgrades-voluntary-cheese-recall-highest-risk-level-129197174"
-    },
-    {
-      "title": "Boar’s Head·Member’s Mark 등 1만1,530개 치즈, 리스테리아 가능성으로 회수",
-      "summary": "Ambriola가 제조한 Boar’s Head·Member’s Mark 치즈 제품 1만1,530개가 리스테리아 가능성으로 여러 주에서 리콜되고 있으며, FDA는 소비자에게 즉시 폐기 또는 환불을 권고하고 있다고 전함. [web:95]",
-      "tag": "listeria_free",
-      "score": "0.88",
-      "url": "https://www.ksat.com/news/local/2026/01/09/more-than-11000-cheese-products-recalled-due-to-possible-listeria-contamination/"
-    }
-  ]
+  "intelligence_backup": []
 }
