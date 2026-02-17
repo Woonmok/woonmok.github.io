@@ -345,7 +345,7 @@ def handle_text(message):
         return
 
     # 목록
-    if text in ["목록", "오늘", "할일"]:
+    if text in ["목록", "오늘", "할일", "내가 할 일", "내가할일"]:
         cmd_todo(message)
         return
 
@@ -355,7 +355,12 @@ def handle_text(message):
         return
 
     # 할일 덮어쓰기: "할일: 1. xxx, 2. yyy"
-    if text.startswith("할일:") or text.startswith("할일 :"):
+    if (
+        text.startswith("할일:")
+        or text.startswith("할일 :")
+        or text.startswith("내가 할 일:")
+        or text.startswith("내가할일:")
+    ):
         task_text = text.split(":", 1)[1].strip()
         if not task_text:
             bot.reply_to(message, "\u274c 할일을 입력해주세요! 예) 할일: 1. 회의 준비, 2. 자료 정리")
