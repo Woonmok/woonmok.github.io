@@ -43,6 +43,7 @@ bot = telebot.TeleBot(TOKEN)
 # --- 파일 경로 ---
 DASHBOARD_JSON = os.path.join(BASE_DIR, "dashboard_data.json")
 DAILY_NEWS_JSON = os.path.join(BASE_DIR, "daily_news.json")
+TODO_STORAGE_JSON = os.path.join(BASE_DIR, "todo_storage.json")
 LOG_FILE = os.path.join(BASE_DIR, "logs", "antigravity.log")
 
 os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
@@ -77,8 +78,44 @@ def save_dashboard(data):
                 json.dump(data, f, ensure_ascii=False, indent=2)
             finally:
                 fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+        sync_todo_storage_from_dashboard(data)
     except Exception as e:
         log(f"dashboard 저장 실패: {e}")
+
+
+def sync_todo_storage_from_dashboard(dashboard_data):
+    try:
+        todos = dashboard_data.get("todo_list", [])
+        tasks = []
+        now_iso = datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+        for idx, item in enumerate(todos, 1):
+            text = str(item.get("text", "")).strip()
+            if not text:
+                continue
+            task_id = item.get("id")
+            if isinstance(task_id, int):
+                mapped_id = task_id
+            else:
+                mapped_id = idx
+            tasks.append({
+                "id": mapped_id,
+                "text": text,
+                "completed": bool(item.get("completed", False)),
+                "date": now_iso
+            })
+
+        payload = {
+            "tasks": tasks,
+            "lastMsgId": 0,
+            "synced_from": "dashboard_data.json",
+            "synced_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+
+        with open(TODO_STORAGE_JSON, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        log(f"todo_storage 동기화 실패: {e}")
 
 
 def load_daily_news():
