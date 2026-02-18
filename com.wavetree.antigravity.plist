@@ -6,15 +6,16 @@
 	<string>com.wavetree.antigravity</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Library/Frameworks/Python.framework/Versions/3.14/bin/python3</string>
-		<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/antigravity.py</string>
+		<string>/bin/zsh</string>
+		<string>-lc</string>
+		<string>cd /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io &amp;&amp; exec /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 antigravity.py</string>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io</string>
+	<string>/Users/seunghoonoh</string>
 	<key>StandardOutPath</key>
-	<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/logs/antigravity.log</string>
+	<string>/tmp/com.wavetree.antigravity.out.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/logs/antigravity_error.log</string>
+	<string>/tmp/com.wavetree.antigravity.err.log</string>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>KeepAlive</key>

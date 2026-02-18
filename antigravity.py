@@ -451,9 +451,10 @@ def main():
     while True:
         try:
             bot.infinity_polling(timeout=60, long_polling_timeout=60)
-        except BaseException as e:
+            log("텔레그램 폴링 종료 감지, 10초 후 재시작")
+        except Exception as e:
             log(f"텔레그램 폴링 오류: {e}")
-            time.sleep(10)
+        time.sleep(10)
 
 
 if __name__ == "__main__":
