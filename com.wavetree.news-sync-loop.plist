@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.wavetree.news-sync-loop</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/zsh</string>
+		<string>-lc</string>
+		<string>/Users/seunghoonoh/.gemini/antigravity/scratch/node-v20/bin/node /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/scripts/normalize.js --in /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/data/raw/perplexity.txt --out /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/data/normalized/news.json &amp;&amp; NEWS_JSON_PATH=/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/data/normalized/news.json /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/sync_top_news.py</string>
+	</array>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>StandardOutPath</key>
+	<string>/tmp/com.wavetree.news-sync-loop.out.log</string>
+	<key>StandardErrorPath</key>
+	<string>/tmp/com.wavetree.news-sync-loop.err.log</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartInterval</key>
+	<integer>300</integer>
+</dict>
+</plist>

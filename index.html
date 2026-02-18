@@ -528,7 +528,7 @@
 
                 let hubItems = Array.isArray(data.intelligence) ? data.intelligence.slice(0, 2) : [];
 
-                if (newsData && Array.isArray(newsData.items) && newsData.items.length > 0) {
+                if (hubItems.length === 0 && newsData && Array.isArray(newsData.items) && newsData.items.length > 0) {
                     const topFromNews = [...newsData.items]
                         .sort((a, b) => String(b.published_at || '').localeCompare(String(a.published_at || '')))
                         .slice(0, 2)
