@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-18 05:59:00",
+  "last_updated": "2026-02-18 06:18:11",
   "intelligence": [
     {
       "title": "Daily Bridge 2026-02-18",
@@ -25,6 +25,13 @@
       "tag": "global_biz",
       "score": "0.95",
       "url": null
+    },
+    {
+      "title": "2026년 배양육 업계, “환상은 줄고 현실적인 재정·규제 전략으로 전환”",
+      "summary": "PPTI는 2025년 고프로필 실패 이후 배양육 섹터가 ‘폭발적 성장’ 기대를 접고, 반려동물 사료·하이브리드 제품·공유 인프라 같은 현실적 유즈케이스에 집중하는 방향으로 재편되고 있다고 분석함. [web:41]",
+      "tag": "cultured_meat",
+      "score": "0.92",
+      "url": "https://www.proteinproductiontechnology.com/post/cultivated-meat-in-2026-fewer-illusions-firmer-footing"
     }
   ],
   "weather": {
