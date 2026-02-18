@@ -2,22 +2,12 @@
   "todo_list": [
     {
       "id": 1,
-      "text": "1. 7일 템플릿 영어 쓰기",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "text": "2. 버섯특허허브 시스템 제작",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "text": "3. 군의원 출마 선언문 마무리",
+      "text": "1. 7일 템플릿 영어 쓰기. 2. OpenClaw 봇 알아 보기. 3. 군의원 출마 선언문 마무리.",
       "completed": false
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-18 03:12:39",
+  "last_updated": "2026-02-18 13:01:22",
   "intelligence": [
     {
       "title": "2026년 배양육 업계, “환상은 줄고 현실적인 재정·규제 전략으로 전환”",
@@ -35,9 +25,9 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-18 12:24:08",
-    "temp": 5.9,
-    "humidity": 42,
+    "updated": "2026-02-18 13:24:11",
+    "temp": 6.39,
+    "humidity": 34,
     "desc": "맑음"
   },
   "intelligence_backup": [
