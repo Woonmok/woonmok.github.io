@@ -6,8 +6,9 @@
 	<string>com.wavetree.news-sync</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/.venv312/bin/python</string>
-		<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub/sync_top_news.py</string>
+		<string>/bin/zsh</string>
+		<string>-lc</string>
+		<string>cd /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub &amp;&amp; /Users/seunghoonoh/.gemini/antigravity/scratch/node-v20/bin/node scripts/normalize.js --in data/raw/perplexity.txt --out data/normalized/news.json &amp;&amp; cp data/normalized/news.json /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/news.json &amp;&amp; /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 sync_top_news.py</string>
 	</array>
 	<key>WorkingDirectory</key>
 	<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub</string>
@@ -17,9 +18,9 @@
 		<string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>StandardOutPath</key>
-	<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/logs/news_sync.log</string>
+	<string>/tmp/com.wavetree.news-sync.out.log</string>
 	<key>StandardErrorPath</key>
-	<string>/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/logs/news_sync_error.log</string>
+	<string>/tmp/com.wavetree.news-sync.err.log</string>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StartInterval</key>

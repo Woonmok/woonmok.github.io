@@ -2,48 +2,58 @@
   "todo_list": [
     {
       "id": 1,
-      "text": "1. 7일 템플릿 영어 쓰기. 2. OpenClaw 봇 알아 보기. 3. 군의원 출마 선언문 마무리.",
+      "text": "1. 7일 템플릿 영어 쓰기.",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "2. OpenClaw 봇 알아 보기.",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "3. 군의원 출마 선언문 마무리.",
       "completed": false
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-18 13:01:22",
+  "last_updated": "2026-02-18 04:42:51",
   "intelligence": [
     {
       "title": "2026년 배양육 업계, “환상은 줄고 현실적인 재정·규제 전략으로 전환”",
-      "summary": "PPTI는 2025년 고프로필 실패 이후 배양육 섹터가 “폭발적 성장” 기대를 접고, 반려동물 사료·하이브리드 제품·공유 인프라 같은 현실적 유즈케이스에 집중하는 방향으로 재편되고 있다고 분석함. [web:41]",
+      "summary": "PPTI는 2025년 고프로필 실패 이후 배양육 섹터가 ‘폭발적 성장’ 기대를 접고, 반려동물 사료·하이브리드 제품·공유 인프라 같은 현실적 유즈케이스에 집중하는 방향으로 재편되고 있다고 분석함. [web:41]",
       "tag": "cultured_meat",
       "score": "0.92",
       "url": "https://www.proteinproductiontechnology.com/post/cultivated-meat-in-2026-fewer-illusions-firmer-footing"
     },
     {
-      "title": "FDA Announces Salmon Recall in 7 States Due to Listeria Contamination",
-      "summary": "Health.com은 해당 연어가 1월 31일부터 2월 7일까지 델라웨어·뉴저지·뉴욕·노스캐롤라이나·펜실베이니아·버지니아 등에서 판매됐으며, 냉동고에 보관 중인 소비자는 제품을 폐기하거나 환불 받아야 한다고 안내함. [web:36]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+      "title": "vegconomist 배양육 카테고리, 2026년 2월 기준 글로벌 규제·시장 이슈 총정리",
+      "summary": "vegconomist는 호주 Vow의 배양 메추리 승인, 인디애나주의 배양육 2년 판매 모라토리엄, 싱가포르·미국 초기 상용화, 독일 MicroHarvest의 생산시설 계획 등 최근 배양육·대체단백 뉴스를 모아 전함. [web:28]",
+      "tag": "cultured_meat",
+      "score": "0.8",
+      "url": "https://vegconomist.com/category/cultivated-cell-cultured-biotechnology/cultivated-meat/"
     }
   ],
   "weather": {
-    "updated": "2026-02-18 13:33:42",
-    "temp": 6.39,
-    "humidity": 34,
+    "updated": "2026-02-18 13:40:07",
+    "temp": 6.25,
+    "humidity": 30,
     "desc": "맑음"
   },
   "intelligence_backup": [
     {
       "title": "2026년 배양육 업계, “환상은 줄고 현실적인 재정·규제 전략으로 전환”",
-      "summary": "PPTI는 2025년 고프로필 실패 이후 배양육 섹터가 “폭발적 성장” 기대를 접고, 반려동물 사료·하이브리드 제품·공유 인프라 같은 현실적 유즈케이스에 집중하는 방향으로 재편되고 있다고 분석함. [web:41]",
+      "summary": "PPTI는 2025년 고프로필 실패 이후 배양육 섹터가 ‘폭발적 성장’ 기대를 접고, 반려동물 사료·하이브리드 제품·공유 인프라 같은 현실적 유즈케이스에 집중하는 방향으로 재편되고 있다고 분석함. [web:41]",
       "tag": "cultured_meat",
       "score": "0.92",
       "url": "https://www.proteinproductiontechnology.com/post/cultivated-meat-in-2026-fewer-illusions-firmer-footing"
     },
     {
-      "title": "FDA Announces Salmon Recall in 7 States Due to Listeria Contamination",
-      "summary": "Health.com은 해당 연어가 1월 31일부터 2월 7일까지 델라웨어·뉴저지·뉴욕·노스캐롤라이나·펜실베이니아·버지니아 등에서 판매됐으며, 냉동고에 보관 중인 소비자는 제품을 폐기하거나 환불 받아야 한다고 안내함. [web:36]",
-      "tag": "listeria_free",
-      "score": "0.9",
-      "url": "https://www.health.com/salmon-recall-february-2026-11905629"
+      "title": "vegconomist 배양육 카테고리, 2026년 2월 기준 글로벌 규제·시장 이슈 총정리",
+      "summary": "vegconomist는 호주 Vow의 배양 메추리 승인, 인디애나주의 배양육 2년 판매 모라토리엄, 싱가포르·미국 초기 상용화, 독일 MicroHarvest의 생산시설 계획 등 최근 배양육·대체단백 뉴스를 모아 전함. [web:28]",
+      "tag": "cultured_meat",
+      "score": "0.8",
+      "url": "https://vegconomist.com/category/cultivated-cell-cultured-biotechnology/cultivated-meat/"
     }
   ]
 }

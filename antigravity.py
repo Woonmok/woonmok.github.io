@@ -11,6 +11,7 @@ import os
 import sys
 import json
 import time
+import re
 import threading
 import fcntl
 import warnings
@@ -402,7 +403,14 @@ def handle_text(message):
         if not task_text:
             bot.reply_to(message, "\u274c 할일을 입력해주세요! 예) 할일: 1. 회의 준비, 2. 자료 정리")
             return
-        tasks = [t.strip() for t in task_text.split(",")]
+
+        normalized = task_text.replace("\r", "\n").strip()
+
+        numbered_markers = re.findall(r"\d+\.\s*", normalized)
+        if len(numbered_markers) >= 2 and "\n" not in normalized:
+            normalized = re.sub(r"\s+(?=\d+\.\s*)", "\n", normalized)
+
+        tasks = [t.strip() for t in re.split(r"[\n,]+", normalized) if t.strip()]
         new_list = []
         for task in tasks:
             if not task:
