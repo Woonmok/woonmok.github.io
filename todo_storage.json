@@ -4,22 +4,22 @@
       "id": 1,
       "text": "1. 7일 템플릿 영어 쓰기",
       "completed": false,
-      "date": "2026-02-17T00:00:00Z"
+      "date": "2026-02-18T03:24:08Z"
     },
     {
       "id": 2,
       "text": "2. 버섯특허허브 시스템 제작",
       "completed": false,
-      "date": "2026-02-17T00:00:00Z"
+      "date": "2026-02-18T03:24:08Z"
     },
     {
       "id": 3,
       "text": "3. 군의원 출마 선언문 마무리",
       "completed": false,
-      "date": "2026-02-17T00:00:00Z"
+      "date": "2026-02-18T03:24:08Z"
     }
   ],
   "lastMsgId": 0,
   "synced_from": "dashboard_data.json",
-  "synced_at": "2026-02-17 11:15:00"
+  "synced_at": "2026-02-18 12:24:08"
 }
