@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-18 05:26:43",
+  "last_updated": "2026-02-18 05:46:47",
   "intelligence": [
     {
       "title": "2026년 배양육 업계, “환상은 줄고 현실적인 재정·규제 전략으로 전환”",
@@ -35,9 +35,9 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-18 14:20:09",
-    "temp": 6.25,
-    "humidity": 30,
+    "updated": "2026-02-18 14:40:09",
+    "temp": 5.49,
+    "humidity": 29,
     "desc": "맑음"
   },
   "intelligence_backup": [
