@@ -17,13 +17,20 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-19 02:54:13",
+  "last_updated": "2026-02-19 03:01:12",
   "intelligence": [
     {
-      "title": "Daily Bridge 2026-02-19",
-      "summary": "이 파일은 VS Code와 Antigravity를 연결하는 인사이트 브릿지입니다.**",
-      "tag": "global_biz",
-      "score": "0.95",
+      "title": "미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중",
+      "summary": "분석: 감지 키워드(균사체, mycelium, 배양육, 배양) 기준으로 프로젝트 관련성이 확인되었습니다.\n액션: 비용 절감 PoC 우선 검토",
+      "tag": "cultured_meat",
+      "score": "0.86",
+      "url": null
+    },
+    {
+      "title": "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상",
+      "summary": "분석: 감지 키워드(균사체, fermentation) 기준으로 프로젝트 관련성이 확인되었습니다.\n액션: 주간 회의 안건으로 추적",
+      "tag": "cultured_meat",
+      "score": "0.7",
       "url": null
     }
   ],
@@ -35,10 +42,17 @@
   },
   "intelligence_backup": [
     {
-      "title": "Daily Bridge 2026-02-19",
-      "summary": "이 파일은 VS Code와 Antigravity를 연결하는 인사이트 브릿지입니다.**",
-      "tag": "global_biz",
-      "score": "0.95",
+      "title": "미국 내 배양육 시장, 고비용 문제로 세포 배양 방식에서 균사체(Mycelium) 기반 발효 방식으로 급격한 이동 중",
+      "summary": "분석: 감지 키워드(균사체, mycelium, 배양육, 배양) 기준으로 프로젝트 관련성이 확인되었습니다.\n액션: 비용 절감 PoC 우선 검토",
+      "tag": "cultured_meat",
+      "score": "0.86",
+      "url": null
+    },
+    {
+      "title": "2026년 푸드테크 트렌드: 'Precision Fermentation'과 버섯 균사체를 결합한 하이브리드 단백질 부상",
+      "summary": "분석: 감지 키워드(균사체, fermentation) 기준으로 프로젝트 관련성이 확인되었습니다.\n액션: 주간 회의 안건으로 추적",
+      "tag": "cultured_meat",
+      "score": "0.7",
       "url": null
     }
   ]
