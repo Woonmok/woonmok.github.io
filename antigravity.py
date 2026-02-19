@@ -345,6 +345,12 @@ def handle_text(message):
     text = message.text.strip()
     data = load_dashboard()
 
+    def format_numbered_line(item):
+        tid = item.get("id", "?")
+        raw_text = str(item.get("text", "")).strip()
+        clean_text = re.sub(r"^\d+\.\s*", "", raw_text)
+        return f"\u2713 {tid}. {clean_text}"
+
     # 추가
     if text.startswith("추가:"):
         task = text.replace("추가:", "").strip()
@@ -418,9 +424,10 @@ def handle_text(message):
         for task in tasks:
             matched = re.match(r"^(\d+)\.\s*(.+)$", task)
             if matched:
+                tid = int(matched.group(1))
                 parsed_tasks.append({
-                    "id": int(matched.group(1)),
-                    "text": matched.group(2).strip(),
+                    "id": tid,
+                    "text": f"{tid}. {matched.group(2).strip()}",
                     "completed": False
                 })
             else:
@@ -458,7 +465,7 @@ def handle_text(message):
         data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         save_dashboard(data)
 
-        items = "\n".join([f"\u2713 {item['text']}" for item in data["todo_list"]])
+        items = "\n".join([format_numbered_line(item) for item in data["todo_list"]])
         bot.reply_to(message, f"\u2705 할일 업데이트 완료!\n\n{items}")
         return
 

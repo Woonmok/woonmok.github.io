@@ -4003,3 +4003,5 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 [get_weather] 2026-02-10 23:53:53.214348 {'text': '진안 실시간 날씨: 가벼운 눈, 온도 -0.04°C, 습도 100%', 'temp': -0.04, 'humidity': 100, 'desc': '가벼운 눈'}
 [get_weather] 2026-02-11 00:03:53.541438 {'text': '진안 실시간 날씨: 가벼운 눈, 온도 -0.04°C, 습도 100%', 'temp': -0.04, 'humidity': 100, 'desc': '가벼운 눈'}
 [get_weather] 2026-02-11 00:13:53.886106 {'text': '진안 실시간 날씨: 가벼운 눈, 온도 -0.04°C, 습도 100%', 'temp': -0.04, 'humidity': 100, 'desc': '가벼운 눈'}
+/Users/seunghoonoh/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(

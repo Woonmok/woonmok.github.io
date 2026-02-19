@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "text": "피치 덱 점검 하기.",
+      "text": "2. 피치 덱 점검 하기.",
       "completed": false
     },
     {
@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-19 19:32:34",
+  "last_updated": "2026-02-20 04:39:00",
   "intelligence": [
     {
       "title": "파스타 식사 리스테리아 발병 종식 선언",
@@ -35,7 +35,7 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-20 04:32:26",
+    "updated": "2026-02-20 04:38:39",
     "temp": -1.29,
     "humidity": 38,
     "desc": "튼구름"
