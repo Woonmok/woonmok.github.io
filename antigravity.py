@@ -27,7 +27,13 @@ warnings.filterwarnings('ignore')
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 from dotenv import load_dotenv
-load_dotenv(os.path.join(BASE_DIR, ".env"))
+env_candidates = [
+    os.path.join(BASE_DIR, ".env"),
+    os.path.join(os.path.dirname(BASE_DIR), "wave-tree-news-hub", ".env"),
+]
+for env_path in env_candidates:
+    if os.path.exists(env_path):
+        load_dotenv(env_path, override=False)
 os.chdir(BASE_DIR)
 
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -37,7 +43,7 @@ OPENWEATHER_CITY = "Jinan,KR"
 AUTO_BRIEFING_ENABLED = os.getenv("ANTIGRAVITY_AUTO_BRIEFING", "false").strip().lower() in {"1", "true", "yes", "on"}
 
 if not TOKEN:
-    raise ValueError("TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다!")
+    raise ValueError("TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다! (.env 또는 시스템 환경 변수 확인 필요)")
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -392,14 +398,10 @@ def handle_text(message):
         cmd_weather(message)
         return
 
-    # 할일 덮어쓰기: "할일: 1. xxx, 2. yyy"
-    if (
-        text.startswith("할일:")
-        or text.startswith("할일 :")
-        or text.startswith("내가 할 일:")
-        or text.startswith("내가할일:")
-    ):
-        task_text = text.split(":", 1)[1].strip()
+    # 할일 업데이트: 문장 어디에 있든 "할일: ..." 또는 "내가 할 일: ..." 추출
+    todo_update_match = re.search(r"(?:할일|내가\s*할\s*일)\s*[:：]\s*(.+)", text)
+    if todo_update_match:
+        task_text = todo_update_match.group(1).strip()
         if not task_text:
             bot.reply_to(message, "\u274c 할일을 입력해주세요! 예) 할일: 1. 회의 준비, 2. 자료 정리")
             return
@@ -411,28 +413,57 @@ def handle_text(message):
             normalized = re.sub(r"\s+(?=\d+\.\s*)", "\n", normalized)
 
         tasks = [t.strip() for t in re.split(r"[\n,]+", normalized) if t.strip()]
-        new_list = []
+        parsed_tasks = []
+        all_numbered = True
         for task in tasks:
-            if not task:
-                continue
-            parts = task.split(".", 1)
-            if len(parts) == 2 and parts[0].strip().isdigit():
-                tid = int(parts[0].strip())
-                ttext = f"{parts[0].strip()}. {parts[1].strip()}"
-                new_list.append({"id": tid, "text": ttext, "completed": False})
+            matched = re.match(r"^(\d+)\.\s*(.+)$", task)
+            if matched:
+                parsed_tasks.append({
+                    "id": int(matched.group(1)),
+                    "text": matched.group(2).strip(),
+                    "completed": False
+                })
             else:
-                new_list.append({"id": len(new_list)+1, "text": task, "completed": False})
+                all_numbered = False
+                parsed_tasks.append({
+                    "id": None,
+                    "text": task,
+                    "completed": False
+                })
 
-        if not new_list:
+        if not parsed_tasks:
             bot.reply_to(message, "\u274c 형식이 맞지 않습니다. 예) 할일: 1. 대시보드, 2. 리포트")
             return
 
-        data["todo_list"] = sorted(new_list, key=lambda x: x["id"])
+        if all_numbered:
+            existing = data.get("todo_list", [])
+            updated_map = {int(item.get("id", idx + 1)): item for idx, item in enumerate(existing)}
+            for item in parsed_tasks:
+                updated_map[item["id"]] = {
+                    "id": item["id"],
+                    "text": item["text"],
+                    "completed": False
+                }
+            data["todo_list"] = sorted(updated_map.values(), key=lambda x: int(x.get("id", 0)))
+        else:
+            rebuilt = []
+            for idx, item in enumerate(parsed_tasks, 1):
+                rebuilt.append({
+                    "id": idx,
+                    "text": item["text"],
+                    "completed": False
+                })
+            data["todo_list"] = rebuilt
+
         data["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         save_dashboard(data)
 
         items = "\n".join([f"\u2713 {item['text']}" for item in data["todo_list"]])
         bot.reply_to(message, f"\u2705 할일 업데이트 완료!\n\n{items}")
+        return
+
+    if "할일 업데이트" in text:
+        bot.reply_to(message, "\u274c 형식이 맞지 않습니다. 예) 텔레그램으로 할일 업데이트 할일: 2. 피치 덱 점검 하기")
         return
 
 

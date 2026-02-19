@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "text": "2. OpenClaw 봇 알아 보기.",
+      "text": "피치 덱 점검 하기.",
       "completed": false
     },
     {
@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-19 19:12:42",
+  "last_updated": "2026-02-19 19:32:34",
   "intelligence": [
     {
       "title": "파스타 식사 리스테리아 발병 종식 선언",
@@ -35,10 +35,25 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-18 22:10:27",
-    "temp": -3.96,
-    "humidity": 59,
-    "desc": "맑음"
+    "updated": "2026-02-20 04:32:26",
+    "temp": -1.29,
+    "humidity": 38,
+    "desc": "튼구름"
   },
-  "intelligence_backup": []
+  "intelligence_backup": [
+    {
+      "title": "파스타 식사 리스테리아 발병 종식 선언",
+      "summary": "FDA가 파스타 식사로 인한 치명적 리스테리아 발병을 공식 종식 선언했다. 19개 주 28명 감염, 7명 사망, 대부분 입원 치료 필요했으며 임산부 1건에서 태아 손실 발생. Nate’s Fine Foods 제품으로 추적, Walmart 등 여러 매장 제품 회수 후 조사 마무리.[1]",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    },
+    {
+      "title": "CDC 파스타 식사 리스테리아 발병 타임라인 업데이트",
+      "summary": "치킨 페투치네 알프레도 파스타 식사로 인한 리스테리아 발병 종료, 회수 제품 판매 중단. 17명 감염 확인, 실제 감염자 수는 더 많을 수 있으며 최근 사례는 3-4주 후 보고. FreshRealm 제품이 주요 원인으로 밝혀짐.[2]",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+    }
+  ]
 }
