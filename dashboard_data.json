@@ -17,43 +17,43 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 12:54:11",
+  "last_updated": "2026-02-21 13:04:07",
   "intelligence": [
     {
-      "title": "포장 샐러드 지속 리스테리아 오염 위험",
-      "summary": "장기 리스테리아 발병이 포장 샐러드 오염 위험 강조. 두 건의 지속 발병 사례 분석으로 포장 과정 개선 필요성 제기.[4]",
+      "title": "Listeria outbreak traced to pasta meals is over",
+      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
       "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.idse.net/Bacterial-Infections/Article/02-26/continued-listeria-contamination-salads/79761"
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
     },
     {
-      "title": "크림 치즈 리스테리아 오염 리콜",
-      "summary": "Made Fresh Salads가 다양한 크림 치즈 13종 리콜, 믹서 오염으로 리스테리아 가능성. 뉴욕 지역 유통, 유효기간 2026-02-27까지 제품 반환 권고. 아직 발병 보고 없음.[7]",
+      "title": "When People Got Sick: Prepared Pasta Meals Outbreak",
+      "summary": "CDC가 조사한 파스타 식품 리스테리아 발병이 종료되었습니다. FreshRealm에서 제조한 치킨 페투치니 알프레도 식사가 감염원이었으며, 실제 감염자 수는 보도된 수보다 높을 것으로 예상됩니다.",
       "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk"
+      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
     }
   ],
   "weather": {
-    "updated": "2026-02-21 21:52:51",
+    "updated": "2026-02-21 22:02:51",
     "temp": 5.69,
     "humidity": 60,
     "desc": "맑음"
   },
   "intelligence_backup": [
     {
-      "title": "파스타 식사 리스테리아 발병 종료",
-      "summary": "FDA가 Nate’s Fine Foods 파스타 식사 관련 리스테리아 발병을 종료 선언. 19개 주 28명 감염, 7명 사망, 대부분 입원. Walmart, Kroger 등 다수 매장 제품 리콜 후 조사 마무리.",
-      "tag": "listeria_free",
-      "score": "None",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
-    },
-    {
       "title": "치킨 페투치네 알프레도 리스테리아 발병 타임라인",
-      "summary": "CDC가 FreshRealm 치킨 페투치네 알프레도 식사 관련 리스테리아 발병 조사. 17명 감염 확인, 리콜 제품 판매 중단. 발병자 증상 시기 차트 공개, 실제 감염자 더 많을 수 있음.",
+      "summary": "신선한 FreshRealm 치킨 페투치네 알프레도 식사로 인한 다주 리스테리아 발병 조사 중. 17명 이상 감염, 실제 환자 수 더 많을 수 있음. 리콜 제품 판매 중단, 소비자 주의 권고.",
       "tag": "listeria_free",
       "score": "None",
       "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+    },
+    {
+      "title": "샐러드 지속 리스테리아 오염 위험 강조",
+      "summary": "포장 샐러드 장기 리스테리아 발병 지속, 오염 위험 경고. 두 건의 발병 사례 통해 포장 식품 안전 문제 부각. 2026년 2월 21일 기준 최신 보고.",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.idse.net/Bacterial-Infections/Article/02-26/continued-listeria-contamination-salads/79761"
     }
   ]
 }
