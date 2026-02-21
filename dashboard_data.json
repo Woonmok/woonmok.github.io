@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 21:24:04",
+  "last_updated": "2026-02-21 22:11:19",
   "intelligence": [
     {
       "title": "Listeria outbreak traced to pasta meals is over",
@@ -27,17 +27,17 @@
       "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
     },
     {
-      "title": "When People Got Sick: Prepared Pasta Meals Outbreak",
-      "summary": "CDC가 조사한 파스타 식품 리스테리아 발병이 종료되었습니다. FreshRealm에서 제조한 치킨 페투치니 알프레도 식사가 감염원이었으며, 실제 감염자 수는 보도된 수보다 높을 것으로 예상됩니다.",
-      "tag": "listeria_free",
+      "title": "2026년 AI 칩 시장, 엔비디아·AMD·브로드컴 대격돌",
+      "summary": "AMD가 2026년 하반기 MI450 GPU 출시로 엔비디아에 대응하며 AI 칩 시장 경쟁이 치열해진다. 젠슨 황 CEO가 GTC 2026에서 신규 칩 공개를 예고했다.",
+      "tag": "computer_ai",
       "score": "None",
-      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+      "url": "https://www.choicestock.co.kr/stock/news_view/90965?bu="
     }
   ],
   "weather": {
-    "updated": "2026-02-22 06:23:14",
-    "temp": 5.95,
-    "humidity": 84,
+    "updated": "2026-02-22 07:03:16",
+    "temp": 6.19,
+    "humidity": 89,
     "desc": "맑음"
   },
   "intelligence_backup": [
