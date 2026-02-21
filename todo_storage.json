@@ -4,22 +4,22 @@
       "id": 1,
       "text": "1. 7일 템플릿 영어 쓰기.",
       "completed": false,
-      "date": "2026-02-21T13:12:52Z"
+      "date": "2026-02-21T21:23:14Z"
     },
     {
       "id": 2,
       "text": "2. 피치 덱 점검 하기.",
       "completed": false,
-      "date": "2026-02-21T13:12:52Z"
+      "date": "2026-02-21T21:23:14Z"
     },
     {
       "id": 3,
       "text": "3. 군의원 출마 선언문 마무리.",
       "completed": false,
-      "date": "2026-02-21T13:12:52Z"
+      "date": "2026-02-21T21:23:14Z"
     }
   ],
   "lastMsgId": 0,
   "synced_from": "dashboard_data.json",
-  "synced_at": "2026-02-21 22:12:52"
+  "synced_at": "2026-02-22 06:23:14"
 }
