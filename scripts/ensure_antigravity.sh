@@ -10,7 +10,7 @@ if [[ ! -f "$SCRIPT_PATH" ]]; then
   exit 0
 fi
 
-if pgrep -f "$SCRIPT_PATH" >/dev/null 2>&1; then
+if pgrep -f "[a]ntigravity.py" >/dev/null 2>&1; then
   exit 0
 fi
 
