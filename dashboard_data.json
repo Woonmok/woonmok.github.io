@@ -17,13 +17,43 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 01:51:31",
-  "intelligence": [],
+  "last_updated": "2026-02-21 01:59:48",
+  "intelligence": [
+    {
+      "title": "FDA, 냉동 보충 쉐이크 리스테리아 발병 조사 종료",
+      "summary": "Lyons ReadyCare 및 Sysco Imperial 냉동 쉐이크 관련 리스테리아 발병이 종료됨. 총 42명 감염, 41명 입원, 14명 사망 보고. 시장에 리콜 제품 없음.[1]",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-listeria-monocytogenes-frozen-supplemental-shakes-february-2025"
+    },
+    {
+      "title": "파스타 밀 관련 치명적 리스테리아 발병 종료 선언",
+      "summary": "FDA가 Nate’s Fine Foods 파스타 밀 발병 종료 선언. 19개 주 28명 감염, 7명 사망, 다수 입원. Walmart, Kroger 등 다수 브랜드 리콜.[2]",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    }
+  ],
   "weather": {
-    "updated": "2026-02-21 10:43:06",
+    "updated": "2026-02-21 10:53:07",
     "temp": 10.98,
     "humidity": 46,
     "desc": "맑음"
   },
-  "intelligence_backup": []
+  "intelligence_backup": [
+    {
+      "title": "FDA, 냉동 보충 쉐이크 리스테리아 발병 조사 종료",
+      "summary": "Lyons ReadyCare 및 Sysco Imperial 냉동 쉐이크 관련 리스테리아 발병이 종료됨. 총 42명 감염, 41명 입원, 14명 사망 보고. 시장에 리콜 제품 없음.[1]",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-listeria-monocytogenes-frozen-supplemental-shakes-february-2025"
+    },
+    {
+      "title": "파스타 밀 관련 치명적 리스테리아 발병 종료 선언",
+      "summary": "FDA가 Nate’s Fine Foods 파스타 밀 발병 종료 선언. 19개 주 28명 감염, 7명 사망, 다수 입원. Walmart, Kroger 등 다수 브랜드 리콜.[2]",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    }
+  ]
 }
