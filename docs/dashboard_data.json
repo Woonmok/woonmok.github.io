@@ -1,0 +1,59 @@
+{
+  "todo_list": [
+    {
+      "id": 1,
+      "text": "1. 7일 템플릿 영어 쓰기.",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "2. 피치 덱 점검 하기.",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "3. 군의원 출마 선언문 마무리.",
+      "completed": false
+    }
+  ],
+  "system_status": "NORMAL",
+  "last_updated": "2026-02-21 22:47:33",
+  "intelligence": [
+    {
+      "title": "Listeria outbreak traced to pasta meals is over",
+      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    },
+    {
+      "title": "When People Got Sick: Prepared Pasta Meals Outbreak",
+      "summary": "CDC가 조사한 파스타 식품 리스테리아 발병이 종료되었습니다. FreshRealm에서 제조한 치킨 페투치니 알프레도 식사가 감염원이었으며, 실제 감염자 수는 보도된 수보다 높을 것으로 예상됩니다.",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-22 07:43:17",
+    "temp": 8.85,
+    "humidity": 88,
+    "desc": "맑음"
+  },
+  "intelligence_backup": [
+    {
+      "title": "Listeria outbreak traced to pasta meals is over",
+      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    },
+    {
+      "title": "When People Got Sick: Prepared Pasta Meals Outbreak",
+      "summary": "CDC가 조사한 파스타 식품 리스테리아 발병이 종료되었습니다. FreshRealm에서 제조한 치킨 페투치니 알프레도 식사가 감염원이었으며, 실제 감염자 수는 보도된 수보다 높을 것으로 예상됩니다.",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+    }
+  ]
+}
