@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-21T05:14:32.550810Z",
+  "generated_at": "2026-02-21T12:16:17.663108Z",
   "items": [
     {
       "id": "62a9af1423b19b77c0f977636c16a2917dcd9f67",
@@ -261,6 +261,186 @@
       "mode": "decision",
       "status": "PENDING_ACTION",
       "decision_generated_at": "2026-02-21T04:04:44.566577+00:00"
+    },
+    {
+      "id": "4f210a831dbe5203b971947868744f5868d53f4e",
+      "category": "high_end_audio",
+      "title": "에소테릭, XE 시리즈 N-05XE 네트워크 플레이어/DAC와 S-05XE 클래스 A 파워앰프 신제품 발표",
+      "source": "avplaza.co.kr",
+      "url": "https://avplaza.co.kr/category/audionews/",
+      "published_at": "2026-02-02T00:00:00.000Z",
+      "summary": "일본 하이엔드 오디오 브랜드 에소테릭이 N-05XE 네트워크 플레이어/DAC/프리앰프와 S-05XE 클래스 A 스테레오 파워앰프로 구성된 XE 시리즈를 2026년 3월 출시한다.",
+      "highlights": [],
+      "tags": [
+        "DAC",
+        "하이엔드 앰프",
+        "플래그십 신제품"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 3.5,
+        "impact_reason": "에소테릭의 하이엔드 네트워크 플레이어/DAC 출시는 프리미엄 오디오 시장의 기술 트렌드를 보여주지만, THE EIGHT GATES/DARS의 직접적 경쟁 영역은 아님.",
+        "confidence": 0.75,
+        "confidence_basis": "일본 하이엔드 브랜드의 제품 발표로 시장 정보는 신뢰할 만하나 구체적 기술 스펙은 제한적.",
+        "next_action": "에소테릭 XE 시리즈의 네트워크 오디오 기술과 DAC 구현 방식을 벤치마킹하여 자사 제품 차별화 포인트 재점검",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "하이엔드 네트워크 오디오 시장의 성장과 프리미엄 DAC 기술 트렌드 파악 가능",
+        "risk": "일본 브랜드의 기술력과 브랜드 파워가 한국 스타트업 진입 장벽으로 작용할 수 있음"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:15:32.853766+00:00"
+    },
+    {
+      "id": "6725320abb5e744711cf03f5dbe9de587ec7cd59",
+      "category": "computer_ai",
+      "title": "엔비디아-메타, AI 인프라 구축 맞손…GPU·CPU 대규모 공급",
+      "source": "뉴스토마토",
+      "url": "https://www.newstomato.com/ReadNews.aspx?no=1291927",
+      "published_at": "2026-02-20T00:00:00.000Z",
+      "summary": "엔비디아와 메타가 차세대 AI 인프라 구축을 위한 장기 파트너십을 체결하고 블랙웰·루빈 GPU 수백만 장과 그레이스·베라 CPU를 대규모 공급하기로 합의했다. 2027년을 목표로 에너지 효율적인 AI 컴퓨팅 역량을 강화할 계획이다.",
+      "highlights": [],
+      "tags": [
+        "GPU",
+        "AI 인프라",
+        "데이터센터",
+        "엔비디아",
+        "메타"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "대형 클라우드 업체들의 GPU 독점 공급으로 중소 AI 인프라 사업체의 GPU 확보 난이도와 단가가 상승할 것으로 예상됩니다. 서버 투자 회수 기간이 연장되고 가격 경쟁력 확보가 어려워질 수 있습니다.",
+        "confidence": 0.85,
+        "confidence_basis": "엔비디아-메타 파트너십은 GPU 공급망에 직접적 영향을 미치는 확실한 변수입니다.",
+        "next_action": "GPU 공급업체 다변화 및 대안 칩셋 검토를 통한 조달 리스크 헤징 전략을 즉시 수립해야 합니다.",
+        "time_sensitivity": "IMMEDIATE",
+        "opportunity": "GPU 부족으로 인한 AI 인프라 수요 증가로 기존 보유 자원의 가치와 수익성이 상승할 가능성이 있습니다.",
+        "risk": "메타 등 대형 업체 대비 GPU 조달 경쟁력 약화로 사업 확장성과 수익성이 제약받을 위험이 큽니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:15:45.402419+00:00"
+    },
+    {
+      "id": "770e1beabaef34deb858be1549fa08cbb1480524",
+      "category": "computer_ai",
+      "title": "메타, 엔비디아와 손잡고 'AI 초강대국' 도약 선언…블랙웰·루빈 GPU 수백만 개 도입",
+      "source": "AI Matters",
+      "url": "https://aimatters.co.kr/news-report/38248/",
+      "published_at": "2026-02-19T00:00:00.000Z",
+      "summary": "메타가 엔비디아와 다년간 전략적 파트너십을 체결해 블랙웰·루빈 GPU와 ARM 기반 그레이스 CPU를 대규모 배치하고 단일 통합 아키텍처로 운영 효율화를 추진한다.",
+      "highlights": [],
+      "tags": [
+        "AI 인프라",
+        "GPU",
+        "데이터센터",
+        "하이퍼스케일"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "메타의 대규모 GPU 도입으로 글로벌 GPU 공급 부족이 심화되어 Wavtree의 GPU 조달 비용 상승과 납기 지연이 예상됩니다.",
+        "confidence": 0.82,
+        "confidence_basis": "메타와 엔비디아의 공식 파트너십 발표로 GPU 시장 수급 변화가 확실시됩니다.",
+        "next_action": "현재 GPU 재고 확보 계획을 재검토하고 대안 공급업체와의 계약을 긴급 협의해야 합니다.",
+        "time_sensitivity": "IMMEDIATE",
+        "opportunity": "GPU 부족으로 인한 클라우드 서비스 요금 상승 시 Wavtree의 가격 경쟁력 개선 가능성이 있습니다.",
+        "risk": "GPU 조달 비용 급등과 공급 지연으로 서버 투자 회수 기간이 연장되고 사업 확장이 제약될 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:16:00.969406+00:00"
+    },
+    {
+      "id": "99bedfcd38504c942e6eec1e2127e521bbffd75e",
+      "category": "computer_ai",
+      "title": "2315조 AI 주문 폭주에도 '상투론' 나오는 이유… 2026년",
+      "source": "지이뉴스",
+      "url": "https://www.g-enews.com/article/Global-Biz/2026/02/202602180624219495fbbec65dfb_1",
+      "published_at": "2026-02-18T00:00:00.000Z",
+      "summary": "반도체 시장이 AI 붐 속에서도 '성장통'과 '진짜 확장'이 뒤섞인 구간에 있으며, 과거처럼 AI 관련 모든 기업이 동반 상승하는 시대는 종료되었다.",
+      "highlights": [],
+      "tags": [
+        "AI 시장",
+        "반도체",
+        "성장통"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "AI 반도체 시장의 성장 둔화와 차별화 시대 진입으로 GPU 공급 안정화 가능성이 높아지나, 클라우드 서비스 경쟁 심화로 단가 압박이 예상됩니다.",
+        "confidence": 0.75,
+        "confidence_basis": "반도체 업계 전반의 성장 둔화 신호는 명확하나 AI 인프라 수요의 구체적 변화 시점은 불확실합니다.",
+        "next_action": "GPU 조달 비용 하락 시나리오에 맞춘 가격 정책 재검토 및 차별화된 AI 서비스 개발 계획 수립",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "GPU 공급 안정화와 조달 비용 하락으로 서버 투자 회수 기간 단축 및 경쟁력 강화 기회",
+        "risk": "AI 시장 성장 둔화로 클라우드 서비스 가격 경쟁 심화 및 수익성 악화 위험"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:16:09.170367+00:00"
+    },
+    {
+      "id": "1ff9078592bc90cb312b8f003b5726a0682c3c2a",
+      "category": "computer_ai",
+      "title": "GPU 광풍 속, 조용히 사상 최고가 찍은 기업",
+      "source": "머니서퍼플러스",
+      "url": "https://contents.premium.naver.com/finup/moneysurferplus/contents/260220103858654gj",
+      "published_at": "2026-02-20T00:00:00.000Z",
+      "summary": "Applied Materials가 2026년 반도체 장비 시장(WFE) 20% 이상 성장을 공식 선언했으며, TSMC·삼성·Intel의 차세대 공정 투자로 AI 수요가 실물 자본 지출로 연결되고 있다.",
+      "highlights": [],
+      "tags": [
+        "반도체 장비",
+        "AI",
+        "CapEx",
+        "인프라 투자"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 6.5,
+        "impact_reason": "반도체 장비 투자 확대는 향후 GPU 공급 안정화 신호이나, 2026년까지는 현재 GPU 부족과 높은 클라우드 단가가 지속될 가능성이 높습니다.",
+        "confidence": 0.75,
+        "confidence_basis": "TSMC, 삼성, Intel의 공식 투자 계획이 구체적이고 Applied Materials의 시장 전망이 명확합니다.",
+        "next_action": "2024-2025년 GPU 확보 전략을 조기 실행하고, 2026년 공급 증가 시점의 서버 투자 회수 시나리오를 재검토해야 합니다.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "현재 높은 클라우드 단가로 수익성 확보가 가능하며, 향후 GPU 공급 증가 전 시장 점유율을 선점할 수 있습니다.",
+        "risk": "2026년 GPU 공급 급증 시 클라우드 단가 하락으로 현재 서버 투자의 회수 기간이 연장될 위험이 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:15:53.572711+00:00"
+    },
+    {
+      "id": "feb9c1f56b4614ef43b79f7a96851d59463f5646",
+      "category": "computer_ai",
+      "title": "엔비디아, GPU 넘어 CPU도 장악 나서",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/it/11965013",
+      "published_at": "2026-02-17T00:00:00.000Z",
+      "summary": "메타가 엔비디아 그레이스 CPU만으로 구성된 전용 서버를 도입하는 첫 빅테크 기업이 되면서 인텔·AMD 중심의 서버 시장에 균열이 생기고 있다. 내년에는 차세대 베라 CPU도 대규모로 도입할 계획이다.",
+      "highlights": [],
+      "tags": [
+        "CPU",
+        "GPU",
+        "AI 데이터센터",
+        "엔비디아",
+        "메타"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 6.5,
+        "impact_reason": "엔비디아의 CPU 시장 진출로 GPU-CPU 통합 솔루션이 확산되면 AI 인프라 구성 비용과 성능 효율성이 변화할 수 있습니다.",
+        "confidence": 0.75,
+        "confidence_basis": "메타와 같은 빅테크의 도입 사례가 시장 트렌드를 주도하는 경향이 강합니다.",
+        "next_action": "엔비디아 통합 솔루션의 성능 대비 비용 효율성을 기존 인텔/AMD 구성과 비교 분석하여 서버 투자 전략을 재검토해야 합니다.",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "엔비디아 통합 솔루션 도입으로 AI 워크로드 최적화와 전력 효율성 개선을 통한 운영비 절감이 가능합니다.",
+        "risk": "초기 도입 비용 증가와 기존 인텔/AMD 기반 인프라와의 호환성 문제로 투자 회수 기간이 연장될 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:16:17.663038+00:00"
     },
     {
       "id": "fc3be89f84cc7106afc4d166d5141fe93db2f18f",
