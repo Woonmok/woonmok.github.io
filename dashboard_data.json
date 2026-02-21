@@ -17,30 +17,8 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 23:22:10",
+  "last_updated": "2026-02-21 23:22:40",
   "intelligence": [
-    {
-      "title": "Listeria outbreak traced to pasta meals is over",
-      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
-      "tag": "listeria_free",
-      "score": "None",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
-    },
-    {
-      "title": "2026년 AI 칩 시장, 엔비디아·AMD·브로드컴 대격돌",
-      "summary": "AMD가 2026년 하반기 MI450 GPU 출시로 엔비디아에 대응하며 AI 칩 시장 경쟁이 치열해진다. 젠슨 황 CEO가 GTC 2026에서 신규 칩 공개를 예고했다.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://www.choicestock.co.kr/stock/news_view/90965?bu="
-    }
-  ],
-  "weather": {
-    "updated": "2026-02-22 08:13:19",
-    "temp": 8.85,
-    "humidity": 88,
-    "desc": "맑음"
-  },
-  "intelligence_backup": [
     {
       "title": "Listeria outbreak traced to pasta meals is over",
       "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
@@ -54,6 +32,28 @@
       "tag": "listeria_free",
       "score": "None",
       "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+    }
+  ],
+  "weather": {
+    "updated": "2026-02-22 08:23:20",
+    "temp": 8.85,
+    "humidity": 88,
+    "desc": "맑음"
+  },
+  "intelligence_backup": [
+    {
+      "title": "Listeria outbreak traced to pasta meals is over",
+      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
+      "tag": "listeria_free",
+      "score": "None",
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    },
+    {
+      "title": "2026년 AI 칩 시장, 엔비디아·AMD·브로드컴 대격돌",
+      "summary": "AMD가 2026년 하반기 MI450 GPU 출시로 엔비디아에 대응하며 AI 칩 시장 경쟁이 치열해진다. 젠슨 황 CEO가 GTC 2026에서 신규 칩 공개를 예고했다.",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "https://www.choicestock.co.kr/stock/news_view/90965?bu="
     }
   ]
 }
