@@ -1,6 +1,7 @@
 
 .env
 .venv/
+.venv312/
 wave-tree-ai-pilot/.venv/
 node_modules/
 # Ignore log files
