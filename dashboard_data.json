@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 02:51:43",
+  "last_updated": "2026-02-21 03:01:45",
   "intelligence": [
     {
       "title": "배양육 탄소 배출 90% 감소 연구 결과",
@@ -35,8 +35,8 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-21 11:53:10",
-    "temp": 12.24,
+    "updated": "2026-02-21 12:03:10",
+    "temp": 12.26,
     "humidity": 42,
     "desc": "맑음"
   },
