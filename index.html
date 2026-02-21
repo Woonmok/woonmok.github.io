@@ -486,8 +486,28 @@
         async function updateDashboard() {
             try {
                 const cacheBust = `ts=${Date.now()}`;
-                const [dashboardRes, statusRes, newsRes] = await Promise.all([
-                    fetch(`dashboard_data.json?${cacheBust}`, { cache: 'no-store' }),
+                let dashboardRes = null;
+                const dashboardCandidates = [
+                    `https://raw.githubusercontent.com/Woonmok/woonmok.github.io/main/dashboard_data.json?${cacheBust}`,
+                    `dashboard_data.json?${cacheBust}`
+                ];
+
+                for (const url of dashboardCandidates) {
+                    try {
+                        const res = await fetch(url, { cache: 'no-store' });
+                        if (res.ok) {
+                            dashboardRes = res;
+                            break;
+                        }
+                    } catch (e) {
+                    }
+                }
+
+                if (!dashboardRes) {
+                    throw new Error('dashboard_data fetch failed');
+                }
+
+                const [statusRes, newsRes] = await Promise.all([
                     fetch(`WaveTree_status.json?${cacheBust}`, { cache: 'no-store' }),
                     fetch(`news.json?${cacheBust}`, { cache: 'no-store' })
                 ]);
