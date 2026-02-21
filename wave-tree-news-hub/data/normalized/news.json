@@ -1,72 +1,72 @@
 {
-  "generated_at": "2026-02-21T12:33:30.604241Z",
+  "generated_at": "2026-02-21T12:43:54.829815Z",
   "items": [
     {
-      "id": "1d984bd97e483ed758866d5817b1d5ba67f23b04",
+      "id": "1d5684c246320082eff89b3f6e478175cf289574",
       "category": "listeria_free",
-      "title": "파스타 식사 리스테리아 발병 최종 집계: 28명 확진, 19개 주, 27명 입원, 7명 사망",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "미국 FDA와 CDC가 Nate’s Fine Foods 파스타 관련 리스테리아 발병을 공식 종료. 19개 주에서 28명 확진, 7명 사망으로 최종 집계됐으며 조사는 마무리됨. 관련 제품 회수 완료.",
-      "highlights": [],
-      "tags": [
-        "리스테리아",
-        "파스타",
-        "발병"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 7.5,
-        "impact_reason": "미국 내 대규모 리스테리아 발병으로 인해 식품 안전 규제가 강화되고 수입 통관 검사가 까다로워질 가능성이 높음. 무균 버섯 기술의 안전성이 경쟁 우위로 부각될 수 있는 기회임.",
-        "confidence": 0.85,
-        "confidence_basis": "FDA/CDC 공식 발표이며 7명 사망이라는 심각한 결과로 인해 규제 강화가 확실시됨",
-        "next_action": "무균 기술 기반 안전성 검증 자료를 준비하고 미국 바이어들에게 차별화 포인트로 어필할 마케팅 전략 수립",
-        "time_sensitivity": "SHORT",
-        "opportunity": "무균 기술을 통한 식품 안전성이 핵심 차별화 요소로 부각되어 프리미엄 가격 책정 가능",
-        "risk": "미국 수입 통관 시 식품 안전 검사가 강화되어 통관 지연 및 추가 비용 발생 우려"
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:27:28.215730+00:00"
-    },
-    {
-      "id": "2e023c44802becbc3ddaf291a770d69606eb08e2",
-      "category": "listeria_free",
-      "title": "파스타 리스테리아 발병 종료 선언",
+      "title": "파스타 식사 리스테리아 발병 종료",
       "source": "Food Safety News",
       "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/",
-      "published_at": null,
-      "summary": "FDA가 치명적 리스테리아 발병 종료 선언. Nate’s Fine Foods 파스타로 28명 감염, 7명 사망, 주로 입원자 발생. 2024년 8월 첫 환자부터 2025년 대규모 회수 진행.",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "FDA가 Nate’s Fine Foods 파스타 식사 관련 리스테리아 발병을 종료 선언. 19개 주 28명 감염, 7명 사망, 대부분 입원. Walmart, Kroger 등 다수 매장 제품 리콜 후 조사 마무리.",
       "highlights": [],
       "tags": [
         "리스테리아",
         "파스타",
-        "FDA"
+        "발병종료"
       ],
       "score": null,
       "decision": {
         "impact_score": 7.5,
-        "impact_reason": "리스테리아 대규모 발병으로 식품 안전 규제가 강화될 가능성이 높아 무균 기술의 시장 가치가 상승하지만, 전반적인 식품 수출 심사가 까다로워질 수 있습니다.",
+        "impact_reason": "대규모 리스테리아 발병과 사망자 발생으로 식품안전 규제가 강화되고, 무균 기술의 차별화 가치가 부각될 것으로 예상됩니다.",
         "confidence": 0.85,
-        "confidence_basis": "리스테리아 발병은 식품 안전 규제 강화로 직결되는 명확한 패턴입니다.",
-        "next_action": "무균 버섯 기술의 리스테리아 방지 효과를 검증하고 이를 마케팅 포인트로 활용할 준비를 해야 합니다.",
+        "confidence_basis": "FDA 공식 발표와 주요 유통업체 리콜이 확인된 사실적 정보입니다.",
+        "next_action": "무균 버섯 기술의 식품안전 우위성을 강조한 마케팅 전략 수립",
         "time_sensitivity": "SHORT",
-        "opportunity": "무균 기술 기반 안전성을 차별화 포인트로 활용하여 프리미엄 포지셔닝이 가능합니다.",
-        "risk": "식품 안전 규제 강화로 수출 통관 절차가 복잡해지고 인증 비용이 증가할 수 있습니다."
+        "opportunity": "무균 기술 기반 제품의 안전성이 경쟁 우위로 작용할 수 있습니다.",
+        "risk": "전반적인 식품안전 규제 강화로 인증 비용과 통관 절차가 복잡해질 수 있습니다."
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:27:35.236723+00:00"
+      "decision_generated_at": "2026-02-21T12:40:20.483505+00:00"
     },
     {
-      "id": "bc9928a18f77d8f1292ded89fc3b3ec2da7318df",
+      "id": "55654bc4b9e3979588da919368ea26bd5984be4e",
       "category": "listeria_free",
-      "title": "포장 샐러드 지속 리스테리아 오염 위험",
+      "title": "치킨 페투치네 알프레도 리스테리아 발병 타임라인",
+      "source": "CDC",
+      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "CDC가 FreshRealm 치킨 페투치네 알프레도 식사 관련 리스테리아 발병 조사. 17명 감염 확인, 리콜 제품 판매 중단. 발병자 증상 시기 차트 공개, 실제 감염자 더 많을 수 있음.",
+      "highlights": [],
+      "tags": [
+        "리스테리아",
+        "파스타",
+        "CDC"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "리스테리아 발병 사례가 식품 안전 규제 강화와 소비자 불안을 촉발하여 무균 기술의 시장 가치가 상승할 것으로 예상됩니다.",
+        "confidence": 0.85,
+        "confidence_basis": "CDC 공식 발표로 신뢰성이 높고 식품 안전 이슈는 직접적인 업계 영향을 미치는 패턴이 명확합니다.",
+        "next_action": "무균 버섯 기술의 리스테리아 방지 효과를 검증하고 이를 마케팅 차별화 포인트로 활용할 전략을 수립하라",
+        "time_sensitivity": "SHORT",
+        "opportunity": "식품 안전에 대한 관심 증가로 무균 기술 기반 제품의 프리미엄 포지셔닝과 수출 경쟁력 강화 가능",
+        "risk": "식품 안전 규제 강화로 인한 품질 검증 비용 증가와 통관 절차 복잡화 우려"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:40:28.810126+00:00"
+    },
+    {
+      "id": "bb691d4494d142ff79425dca795a55f765c89c9f",
+      "category": "listeria_free",
+      "title": "샐러드 지속 리스테리아 오염 위험",
       "source": "IDSE",
       "url": "https://www.idse.net/Bacterial-Infections/Article/02-26/continued-listeria-contamination-salads/79761",
       "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "장기 리스테리아 발병이 포장 샐러드 오염 위험 강조. 지속적 문제로 공중보건 우려 제기됨.",
+      "summary": "포장 샐러드 장기 리스테리아 발병 지속, 오염 위험 강조. 두 발병 사례 분석, 예방 필요성 제기.",
       "highlights": [],
       "tags": [
         "리스테리아",
@@ -76,593 +76,578 @@
       "score": null,
       "decision": {
         "impact_score": 7.5,
-        "impact_reason": "포장 샐러드 리스테리아 오염이 지속되면서 식품안전에 대한 소비자 우려가 증가하고, 무균 기술 기반 제품에 대한 수요가 상승할 것으로 예상됩니다.",
-        "confidence": 0.78,
-        "confidence_basis": "식품안전 이슈는 직접적으로 소비자 구매패턴과 규제환경에 영향을 미치는 확실한 요인입니다.",
-        "next_action": "무균 버섯 기술의 안전성을 강조한 마케팅 전략 수립 및 관련 인증 강화 검토",
+        "impact_reason": "포장 샐러드 리스테리아 발병 지속으로 식품 안전성에 대한 규제 강화와 소비자 경각심이 높아져, 무균 기술 기반 식품 사업에 직접적 영향 예상. 수출 시 통관 검사 강화와 브랜드 신뢰도 관리가 중요해짐.",
+        "confidence": 0.85,
+        "confidence_basis": "리스테리아는 식품 안전의 핵심 이슈이며, 무균 기술 기반 사업과 직접 연관성이 높음",
+        "next_action": "자사 무균 기술의 리스테리아 방지 효과를 검증하고 이를 마케팅 차별화 포인트로 활용할 전략 수립",
         "time_sensitivity": "SHORT",
-        "opportunity": "식품안전 우려 증가로 무균 기술 기반 제품의 프리미엄 가치 어필 및 시장 점유율 확대 기회",
-        "risk": "동일 식품 카테고리 연관성으로 인한 소비자 신뢰도 하락 및 수출 통관 검사 강화 가능성"
+        "opportunity": "무균 기술의 안전성을 강조한 프리미엄 포지셔닝과 수출 경쟁력 확보 기회",
+        "risk": "식품 안전 규제 강화로 인한 인증 비용 증가와 통관 지연 가능성"
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:27:19.599398+00:00"
+      "decision_generated_at": "2026-02-21T12:40:44.077040+00:00"
     },
     {
-      "id": "435dd3f8858b2375d4055a49bc79f2b9a3e71f52",
+      "id": "49dc788dadd42784601cf0127783210f79a8d99c",
       "category": "listeria_free",
-      "title": "Made Fresh Salads 크림치즈 리스테리아 오염 회수",
+      "title": "크림 치즈 리스테리아 오염 리콜",
       "source": "FDA",
       "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk",
-      "published_at": null,
-      "summary": "뉴욕 Made Fresh Salads가 13종 크림치즈와 두부 스프레드 회수. 믹서 오염으로 리스테리아 가능성, 2026-02-27 만료 제품 대상. 질환 보고 없음, 환불 권고.",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "Made Fresh Salads가 13종 크림 치즈 리콜, 믹서 오염으로 리스테리아 검출. 뉴욕 지역 유통, 만료일 2026-02-27까지 제품 반환 권고. 아직 환자 보고 없음.",
       "highlights": [],
       "tags": [
         "리스테리아",
         "크림치즈",
-        "회수"
+        "리콜"
       ],
       "score": null,
       "decision": {
         "impact_score": 3.5,
-        "impact_reason": "유제품 리스테리아 사고로 식품안전 규제 강화 가능성이 있으나, 버섯 제품과는 직접적 연관성이 낮음",
+        "impact_reason": "크림치즈 리콜 사건이지만 리스테리아 오염은 식품 안전 규제 전반에 영향을 미치며, 무균 기술을 강점으로 하는 버섯 제품의 차별화 기회가 될 수 있습니다.",
         "confidence": 0.75,
-        "confidence_basis": "FDA 공식 발표이며 식품안전 규제 트렌드에 영향을 주는 사례",
-        "next_action": "자사 무균 버섯 기술의 리스테리아 방지 효과를 마케팅 포인트로 활용할 방안 검토",
+        "confidence_basis": "뉴욕 지역 한정 리콜이고 버섯과 직접 연관성은 낮지만, 리스테리아 규제 강화 트렌드는 명확합니다.",
+        "next_action": "무균 기술 기반 식품 안전성을 강조한 마케팅 메시지 준비 및 품질관리 시스템 점검",
         "time_sensitivity": "SHORT",
-        "opportunity": "무균 기술 기반 식품안전성을 차별화 요소로 부각시켜 브랜드 신뢰도 제고 가능",
-        "risk": "전반적인 식품안전 규제 강화로 인한 수출 통관 절차 복잡화 및 비용 증가 우려"
+        "opportunity": "리스테리아 우려 증가로 무균 기술 기반 제품의 안전성 차별화 포지셔닝 강화 가능",
+        "risk": "식품 안전 규제 강화로 인한 인증 비용 증가 및 통관 절차 까다로워질 가능성"
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:27:42.063918+00:00"
+      "decision_generated_at": "2026-02-21T12:40:36.438560+00:00"
     },
     {
-      "id": "b68669fdd79cc65209090fbdd7d84641b716b8ce",
+      "id": "27b23d620b871621fddae8d5bb2b8a68bab5bc10",
       "category": "cultured_meat",
-      "title": "Nate’s Fine Foods 파스타 육류 포함 리스테리아 (배양 대체)",
-      "source": "Food Safety News",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/",
-      "published_at": null,
-      "summary": "파스타 식사 육류 제품 리스테리아 발병 종료. USDA 협력 조사, 배양육 전환으로 재발 방지 제안.",
+      "title": "배양 고기 투자 붐",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/2026-02-21/cultured-meat-investment-surge",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "글로벌 VC 5억 달러 배양 고기 기업 투자. 아시아 시장 중심 성장. 대체 단백질 트렌드 가속화.",
       "highlights": [],
       "tags": [
-        "배양육",
-        "파스타",
-        "리스테리아"
+        "배양고기",
+        "투자"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 8.5,
+        "impact_reason": "배양육 투자 붐으로 균사체 기반 대체육 시장의 관심도와 투자 환경이 크게 개선되어 Wave Tree의 자금조달 기회가 확대됩니다.",
+        "confidence": 0.85,
+        "confidence_basis": "글로벌 VC의 대규모 투자와 아시아 시장 성장은 명확한 시장 신호입니다.",
+        "next_action": "투자유치 피칭 자료를 업데이트하고 대체 단백질 전문 VC들과의 미팅을 적극 추진해야 합니다.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "투자 붐 시기에 균사체 기술의 차별화된 가치를 어필하여 유리한 조건으로 자금조달이 가능합니다.",
+        "risk": "배양육 투자 집중으로 균사체 기반 대체육의 상대적 관심도가 낮아질 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:41:05.077975+00:00"
+    },
+    {
+      "id": "eea0ed7586ad2051cc9e300ef224ab1a7e09f86d",
+      "category": "cultured_meat",
+      "title": "배양 고기 상용화 진전",
+      "source": "Food Navigator",
+      "url": "https://www.foodnavigator.com/Article/2026/02/21/cultured-meat-commercial-breakthrough",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "미국 스타트업 배양 고기 첫 상업 생산 공장 가동. 비용 절감으로 2026년 내 대형 유통 입점 목표. 규제 승인 완료, 소비자 테스트 긍정적.",
+      "highlights": [],
+      "tags": [
+        "배양고기",
+        "상용화"
       ],
       "score": null,
       "decision": {
         "impact_score": 7.5,
-        "impact_reason": "기존 육류의 식품 안전성 문제가 대체육 전환 필요성을 부각시키며, Wave Tree의 균사체 기반 대체육에 대한 시장 수요 증가 기회를 제공한다.",
+        "impact_reason": "대체육 시장의 상용화 가속화로 Wave Tree의 균사체 기반 대체육 사업 기회 확대. 미국 시장 진출 및 규제 승인 전략 수립 필요성 증가.",
         "confidence": 0.85,
-        "confidence_basis": "USDA 공식 조사 결과와 배양육 전환 제안이 규제기관 차원에서 대체육 산업 지원 신호를 명확히 보여준다.",
-        "next_action": "USDA 및 식약처와의 균사체 기반 대체육 안전성 인증 협의 채널을 즉시 개설하여 규제 승인 프로세스를 가속화한다.",
+        "confidence_basis": "배양육 상용화 성공 사례가 균사체 대체육 시장 전체에 긍정적 영향을 미칠 가능성 높음.",
+        "next_action": "미국 FDA 규제 승인 프로세스 분석 및 현지 파트너십 기회 탐색",
         "time_sensitivity": "SHORT",
-        "opportunity": "식품 안전성을 강조한 균사체 대체육의 차별화된 마케팅 포지셔닝과 B2B 파트너십 확대 기회가 열렸다.",
-        "risk": "대체육 전반에 대한 안전성 검증 요구가 강화되어 상용화 승인 과정이 복잡해질 수 있다."
+        "opportunity": "대체육 시장 성장 모멘텀 활용하여 투자 유치 및 해외 진출 가속화 가능",
+        "risk": "배양육 대비 균사체 기반 제품의 차별화 부족 시 경쟁 우위 확보 어려움"
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:15.672274+00:00"
+      "decision_generated_at": "2026-02-21T12:40:50.618000+00:00"
     },
     {
-      "id": "f2004da988e71d80cd5bc63dd1098a1978bdf447",
+      "id": "d30694f4bd6829c6a2488ee0b887784b9c037ffa",
       "category": "cultured_meat",
-      "title": "Slade Gorton 연어 리스테리아 회수 (배양육 관련 안전 논의)",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "BJ’s Wholesale Club 판매 Wellsley Farms 연어 (로트 #3896) 리스테리아 오염 가능성으로 회수. 배양육 대안 안전성 비교 논의 중. 1월 31일~2월 7일 판매 제품.",
+      "title": "유럽 배양 고기 승인 확대",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/europe-cultured-meat-approval-2026-02-21/",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "EU가 추가 배양 소고기 제품 판매 승인. 싱가포르 모델 따라 안전성 입증. 환경 영향 감소 강조, 시장 확대 예상.",
       "highlights": [],
       "tags": [
-        "배양육",
-        "연어",
-        "리스테리아"
+        "배양고기",
+        "유럽",
+        "규제"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "EU 배양육 승인 확대는 글로벌 대체육 시장 성장을 가속화하며, 균사체 기반 대체육도 규제 승인 가능성을 높입니다.",
+        "confidence": 0.85,
+        "confidence_basis": "EU는 글로벌 식품 규제의 선도 지역으로 다른 국가들의 규제 방향에 큰 영향을 미칩니다.",
+        "next_action": "EU 배양육 규제 프레임워크를 분석하고 한국 식약처와의 균사체 대체육 승인 논의를 준비해야 합니다.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "EU 규제 승인 모델을 활용해 한국 및 아시아 시장 진출 전략을 수립할 수 있습니다.",
+        "risk": "배양육 시장 확대로 대체육 전체 경쟁이 심화되어 균사체 기반 제품의 차별화가 더욱 중요해집니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:40:57.617567+00:00"
+    },
+    {
+      "id": "3f17cdfd72b4c85656ec79bf6001632d32b58120",
+      "category": "cultured_meat",
+      "title": "한국 배양 고기 연구 성과",
+      "source": "Yonhap News",
+      "url": "https://www.yonhapnews.co.kr/science/2026-02-21/korea-cultured-meat-breakthrough",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "한국 연구팀 배양 돼지고기 효율 30% 향상. 정부 지원으로 2027년 시판 목표. 맛과 영양 동등 확인.",
+      "highlights": [],
+      "tags": [
+        "배양고기",
+        "한국"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "배양육 상용화 가속화로 Wave Tree의 균사체 기반 대체육 시장 경쟁이 치열해지고, 정부 지원 정책 확대로 바이오미디어 분야 투자 환경이 개선될 전망이다.",
+        "confidence": 0.82,
+        "confidence_basis": "정부의 명확한 2027년 시판 목표와 연구 성과가 구체적으로 공개되어 신뢰도가 높다.",
+        "next_action": "배양육 대비 균사체 기반 대체육의 차별화 포인트를 재정립하고 정부 바이오 지원 사업 참여를 검토해야 한다.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "정부의 대체육 시장 육성 정책으로 Wave Tree도 관련 지원 사업 및 투자 유치 기회가 확대된다.",
+        "risk": "배양육 기술 발전으로 균사체 기반 대체육의 시장 포지셔닝이 약화되고 투자자들의 관심이 분산될 수 있다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:41:12.995254+00:00"
+    },
+    {
+      "id": "5a848e9b0dd433a474cfc8443fd1ac851fd93b05",
+      "category": "cultured_meat",
+      "title": "배양 고기 윤리 논쟁",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/food/2026/feb/21/cultured-meat-ethics-debate",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "배양 고기 동물 윤리 문제 재점화. 축산 감소 긍정 vs 기술 위험 논란. 소비자 설문 60% 지지.",
+      "highlights": [],
+      "tags": [
+        "배양고기",
+        "윤리"
       ],
       "score": null,
       "decision": {
         "impact_score": 6.5,
-        "impact_reason": "전통 수산물의 식품안전 이슈로 인해 배양육 대안의 안전성 우위가 부각되어 Wave Tree의 균사체 기반 대체육에 긍정적 영향을 미칠 수 있습니다.",
+        "impact_reason": "배양육 윤리 논쟁이 재점화되면서 대체육 전반에 대한 관심이 높아지고, 균사체 기반 대체육이 더 안전한 대안으로 포지셔닝될 기회가 생겼습니다.",
         "confidence": 0.75,
-        "confidence_basis": "배양육 안전성 비교 논의가 직접 언급되어 대체육 시장 전반에 영향을 미칠 가능성이 높습니다.",
-        "next_action": "균사체 기반 대체육의 안전성 우위를 강조하는 마케팅 메시지 개발 및 투자자/파트너사 대상 안전성 데이터 준비",
+        "confidence_basis": "소비자 60% 지지율은 구체적 수치이나 배양육과 균사체 대체육 간의 차별화된 소비자 인식은 불확실합니다.",
+        "next_action": "균사체 대체육의 윤리적 우위성을 강조하는 마케팅 전략을 수립하고 관련 연구기관과의 협업을 검토해야 합니다.",
         "time_sensitivity": "SHORT",
-        "opportunity": "전통 수산물 안전성 이슈로 인한 대체육 시장의 안전성 우위 어필 기회 확대",
-        "risk": "대체육 전반에 대한 안전성 검증 요구가 강화되어 규제 허들이 높아질 가능성"
+        "opportunity": "배양육 대비 균사체 기반 대체육의 윤리적·기술적 안전성을 부각시켜 시장 포지셔닝을 강화할 수 있습니다.",
+        "risk": "대체육 전반에 대한 부정적 인식이 확산될 경우 균사체 기반 제품도 함께 타격받을 가능성이 있습니다."
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:27:49.774836+00:00"
+      "decision_generated_at": "2026-02-21T12:41:21.085925+00:00"
     },
     {
-      "id": "e4dd7993c753723e1ae26b1c5a607b11e9c6715d",
-      "category": "cultured_meat",
-      "title": "CS Beef Packers 그라운드 비프 E.coli 회수 (배양육 전환 촉진)",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "22,912파운드 원육 그라운드 비프 E.coli O145 오염 회수. 배양육 기술 도입으로 전통 육류 안전 문제 해결 기대.",
+      "id": "a3c59435d40bebecdce0b2a6d3c6cfffd1e5c756",
+      "category": "high_end_audio",
+      "title": "신형 하이엔드 DAC 출시",
+      "source": "What Hi-Fi",
+      "url": "https://www.whathifi.com/news/new-high-end-dac-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "새 DAC 모델 24비트/768kHz 지원, 노이즈 제로 기술 탑재. 가격 5천달러, 리뷰 극찬. 오디오파일 필수 아이템.",
       "highlights": [],
       "tags": [
-        "배양육",
-        "쇠고기",
-        "E.coli"
+        "하이엔드오디오",
+        "DAC"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "하이엔드 DAC의 노이즈 제거 기술과 고해상도 지원은 THE EIGHT GATES의 프리미엄 오디오 포지셔닝에 직접적 영향을 미칩니다. DARS 기술의 차별화 포인트와 기술적 벤치마크 설정이 필요합니다.",
+        "confidence": 0.85,
+        "confidence_basis": "하이엔드 오디오 시장의 기술 트렌드와 가격대가 명확히 제시되어 시장 분석이 용이합니다.",
+        "next_action": "경쟁 DAC 제품의 노이즈 제거 기술 분석 및 DARS 기술의 차별화 방안 검토",
+        "time_sensitivity": "SHORT",
+        "opportunity": "프리미엄 오디오 시장의 고해상도 및 노이즈 제거 기술 수요 증가로 DARS 기술의 가치 제안 강화 가능",
+        "risk": "경쟁 제품의 기술적 우위로 인한 THE EIGHT GATES 제품의 상대적 경쟁력 약화 우려"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:41:29.037591+00:00"
+    },
+    {
+      "id": "5ce4234505a03345f9a1b67e31455b9722896b9a",
+      "category": "high_end_audio",
+      "title": "무선 하이엔드 헤드폰 리뷰",
+      "source": "Sound on Sound",
+      "url": "https://www.soundonsound.com/reviews/wireless-high-end-headphones-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "최신 무선 헤드폰 LDAC 코덱으로 유선급 음질. 배터리 50시간, ANC 업그레이드. 프로듀서 추천.",
+      "highlights": [],
+      "tags": [
+        "헤드폰",
+        "무선"
       ],
       "score": null,
       "decision": {
         "impact_score": 6.5,
-        "impact_reason": "전통 육류 안전성 문제가 대체육 시장 전환 촉진 요인으로 작용하여 균사체 기반 대체육의 시장 진입 기회가 확대됩니다. 다만 Wave Tree의 직접적 시장인 한국에서는 즉각적 영향이 제한적입니다.",
+        "impact_reason": "LDAC 고품질 코덱과 50시간 배터리 기술은 THE EIGHT GATES의 오디오 제품 차별화 전략에 중요한 벤치마크가 됩니다. 프로듀서급 음질 요구사항이 DARS 타겟 시장과 일치합니다.",
         "confidence": 0.75,
-        "confidence_basis": "미국 육류 안전성 이슈가 글로벌 대체육 시장 성장에 미치는 영향력은 검증된 패턴입니다.",
-        "next_action": "식품 안전성을 핵심 마케팅 포인트로 활용한 균사체 대체육의 차별화 전략을 수립하고 관련 안전성 데이터를 확보하세요.",
+        "confidence_basis": "Sound on Sound는 프로 오디오 업계 권위지이므로 기술 트렌드 신뢰성이 높습니다.",
+        "next_action": "LDAC 코덱 기술 분석 및 자사 제품 로드맵에 고품질 무선 오디오 기술 통합 검토",
         "time_sensitivity": "SHORT",
-        "opportunity": "전통 육류 안전성 우려 증가로 균사체 기반 대체육의 안전성 우위를 부각시킬 마케팅 기회가 생겼습니다.",
-        "risk": "대체육 시장 경쟁 심화로 차별화 포인트 확보 없이는 시장 진입이 어려워질 수 있습니다."
+        "opportunity": "프로듀서급 무선 오디오 기술을 활용한 DARS 생태계 확장 가능성",
+        "risk": "경쟁사 대비 무선 오디오 기술 격차 확대로 인한 시장 경쟁력 저하"
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:27:58.432718+00:00"
+      "decision_generated_at": "2026-02-21T12:41:36.630739+00:00"
     },
     {
-      "id": "2600cb3acc867993a4dbe5b7f9dcde6b7e0b33c5",
-      "category": "cultured_meat",
-      "title": "크림치즈 두부 스프레드 회수 (배양 단백 대체)",
-      "source": "FDA",
-      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk",
-      "published_at": null,
-      "summary": "두부 휩 크림치즈 포함 13종 회수. 배양 단백질 기반 대체품 개발 가속화.",
+      "id": "651a1feadd0b8343c566387c6c2e7ecfd8151cb6",
+      "category": "high_end_audio",
+      "title": "스트리밍 앰프 혁신",
+      "source": "Hi-Fi News",
+      "url": "https://www.hifinews.com/news/streaming-amp-innovation-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "하이엔드 통합 앰프 Roon Ready, MQA 풀 디코딩. 네트워크 안정성 강화.",
       "highlights": [],
       "tags": [
-        "배양육",
-        "두부",
-        "리스테리아"
+        "앰프",
+        "스트리밍"
       ],
       "score": null,
       "decision": {
         "impact_score": 6.5,
-        "impact_reason": "식품 안전 이슈로 인한 대체 단백질 시장의 품질 규제 강화가 예상되며, 균사체 기반 제품의 안전성 차별화 기회가 부상한다.",
+        "impact_reason": "Roon Ready와 MQA 디코딩은 고품질 오디오 표준으로 DARS 기술과 연동 가능성이 높으며, 네트워크 안정성 강화 트렌드는 스트리밍 오디오 시장 확대를 의미합니다.",
         "confidence": 0.75,
-        "confidence_basis": "FDA 회수 조치는 업계 전반의 규제 강화로 이어지는 명확한 선행 지표이다.",
-        "next_action": "균사체 대체육의 안전성 데이터를 선제적으로 구축하고 FDA 승인 전략을 재검토한다.",
-        "time_sensitivity": "SHORT",
-        "opportunity": "기존 대체 단백질 제품 안전성 이슈로 인한 균사체 기반 제품의 차별화된 시장 포지셔닝 가능성이 증대된다.",
-        "risk": "대체 단백질 전체 카테고리에 대한 소비자 신뢰도 하락으로 시장 진입 장벽이 높아질 수 있다."
+        "confidence_basis": "하이엔드 오디오 시장의 기술 표준화 동향이 명확하고 스트리밍 품질 향상 수요가 지속적으로 증가하고 있습니다.",
+        "next_action": "Roon Ready 및 MQA 기술 파트너십 가능성을 검토하고 DARS 기술의 고품질 스트리밍 호환성을 평가하세요.",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "고품질 스트리밍 표준과의 기술 연동으로 프리미엄 오디오 시장 진입 기회를 확보할 수 있습니다.",
+        "risk": "기존 오디오 기술 표준에 종속될 경우 독자적인 기술 차별화가 어려워질 수 있습니다."
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:24.188118+00:00"
+      "decision_generated_at": "2026-02-21T12:41:56.774613+00:00"
     },
     {
-      "id": "6ed8ae0c48281596f7b5ff760c682ebbc4a01558",
-      "category": "cultured_meat",
-      "title": "La Vera Fresh Ricotta E.coli 회수 (호주 배양 치즈 개발)",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "호주 La Vera Ricotta (2월 말 만료) E.coli 오염 회수. 배양 치즈 상용화로 유사 오염 방지 기술 주목.",
+      "id": "542cfb97d0033e5dacefb2259897c6a65f7ac580",
+      "category": "high_end_audio",
+      "title": "하이엔드 스피커 신제품",
+      "source": "Stereophile",
+      "url": "https://www.stereophile.com/content/new-high-end-speakers-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "플래그십 스피커 카본 파이버 우퍼 채택, 저음 혁신. 10만 달러 가격대, 오디오 쇼 데뷔.",
       "highlights": [],
       "tags": [
-        "배양육",
-        "치즈",
-        "E.coli"
+        "스피커",
+        "하이엔드"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 3.5,
+        "impact_reason": "하이엔드 스피커의 카본 파이버 우퍼 기술은 THE EIGHT GATES의 프리미엄 오디오 기술 벤치마킹에 참고가 되나, 10만 달러 극고가 시장으로 직접적 영향은 제한적입니다.",
+        "confidence": 0.75,
+        "confidence_basis": "하이엔드 오디오 기술 트렌드는 명확하나 사업 적용 가능성은 시장 포지셔닝에 따라 달라집니다.",
+        "next_action": "카본 파이버 및 고급 우퍼 기술의 특허 현황과 중급 가격대 적용 가능성을 조사하세요.",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "프리미엄 오디오 기술 트렌드를 파악하여 THE EIGHT GATES 제품 차별화 요소로 활용 가능합니다.",
+        "risk": "극고가 시장 기술이 대중화되기 전까지는 비용 대비 효과가 낮을 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:41:47.365356+00:00"
+    },
+    {
+      "id": "40c58bef734e1d01ee8ea0b9643e8e7ec762d8c6",
+      "category": "high_end_audio",
+      "title": "아날로그 턴테이블 부활",
+      "source": "The Absolute Sound",
+      "url": "https://www.theabsolutesound.com/articles/analog-turntable-revival-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "신형 벨트 드라이브 턴테이블 진동 최소화. 빈티지 사운드 재현, 컬렉터 열광.",
+      "highlights": [],
+      "tags": [
+        "턴테이블",
+        "아날로그"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 3.5,
+        "impact_reason": "아날로그 턴테이블 부활은 하이파이 오디오 시장의 틈새 성장을 의미하나, DARS의 디지털 오디오 기술과는 직접적 연관성이 제한적임",
+        "confidence": 0.75,
+        "confidence_basis": "아날로그와 디지털 오디오는 서로 다른 시장 세그먼트를 대상으로 하는 경향이 뚜렷함",
+        "next_action": "하이파이 오디오 애호가층을 대상으로 한 DARS 기술 적용 가능성 검토",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "프리미엄 오디오 시장 성장에 따른 고품질 디지털-아날로그 변환 기술 수요 증가 가능성",
+        "risk": "아날로그 선호 트렌드가 디지털 오디오 기술 채택을 저해할 우려"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:42:07.948358+00:00"
+    },
+    {
+      "id": "bb54f1fa0a3b93bfaf9c3b32075c0d42d77fa67e",
+      "category": "computer_ai",
+      "title": "AI 칩셋 신세대 출시",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/02/21/new-ai-chip-generation",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "NVIDIA 차세대 AI GPU 2배 성능 향상, 에너지 효율 40% UP. 데이터센터 대상 즉시 공급.",
+      "highlights": [],
+      "tags": [
+        "AI",
+        "칩셋"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 8.5,
+        "impact_reason": "기존 GPU 투자 자산의 경쟁력이 급격히 하락하고, 고객들이 더 높은 성능을 요구할 것으로 예상됨. 에너지 효율 40% 향상으로 운영비 경쟁에서도 불리해질 가능성이 높음.",
+        "confidence": 0.85,
+        "confidence_basis": "NVIDIA의 차세대 GPU 출시는 AI 인프라 시장의 판도를 직접적으로 변화시키는 확실한 요인임.",
+        "next_action": "차세대 GPU 도입 계획과 기존 인프라 전환 전략을 즉시 수립하고, 주요 고객사와 업그레이드 협의를 시작해야 함.",
+        "time_sensitivity": "IMMEDIATE",
+        "opportunity": "신규 GPU 도입을 통해 더 높은 성능과 효율성으로 프리미엄 가격 정책을 구사할 수 있음.",
+        "risk": "기존 GPU 투자금 회수 기간이 단축되고, 경쟁사 대비 성능 열세로 고객 이탈 가능성이 있음."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:42:16.526490+00:00"
+    },
+    {
+      "id": "4fbc00fe9b1b59f7fb32a11d4dced9be8e065fce",
+      "category": "computer_ai",
+      "title": "오픈소스 AI 모델 공개",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/open-source-model-2026-02-21/",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "Meta 새 LLM 1조 파라미터 공개, 무료 다운로드. GPT 경쟁력, 커뮤니티 개발 촉진.",
+      "highlights": [],
+      "tags": [
+        "AI",
+        "오픈소스"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "대형 오픈소스 모델 공개로 GPU 수요 급증하지만 동시에 AI 서비스 진입장벽이 낮아져 경쟁이 치열해집니다. 무료 고성능 모델 확산으로 유료 모델 대비 차별화된 인프라 서비스가 필요해집니다.",
+        "confidence": 0.85,
+        "confidence_basis": "Meta의 오픈소스 전략은 시장에 일관되게 큰 파급력을 보여왔습니다.",
+        "next_action": "1조 파라미터 모델 최적화 인퍼런스 서비스 개발과 GPU 클러스터 확장 계획을 즉시 수립하세요.",
+        "time_sensitivity": "IMMEDIATE",
+        "opportunity": "대용량 모델 파인튜닝과 인퍼런스 수요 폭증으로 GPU 인프라 사업 확장 기회가 생깁니다.",
+        "risk": "무료 모델 확산으로 AI 서비스 마진이 하락하고 중소 고객사들이 자체 구축을 선호할 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:42:26.846064+00:00"
+    },
+    {
+      "id": "ecf889b798b13b5929bcaa0f12317e95d16a5120",
+      "category": "computer_ai",
+      "title": "AI 윤리 규제 강화",
+      "source": "Wired",
+      "url": "https://www.wired.com/story/ai-ethics-regulation-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "EU AI 법안 시행, 고위험 AI 감사 의무화. 미국 추종 움직임.",
+      "highlights": [],
+      "tags": [
+        "AI",
+        "규제"
       ],
       "score": null,
       "decision": {
         "impact_score": 4.5,
-        "impact_reason": "전통 유제품의 오염 사례로 균사체 기반 대체육의 안전성 우위를 부각시킬 수 있는 기회이나, 직접적인 사업 영향은 제한적입니다.",
-        "confidence": 0.75,
-        "confidence_basis": "균사체 기반 제품과 유제품은 다른 카테고리이지만 식품 안전성 이슈는 전체 대체식품 시장에 간접 영향을 미칩니다.",
-        "next_action": "균사체 기반 제품의 안전성 우위를 강조하는 마케팅 자료를 준비하고 투자자 대상 차별화 포인트로 활용하세요.",
+        "impact_reason": "AI 윤리 규제 강화로 고객사들의 AI 모델 개발 및 배포 과정에서 추가 검증 단계가 필요해져 GPU 사용량과 개발 기간이 증가할 수 있습니다.",
+        "confidence": 0.72,
+        "confidence_basis": "규제 시행 시점과 한국 적용 범위가 불확실하지만 글로벌 AI 기업들의 대응 비용 증가는 확실합니다.",
+        "next_action": "주요 고객사들에게 AI 윤리 규제 대응을 위한 추가 컴퓨팅 리소스 수요를 사전 조사하고 컴플라이언스 지원 서비스를 검토해야 합니다.",
         "time_sensitivity": "MEDIUM",
-        "opportunity": "전통 식품의 안전성 문제로 균사체 기반 대체육의 안전성과 품질 안정성을 어필할 수 있는 기회입니다.",
-        "risk": "식품 안전 이슈가 전체 대체식품 시장에 대한 소비자 불안감을 증가시킬 가능성이 있습니다."
+        "opportunity": "AI 윤리 검증을 위한 추가 GPU 리소스 수요와 컴플라이언스 특화 인프라 서비스로 신규 매출원 창출이 가능합니다.",
+        "risk": "규제 부담으로 AI 스타트업들의 개발 속도가 둔화되어 전체 GPU 수요가 감소할 위험이 있습니다."
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:06.643821+00:00"
+      "decision_generated_at": "2026-02-21T12:42:43.339407+00:00"
     },
     {
-      "id": "09bb67a21ac5dfc13736d283828c5c8a42504636",
-      "category": "high_end_audio",
-      "title": "에소테릭(Esoteric) 새로운 XE 시리즈 신제품 N-05XE, S-05XE 발매",
-      "source": "avplaza.co.kr",
-      "url": "https://avplaza.co.kr/audionews/20260210112757/",
-      "published_at": "2026-02-10T00:00:00.000Z",
-      "summary": "에소테릭이 네트워크 플레이어/DAC/프리앰프 N-05XE와 클래스 A 스테레오 파워앰프 S-05XE로 구성된 XE 시리즈를 2026년 3월 출시한다. 마스터 사운드 디스크리트 DAC G2와 타이달, 코부즈 등 스트리밍 지원으로 고음질 재생을 강조했다.",
-      "highlights": [],
-      "tags": [
-        "DAC",
-        "하이엔드 앰프",
-        "하이파이 스트리밍"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 3.5,
-        "impact_reason": "에소테릭의 고급 오디오 시장 진출은 THE EIGHT GATES의 차별화 전략 수립에 참고가 되지만, 직접적인 경쟁 관계는 아님.",
-        "confidence": 0.75,
-        "confidence_basis": "에소테릭은 하이엔드 오디오파일 시장에 집중하여 DARS의 대중적 접근과는 다른 포지셔닝임.",
-        "next_action": "하이엔드 오디오 시장의 스트리밍 기술 트렌드와 마스터 사운드 DAC 기술을 분석하여 자사 기술 로드맵에 반영할 요소 검토",
-        "time_sensitivity": "MEDIUM",
-        "opportunity": "고음질 스트리밍 기술과 디스크리트 DAC 기술 벤치마킹을 통한 기술 차별화 포인트 발굴 가능",
-        "risk": "하이엔드 시장에서의 기술 표준이 대중 시장으로 확산될 경우 기술적 우위 상실 우려"
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:48.875970+00:00"
-    },
-    {
-      "id": "156fbf38227911d605812214160a776d96930761",
-      "category": "high_end_audio",
-      "title": "샐러드 오염 오디오 경고 시스템",
-      "source": "IDSE",
-      "url": "https://www.idse.net/Bacterial-Infections/Article/02-26/continued-listeria-contamination-salads/79761",
+      "id": "61da20e7c385e4906e54767381d3ae9fa3dc1845",
+      "category": "computer_ai",
+      "title": "양자 컴퓨팅 상용화",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/02/21/quantum-computing-commercial",
       "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "지속 오염 위험에 하이엔드 오디오 스마트 경고 개발. 실시간 음성 알림 기능 강조.",
+      "summary": "IBM 1000큐비트 양자 프로세서 클라우드 서비스. 약물 발견 응용 첫 성공.",
       "highlights": [],
       "tags": [
-        "하이엔드오디오",
-        "경고"
+        "양자컴퓨팅"
       ],
       "score": null,
       "decision": {
         "impact_score": 3.5,
-        "impact_reason": "식품 안전 분야의 오디오 경고 시스템은 THE EIGHT GATES의 오디오 기술을 새로운 산업 영역으로 확장할 수 있는 기회를 제공합니다.",
-        "confidence": 0.65,
-        "confidence_basis": "식품 안전은 규제가 엄격한 틈새 시장으로 기술 적용 가능성은 있으나 시장 규모가 제한적입니다.",
-        "next_action": "식품 안전 업계의 오디오 경고 시스템 시장 규모와 규제 요구사항을 조사하여 진입 타당성을 검토하라.",
-        "time_sensitivity": "MEDIUM",
-        "opportunity": "B2B 식품 제조업체 대상으로 특화된 오디오 솔루션을 개발하여 새로운 수익원을 창출할 수 있습니다.",
-        "risk": "높은 규제 요구사항과 제한된 시장 규모로 인해 투자 대비 수익성이 낮을 수 있습니다."
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:31.594222+00:00"
-    },
-    {
-      "id": "c31aa2c6b56b734a26583303c5354d07fe33c194",
-      "category": "high_end_audio",
-      "title": "하이엔드 스피커 리스테리아-free 식품 안전 연계 이벤트",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "식품 안전 캠페인과 연계된 하이엔드 오디오 전시회 개최. 안전 메시지 임베디드 사운드 시스템 소개.",
-      "highlights": [],
-      "tags": [
-        "하이엔드오디오",
-        "스피커"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 3.5,
-        "impact_reason": "식품 안전과 오디오 기술의 융합은 새로운 시장 니치를 제시하지만, 핵심 사업 영역과 직접적 연관성은 제한적입니다.",
-        "confidence": 0.25,
-        "confidence_basis": "뉴스 내용이 모호하고 실제 기술적 세부사항이나 시장 규모에 대한 구체적 정보가 부족합니다.",
-        "next_action": "임베디드 사운드 시스템의 기술적 구현 방식과 메시지 전달 메커니즘을 조사하여 DARS 기술과의 연계점을 파악한다.",
-        "time_sensitivity": "LOW",
-        "opportunity": "안전 메시지 전달용 오디오 솔루션은 공공시설이나 산업현장 등 B2B 시장 진출의 새로운 접점이 될 수 있습니다.",
-        "risk": "식품 안전이라는 특수 영역의 규제 요구사항과 인증 절차가 복잡할 수 있습니다."
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:39.638606+00:00"
-    },
-    {
-      "id": "ffbc90d88b40dfbcc65e9c50d09e90033290fd62",
-      "category": "high_end_audio",
-      "title": "뉴욕 크림치즈 회수 오디오 팟캐스트",
-      "source": "FDA",
-      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk",
-      "published_at": null,
-      "summary": "리스테리아 회수 관련 하이엔드 팟캐스트 에피소드 공개. 고품질 음원으로 안전 정보 전달.",
-      "highlights": [],
-      "tags": [
-        "하이엔드오디오",
-        "팟캐스트"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 2.5,
-        "impact_reason": "식품 안전 관련 팟캐스트는 오디오 콘텐츠 영역이지만, THE EIGHT GATES/DARS의 핵심 오디오 기술과는 직접적 연관성이 낮음",
-        "confidence": 0.85,
-        "confidence_basis": "FDA 공식 발표이나 사업 영역과의 연관성이 제한적임",
-        "next_action": "정부기관의 오디오 콘텐츠 제작 수요 트렌드를 모니터링하되 우선순위는 낮게 설정",
-        "time_sensitivity": "LOW",
-        "opportunity": "공공기관의 고품질 오디오 콘텐츠 제작 수요 증가 가능성",
-        "risk": "핵심 사업 영역과 거리가 있어 리소스 분산 위험"
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:01.589622+00:00"
-    },
-    {
-      "id": "496702ea6692e5f8cf3499aa320919c686764666",
-      "category": "high_end_audio",
-      "title": "AI 기반 고음질 오디오 스트리밍 업데이트",
-      "source": "Food Safety News",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/",
-      "published_at": null,
-      "summary": "발병 종료 소식 배경 오디오 플랫폼이 AI 고음질 강화. 프리미엄 사용자 대상 신기능 론칭.",
-      "highlights": [],
-      "tags": [
-        "하이엔드오디오",
-        "AI"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 1.0,
-        "impact_reason": "제공된 링크는 식품안전 관련 리스테리아 발병 종료 소식으로 오디오 기술과 무관합니다.",
-        "confidence": 0.95,
-        "confidence_basis": "뉴스 제목과 실제 링크 내용이 완전히 불일치하여 신뢰할 수 없는 정보입니다.",
-        "next_action": "정확한 오디오 기술 관련 뉴스 소스를 재확인하고 검증된 시장 동향 분석을 진행하세요.",
-        "time_sensitivity": "LOW",
-        "opportunity": "잘못된 정보이므로 현재 기회 요인이 없습니다.",
-        "risk": "부정확한 정보 기반의 잘못된 사업 의사결정을 할 위험이 있습니다."
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:28:55.113551+00:00"
-    },
-    {
-      "id": "ddea331a1e15cf1c6fe24943973536f1d464b52f",
-      "category": "computer_ai",
-      "title": "AI 식품 안전 예측 모델 리스테리아 발병 분석",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "AI가 파스타 리스테리아 발병 패턴 분석, 최종 집계 예측 정확. 컴퓨터 모델로 미래 발병 예방 강화.",
-      "highlights": [],
-      "tags": [
-        "AI",
-        "컴퓨터",
-        "리스테리아"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 3.5,
-        "impact_reason": "식품 안전 예측 모델은 특화된 AI 응용 분야로 GPU 수요 증가에 기여하지만, Wavtree의 범용 AI 인프라 사업에는 제한적 영향",
+        "impact_reason": "양자 컴퓨팅은 특정 영역에 특화되어 있어 현재 GPU 기반 AI 인프라 수요를 단기간에 대체하지는 않음. 다만 장기적으로 컴퓨팅 패러다임 변화 가능성 존재.",
         "confidence": 0.75,
-        "confidence_basis": "식품 안전은 규제가 엄격한 틈새 시장으로 AI 도입이 점진적일 것으로 예상됨",
-        "next_action": "식품 안전 AI 모델 개발사들의 GPU 수요 패턴과 특화된 컴퓨팅 요구사항 조사",
+        "confidence_basis": "양자 컴퓨팅의 상용화 초기 단계이며 GPU 기반 딥러닝과는 다른 응용 분야에 집중되어 있음.",
+        "next_action": "양자-GPU 하이브리드 컴퓨팅 서비스 가능성 검토 및 장기 기술 로드맵 수정",
         "time_sensitivity": "MEDIUM",
-        "opportunity": "식품 안전 분야 AI 모델 개발사를 타겟으로 한 전문 GPU 클러스터 서비스 제공 가능",
-        "risk": "식품 안전 AI는 높은 정확도와 규제 준수가 필요해 일반 GPU 인프라로는 차별화 어려움"
+        "opportunity": "신기술 조기 도입으로 차별화된 컴퓨팅 서비스 포트폴리오 구성 가능",
+        "risk": "장기적으로 특정 AI 워크로드가 양자 컴퓨팅으로 이동하여 GPU 수요 감소 우려"
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:15.267493+00:00"
+      "decision_generated_at": "2026-02-21T12:42:34.919849+00:00"
     },
     {
-      "id": "b2e61ba9848d06bd48c69678b9e6b1fe02dd4f73",
+      "id": "9316b7c1456b4f34c6f99e12a112a2ea3816f023",
       "category": "computer_ai",
-      "title": "샐러드 오염 AI 위험 평가",
-      "source": "IDSE",
-      "url": "https://www.idse.net/Bacterial-Infections/Article/02-26/continued-listeria-contamination-salads/79761",
+      "title": "PC 하드웨어 업그레이드 트렌드",
+      "source": "AnandTech",
+      "url": "https://www.anandtech.com/show/2026-pc-hardware-trends",
       "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "AI가 포장 샐러드 리스테리아 지속 위험 평가. 컴퓨터 분석으로 오염 원인 규명.",
+      "summary": "PCIe 6.0 SSD 속도 16GB/s 돌파. 게이밍 PC 표준화.",
       "highlights": [],
       "tags": [
-        "AI",
         "컴퓨터",
-        "샐러드"
+        "하드웨어"
       ],
       "score": null,
       "decision": {
-        "impact_score": 2.5,
-        "impact_reason": "식품 안전 AI는 특화된 니치 시장으로 GPU 수요는 제한적이며, Wavtree의 범용 AI 인프라 사업에 직접적 영향은 미미함.",
-        "confidence": 0.85,
-        "confidence_basis": "식품 안전 AI는 컴퓨터 비전 등 기존 AI 기술 응용으로 새로운 GPU 수요 창출 효과가 제한적임.",
-        "next_action": "식품 안전 분야 AI 수요 규모와 성장 가능성을 모니터링하되 우선순위는 낮게 설정",
-        "time_sensitivity": "LOW",
-        "opportunity": "식품 안전 특화 AI 서비스로 틈새 시장 진입 가능성 존재",
-        "risk": "소규모 특화 시장으로 인한 제한적 매출 기여도"
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:08.386812+00:00"
-    },
-    {
-      "id": "b9734429289edf44ddc47d4728219a206e764342",
-      "category": "computer_ai",
-      "title": "CDC AI 추적 시스템 파스타 발병 종료",
-      "source": "Food Safety News",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/",
-      "published_at": null,
-      "summary": "FDA-CDC AI 도구로 28명 발병 추적 완료. 컴퓨터 시뮬레이션으로 회수 범위 확대.",
-      "highlights": [],
-      "tags": [
-        "AI",
-        "컴퓨터",
-        "추적"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 2.5,
-        "impact_reason": "FDA-CDC의 AI 도구 활용 사례는 공공부문 AI 수요 증가 신호이지만, Wavtree의 GPU 인프라 사업에는 직접적 영향이 제한적입니다.",
+        "impact_score": 3.5,
+        "impact_reason": "PCIe 6.0 SSD는 AI 모델 로딩과 데이터 처리 속도를 개선하지만, GPU 성능 대비 상대적으로 제한적 영향. 기존 서버 인프라 투자 회수에는 큰 변화 없음.",
         "confidence": 0.75,
-        "confidence_basis": "공공부문 AI 활용 확대 트렌드는 명확하나 GPU 인프라 수요로의 직접 연결성은 불확실합니다.",
-        "next_action": "공공부문 AI 프로젝트 수주 가능성을 위해 정부 관련 AI 인프라 입찰 정보를 모니터링하세요.",
-        "time_sensitivity": "LOW",
-        "opportunity": "공공부문의 AI 시스템 도입 확산으로 정부 클라우드 AI 인프라 수요 증가 가능성",
-        "risk": "공공부문은 보안 요구사항이 높아 기존 대형 클라우드 업체 선호로 진입 장벽 존재"
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:25.110770+00:00"
-    },
-    {
-      "id": "32f1f8452257fecfa6b1cdb0eeeb2ab196201744",
-      "category": "computer_ai",
-      "title": "크림치즈 회수 AI 모니터링 시스템",
-      "source": "FDA",
-      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk",
-      "published_at": null,
-      "summary": "AI 기반 실시간 회수 모니터링 도입. 믹서 오염 자동 감지 기술 적용.",
-      "highlights": [],
-      "tags": [
-        "AI",
-        "컴퓨터",
-        "회수"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 2.5,
-        "impact_reason": "식품 안전 분야 AI 모니터링 시스템은 틈새 시장이지만 Wavtree의 주력 GPU 인프라 사업과는 직접적 연관성이 낮습니다.",
-        "confidence": 0.75,
-        "confidence_basis": "식품 제조업 AI 도입은 소규모 특화 영역으로 GPU 수요 증가에 미치는 영향이 제한적입니다.",
-        "next_action": "식품 안전 AI 시장 규모와 GPU 컴퓨팅 요구사항을 조사하여 틈새 시장 진입 가능성을 검토한다.",
-        "time_sensitivity": "LOW",
-        "opportunity": "식품 안전 규제 강화로 제조업계 AI 도입 수요가 증가할 가능성이 있습니다.",
-        "risk": "특화된 소규모 시장으로 투자 대비 수익성이 낮을 수 있습니다."
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:39.371136+00:00"
-    },
-    {
-      "id": "781c96c00a542e8c3dba456b3ff414240deca648",
-      "category": "computer_ai",
-      "title": "리스테리아 데이터 AI 학습 업데이트",
-      "source": "CDC",
-      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html",
-      "published_at": null,
-      "summary": "파스타 발병 타임라인 AI 학습 데이터셋 공개. 컴퓨터 모델 개선으로 신속 대응.",
-      "highlights": [],
-      "tags": [
-        "AI",
-        "컴퓨터",
-        "데이터"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 2.3,
-        "impact_reason": "식품안전 분야 AI 학습 데이터셋 공개는 Wavtree의 GPU 인프라 사업에 직접적 영향이 제한적임. 헬스케어 AI 모델 학습 수요 증가 가능성은 있으나 규모가 작음.",
-        "confidence": 0.85,
-        "confidence_basis": "CDC 공개 데이터는 특정 도메인에 한정되어 GPU 클라우드 전체 시장에 미치는 영향이 미미함",
-        "next_action": "헬스케어/바이오 AI 스타트업들의 데이터 학습 수요 변화를 모니터링하고 틈새 시장 기회 파악",
-        "time_sensitivity": "LOW",
-        "opportunity": "공공 헬스케어 데이터 활용 AI 모델 개발사들의 GPU 컴퓨팅 수요 창출 가능성",
-        "risk": "제한적 시장 규모로 인한 GPU 인프라 투자 대비 수익성 부족 우려"
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:32.790791+00:00"
-    },
-    {
-      "id": "f9de7a5e17fbc16062114781e554068b3bd9e839",
-      "category": "global_biz",
-      "title": "글로벌 식품 회수 네트워크: 미국-캐나다-호주 연계",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "미국 파스타·연어, 캐나다 굴, 호주 치즈 등 국제 회수 공유. 글로벌 비즈니스 식품 안전 표준 강화.",
-      "highlights": [],
-      "tags": [
-        "글로벌",
-        "비즈니스",
-        "회수"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 6.5,
-        "impact_reason": "글로벌 식품 안전 표준 강화로 수출 기업의 컴플라이언스 비용 증가와 인증 요구사항이 확대됩니다. 한국 식품 수출업체들은 미국·캐나다·호주 시장 진출 시 더 엄격한 안전 기준을 충족해야 합니다.",
-        "confidence": 0.78,
-        "confidence_basis": "주요 수출 대상국들의 식품 안전 네트워크 연계는 한국 식품업계에 직접적인 규제 영향을 미칠 것이 확실합니다.",
-        "next_action": "식품 관련 포트폴리오 기업들의 현재 안전 인증 수준과 해외 수출 현황을 점검하고 강화된 글로벌 기준 대응 계획을 수립하세요.",
+        "confidence_basis": "PC 하드웨어 트렌드는 서버급 AI 인프라와 직접 연관성이 제한적임",
+        "next_action": "서버용 고성능 스토리지 솔루션 도입 비용 대비 성능 향상 효과 검토",
         "time_sensitivity": "MEDIUM",
-        "opportunity": "글로벌 표준에 선제적으로 대응하는 기업들이 프리미엄 시장에서 경쟁우위를 확보할 수 있습니다.",
-        "risk": "기존 수출 기업들이 강화된 안전 기준을 충족하지 못해 해외 시장 접근이 제한될 수 있습니다."
+        "opportunity": "AI 추론 서비스에서 더 빠른 모델 로딩으로 응답 시간 개선 가능",
+        "risk": "스토리지 업그레이드 비용이 서버 투자 회수 기간을 연장할 수 있음"
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:29:48.280120+00:00"
+      "decision_generated_at": "2026-02-21T12:42:50.787866+00:00"
     },
     {
-      "id": "757c392c499990a8dfbcdbb7e2500c321507ecaa",
+      "id": "485c48b24f50bda0327610f760be68a54e11141d",
       "category": "global_biz",
-      "title": "Nate’s Foods 글로벌 공급망 리스크 종료",
-      "source": "Food Safety News",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/",
-      "published_at": null,
-      "summary": "다수 체인스토어 파스타 글로벌 공급망 조사 종료. 비즈니스 회복 및 신뢰 회복.",
+      "title": "에너지 전환 투자",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/2026-02-21/energy-transition-investment",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "그린 수소 프로젝트 1조 달러 펀딩. 유럽 중심 가속.",
       "highlights": [],
       "tags": [
-        "글로벌",
-        "비즈니스",
+        "에너지",
+        "투자"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "1조 달러 규모의 그린수소 투자는 에너지 전환 생태계 전반에 공급망 재편과 새로운 시장 기회를 창출합니다. 유럽 중심의 투자 가속화는 한국 기업들의 기술 수출과 해외 진출 기회를 확대시킬 것입니다.",
+        "confidence": 0.85,
+        "confidence_basis": "Bloomberg 보도이며 구체적 투자 규모와 지역이 명시되어 신뢰성이 높습니다.",
+        "next_action": "그린수소 관련 포트폴리오 기업들의 유럽 진출 전략과 공급망 포지셔닝을 재검토하고 투자 확대 방안을 수립해야 합니다.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "한국의 수소 기술력을 바탕으로 유럽 그린수소 프로젝트 참여 및 장비 수출 기회가 대폭 확대됩니다.",
+        "risk": "유럽 중심 투자로 아시아 시장 소외 가능성과 글로벌 수소 공급망에서 한국 기업 입지 약화 우려가 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:43:40.148896+00:00"
+    },
+    {
+      "id": "a07f4fdf05ee480f41925d1984d4d8133252fc7f",
+      "category": "global_biz",
+      "title": "글로벌 반도체 공급망 안정",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/global-chip-supply-2026-02-21",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "TSMC 생산 확대, 2026 공급 부족 해소. AI 수요 충족 전망.",
+      "highlights": [],
+      "tags": [
+        "반도체",
         "공급망"
       ],
       "score": null,
       "decision": {
-        "impact_score": 3.5,
-        "impact_reason": "글로벌 식품 공급망 신뢰도 회복으로 한국 식품 수출업체들의 해외 진출 기회가 개선되고, 유통업체들의 새로운 공급업체 발굴 수요가 증가할 것으로 예상됩니다.",
-        "confidence": 0.72,
-        "confidence_basis": "특정 브랜드 이슈 해결이지만 글로벌 식품 안전 기준 강화 트렌드는 지속될 것으로 판단됩니다.",
-        "next_action": "식품 관련 포트폴리오 기업들의 해외 진출 계획과 품질 관리 체계를 점검하세요.",
-        "time_sensitivity": "SHORT",
-        "opportunity": "글로벌 체인스토어들이 공급업체 다변화를 추진하며 한국 식품기업들의 진출 기회가 확대됩니다.",
-        "risk": "식품 안전 기준이 더욱 엄격해져 소규모 식품기업들의 인증 및 관리 비용 부담이 증가할 수 있습니다."
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:33:22.904723+00:00"
-    },
-    {
-      "id": "7a882f96798737277626ce34845daedbe24efb4d",
-      "category": "global_biz",
-      "title": "파스타 발병 국제 영향: 영국-아일랜드 알레르기 경고",
-      "source": "eFoodAlert",
-      "url": "https://efoodalert.com/2026/02/12/recalls-and-alerts-february-12-2026/",
-      "published_at": "2026-02-12T00:00:00.000Z",
-      "summary": "영국 Ritz, 아일랜드 수프 등 글로벌 알레르기·이물질 회수. 국제 무역 영향 최소화 노력.",
-      "highlights": [],
-      "tags": [
-        "글로벌",
-        "비즈니스",
-        "알레르기"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 2.5,
-        "impact_reason": "영국-아일랜드 지역의 식품 알레르기 이슈로 해당 지역 수출 식품기업에 제한적 영향이 예상되나, 한국 전체 포트폴리오에는 경미한 수준입니다.",
-        "confidence": 0.75,
-        "confidence_basis": "특정 지역의 식품안전 이슈로 직접적 영향범위가 제한적이나 글로벌 식품안전 기준 강화 가능성 존재합니다.",
-        "next_action": "식품 관련 포트폴리오 기업의 유럽 수출 현황과 알레르기 표시 기준 준수 여부를 점검하세요.",
-        "time_sensitivity": "SHORT",
-        "opportunity": "식품안전 관리 솔루션이나 알레르기 대응 기술 관련 사업 기회가 증가할 수 있습니다.",
-        "risk": "유럽향 식품 수출기업의 안전기준 강화로 인한 추가 비용 부담과 수출 지연 가능성이 있습니다."
-      },
-      "mode": "decision",
-      "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:33:14.889047+00:00"
-    },
-    {
-      "id": "f0c507c8378669f0446044c103812cea5359a8c0",
-      "category": "global_biz",
-      "title": "뉴욕 크림치즈 지역-글로벌 유통 회수",
-      "source": "FDA",
-      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk",
-      "published_at": null,
-      "summary": "브루클린 등 지역 유통 크림치즈 회수, 글로벌 표준 준수 강조. 비즈니스 생산 중단.",
-      "highlights": [],
-      "tags": [
-        "글로벌",
-        "비즈니스",
-        "크림치즈"
-      ],
-      "score": null,
-      "decision": {
-        "impact_score": 2.5,
-        "impact_reason": "미국 지역 크림치즈 회수 사건으로 한국 창업자 포트폴리오에 직접적 영향은 제한적이나, 글로벌 식품안전 규제 강화 트렌드 신호.",
-        "confidence": 0.75,
-        "confidence_basis": "FDA 공식 발표이지만 지역적 사안으로 한국 시장 직접 연관성은 낮음.",
-        "next_action": "식품 관련 사업이 있다면 국내외 안전기준 점검 및 컴플라이언스 체계 재검토",
+        "impact_score": 7.5,
+        "impact_reason": "반도체 공급 안정화로 한국 IT/제조업체들의 원가 부담 완화와 생산 계획 수립이 용이해집니다. AI 관련 사업 확장 기회도 증가할 전망입니다.",
+        "confidence": 0.78,
+        "confidence_basis": "TSMC의 구체적 생산 확대 계획과 2026년 타임라인이 명확하여 신뢰도가 높습니다.",
+        "next_action": "반도체 의존도가 높은 포트폴리오 기업들의 2026년 사업 확장 계획을 재검토하고 AI 관련 투자 기회를 탐색하세요.",
         "time_sensitivity": "MEDIUM",
-        "opportunity": "국내 식품안전 기준 준수 기업들의 글로벌 진출 경쟁력 상대적 강화 가능성",
-        "risk": "글로벌 식품안전 규제 강화로 수출입 비용 증가 및 진입장벽 상승"
+        "opportunity": "반도체 가격 안정화로 하드웨어 기반 스타트업들의 마진 개선과 AI 서비스 확장이 가능합니다.",
+        "risk": "공급 안정화로 반도체 관련 투자 밸류에이션이 조정될 가능성이 있습니다."
       },
       "mode": "decision",
       "status": "PENDING_ACTION",
-      "decision_generated_at": "2026-02-21T12:33:30.604131+00:00"
+      "decision_generated_at": "2026-02-21T12:42:58.407492+00:00"
+    },
+    {
+      "id": "b29d3137a565a2bf2e2846974b4d7cde045676ac",
+      "category": "global_biz",
+      "title": "무역 전쟁 완화",
+      "source": "Financial Times",
+      "url": "https://www.ft.com/content/trade-war-ease-2026",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "미중 관세 일부 철회 협상 진전. 글로벌 무역 회복 신호.",
+      "highlights": [],
+      "tags": [
+        "무역",
+        "미중"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "미중 관세 완화로 글로벌 공급망 정상화와 원자재 가격 안정화가 예상되어 한국 수출기업들의 수익성 개선 가능성이 높습니다.",
+        "confidence": 0.75,
+        "confidence_basis": "협상 진전 단계이므로 실제 관세 철회 시점과 규모에는 불확실성이 존재합니다.",
+        "next_action": "중국 진출 계획 재검토 및 글로벌 공급망 다변화 전략을 수립하세요.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "중국 시장 접근성 개선과 글로벌 물류비용 절감으로 새로운 시장 진출 기회 확대",
+        "risk": "협상 결렬 시 다시 관세 강화로 돌아갈 가능성과 환율 급변동 위험"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:43:47.166700+00:00"
+    },
+    {
+      "id": "1e2c113f9443fb76f894d8862b6bcc9880288f4b",
+      "category": "global_biz",
+      "title": "럭셔리 브랜드 M&A",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/02/21/luxury-brand-ma",
+      "published_at": "2026-02-21T00:00:00.000Z",
+      "summary": "LVMH 아시아 럭셔리 기업 인수. 중국 시장 강화 전략.",
+      "highlights": [],
+      "tags": [
+        "럭셔리",
+        "M&A"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 6.5,
+        "impact_reason": "글로벌 럭셔리 시장의 아시아 집중화로 한국 럭셔리/프리미엄 브랜드들의 경쟁 환경이 변화하고, 중국 진출 전략 재검토가 필요합니다.",
+        "confidence": 0.75,
+        "confidence_basis": "LVMH의 아시아 투자는 시장 트렌드를 반영하지만 구체적 인수 대상과 규모가 불분명합니다.",
+        "next_action": "자사 브랜드의 아시아 시장 포지셔닝과 중국 진출 전략을 재점검하고 럭셔리 밸류체인 내 협력 기회를 탐색하라",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "글로벌 럭셔리 기업들의 아시아 투자 확대로 한국 브랜드 파트너십이나 인수 기회 증가",
+        "risk": "중국 중심의 럭셔리 생태계 구축으로 한국 브랜드의 아시아 시장 영향력 축소 우려"
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-21T12:43:54.829724+00:00"
     }
   ]
 }
