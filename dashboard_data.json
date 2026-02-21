@@ -17,43 +17,43 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 03:01:45",
+  "last_updated": "2026-02-21 03:26:50",
   "intelligence": [
     {
-      "title": "배양육 탄소 배출 90% 감소 연구 결과",
-      "summary": "최신 연구 배양육 전통 육류 대비 온실가스 90% 적음 확인. 스케일업 시 가격 경쟁력 확보 가능.",
-      "tag": "cultured_meat",
+      "title": "파스타 식사 리스테리아 발병 종료 선언",
+      "summary": "FDA가 파스타 식사 관련 치명적 리스테리아 발병을 종료 선언했다. 19개 주 28명 감염, 7명 사망, 대부분 입원하며 임신부 사산 사례도 발생했다. Nate’s Fine Foods 제품이 원인으로, Walmart 등 다수 매장에서 리콜됐다.[1]",
+      "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.nature.com/articles/s41586-026-02115-8"
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
     },
     {
-      "title": "Focal Utopia EVO 헤드폰 BE 플레처 발표",
-      "summary": "Focal Utopia EVO BE 플레처 에디션, 베릴륨 드라이버 업그레이드. $6,000.",
-      "tag": "high_end_audio",
+      "title": "사우스캐롤라이나 리스테리아 발병 사망 보고",
+      "summary": "사우스캐롤라이나에서 Boar’s Head 델리 육 제품 리스테리아 발병으로 2명 사망 확인됐다. CDC 조사 중 13개 주 43명 입원, 3명 사망하며 리콜 제품 버리기와 냉장고 청소 권고했다.[2]",
+      "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.soundstagehifi.com/index.php/equipment-reviews/2026-focal-utopia-evo-be"
+      "url": "https://dph.sc.gov/news/dph-reports-south-carolina-deaths-linked-us-listeria-outbreak"
     }
   ],
   "weather": {
-    "updated": "2026-02-21 12:03:10",
-    "temp": 12.26,
+    "updated": "2026-02-21 12:23:11",
+    "temp": 12.28,
     "humidity": 42,
     "desc": "맑음"
   },
   "intelligence_backup": [
     {
-      "title": "배양육 탄소 배출 90% 감소 연구 결과",
-      "summary": "최신 연구 배양육 전통 육류 대비 온실가스 90% 적음 확인. 스케일업 시 가격 경쟁력 확보 가능.",
-      "tag": "cultured_meat",
+      "title": "파스타 식사 리스테리아 발병 종료 선언",
+      "summary": "FDA가 파스타 식사 관련 치명적 리스테리아 발병을 종료 선언했다. 19개 주 28명 감염, 7명 사망, 대부분 입원하며 임신부 사산 사례도 발생했다. Nate’s Fine Foods 제품이 원인으로, Walmart 등 다수 매장에서 리콜됐다.[1]",
+      "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.nature.com/articles/s41586-026-02115-8"
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
     },
     {
-      "title": "Focal Utopia EVO 헤드폰 BE 플레처 발표",
-      "summary": "Focal Utopia EVO BE 플레처 에디션, 베릴륨 드라이버 업그레이드. $6,000.",
-      "tag": "high_end_audio",
+      "title": "사우스캐롤라이나 리스테리아 발병 사망 보고",
+      "summary": "사우스캐롤라이나에서 Boar’s Head 델리 육 제품 리스테리아 발병으로 2명 사망 확인됐다. CDC 조사 중 13개 주 43명 입원, 3명 사망하며 리콜 제품 버리기와 냉장고 청소 권고했다.[2]",
+      "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.soundstagehifi.com/index.php/equipment-reviews/2026-focal-utopia-evo-be"
+      "url": "https://dph.sc.gov/news/dph-reports-south-carolina-deaths-linked-us-listeria-outbreak"
     }
   ]
 }
