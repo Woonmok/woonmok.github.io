@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 01:59:48",
+  "last_updated": "2026-02-21 02:06:34",
   "intelligence": [
     {
       "title": "FDA, 냉동 보충 쉐이크 리스테리아 발병 조사 종료",
@@ -35,7 +35,7 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-21 10:53:07",
+    "updated": "2026-02-21 11:03:07",
     "temp": 10.98,
     "humidity": 46,
     "desc": "맑음"
