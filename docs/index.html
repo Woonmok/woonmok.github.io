@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wave Tree Project</title>
+    <!-- deploy-stamp: 2026-02-22T00:00:00+09:00 -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            font-family: 'Pretendard', sans-serif;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        header {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title h1 {
+            font-size: 4.5em;
+            font-weight: 800;
+            background: linear-gradient(to right, #00ff9d, #00ccff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .system-info {
+            text-align: right;
+        }
+
+        .current-time {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .weather-info {
+            color: #00ff9d;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 50px 30px 50px;
+            overflow: hidden;
+        }
+
+        .section {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .section-content {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .intelligence-hub {
+            border-color: #ff3366 !important;
+        }
+
+        .intelligence-hub h2 {
+            color: #ff3366;
+        }
+
+        .news-item {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            border-radius: 8px;
+            border-left: 4px solid #ff3366;
+            font-size: 1em;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: center;
+            min-height: 80px;
+        }
+
+        .news-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.2;
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .news-summary {
+            opacity: 0.8;
+            font-size: 0.72em;
+            line-height: 1.25;
+            margin-bottom: 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7em;
+            opacity: 0.7;
+        }
+
+        .todo-section {
+            border-color: #ffcc00 !important;
+        }
+
+        .todo-section h2 {
+            color: #ffcc00;
+        }
+
+        .todo-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .todo-item {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            font-size: 1.2em;
+            white-space: pre-line;
+        }
+
+        .todo-text {
+            display: block;
+            line-height: 1.35;
+        }
+
+        .todo-item::before {
+            content: '⬜';
+            margin-right: 10px;
+            font-size: 1em;
+            opacity: 0.7;
+        }
+
+        .todo-item.completed {
+            text-decoration: line-through;
+            color: #888;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .todo-item.completed::before {
+            content: '✅';
+            opacity: 1;
+        }
+
+        .dashboard {
+            display: flex;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .column {
+            flex: 1;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            overflow: hidden;
+        }
+
+        .column h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .status-items-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-icon {
+            font-size: 2.5em;
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .status-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .status-label-small {
+            font-size: 0.8em;
+            opacity: 0.7;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .status-label {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .status-value {
+            font-weight: 700;
+            font-size: 1.6em;
+            margin-top: 3px;
+        }
+
+        .column-green {
+            border-color: #00ff9d !important;
+        }
+
+        .column-green h2 {
+            color: #00ff9d;
+        }
+
+        .column-green .status-value {
+            color: #00ff9d;
+        }
+
+        .column-yellow {
+            border-color: #ffcc00 !important;
+        }
+
+        .column-yellow h2 {
+            color: #ffcc00;
+        }
+
+        .column-yellow .status-value {
+            color: #ffcc00;
+        }
+
+        .column-cyan {
+            border-color: #00ccff !important;
+        }
+
+        .column-cyan h2 {
+            color: #00ccff;
+        }
+
+        .column-cyan .status-value {
+            color: #00ccff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="glass">
+        <div class="project-title">
+            <h1>The Wave Tree Project</h1>
+        </div>
+        <div class="system-info">
+            <div class="current-time" id="current-time">2026.02.01 | 14:20:00</div>
+            <div id="weather-info" class="weather-info">기온: -1°C | 습도: 37% (진안군)</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section glass intelligence-hub">
+            <h2>🔥 Intelligence Hub</h2>
+            <div class="section-content" id="intelligence-hub-content">
+                <div class="news-item">
+                        <div class="news-title">🦠 Listeria outbreak traced to pasta meals is over</div>
+                        <div class="news-summary">FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품...</div>
+                        <div class="news-meta">
+                            <span>listeria_free</span>
+                            <span>Score: -</span>
+                        </div>
+                        <a href="https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">🦠 When People Got Sick: Prepared Pasta Meals Outbreak</div>
+                        <div class="news-summary">CDC가 조사한 파스타 식품 리스테리아 발병이 종료되었습니다. FreshRealm에서 제조한 치킨 페투치니 알프레도 식사가 감염원이었으며, 실제 감염자 수는 보도된 수보다 높을 것으로 예상됩니다.</div>
+                        <div class="news-meta">
+                            <span>listeria_free</span>
+                            <span>Score: -</span>
+                        </div>
+                        <a href="https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>
+                    </div></div>
+            </section>
+
+        <section class="section glass todo-section">
+            <h2>✅ 전략 과제</h2>
+            <ul class="todo-list" id="strategy-list">
+                <li class="todo-item">미국 출장 준비</li>
+                <li class="todo-item">한국 다이소 관계자 미팅</li>
+                <li class="todo-item">미국 시온 마켓 바이어 최종 미팅</li>
+            </ul>
+        </section>
+
+        <section class="section glass todo-section">
+            <h2>📋 오늘의 할일</h2>
+            <ul class="todo-list" id="todo-list">
+                <li class="todo-item">1. 대시보드_키오스크 완료하기</li>
+                <li class="todo-item">2. 최소장비리스트 만들기</li>
+            </ul>
+        </section>
+
+        <div class="dashboard">
+            <div class="column glass column-green">
+                <h2>Global Biz Engine</h2>
+                <div class="status-items-container">
+                    <div class="status-item">
+                        <div class="status-icon">📦</div>
+                        <div class="status-info">
+                            <div class="status-label">곡물차 OEM</div>
+                            <div class="status-value" id="tea_status">최종 오더 대기</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-icon">🛍️</div>
+                        <div class="status-info">
+                            <div class="status-label">Pick&Smile</div>
+                            <div class="status-value" id="daiso_status">런칭 준비중</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column glass column-yellow">
+                <h2>Jinan POM Core</h2>
+                <div class="status-items-container">
+                    <div class="status-item">
+                        <div class="status-icon">🧬</div>
+                        <div class="status-info">
+                            <div class="status-label">Bio-R&D</div>
+                            <div class="status-value">계획 단계</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-icon">🎙️</div>
+                        <div class="status-info">
+                            <div class="status-label">DSD System</div>
+                            <div class="status-value">9.1.6 셋업</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column glass column-cyan">
+                <h2>AI Infra Control</h2>
+                <div class="status-items-container">
+                    <div class="status-item">
+                        <div class="status-icon">🧠</div>
+                        <div class="status-info">
+                            <span class="status-label-small">Server A: THE BRAIN (A100 x4)</span>
+                            <div class="status-label">학승 엔진</div>
+                            <div class="status-value" id="srv_a_status">연산 중</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-icon">🏭</div>
+                        <div class="status-info">
+                            <span class="status-label-small">Server B: THE FACTORY (L40S x8)</span>
+                            <div class="status-label">생산 공장</div>
+                            <div class="status-value" id="srv_b_status">추론 가능</div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-icon">👂</div>
+                        <div class="status-info">
+                            <span class="status-label-small">Server C: HANDS & EARS (6000 Ada)</span>
+                            <div class="status-label">창작 엔진</div>
+                            <div class="status-value" id="srv_c_status">DSD 정의</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').innerText = year + '.' + month + '.' + day + ' | ' + hours + ':' + minutes + ':' + seconds;
+        }
+
+        function updateWeather() {
+            // OpenWeather API - 진안군 좌표 (35.9, 127.15)
+            const API_KEY = 'd6e0ceec3cf5f5fbf49ae8ee86e3c0e3'; // OpenWeather free tier API key
+            const lat = 35.9;
+            const lon = 127.15;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const temp = Math.round(data.main.temp);
+                    const humidity = data.main.humidity;
+                    document.getElementById('weather-info').innerText = `기온: ${temp}°C | 습도: ${humidity}% (진안군)`;
+                })
+                .catch(error => {
+                    console.log('날씨 정보 로드 실패:', error);
+                });
+        }
+
+        async function updateDashboard() {
+            try {
+                const cacheBust = `ts=${Date.now()}`;
+                let dashboardRes = null;
+                const dashboardCandidates = [
+                    `https://raw.githubusercontent.com/Woonmok/woonmok.github.io/main/dashboard_data.json?${cacheBust}`,
+                    `dashboard_data.json?${cacheBust}`
+                ];
+
+                for (const url of dashboardCandidates) {
+                    try {
+                        const res = await fetch(url, { cache: 'no-store' });
+                        if (res.ok) {
+                            dashboardRes = res;
+                            break;
+                        }
+                    } catch (e) {
+                    }
+                }
+
+                if (!dashboardRes) {
+                    throw new Error('dashboard_data fetch failed');
+                }
+
+                const [statusRes, newsRes] = await Promise.all([
+                    fetch(`WaveTree_status.json?${cacheBust}`, { cache: 'no-store' }),
+                    fetch(`news.json?${cacheBust}`, { cache: 'no-store' })
+                ]);
+                const data = await dashboardRes.json();
+                const statusData = statusRes.ok ? await statusRes.json() : null;
+                const newsData = newsRes.ok ? await newsRes.json() : null;
+
+
+                // Update System Status Visuals
+                if (data.system_status === 'EMERGENCY') {
+                    document.body.style.border = "5px solid red";
+                    document.querySelector('.project-title h1').innerText = "🚨 EMERGENCY MODE 🚨";
+                } else if (data.system_status === 'HIGH_PRIORITY') {
+                    document.querySelector('.project-title h1').style.color = "#ffcc00";
+                    document.querySelector('.project-title h1').innerText = "⚡ High Priority Mode";
+                } else {
+                    document.body.style.border = "none";
+                    document.querySelector('.project-title h1').innerText = "The Wave Tree Project";
+                }
+
+                // Update Weather Info from dashboard_data.json
+                if (data.weather) {
+                    const temp = typeof data.weather.temp === 'number' ? data.weather.temp : '-';
+                    const humidity = typeof data.weather.humidity === 'number' ? data.weather.humidity : '-';
+                    const desc = data.weather.desc || '';
+                    document.getElementById('weather-info').innerText = `기온: ${temp}°C | 습도: ${humidity}% (${desc})`;
+                }
+
+                // Update Intelligence Hub (dashboard_data 우선 + news.json fallback)
+                const hubContent = document.getElementById('intelligence-hub-content');
+                const iconByCategory = {
+                    listeria_free: '🦠',
+                    cultured_meat: '🥩',
+                    high_end_audio: '🎵',
+                    computer_ai: '🤖',
+                    global_biz: '🌍'
+                };
+
+                let hubItems = Array.isArray(data.intelligence) ? data.intelligence.slice(0, 2) : [];
+
+                if (hubItems.length === 0 && newsData && Array.isArray(newsData.items) && newsData.items.length > 0) {
+                    const topFromNews = [...newsData.items]
+                        .sort((a, b) => String(b.published_at || '').localeCompare(String(a.published_at || '')))
+                        .slice(0, 2)
+                        .map(item => ({
+                            title: `${iconByCategory[item.category] || '📰'} ${item.title || ''}`,
+                            summary: item.summary || '',
+                            tag: item.category || '-',
+                            score: item.score ?? '-',
+                            url: item.url || ''
+                        }));
+
+                    if (topFromNews.length > 0) {
+                        hubItems = topFromNews;
+                    }
+                }
+
+                if (hubItems.length > 0) {
+                    let html = '';
+                    hubItems.forEach(news => {
+                        html += `
+                        <div class="news-item">
+                            <div class="news-title">${news.tag === '긴급' ? '🚨 ' : ''}${news.title}</div>
+                            <div class="news-summary">${news.summary}</div>
+                            <div class="news-meta">
+                                <span>Tag: ${news.tag}</span>
+                                <span>Score: ${news.score}</span>
+                            </div>
+                            ${news.url ? `<a href="${news.url}" target="_blank" style="color: #00ccff; font-size: 0.75em;">원문</a>` : ''}
+                        </div>
+                        `;
+                    });
+                    hubContent.innerHTML = html;
+                }
+
+                // Update To-Do List (dashboard_data.json 우선)
+                const todoList = document.getElementById('todo-list');
+                
+                // dashboard_data.json에서 todo_list 읽기
+                if (data.todo_list && data.todo_list.length > 0) {
+                    let todoHtml = '';
+                    data.todo_list.forEach(item => {
+                        const completedClass = item.completed ? 'completed' : '';
+                        const todoText = String(item.text || '').replace(/\n/g, '<br>');
+                        todoHtml += `
+                        <li class="todo-item ${completedClass}">
+                            <span class="todo-text">${todoText}</span>
+                        </li>
+                        `;
+                    });
+                    todoList.innerHTML = todoHtml;
+                } else if (statusData && Array.isArray(statusData.approved_tickets)) {
+                    let todoHtml = '';
+                    if (statusData.approved_tickets.length > 0) {
+                        statusData.approved_tickets.forEach(text => {
+                            const todoText = String(text || '').replace(/\n/g, '<br>');
+                            todoHtml += `
+                            <li class="todo-item">
+                                <span class="todo-text">${todoText}</span>
+                            </li>
+                            `;
+                        });
+                    } else {
+                        todoHtml = `
+                        <li class="todo-item">
+                            할일 없음
+                        </li>
+                        `;
+                    }
+                    todoList.innerHTML = todoHtml;
+                } else {
+                    todoList.innerHTML = '<li class="todo-item">할일 없음</li>';
+                }
+
+                // Update Servers
+                const servers = data.servers;
+
+                // Server A
+                updateServerStatus('.column-cyan .status-items-container .status-item:nth-child(1)', servers.A);
+                // Server B
+                updateServerStatus('.column-cyan .status-items-container .status-item:nth-child(2)', servers.B);
+                // Server C
+                updateServerStatus('.column-cyan .status-items-container .status-item:nth-child(3)', servers.C);
+
+            } catch (error) {
+                console.error("Dashboard update failed:", error);
+            }
+        }
+
+        function updateServerStatus(selector, serverData) {
+            const el = document.querySelector(selector);
+            if (el) {
+                el.querySelector('.status-value').innerText = serverData.status;
+                // Add some visual indication of load if needed
+            }
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 초기 날씨 정보 로드
+        updateWeather();
+        // 30분마다 날씨 업데이트
+        setInterval(updateWeather, 30 * 60 * 1000);
+
+        // Dashboard Update every 5 seconds
+        updateDashboard();
+        setInterval(updateDashboard, 5000);
+    </script>
+</body>
+
+</html>

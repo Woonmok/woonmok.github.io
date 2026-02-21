@@ -1,0 +1,21 @@
+{
+  "updated_at": "2026-02-02 03:16:17 UTC",
+  "source_daily_bridge": "/Users/seunghoonoh/woonmok.github.io/Daily_Bridge.md",
+  "approved_tickets": [
+    "미국 출장 준비",
+    "한국다이소관계자 미팅",
+    "시온마켓 바이어 최종 미팅"
+  ],
+  "approved_count": 3,
+  "pilot_summary": {
+    "baseline_run": "A-20260201-134834",
+    "optimize_run": "B-20260201-134853",
+    "best_pred_growth_index": 0.7877728404585576,
+    "toy_cost_efficiency": 7.502598480557691,
+    "labels": {
+      "Global Biz": "PIPELINE",
+      "POM Core": "DESIGN",
+      "AI Infra": "RUNNING→REVIEW"
+    }
+  }
+}
