@@ -17,7 +17,7 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 04:11:59",
+  "last_updated": "2026-02-21 05:07:11",
   "intelligence": [
     {
       "title": "파스타 식사 리스테리아 발병 종료 선언",
@@ -35,9 +35,9 @@
     }
   ],
   "weather": {
-    "updated": "2026-02-21 13:03:13",
-    "temp": 13.34,
-    "humidity": 40,
+    "updated": "2026-02-21 14:03:16",
+    "temp": 14.12,
+    "humidity": 38,
     "desc": "맑음"
   },
   "intelligence_backup": [
