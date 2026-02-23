@@ -1,4 +1,5 @@
 import argparse, json, os, sys, time
+import tempfile
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from pathlib import Path
@@ -21,8 +22,42 @@ def load_config(path: str) -> dict:
         return yaml.safe_load(f)
 
 def write_json(path: str, obj: dict):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(obj, f, ensure_ascii=False, indent=2)
+    target_path = os.path.abspath(path)
+    target_dir = os.path.dirname(target_path) or "."
+    os.makedirs(target_dir, exist_ok=True)
+
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=target_dir,
+            prefix=f".{os.path.basename(target_path)}.",
+            suffix=".tmp",
+            delete=False,
+        ) as f:
+            tmp_path = f.name
+            json.dump(obj, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+
+        os.replace(tmp_path, target_path)
+
+        try:
+            dir_fd = os.open(target_dir, os.O_RDONLY)
+            try:
+                os.fsync(dir_fd)
+            finally:
+                os.close(dir_fd)
+        except OSError:
+            pass
+    except Exception:
+        if tmp_path and os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+        raise
 
 def now_utc_str():
     return datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")

@@ -13,6 +13,7 @@ import json
 import time
 import re
 import threading
+import tempfile
 import fcntl
 import warnings
 import requests
@@ -67,6 +68,51 @@ def log(msg):
         pass
 
 
+def atomic_write_json(file_path, payload):
+    target_path = os.path.abspath(file_path)
+    target_dir = os.path.dirname(target_path) or "."
+    os.makedirs(target_dir, exist_ok=True)
+    lock_path = f"{target_path}.lock"
+
+    tmp_path = None
+    try:
+        with open(lock_path, "w", encoding="utf-8") as lockf:
+            fcntl.flock(lockf.fileno(), fcntl.LOCK_EX)
+            try:
+                with tempfile.NamedTemporaryFile(
+                    mode="w",
+                    encoding="utf-8",
+                    dir=target_dir,
+                    prefix=f".{os.path.basename(target_path)}.",
+                    suffix=".tmp",
+                    delete=False,
+                ) as f:
+                    tmp_path = f.name
+                    json.dump(payload, f, ensure_ascii=False, indent=2)
+                    f.flush()
+                    os.fsync(f.fileno())
+
+                os.replace(tmp_path, target_path)
+
+                try:
+                    dir_fd = os.open(target_dir, os.O_RDONLY)
+                    try:
+                        os.fsync(dir_fd)
+                    finally:
+                        os.close(dir_fd)
+                except OSError:
+                    pass
+            finally:
+                fcntl.flock(lockf.fileno(), fcntl.LOCK_UN)
+    except Exception:
+        if tmp_path and os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+        raise
+
+
 # ===== 데이터 로드/저장 =====
 
 def load_dashboard():
@@ -79,12 +125,7 @@ def load_dashboard():
 
 def save_dashboard(data):
     try:
-        with open(DASHBOARD_JSON, 'w', encoding='utf-8') as f:
-            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
-            try:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            finally:
-                fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+        atomic_write_json(DASHBOARD_JSON, data)
         sync_todo_storage_from_dashboard(data)
     except Exception as e:
         log(f"dashboard 저장 실패: {e}")
@@ -119,8 +160,7 @@ def sync_todo_storage_from_dashboard(dashboard_data):
             "synced_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        with open(TODO_STORAGE_JSON, 'w', encoding='utf-8') as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
+        atomic_write_json(TODO_STORAGE_JSON, payload)
     except Exception as e:
         log(f"todo_storage 동기화 실패: {e}")
 

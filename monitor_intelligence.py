@@ -2,9 +2,49 @@ import re
 import json
 import datetime
 import os
+import tempfile
 
 LOG_FILE = "Intelligence_Log.md"
 DATA_FILE = "dashboard_data.json"
+
+
+def atomic_write_json(file_path, payload):
+    target_path = os.path.abspath(file_path)
+    target_dir = os.path.dirname(target_path) or "."
+    os.makedirs(target_dir, exist_ok=True)
+
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=target_dir,
+            prefix=f".{os.path.basename(target_path)}.",
+            suffix=".tmp",
+            delete=False,
+        ) as f:
+            tmp_path = f.name
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+
+        os.replace(tmp_path, target_path)
+
+        try:
+            dir_fd = os.open(target_dir, os.O_RDONLY)
+            try:
+                os.fsync(dir_fd)
+            finally:
+                os.close(dir_fd)
+        except OSError:
+            pass
+    except Exception:
+        if tmp_path and os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+        raise
 
 def parse_log():
     if not os.path.exists(LOG_FILE):
@@ -66,8 +106,7 @@ def update_dashboard_data(entries):
             pass
     
     if not entries:
-        with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        atomic_write_json(DATA_FILE, data)
         return
 
     # Check latest entries (up to 3)
@@ -107,8 +146,7 @@ def update_dashboard_data(entries):
             data["servers"]["C"]["status"] = "DSD 셋업"
             data["servers"]["C"]["load"] = 30
         
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    atomic_write_json(DATA_FILE, data)
     
     print(f"Dashboard updated. Status: {data['system_status']}")
 
@@ -139,8 +177,7 @@ def update_todo_list(new_items):
     # Replace active list
     data["todo_list"] = new_todos
     
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    atomic_write_json(DATA_FILE, data)
     print(f"Updated To-Do List with {len(new_todos)} items.")
 
 if __name__ == "__main__":
