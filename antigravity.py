@@ -15,6 +15,7 @@ import re
 import threading
 import tempfile
 import fcntl
+import atexit
 import warnings
 import requests
 import telebot
@@ -53,6 +54,8 @@ DASHBOARD_JSON = os.path.join(BASE_DIR, "dashboard_data.json")
 DAILY_NEWS_JSON = os.path.join(BASE_DIR, "daily_news.json")
 TODO_STORAGE_JSON = os.path.join(BASE_DIR, "todo_storage.json")
 LOG_FILE = os.path.join(BASE_DIR, "logs", "antigravity.log")
+INSTANCE_LOCK_FILE = os.path.join(BASE_DIR, ".antigravity.lock")
+INSTANCE_LOCK_FD = None
 
 os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
 
@@ -66,6 +69,34 @@ def log(msg):
             f.write(line + "\n")
     except Exception:
         pass
+
+
+def acquire_single_instance_lock():
+    global INSTANCE_LOCK_FD
+    INSTANCE_LOCK_FD = open(INSTANCE_LOCK_FILE, "w")
+    try:
+        fcntl.flock(INSTANCE_LOCK_FD.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        INSTANCE_LOCK_FD.write(str(os.getpid()))
+        INSTANCE_LOCK_FD.flush()
+    except BlockingIOError:
+        print("[single-instance] antigravity.py already running; exiting")
+        sys.exit(0)
+
+    def _release_lock():
+        global INSTANCE_LOCK_FD
+        if INSTANCE_LOCK_FD is None:
+            return
+        try:
+            fcntl.flock(INSTANCE_LOCK_FD.fileno(), fcntl.LOCK_UN)
+        except Exception:
+            pass
+        try:
+            INSTANCE_LOCK_FD.close()
+        except Exception:
+            pass
+        INSTANCE_LOCK_FD = None
+
+    atexit.register(_release_lock)
 
 
 def atomic_write_json(file_path, payload):
@@ -517,6 +548,7 @@ def handle_text(message):
 # ===== 메인 =====
 
 def main():
+    acquire_single_instance_lock()
     log("antigravity.py 시작")
 
     # 1) 날씨 자동 업데이트 스레드
