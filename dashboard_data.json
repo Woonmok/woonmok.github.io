@@ -2,9 +2,9 @@
   "todo_list": [],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-24 11:01:09",
-    "temp": 0.06,
-    "humidity": 88,
+    "updated": "2026-02-24 11:31:11",
+    "temp": 0.1,
+    "humidity": 93,
     "desc": "눈"
   },
   "intelligence_backup": [
