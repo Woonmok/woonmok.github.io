@@ -1,30 +1,14 @@
 {
-  "generated_at": "2026-02-25T02:13:23.475Z",
+  "generated_at": "2026-02-25T02:15:15.035Z",
   "items": [
     {
-      "id": "c482638e1991d16c3f7b9a36681634528f87b983",
+      "id": "c409f5fbe797e7e4acbb8cda41a126293a5ace48",
       "category": "listeria_free",
-      "title": "Listeria Outbreak Update: 27 Illnesses and 6 Deaths Linked to Packaged Meals",
-      "source": "ContagionLive",
-      "url": "https://www.contagionlive.com/view/listeria-outbreak-update-27-illnesses-and-6-deaths-linked-to-packaged-meals",
-      "published_at": "2025-11-04T00:00:00.000Z",
-      "summary": "CDC가 리스테리아 발병을 업데이트하며 27명 감염, 6명 사망, 25명 입원 보고. 18개 주 확산으로 냉장고 확인 권고. 여전히 진행 중인 발병으로 추가 제품 리콜 가능성.",
-      "highlights": [],
-      "tags": [
-        "리스테리아",
-        "패키지식품",
-        "사망"
-      ],
-      "score": null
-    },
-    {
-      "id": "cde23bd3cf2b522df22e1283f91b6b624572cc02",
-      "category": "listeria_free",
-      "title": "Listeria outbreak traced to pasta meals is over",
+      "title": "파스타 식사 리스테리아 발병 종료 선언",
       "source": "Food Safety News",
       "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/",
-      "published_at": null,
-      "summary": "FDA가 파스타 식사 관련 치명적 리스테리아 발병 종료 선언. 19개 주 28명 감염, 7명 사망, 대부분 입원. Nate’s Fine Foods 파스타 원인으로 다수 리콜.",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "FDA가 파스타 식사 관련 치명적 리스테리아 발병을 종료 선언했다. 19개 주 28명 감염, 7명 사망, 1건 태아 손실 발생. Nate’s Fine Foods 파스타가 원인으로 밝혀져 다수 제품 회수 완료.",
       "highlights": [],
       "tags": [
         "리스테리아",
@@ -34,13 +18,13 @@
       "score": null
     },
     {
-      "id": "2e69fe182b37232cfc759d3cb84b3cb99afe326f",
+      "id": "8452d2ce95315bae15879868e3b4a8cf872a8da9",
       "category": "listeria_free",
-      "title": "Continued Listeria Contamination Salads",
+      "title": "샐러드 포장 제품 지속 리스테리아 오염 위험",
       "source": "IDSE",
       "url": "https://www.idse.net/Bacterial-Infections/Article/02-26/continued-listeria-contamination-salads/79761",
       "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "포장 샐러드의 지속적 리스테리아 오염 위험 강조. 장기 발병 사례 통해 포장 식품 안전 문제 부각.",
+      "summary": "장기 리스테리아 발병이 포장 샐러드의 지속 오염 위험 강조. 여러 발병 사례 통해 제조 과정 개선 필요성 제기. 소비자 주의 촉구.",
       "highlights": [],
       "tags": [
         "리스테리아",
@@ -50,322 +34,338 @@
       "score": null
     },
     {
-      "id": "893408dc0e7e48513d6aac4364dac2d33e2931e5",
+      "id": "5cf323d93f8fb69a24be01cee880f5198ba27768",
       "category": "listeria_free",
-      "title": "Cream cheese being recalled because of Listeria contamination",
-      "source": "Food Safety News",
-      "url": "https://www.foodsafetynews.com/2026/02/cream-cheese-being-recalled-because-of-listeria-contamination/",
-      "published_at": null,
-      "summary": "Made Fresh Salads가 크림치즈 여러 맛 리콜. 믹서 오염으로 아직 질환 없으나 취약계층 주의. NY 지역 유통, 증상 시 의료 도움 권고.",
+      "title": "웰슬리 팜스 연어 리스테리아 오염 회수",
+      "source": "FDA",
+      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/slade-gorton-co-inc-recalls-one-lot-wellsley-farms-farm-raised-atlantic-salmon-sold-bjs-wholesale",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "Slade Gorton이 BJ’s Wholesale Club 판매 웰슬리 팜스 연어 1롯(3896) 리스테리아 오염으로 회수. FDA 샘플 검사 발견, 질환 보고 없음. 임산부 등 고위험군 주의.",
+      "highlights": [],
+      "tags": [
+        "리스테리아",
+        "연어",
+        "회수"
+      ],
+      "score": null
+    },
+    {
+      "id": "882ef7418015ba133b709a6bfbe2ee3f72aeb51d",
+      "category": "listeria_free",
+      "title": "크림 치즈 assorted 플레이버 리스테리아 회수",
+      "source": "FDA",
+      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/made-fresh-salads-inc-recalls-assorted-flavors-cream-cheese-because-possible-health-risk",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "Made Fresh Salads가 assorted 크림 치즈(만료 2026-02-27까지) 리스테리아 오염 가능성으로 회수. 취약계층 치명적 위험, 건강인도 단기 증상 발생 가능.",
       "highlights": [],
       "tags": [
         "리스테리아",
         "크림치즈",
-        "리콜"
+        "회수"
       ],
       "score": null
     },
     {
-      "id": "96bd2ee363bc28f4e935738dde8ed76db0e642f2",
+      "id": "bb129e99470b002da3f1027b3fda0fb45b1b0479",
       "category": "cultured_meat",
-      "title": "Cultured Meat Regulation Advances in US",
+      "title": "배양육 시장 2026 전망: 규제 완화 가속",
       "source": "Food Navigator",
-      "url": "https://www.foodnavigator-usa.com/Article/2026/02/24/cultured-meat-fda-approval-progress",
+      "url": "https://www.foodnavigator.com/Article/2026/02/24/cultured-meat-regulatory-breakthroughs-2026",
       "published_at": "2026-02-24T00:00:00.000Z",
-      "summary": "미국 FDA가 배양육 안전성 평가 가속화. 첫 상용화 제품 승인 임박으로 산업 성장 전망. 소비자 수용성 조사 결과 긍정적.",
+      "summary": "미국 FDA가 배양육 상용화 규제 완화, 2026년 시장 규모 2배 성장 예상. Upside Foods 등 기업 대량 생산 시작. 지속가능 단백질 대안 부상.",
       "highlights": [],
       "tags": [
         "배양육",
         "규제",
-        "미국"
+        "시장"
       ],
       "score": null
     },
     {
-      "id": "fae254d9f236d3e3df923595ba92afd6911f8120",
+      "id": "bedf6fd8da697f70d6c285c3c8946d1b0ac6722c",
       "category": "cultured_meat",
-      "title": "Upside Foods Expands Cultured Chicken Production",
+      "title": "싱가포르 배양육 첫 수출 성공",
       "source": "Reuters",
-      "url": "https://www.reuters.com/business/upside-foods-cultured-chicken-scale-up-2026-02-23/",
-      "published_at": "2026-02-23T00:00:00.000Z",
-      "summary": "Upside Foods가 배양 치킨 생산 시설 확대 발표. 비용 절감 기술 도입으로 가격 경쟁력 강화. 레스토랑 공급 확대 계획.",
+      "url": "https://www.reuters.com/business/singapore-cultured-meat-export-milestone-2026-02-25/",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "싱가포르 배양 닭고기 Eat Just社가 미국 첫 수출. 안전 인증 완료로 글로벌 공급망 확대. 가격 경쟁력 강화 중.",
       "highlights": [],
       "tags": [
         "배양육",
-        "치킨",
-        "생산확대"
+        "수출",
+        "싱가포르"
       ],
       "score": null
     },
     {
-      "id": "49b7d7386c1b78f632fac60e5c1ba8aba39c9e49",
+      "id": "e010b4c22d77448222c94e440059d027084ec345",
       "category": "cultured_meat",
-      "title": "EU Approves First Cultured Beef Product",
+      "title": "유럽연합 배양육 승인 첫 사례",
       "source": "Euractiv",
-      "url": "https://www.euractiv.com/section/agriculture-food/news/eu-cultured-beef-approval-2026-02-22/",
-      "published_at": "2026-02-22T00:00:00.000Z",
-      "summary": "EU가 첫 배양 쇠고기 제품 승인. 지속가능성 강조하며 시장 진입 허용. 환경 영향 최소화 데이터 제시.",
-      "highlights": [],
-      "tags": [
-        "배양육",
-        "쇠고기",
-        "EU"
-      ],
-      "score": null
-    },
-    {
-      "id": "51c2a8293160224efcbda9a8711c94c0d5225ebd",
-      "category": "cultured_meat",
-      "title": "Aleph Farms Secures Funding for Cultured Steak",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/02/21/aleph-farms-funding-cultured-steak/",
-      "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "이스라엘 Aleph Farms가 배양 스테이크 개발 자금 1억 달러 조달. 3D 바이오프린팅 기술 적용으로 텍스처 개선.",
-      "highlights": [],
-      "tags": [
-        "배양육",
-        "스테이크",
-        "펀딩"
-      ],
-      "score": null
-    },
-    {
-      "id": "4e450dc05e360d61160cacac89db40c2ef564eed",
-      "category": "cultured_meat",
-      "title": "Cultured Meat Market Hits $500M Valuation",
-      "source": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/2026-02-20/cultured-meat-market-valuation",
-      "published_at": "2026-02-20T00:00:00.000Z",
-      "summary": "글로벌 배양육 시장 가치 5억 달러 돌파. 아시아 수요 증가로 성장 가속. 2030년 100억 달러 예측.",
-      "highlights": [],
-      "tags": [
-        "배양육",
-        "시장",
-        "가치"
-      ],
-      "score": null
-    },
-    {
-      "id": "dad69b41fe387f0930d7f20db544653ce7879c64",
-      "category": "high_end_audio",
-      "title": "Bang & Olufsen Unveils Beolab 120 Speakers",
-      "source": "What Hi-Fi",
-      "url": "https://www.whathifi.com/news/bang-olufsen-beolab-120-2026-02-24",
-      "published_at": "2026-02-24T00:00:00.000Z",
-      "summary": "B&O가 Beolab 120 무선 스피커 출시. AI 음향 최적화와 모듈러 디자인 탑재. 가격 5천 달러대 프리미엄 사양.",
-      "highlights": [],
-      "tags": [
-        "하이엔드오디오",
-        "스피커",
-        "신제품"
-      ],
-      "score": null
-    },
-    {
-      "id": "415b7d4896acd515f6ade3faef205ea72fc26612",
-      "category": "high_end_audio",
-      "title": "McIntosh Expands MA12000 Amp Line",
-      "source": "Stereophile",
-      "url": "https://www.stereophile.com/content/mcintosh-ma12000-update-2026-02-23",
+      "url": "https://www.euractiv.com/section/agriculture/news/eu-approves-first-cultured-meat-product-2026/",
       "published_at": "2026-02-23T00:00:00.000Z",
-      "summary": "McIntosh MA12000 통합 앰프 신버전 공개. 디지털 입력 강화로 스트리밍 최적화. 오디오파일 대상 고출력 350W.",
+      "summary": "EU가 Mosa Meat 배양 소고기 첫 승인. 동물 복지·환경 이점 강조. 2026년 말 유럽 시장 진입 예정.",
       "highlights": [],
       "tags": [
-        "하이엔드오디오",
-        "앰프",
-        "업그레이드"
+        "배양육",
+        "EU",
+        "승인"
       ],
       "score": null
     },
     {
-      "id": "fb3e42b69f53edb019b42a103bf08f34a8bbd104",
-      "category": "high_end_audio",
-      "title": "Wilson Audio Chronosonic XVX Limited Edition",
-      "source": "The Absolute Sound",
-      "url": "https://www.theabsolutesound.com/articles/wilson-audio-chronosonic-xvx-2026-02-22/",
+      "id": "c1fb5f871b0289f51d9d25f2e785d46abf330543",
+      "category": "cultured_meat",
+      "title": "배양육 비용 절감 기술 혁신",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/02/22/cultured-meat-cost-breakthrough/",
       "published_at": "2026-02-22T00:00:00.000Z",
-      "summary": "Wilson Audio가 Chronosonic XVX 한정판 출시. 15만 달러 가격에 초고해상도 사운드. 하이엔드 쇼 데뷔.",
+      "summary": "바이오리액터 효율화로 배양육 생산 비용 50% 하락. 스타트업 Believer Meats 상용화 임박. 전통 육류 대체 가속.",
       "highlights": [],
       "tags": [
-        "하이엔드오디오",
-        "스피커",
-        "리미티드"
+        "배양육",
+        "비용",
+        "기술"
       ],
       "score": null
     },
     {
-      "id": "7bf22f2bca00dd8f9aaf25488485fd59674f3069",
+      "id": "66820b74e2c3ecbdc056e48095b892d0677b3767",
+      "category": "cultured_meat",
+      "title": "중국 배양육 공장 가동 개시",
+      "source": "South China Morning Post",
+      "url": "https://www.scmp.com/news/china/science/article/2026/02/25/china-cultured-meat-factory-launch",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "중국 DC Foods가 아시아 최대 배양육 공장 가동. 연 1만톤 생산 목표. 국내 시장 독점 전략.",
+      "highlights": [],
+      "tags": [
+        "배양육",
+        "중국",
+        "공장"
+      ],
+      "score": null
+    },
+    {
+      "id": "0fb9a5227af7110a26253737a3d9b59e3d636ae8",
       "category": "high_end_audio",
-      "title": "dCS Rossini Apex DAC Upgrade",
-      "source": "Hi-Fi News",
-      "url": "https://www.hifinews.com/content/dcs-rossini-apex-dac-2026-02-21",
-      "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "dCS Rossini Apex DAC 펌웨어 업데이트. 노이즈 감소 20% 향상으로 음질 극대화. 스트리밍 호환성 강화.",
-      "highlights": [],
-      "tags": [
-        "하이엔드오디오",
-        "DAC",
-        "업그레이드"
-      ],
-      "score": null
-    },
-    {
-      "id": "4ce38764243c8a40bac25742e6836c75072a4aae",
-      "category": "high_end_audio",
-      "title": "Focal Utopia EVO Headphones Refresh",
-      "source": "Headfonics",
-      "url": "https://headfonics.com/2026/02/20/focal-utopia-evo-refresh/",
-      "published_at": "2026-02-20T00:00:00.000Z",
-      "summary": "Focal Utopia EVO 헤드폰 리프레시 버전. 베릴륨 드라이버 업그레이드로 해상도 향상. 5천 달러 플래그십.",
-      "highlights": [],
-      "tags": [
-        "하이엔드오디오",
-        "헤드폰",
-        "리뉴얼"
-      ],
-      "score": null
-    },
-    {
-      "id": "62b79faf5ea827ead85dd1b960a6d3b8a76ff43c",
-      "category": "computer_ai",
-      "title": "NVIDIA Blackwell AI Chip Ships to Data Centers",
-      "source": "AnandTech",
-      "url": "https://www.anandtech.com/show/21500/nvidia-blackwell-ai-ships-2026-02-24",
+      "title": "새 하이엔드 DAC 칩셋 공개",
+      "source": "What Hi-Fi?",
+      "url": "https://www.whathifi.com/news/new-high-end-dac-chipset-revealed-2026",
       "published_at": "2026-02-24T00:00:00.000Z",
-      "summary": "NVIDIA Blackwell B200 칩 데이터센터 출하 시작. 30배 성능 향상으로 AI 훈련 혁신. 주요 클라우드 업체 도입.",
+      "summary": "ESS Sabre ES9039PRO 칩셋 출시, 16비트 초고해상도 지원. 오디오필 대상 가격 500달러. 음질 혁신 평가.",
+      "highlights": [],
+      "tags": [
+        "하이엔드",
+        "오디오",
+        "DAC"
+      ],
+      "score": null
+    },
+    {
+      "id": "e98d630405839b4a6fe11310f0ea0cae51819244",
+      "category": "high_end_audio",
+      "title": "무선 이어폰 플래그십 리뷰",
+      "source": "SoundGuys",
+      "url": "https://www.soundguys.com/best-wireless-earbuds-2026-high-end-45678/",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "Bowers & Wilkins Pi8 무선 이어폰 최고 성능. 노이즈 캔슬링·LDAC 코덱 탑재. 가격대 400달러.",
+      "highlights": [],
+      "tags": [
+        "이어폰",
+        "무선",
+        "하이엔드"
+      ],
+      "score": null
+    },
+    {
+      "id": "1141450e384b436088819639cee6c669f1f8a34b",
+      "category": "high_end_audio",
+      "title": "빈티지 앰프 재출시 붐",
+      "source": "Stereophile",
+      "url": "https://www.stereophile.com/content/vintage-amp-reissues-2026-trend",
+      "published_at": "2026-02-23T00:00:00.000Z",
+      "summary": "McIntosh·Marantz 클래식 앰프 재생산. 아날로그 사운드 선호 증가. 컬렉터 시장 호황.",
+      "highlights": [],
+      "tags": [
+        "앰프",
+        "빈티지",
+        "하이엔드"
+      ],
+      "score": null
+    },
+    {
+      "id": "0a7c9ca073f0adc186b34aafe249522f5f143610",
+      "category": "high_end_audio",
+      "title": "스트리밍 서비스 하이레즈 오디오 업그레이드",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/2026/2/25/hi-res-audio-streaming-update",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "Qobuz·Tidal 24비트/192kHz 전곡 지원 확대. 하이엔드 사용자 편의 증대. 구독자 20% 증가.",
+      "highlights": [],
+      "tags": [
+        "스트리밍",
+        "하이레즈",
+        "오디오"
+      ],
+      "score": null
+    },
+    {
+      "id": "dc37b80f5f503c5f6150d00403b30c346334cb76",
+      "category": "high_end_audio",
+      "title": "홈 시어터 사운드바 혁신",
+      "source": "CNET",
+      "url": "https://www.cnet.com/tech/home-entertainment/new-high-end-soundbar-2026/",
+      "published_at": "2026-02-24T00:00:00.000Z",
+      "summary": "Sonos Arc Ultra 16채널 사운드바 출시. Dolby Atmos 완벽 구현. 가격 1,000달러.",
+      "highlights": [],
+      "tags": [
+        "사운드바",
+        "홈시어터",
+        "하이엔드"
+      ],
+      "score": null
+    },
+    {
+      "id": "db0ef6c56f84b9ad6e65b4ad24e94f2b69281691",
+      "category": "computer_ai",
+      "title": "엔비디아 Blackwell AI 칩 대량 출하",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/02/25/nvidia-blackwell-shipping/",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "Blackwell GB200 AI 칩 대량 생산 시작. 30배 성능 향상. 데이터센터 수요 폭증.",
       "highlights": [],
       "tags": [
         "AI",
         "칩",
-        "NVIDIA"
+        "엔비디아"
       ],
       "score": null
     },
     {
-      "id": "89c240b2bba845d7891812ee09aaa2edef119ed8",
+      "id": "403a7bab6e04f2fa85f71959c881f979d3df1284",
       "category": "computer_ai",
-      "title": "OpenAI Releases GPT-5 Preview",
-      "source": "VentureBeat",
-      "url": "https://venturebeat.com/ai/openai-gpt5-preview-2026-02-23/",
-      "published_at": "2026-02-23T00:00:00.000Z",
-      "summary": "OpenAI GPT-5 프리뷰 버전 공개. 멀티모달 기능 강화와 환각 감소. 개발자 API 즉시 이용 가능.",
-      "highlights": [],
-      "tags": [
-        "AI",
-        "모델",
-        "OpenAI"
-      ],
-      "score": null
-    },
-    {
-      "id": "6cf51dba91d783d479a1f25a45f461d40c7066e0",
-      "category": "computer_ai",
-      "title": "AMD Ryzen AI 400 Series Launch",
-      "source": "Tom's Hardware",
-      "url": "https://www.tomshardware.com/pc-components/amd-ryzen-ai-400-2026-02-22",
-      "published_at": "2026-02-22T00:00:00.000Z",
-      "summary": "AMD Ryzen AI 400 시리즈 노트북 CPU 출시. NPU 50TOPS로 로컬 AI 가속. 배터리 효율 20% 개선.",
-      "highlights": [],
-      "tags": [
-        "컴퓨터",
-        "AI프로세서",
-        "AMD"
-      ],
-      "score": null
-    },
-    {
-      "id": "59d3eec33d0d658e7a75b6cece6e7a0a34679367",
-      "category": "computer_ai",
-      "title": "Google DeepMind Achieves AGI Milestone",
-      "source": "MIT Technology Review",
-      "url": "https://www.technologyreview.com/2026/02/21/google-deepmind-agi-milestone/",
-      "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "Google DeepMind가 AGI 수준 작업 해결 보고. 자율 에이전트 기술로 연구 분야 혁명. 윤리 가이드라인 강조.",
-      "highlights": [],
-      "tags": [
-        "AI",
-        "AGI",
-        "DeepMind"
-      ],
-      "score": null
-    },
-    {
-      "id": "df83ca069d141659c1520ebac46da404e457366f",
-      "category": "computer_ai",
-      "title": "Apple Intelligence M5 Chip Integration",
-      "source": "MacRumors",
-      "url": "https://www.macrumors.com/2026/02/20/apple-intelligence-m5/",
-      "published_at": "2026-02-20T00:00:00.000Z",
-      "summary": "Apple M5 칩에 Intelligence 기능 통합. 온디바이스 AI 처리로 프라이버시 강화. WWDC 발표 예고.",
-      "highlights": [],
-      "tags": [
-        "컴퓨터",
-        "AI",
-        "Apple"
-      ],
-      "score": null
-    },
-    {
-      "id": "6df733feab404ea60673df55cfd892dbe0adc816",
-      "category": "global_biz",
-      "title": "TSMC Reports Record Q4 Revenue on AI Boom",
-      "source": "Nikkei Asia",
-      "url": "https://asia.nikkei.com/Business/TSMC-Q4-revenue-2026-02-24",
+      "title": "오픈AI GPT-5 베타 공개",
+      "source": "The Information",
+      "url": "https://www.theinformation.com/articles/openai-gpt5-beta-launch-2026",
       "published_at": "2026-02-24T00:00:00.000Z",
-      "summary": "TSMC 4분기 매출 사상 최대 기록. AI 칩 수요 폭증으로 30% 성장. 2026년 투자 확대 선언.",
+      "summary": "GPT-5 베타 버전 개발자 공개. 멀티모달 기능 강화. 상용화 3월 예정.",
       "highlights": [],
       "tags": [
-        "반도체",
-        "매출",
-        "TSMC"
+        "AI",
+        "챗GPT",
+        "오픈AI"
       ],
       "score": null
     },
     {
-      "id": "5e3561f6295cde5b305d9ecbcf1edd967d48be56",
-      "category": "global_biz",
-      "title": "Boeing Strikes Deal with China for 737 MAX",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/business/aerospace-defense/boeing-china-737-deal-2026-02-23/",
+      "id": "e6c944de148c8f0193c7c7cd1fa89dc214f7d826",
+      "category": "computer_ai",
+      "title": "퀀텀 컴퓨팅 상용 첫걸음",
+      "source": "IBM Newsroom",
+      "url": "https://newsroom.ibm.com/2026-02-23-quantum-commercial-breakthrough",
       "published_at": "2026-02-23T00:00:00.000Z",
-      "summary": "Boeing, 중국과 737 MAX 100대 주문 계약. 공급망 안정화로 회복 신호. 아시아 시장 확대.",
+      "summary": "IBM 1,000큐비트 프로세서 상용 서비스. 약물 개발 적용. 클라우드 액세스 오픈.",
       "highlights": [],
       "tags": [
-        "항공",
-        "거래",
-        "Boeing"
+        "퀀텀",
+        "컴퓨팅",
+        "IBM"
       ],
       "score": null
     },
     {
-      "id": "b606605904202960e3bdd22ad922e8f56455edaf",
-      "category": "global_biz",
-      "title": "Saudi Aramco Cuts Oil Prices Amid Demand Worries",
+      "id": "d133b69953681d76690cc1dcbd186c0c52a11588",
+      "category": "computer_ai",
+      "title": "애플 AI 칩 M5 발표",
       "source": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/2026-02-22/aramco-oil-price-cut",
-      "published_at": "2026-02-22T00:00:00.000Z",
-      "summary": "Aramco 아시아향 원유 가격 인하. 수요 둔화 우려로 마진 압박. 글로벌 에너지 전환 가속.",
+      "url": "https://www.bloomberg.com/news/apple-m5-ai-chip-2026",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "M5 칩 내장 AI 엔진 2배 빠름. 맥북 프로 탑재 예정. 온디바이스 처리 강조.",
       "highlights": [],
       "tags": [
-        "에너지",
-        "석유",
-        "Aramco"
+        "AI",
+        "칩",
+        "애플"
       ],
       "score": null
     },
     {
-      "id": "010b642ddedf43ee3311ca3ce57d4681df0e7063",
-      "category": "global_biz",
-      "title": "Volkswagen ID. Battery Gigafactory in US",
-      "source": "Electrek",
-      "url": "https://electrek.co/2026/02/21/vw-id-battery-gigafactory-us/",
-      "published_at": "2026-02-21T00:00:00.000Z",
-      "summary": "VW 미국에 ID. 전용 배터리 기가팩토리 건설. Northvolt 파트너십으로 EV 생산 비용 절감. 2028년 가동.",
+      "id": "3fa733fd989b3985f5891bc69fc7cd4a899514b7",
+      "category": "computer_ai",
+      "title": "구글 Gemini 2.0 론칭",
+      "source": "Google Blog",
+      "url": "https://blog.google/technology/ai/gemini-2-february-2026/",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "Gemini 2.0 멀티태스크 40% 향상. 안드로이드 통합. 무료 버전 업그레이드.",
       "highlights": [],
       "tags": [
-        "자동차",
-        "배터리",
-        "Volkswagen"
+        "AI",
+        "구글",
+        "제미니"
+      ],
+      "score": null
+    },
+    {
+      "id": "797bbd2b2260716846e0ef5fd2a6ed2a7ff288b4",
+      "category": "global_biz",
+      "title": "테슬라 중국 판매 1위 탈환",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/02/25/tesla-china-sales-lead.html",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "테슬라 모델Y 중국 1월 판매 1위. BYD 추월. 가격 인하 효과.",
+      "highlights": [],
+      "tags": [
+        "테슬라",
+        "중국",
+        "판매"
+      ],
+      "score": null
+    },
+    {
+      "id": "962e9c424e65dc3c61f099f5a2efcc1e6dea744f",
+      "category": "global_biz",
+      "title": "아마존 AWS 매출 신기록",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/amazon-aws-record-revenue-2026-q1/",
+      "published_at": "2026-02-24T00:00:00.000Z",
+      "summary": "AWS 1분기 매출 30% 증가. AI 클라우드 수요 폭발. 연간 1,000억 달러 돌파.",
+      "highlights": [],
+      "tags": [
+        "아마존",
+        "AWS",
+        "매출"
+      ],
+      "score": null
+    },
+    {
+      "id": "9c27da25bd2afc843d9fafec8a83bdf89b6f65d0",
+      "category": "global_biz",
+      "title": "삼성 반도체 호실적 전망",
+      "source": "Yonhap News",
+      "url": "https://en.yna.co.kr/view/AEN20260225001200320",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "삼성전자 1분기 영업이익 50% 상승 예상. HBM 칩 수요 증가. 글로벌 2위 유지.",
+      "highlights": [],
+      "tags": [
+        "삼성",
+        "반도체",
+        "실적"
+      ],
+      "score": null
+    },
+    {
+      "id": "9152a45637f4a52a35d6faf604b4130e49d8db1e",
+      "category": "global_biz",
+      "title": "OPEC+ 감산 연장 결정",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/opec-plus-production-cut-extension-2026",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "OPEC+ 2026년 상반기 감산 연장. 유가 80달러 안정화 목표. 러시아 준수 강화.",
+      "highlights": [],
+      "tags": [
+        "OPEC",
+        "석유",
+        "감산"
       ],
       "score": null
     }
