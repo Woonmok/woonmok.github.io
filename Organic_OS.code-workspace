@@ -7,11 +7,5 @@
 			"path": "."
 		}
 	],
-	"settings": {
-		"python.defaultInterpreterPath": "${workspaceFolder:woonmok.github.io}/.venv/bin/python",
-		"python.terminal.activateEnvironment": true,
-		"python.analysis.extraPaths": [
-			"${workspaceFolder:woonmok.github.io}/.venv/lib/python3.14/site-packages"
-		]
-	}
+	"settings": {}
 }
