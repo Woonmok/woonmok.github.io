@@ -9,9 +9,12 @@ import fs from 'fs/promises';
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+
 // Configuration
-// ABSOLUTE PATH to the data file on Desktop
-const DATA_FILE_PATH = '/Users/seunghoonoh/Desktop/farmerstree-dashboard/src/data/dashboardData.json';
+const DATA_FILE_PATH = process.env.DASHBOARD_DATA_FILE || path.join(PROJECT_ROOT, 'dashboard_data.json');
 
 const SPREADSHEET_ID = '1Rq2GPvvNowK5WxEYk2wUJTAAEkXsFPpW0u2aFVWvIMk';
 const SHEET_NAME = '시트1';

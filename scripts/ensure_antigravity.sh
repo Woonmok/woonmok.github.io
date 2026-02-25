@@ -1,10 +1,11 @@
 #!/bin/zsh
 set -euo pipefail
 
-BASE_DIR="/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io"
-SCRIPT_PATH="$BASE_DIR/antigravity.py"
-STDOUT_LOG="$BASE_DIR/logs/antigravity_stdout.log"
-STDERR_LOG="$BASE_DIR/logs/antigravity_error.log"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+SCRIPT_PATH="$PROJECT_ROOT/antigravity.py"
+STDOUT_LOG="$PROJECT_ROOT/logs/antigravity_stdout.log"
+STDERR_LOG="$PROJECT_ROOT/logs/antigravity_error.log"
 
 if [[ ! -f "$SCRIPT_PATH" ]]; then
   exit 0
@@ -27,6 +28,6 @@ if [[ "$PID_COUNT" -eq 1 ]]; then
   exit 0
 fi
 
-mkdir -p "$BASE_DIR/logs"
-cd "$BASE_DIR"
+mkdir -p "$PROJECT_ROOT/logs"
+cd "$PROJECT_ROOT"
 nohup /usr/bin/python3 "$SCRIPT_PATH" >> "$STDOUT_LOG" 2>> "$STDERR_LOG" &

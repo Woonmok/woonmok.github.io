@@ -8,6 +8,9 @@ from datetime import datetime
 from pathlib import Path
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
@@ -56,9 +59,9 @@ def find_latest_pilot_summary(reports_dir: Path):
 
 def main():
     ap = argparse.ArgumentParser(description="Daily_Bridge → WaveTree_status.json bridge")
-    ap.add_argument("--daily", default="/Users/seunghoonoh/woonmok.github.io/Daily_Bridge.md")
-    ap.add_argument("--reports", default="/Users/seunghoonoh/woonmok.github.io/wave-tree-ai-pilot/reports")
-    ap.add_argument("--output", default="/Users/seunghoonoh/woonmok.github.io/WaveTree_status.json")
+    ap.add_argument("--daily", default=str(PROJECT_ROOT / "Daily_Bridge.md"))
+    ap.add_argument("--reports", default=str(PROJECT_ROOT / "wave-tree-ai-pilot" / "reports"))
+    ap.add_argument("--output", default=str(PROJECT_ROOT / "WaveTree_status.json"))
     args = ap.parse_args()
 
     daily_path = Path(args.daily)

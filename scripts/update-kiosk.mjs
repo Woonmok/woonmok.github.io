@@ -10,9 +10,10 @@ dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 // --- CONFIGURATION ---
-const TARGET_HTML_PATH = '/Users/seunghoonoh/Documents/digital_signage.html';
+const TARGET_HTML_PATH = process.env.TARGET_HTML_PATH || path.join(PROJECT_ROOT, 'digital_signage.html');
 const TODO_FILE_PATH = path.join(__dirname, '..', 'todo_storage.json');
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;

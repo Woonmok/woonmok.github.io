@@ -7,9 +7,10 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-WORKSPACE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-JINAN_DIR="$SCRIPT_DIR/jinan-dashboard"
-NEWS_HUB_DIR="/Volumes/AI_DATA_CENTRE/AI_WORKSPACE/wave-tree-news-hub"
+PROJECT_ROOT="$SCRIPT_DIR"
+WORKSPACE_ROOT="${WAVETREE_WORKSPACE_ROOT:-$(cd "$PROJECT_ROOT/.." && pwd)}"
+JINAN_DIR="$PROJECT_ROOT/jinan-dashboard"
+NEWS_HUB_DIR="${NEWS_HUB_DIR:-$WORKSPACE_ROOT/wave-tree-news-hub}"
 
 if [ ! -d "$NEWS_HUB_DIR" ]; then
 	NEWS_HUB_DIR="$WORKSPACE_ROOT/wave-tree-news-hub"

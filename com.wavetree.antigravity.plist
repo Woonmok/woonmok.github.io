@@ -4,7 +4,7 @@
 DEPRECATED (2026-02-21)
 - LaunchAgent 기반 운영 중단: 외장 볼륨 경로 접근 시 Operation not permitted 발생 가능
 - 현재 운영 기준: cron + scripts/ensure_antigravity.sh
-- 참고 문서: /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/AUTOMATION_STATUS.md
+- 참고 문서: AUTOMATION_STATUS.md
 -->
 <plist version="1.0">
 <dict>
@@ -14,10 +14,10 @@ DEPRECATED (2026-02-21)
 	<array>
 		<string>/bin/zsh</string>
 		<string>-lc</string>
-		<string>exec /usr/bin/python3 /Volumes/AI_DATA_CENTRE/AI_WORKSPACE/woonmok.github.io/antigravity.py</string>
+		<string>WOONMOK_DIR="${WAVETREE_WOONMOK_DIR:-${WAVETREE_WORKSPACE_ROOT:-$HOME/AI_WORKSPACE}/woonmok.github.io}"; exec /usr/bin/python3 "$WOONMOK_DIR/antigravity.py"</string>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/seunghoonoh</string>
+	<string>/tmp</string>
 	<key>StandardOutPath</key>
 	<string>/tmp/com.wavetree.antigravity.out.log</string>
 	<key>StandardErrorPath</key>

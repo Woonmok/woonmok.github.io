@@ -5,12 +5,13 @@ Project_Radar.md를 읽고 로컬 규칙 기반으로 분석하여 인사이트 
 Antigravity가 실행하거나 대화로 요청 가능
 """
 
-import os
 from datetime import datetime
 from collections import Counter
+from pathlib import Path
 
-RADAR_FILE = "/Users/seunghoonoh/woonmok.github.io/Project_Radar.md"
-OUTPUT_FILE = "/Users/seunghoonoh/woonmok.github.io/Radar_Insights.md"
+PROJECT_ROOT = Path(__file__).resolve().parent
+RADAR_FILE = PROJECT_ROOT / "Project_Radar.md"
+OUTPUT_FILE = PROJECT_ROOT / "Radar_Insights.md"
 
 CATEGORY_KEYWORDS = {
     "배양육/푸드테크": ["배양육", "cultured meat", "cell-based", "fermentation", "균사체", "mycelium"],
@@ -44,8 +45,7 @@ def _extract_relevant_lines(text, topic=None, limit=8):
 def read_radar():
     """Project_Radar.md 읽기"""
     try:
-        with open(RADAR_FILE, "r", encoding="utf-8") as f:
-            return f.read()
+        return RADAR_FILE.read_text(encoding="utf-8")
     except FileNotFoundError:
         return None
 
@@ -157,7 +157,7 @@ def save_insights(content, mode="append"):
     """인사이트를 파일로 저장"""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    if mode == "overwrite" or not os.path.exists(OUTPUT_FILE):
+    if mode == "overwrite" or not OUTPUT_FILE.exists():
         header = f"""# 🔍 Radar Insights - 분석 리포트
 
 **생성 시각**: {timestamp}
@@ -166,10 +166,10 @@ def save_insights(content, mode="append"):
 ---
 
 """
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        with OUTPUT_FILE.open("w", encoding="utf-8") as f:
             f.write(header + content)
     else:
-        with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
+        with OUTPUT_FILE.open("a", encoding="utf-8") as f:
             f.write(f"\n\n---\n## [{timestamp}] 업데이트\n\n{content}\n")
 
 
