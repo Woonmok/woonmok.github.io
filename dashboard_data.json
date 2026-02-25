@@ -9,18 +9,18 @@
   },
   "intelligence_backup": [
     {
-      "title": "치킨 페투치네 알프레도 리스테리아 발병 타임라인",
-      "summary": "CDC가 FreshRealm 치킨 페투치네 알프레도 식사로 인한 다주 리스테리아 발병 조사 중이며 리콜 제품 판매 중단. 17명 이상 감염 확인, 실제 규모는 더 클 수 있음. 발병자 증상 발생 시기 차트 공개.[2]",
-      "tag": "listeria_free",
-      "score": "None",
-      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+      "title": "2026년 배양육 업계, “환상은 줄고 현실적인 재정·규제 전략으로 전환”",
+      "summary": "PPTI는 2025년 고프로필 실패 이후 배양육 섹터가 ‘폭발적 성장’ 기대를 접고, 반려동물 사료·하이브리드 제품·공유 인프라 같은 현실적 유즈케이스에 집중하는 방향으로 재편되고 있다고 분석함. [web:41]",
+      "tag": "cultured_meat",
+      "score": "0.92",
+      "url": "https://www.proteinproductiontechnology.com/post/cultivated-meat-in-2026-fewer-illusions-firmer-footing"
     },
     {
-      "title": "배양육 상용화 가속, FDA 승인 임박",
-      "summary": "미국 배양육 기업들이 FDA 안전 승인 임박 소식. Upside Foods 등 첫 상용 제품 출시 준비 중. 지속 가능한 단백질 대안으로 시장 확대 전망.[web:1]",
-      "tag": "cultured_meat",
-      "score": "None",
-      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/cultured-meat-fda-approval-2026-02-24/"
+      "title": "Applied Materials, 중국 불법 반도체 장비 수출 혐의로 2억5,200만 달러 합의",
+      "summary": "미 법무부는 반도체 장비 업체 어플라이드 머티어리얼즈가 중국으로의 불법 수출 혐의를 해결하기 위해 2억5,200만 달러를 지급하기로 합의했으며, 미국의 수출통제 강화 기조를 재확인하는 사례로 평가됨. [web:30]",
+      "tag": "global_biz",
+      "score": "0.86",
+      "url": "https://www.reuters.com/world/china/applied-materials-pay-252-million-resolve-illegal-chip-exports-us-says-2026-02-12/"
     }
   ],
   "intelligence": [
@@ -39,5 +39,5 @@
       "url": "https://www.reuters.com/world/china/applied-materials-pay-252-million-resolve-illegal-chip-exports-us-says-2026-02-12/"
     }
   ],
-  "last_updated": "2026-02-24 01:50:11"
+  "last_updated": "2026-02-25 02:11:07"
 }
