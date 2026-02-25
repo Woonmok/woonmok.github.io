@@ -4,6 +4,12 @@
 .venv312/
 wave-tree-ai-pilot/.venv/
 node_modules/
+.DS_Store
+__pycache__/
+*.py[cod]
+*.pyo
+*.swp
+*.swo
 # Ignore log files
 logs/antigravity_error.log
 logs/*.log
