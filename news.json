@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-25T02:43:19.130250Z",
+  "generated_at": "2026-02-25T02:52:01.224611Z",
   "items": [
     {
       "id": "c409f5fbe797e7e4acbb8cda41a126293a5ace48",
@@ -553,6 +553,64 @@
       "decision_generated_at": "2026-02-25T02:43:05.385118+00:00"
     },
     {
+      "id": "9c27da25bd2afc843d9fafec8a83bdf89b6f65d0",
+      "category": "global_biz",
+      "title": "삼성 반도체 호실적 전망",
+      "source": "Yonhap News",
+      "url": "https://en.yna.co.kr/view/AEN20260225001200320",
+      "published_at": "2026-02-25T00:00:00.000Z",
+      "summary": "삼성전자 1분기 영업이익 50% 상승 예상. HBM 칩 수요 증가. 글로벌 2위 유지.",
+      "highlights": [],
+      "tags": [
+        "삼성",
+        "반도체",
+        "실적"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.2,
+        "impact_reason": "삼성 반도체 호실적은 국내 공급망 기업 수요 증가와 수출 환경 개선을 의미하며, 관련 포트폴리오 기업의 B2B 매출 기회 확대를 시사한다.",
+        "confidence": 0.78,
+        "confidence_basis": "삼성의 1분기 영업이익 50% 상승은 확정 뉴스이나, 포트폴리오 기업의 수혜 정도는 산업군 특성에 따라 편차가 크다.",
+        "next_action": "포트폴리오 기업 중 반도체 관련 공급업체/장비업체의 수주 파이프라인을 긴급 검토하고 상반기 매출 전망을 상향 조정할 근거 수집을 시작하라.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "삼성 HBM 칩 수요 증가에 따른 소재/부품 협력업체의 수주 물량 증가 가능성 및 원가율 개선 기회.",
+        "risk": "삼성의 글로벌 2위 유지에도 불구하고 원가 경쟁 심화로 하청업체 마진율이 압박받을 가능성과 단가 인하 요구 증가 우려."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-25T02:51:52.613472+00:00"
+    },
+    {
+      "id": "962e9c424e65dc3c61f099f5a2efcc1e6dea744f",
+      "category": "global_biz",
+      "title": "아마존 AWS 매출 신기록",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/amazon-aws-record-revenue-2026-q1/",
+      "published_at": "2026-02-24T00:00:00.000Z",
+      "summary": "AWS 1분기 매출 30% 증가. AI 클라우드 수요 폭발. 연간 1,000억 달러 돌파.",
+      "highlights": [],
+      "tags": [
+        "아마존",
+        "AWS",
+        "매출"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.2,
+        "impact_reason": "글로벌 AI 클라우드 수요 급증으로 한국 클라우드/AI 관련 기업의 경쟁 심화 및 기술 투자 필요성 증가. 미국 클라우드 시장 독점화는 한국 수출형 IT 서비스 업계의 마진 압박 요인.",
+        "confidence": 0.78,
+        "confidence_basis": "AWS 성장이 실제 시장 수요 반영이지만, 한국 기업 영향도는 산업 특성에 따라 편차가 크므로 중상 수준.",
+        "next_action": "포트폴리오 기업의 클라우드/AI 의존도를 재점검하고, 글로벌 주요 클라우드 플랫폼과의 파트너십 강화 또는 차별화 전략 수립 필요.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "AWS 공급망 확대에 따른 한국 데이터센터/반도체/네트워크 기업의 수요 증가 및 AWS 파트너 사업 진출 기회.",
+        "risk": "미국 클라우드 시장 집중화로 한국 자체 클라우드 사업의 경쟁력 약화 및 기술 종속도 심화 우려."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-25T02:52:01.224520+00:00"
+    },
+    {
       "id": "797bbd2b2260716846e0ef5fd2a6ed2a7ff288b4",
       "category": "global_biz",
       "title": "테슬라 중국 판매 1위 탈환",
@@ -582,22 +640,6 @@
       "decision_generated_at": "2026-02-25T02:43:19.130161+00:00"
     },
     {
-      "id": "9c27da25bd2afc843d9fafec8a83bdf89b6f65d0",
-      "category": "global_biz",
-      "title": "삼성 반도체 호실적 전망",
-      "source": "Yonhap News",
-      "url": "https://en.yna.co.kr/view/AEN20260225001200320",
-      "published_at": "2026-02-25T00:00:00.000Z",
-      "summary": "삼성전자 1분기 영업이익 50% 상승 예상. HBM 칩 수요 증가. 글로벌 2위 유지.",
-      "highlights": [],
-      "tags": [
-        "삼성",
-        "반도체",
-        "실적"
-      ],
-      "score": null
-    },
-    {
       "id": "9152a45637f4a52a35d6faf604b4130e49d8db1e",
       "category": "global_biz",
       "title": "OPEC+ 감산 연장 결정",
@@ -611,23 +653,20 @@
         "석유",
         "감산"
       ],
-      "score": null
-    },
-    {
-      "id": "962e9c424e65dc3c61f099f5a2efcc1e6dea744f",
-      "category": "global_biz",
-      "title": "아마존 AWS 매출 신기록",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/business/amazon-aws-record-revenue-2026-q1/",
-      "published_at": "2026-02-24T00:00:00.000Z",
-      "summary": "AWS 1분기 매출 30% 증가. AI 클라우드 수요 폭발. 연간 1,000억 달러 돌파.",
-      "highlights": [],
-      "tags": [
-        "아마존",
-        "AWS",
-        "매출"
-      ],
-      "score": null
+      "score": null,
+      "decision": {
+        "impact_score": 6.5,
+        "impact_reason": "유가 80달러 안정화는 에너지 수입 의존도가 높은 한국의 수출 제조업 원가를 상향 안정화시키며, 동시에 에너지 관련 소재·부품 사업에는 수요 기반을 제공합니다.",
+        "confidence": 0.78,
+        "confidence_basis": "OPEC+의 정책 일관성은 높으나 러시아 제재, 이란 생산 변수 등 지정학적 불확실성이 존재합니다.",
+        "next_action": "포트폴리오 기업별로 에너지 원가 민감도를 재평가하고 2026년 상반기 가격 시나리오 분석을 수립하세요.",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "유가 안정은 장기 비용 예측 가능성을 높여 수출가격 경쟁력 회복에 유리합니다.",
+        "risk": "유가 80달러 유지 실패 시 한국 수출품 가격경쟁력이 급변할 수 있으며, 중국 경기 둔화와 겹치면 이중 압박이 발생합니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-25T02:51:57.249285+00:00"
     }
   ]
 }
