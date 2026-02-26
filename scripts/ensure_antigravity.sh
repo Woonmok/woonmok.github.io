@@ -6,6 +6,13 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SCRIPT_PATH="$PROJECT_ROOT/antigravity.py"
 STDOUT_LOG="$PROJECT_ROOT/logs/antigravity_stdout.log"
 STDERR_LOG="$PROJECT_ROOT/logs/antigravity_error.log"
+PYTHON_BIN="python3"
+
+if [[ -x "$PROJECT_ROOT/.venv/bin/python" ]]; then
+  PYTHON_BIN="$PROJECT_ROOT/.venv/bin/python"
+elif [[ -x "$PROJECT_ROOT/.venv-1/bin/python" ]]; then
+  PYTHON_BIN="$PROJECT_ROOT/.venv-1/bin/python"
+fi
 
 if [[ ! -f "$SCRIPT_PATH" ]]; then
   exit 0
@@ -30,4 +37,4 @@ fi
 
 mkdir -p "$PROJECT_ROOT/logs"
 cd "$PROJECT_ROOT"
-nohup /usr/bin/python3 "$SCRIPT_PATH" >> "$STDOUT_LOG" 2>> "$STDERR_LOG" &
+nohup "$PYTHON_BIN" "$SCRIPT_PATH" >> "$STDOUT_LOG" 2>> "$STDERR_LOG" &

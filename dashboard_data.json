@@ -2,10 +2,10 @@
   "todo_list": [],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-25 23:13:42",
-    "temp": -1.01,
-    "humidity": 95,
-    "desc": "맑음"
+    "updated": "2026-02-26 10:52:30",
+    "temp": 8.97,
+    "humidity": 63,
+    "desc": "온흐림"
   },
   "intelligence_backup": [
     {
