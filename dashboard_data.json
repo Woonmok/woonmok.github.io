@@ -18,7 +18,7 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-27 11:08:05",
+    "updated": "2026-02-27 11:18:06",
     "temp": 8,
     "humidity": 78,
     "desc": "온흐림"
@@ -55,5 +55,5 @@
       "url": "https://elec4.co.kr/contents/article_detail?article_idx=35844&s_cate=27"
     }
   ],
-  "last_updated": "2026-02-27 02:16:34"
+  "last_updated": "2026-02-27 02:20:57"
 }
