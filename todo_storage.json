@@ -4,22 +4,22 @@
       "id": 1,
       "text": "1. 7일 템플릿 영어 쓰기.",
       "completed": false,
-      "date": "2026-02-27T01:48:04Z"
+      "date": "2026-02-27T01:58:05Z"
     },
     {
       "id": 2,
       "text": "2. 플러그인_이펙터 업그레이드 하기.",
       "completed": false,
-      "date": "2026-02-27T01:48:04Z"
+      "date": "2026-02-27T01:58:05Z"
     },
     {
       "id": 3,
       "text": "3. 도의원 의정보고 준비 하기.",
       "completed": false,
-      "date": "2026-02-27T01:48:04Z"
+      "date": "2026-02-27T01:58:05Z"
     }
   ],
   "lastMsgId": 0,
   "synced_from": "dashboard_data.json",
-  "synced_at": "2026-02-27 10:48:04"
+  "synced_at": "2026-02-27 10:58:05"
 }
