@@ -41,11 +41,11 @@
   ],
   "intelligence": [
     {
-      "title": "치킨 페투치네 알프레도 리스테리아 발병 위치",
-      "summary": "전국 유통 FreshRealm 치킨 페투치네 알프레도 식사로 인한 리스테리아 발병. 17명 감염 확인, 실제 환자 수 더 많을 수 있음. 리콜 제품 소비 금지 권고.",
+      "title": "파스타 식사 리스테리아 발병 종료 선언",
+      "summary": "FDA가 Nate’s Fine Foods 파스타 식사 관련 치명적 리스테리아 발병 종료 선언. 19개 주 28명 감염, 7명 사망, 대부분 입원. 2024년 8월부터 시작된 발병으로 Walmart, Kroger 등 다수 매장 제품 리콜.",
       "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/locations.html"
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
     },
     {
       "title": "배양 고기 상용화 가속, FDA 승인 임박",
@@ -55,5 +55,5 @@
       "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/cultured-meat-fda-approval-2026-02-27/"
     }
   ],
-  "last_updated": "2026-02-27 01:31:31"
+  "last_updated": "2026-02-27 01:32:13"
 }
