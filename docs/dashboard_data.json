@@ -17,43 +17,43 @@
     }
   ],
   "system_status": "NORMAL",
-  "last_updated": "2026-02-21 23:22:10",
-  "intelligence": [
-    {
-      "title": "Listeria outbreak traced to pasta meals is over",
-      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
-      "tag": "listeria_free",
-      "score": "None",
-      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
-    },
-    {
-      "title": "2026년 AI 칩 시장, 엔비디아·AMD·브로드컴 대격돌",
-      "summary": "AMD가 2026년 하반기 MI450 GPU 출시로 엔비디아에 대응하며 AI 칩 시장 경쟁이 치열해진다. 젠슨 황 CEO가 GTC 2026에서 신규 칩 공개를 예고했다.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://www.choicestock.co.kr/stock/news_view/90965?bu="
-    }
-  ],
   "weather": {
-    "updated": "2026-02-22 08:13:19",
-    "temp": 8.85,
-    "humidity": 88,
-    "desc": "맑음"
+    "updated": "2026-02-27 10:38:04",
+    "temp": 8,
+    "humidity": 78,
+    "desc": "온흐림"
   },
   "intelligence_backup": [
     {
-      "title": "Listeria outbreak traced to pasta meals is over",
-      "summary": "FDA가 파스타 식품에서 발생한 리스테리아 감염 대규모 발병을 종료 선언했습니다. 19개 주에서 28명이 감염되어 7명이 사망했으며, 임산부 1명은 유산을 경험했습니다. Nate's Fine Foods가 생산한 제품이 원인이었습니다.",
+      "title": "파스타 식사 리스테리아 발병 종료 선언",
+      "summary": "FDA가 Nate’s Fine Foods 파스타 식사 관련 치명적 리스테리아 발병 종료 선언. 19개 주 28명 감염, 7명 사망, 대부분 입원. 2024년 8월부터 시작된 발병으로 Walmart, Kroger 등 다수 매장 제품 리콜.",
       "tag": "listeria_free",
       "score": "None",
       "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
     },
     {
-      "title": "When People Got Sick: Prepared Pasta Meals Outbreak",
-      "summary": "CDC가 조사한 파스타 식품 리스테리아 발병이 종료되었습니다. FreshRealm에서 제조한 치킨 페투치니 알프레도 식사가 감염원이었으며, 실제 감염자 수는 보도된 수보다 높을 것으로 예상됩니다.",
+      "title": "배양 고기 상용화 가속, FDA 승인 임박",
+      "summary": "미국 배양 고기 기업 Upside Foods FDA 최종 승인 단계 진입. 안전성 데이터 제출 완료로 상용화 기대. 유럽 시장 확대 동향.",
+      "tag": "cultured_meat",
+      "score": "None",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/cultured-meat-fda-approval-2026-02-27/"
+    }
+  ],
+  "intelligence": [
+    {
+      "title": "Listeria outbreak traced to pasta meals is over",
+      "summary": "FDA가 파스타 식사와 연결된 리스테리아 발병 종료를 공식 선언했습니다. 이번 발병은 19개 주에서 28명을 감염시켰고 7명이 사망했으며, 임산부 1명의 태아 사망까지 초래했습니다.",
       "tag": "listeria_free",
       "score": "None",
-      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/timeline.html"
+      "url": "https://www.foodsafetynews.com/2026/02/listeria-outbreak-traced-to-pasta-meals-is-over/"
+    },
+    {
+      "title": "사이냅 OCR IX 성능 수치 공개, \"GPU 하나로 분당 500장\"",
+      "summary": "사이냅소프트가 1월 출시한 사이냅 OCR IX의 성능을 공개하며 GPU 하나로 분당 500장 처리 가능하다고 밝혔다. OCR 엔진의 고성능 처리 능력이 강조됐다.",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "https://elec4.co.kr/contents/article_detail?article_idx=35844&s_cate=27"
     }
-  ]
+  ],
+  "last_updated": "2026-02-27 01:47:05"
 }
