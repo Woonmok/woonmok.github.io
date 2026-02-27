@@ -18,9 +18,9 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-27 10:28:04",
-    "temp": 7.47,
-    "humidity": 79,
+    "updated": "2026-02-27 10:38:04",
+    "temp": 8,
+    "humidity": 78,
     "desc": "온흐림"
   },
   "intelligence_backup": [
@@ -55,5 +55,5 @@
       "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/cultured-meat-fda-approval-2026-02-27/"
     }
   ],
-  "last_updated": "2026-02-27 01:32:13"
+  "last_updated": "2026-02-27 01:38:12"
 }

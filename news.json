@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-27T01:31:42.443294Z",
+  "generated_at": "2026-02-27T01:32:13.613861Z",
   "items": [
     {
       "id": "c409f5fbe797e7e4acbb8cda41a126293a5ace48",
@@ -552,6 +552,35 @@
       "decision_generated_at": "2026-02-27T01:31:28.674828+00:00"
     },
     {
+      "id": "6ec86e2ac884cd16a3fb769faa3faef30696e3bb",
+      "category": "global_biz",
+      "title": "아마존 AWS 클라우드 매출 신기록",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/02/27/amazon-aws-revenue.html",
+      "published_at": "2026-02-27T00:00:00.000Z",
+      "summary": "AWS 4분기 매출 30% 증가. AI 서비스 수요 주도.",
+      "highlights": [],
+      "tags": [
+        "아마존",
+        "AWS",
+        "매출"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 7.5,
+        "impact_reason": "글로벌 클라우드·AI 수요 증가로 한국 클라우드/AI 스타트업의 해외 진출 기회와 경쟁 심화가 동시에 발생. AWS 가격 인하 압박 및 대기업 클라우드 투자 가속화로 국내 포트폴리오 기업의 사업 환경 재편 예상.",
+        "confidence": 0.78,
+        "confidence_basis": "AWS 성장은 업계 신호로 신뢰도 높으나, 한국 기업별 영향도 편차가 크고 환율·정책 변수 미포함으로 확실성 중간 수준.",
+        "next_action": "포트폴리오 기업의 클라우드·AI 의존도를 재점검하고 AWS 가격 인하 시나리오에 따른 마진율 시뮬레이션 실행.",
+        "time_sensitivity": "SHORT",
+        "opportunity": "한국 클라우드 기업의 해외 진출 가속화 및 AWS 파트너십·마이그레이션 서비스 수요 증가로 B2B SaaS 포트폴리오 성장 견인 가능.",
+        "risk": "AWS 가격 경쟁 심화로 유사 서비스 제공 기업의 마진율 악화 및 대기업 클라우드 자체 구축으로 중소 클라우드 솔루션 업체의 수주 감소 위험."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-27T01:32:09.245853+00:00"
+    },
+    {
       "id": "2e1dc8bb4dc97c0968ab347c0855d2ca85cb3d93",
       "category": "global_biz",
       "title": "테슬라 중국 판매 30% 증가",
@@ -581,38 +610,6 @@
       "decision_generated_at": "2026-02-27T01:31:42.443156+00:00"
     },
     {
-      "id": "448fbf0f3a40b58026373eca79d9625a651a0b70",
-      "category": "global_biz",
-      "title": "비트코인 10만 달러 돌파",
-      "source": "CoinDesk",
-      "url": "https://www.coindesk.com/markets/2026/02/27/bitcoin-100k/",
-      "published_at": "2026-02-27T00:00:00.000Z",
-      "summary": "비트코인 1만 달러 사상 최고치. ETF 유입·규제 완화 영향.",
-      "highlights": [],
-      "tags": [
-        "비트코인",
-        "암호화폐",
-        "가격"
-      ],
-      "score": null
-    },
-    {
-      "id": "6ec86e2ac884cd16a3fb769faa3faef30696e3bb",
-      "category": "global_biz",
-      "title": "아마존 AWS 클라우드 매출 신기록",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/02/27/amazon-aws-revenue.html",
-      "published_at": "2026-02-27T00:00:00.000Z",
-      "summary": "AWS 4분기 매출 30% 증가. AI 서비스 수요 주도.",
-      "highlights": [],
-      "tags": [
-        "아마존",
-        "AWS",
-        "매출"
-      ],
-      "score": null
-    },
-    {
       "id": "5ee29f97e480a6418c574667238f8a96c07766b1",
       "category": "global_biz",
       "title": "EU 반독점 벌금 마이크로소프트",
@@ -626,7 +623,49 @@
         "마이크로소프트",
         "반독점"
       ],
-      "score": null
+      "score": null,
+      "decision": {
+        "impact_score": 3.5,
+        "impact_reason": "EU 규제 강화는 글로벌 클라우드 시장 구조 변화를 신호하지만, 한국 기업의 직접 영향은 제한적이며 오히려 국내 클라우드 기업의 기술 자립 기회를 제공합니다.",
+        "confidence": 0.72,
+        "confidence_basis": "MS 벌금은 EU 특화 이슈이나 글로벌 클라우드 정책 선례로 작용할 가능성과 한국 정부의 보조금 정책 변화 연동성을 고려했습니다.",
+        "next_action": "한국 클라우드/SaaS 기업 포트폴리오 기업들의 번들링 전략과 독점 위험도를 자체 감사하고 EU 진출 계획이 있다면 규정 컴플라이언스를 점검하세요.",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "MS의 시장 점유율 조정으로 한국 클라우드 및 협업 도구 기업들의 EU 시장 진입 기회가 증대될 수 있습니다.",
+        "risk": "향후 한국 정부의 클라우드 보조금 정책이 규제 방향으로 강화될 경우 포트폴리오 기업의 개발 환경 제약이 발생할 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-27T01:32:13.613772+00:00"
+    },
+    {
+      "id": "448fbf0f3a40b58026373eca79d9625a651a0b70",
+      "category": "global_biz",
+      "title": "비트코인 10만 달러 돌파",
+      "source": "CoinDesk",
+      "url": "https://www.coindesk.com/markets/2026/02/27/bitcoin-100k/",
+      "published_at": "2026-02-27T00:00:00.000Z",
+      "summary": "비트코인 1만 달러 사상 최고치. ETF 유입·규제 완화 영향.",
+      "highlights": [],
+      "tags": [
+        "비트코인",
+        "암호화폐",
+        "가격"
+      ],
+      "score": null,
+      "decision": {
+        "impact_score": 3.5,
+        "impact_reason": "비트코인 상승은 암호화폐 생태계 호황을 신호하지만, 일반 제조업/수출업 포트폴리오에 직접 영향은 제한적입니다. 다만 기술주·핀테크·블록체인 관련 사업이 있다면 시장심리 개선 효과가 있습니다.",
+        "confidence": 0.65,
+        "confidence_basis": "비트코인 가격 변동이 한국 실물경제 포트폴리오의 거시 변수(환율, 금리, 수출)에 직접 영향을 주지 않으나, 기술 섹터 심리에는 즉각 영향을 미칠 수 있습니다.",
+        "next_action": "암호화폐·블록체인 관련 사업 여부를 재검토하고, 없다면 경쟁사 기술 투자 움직임 모니터링으로 간접 영향을 추적하세요.",
+        "time_sensitivity": "MEDIUM",
+        "opportunity": "규제 완화 기조가 강화되면 한국 핀테크·블록체인 스타트업 투자 및 협력 기회가 증가할 수 있습니다.",
+        "risk": "과도한 암호화폐 열풍은 기술인력 유출 및 투기 자금 분산으로 실물 사업 자금 조달이 어려워질 수 있습니다."
+      },
+      "mode": "decision",
+      "status": "PENDING_ACTION",
+      "decision_generated_at": "2026-02-27T01:32:04.374620+00:00"
     }
   ]
 }
