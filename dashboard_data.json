@@ -18,10 +18,10 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-27 14:28:15",
-    "temp": 7.98,
-    "humidity": 78,
-    "desc": "온흐림"
+    "updated": "2026-02-28 11:19:51",
+    "temp": 10.32,
+    "humidity": 47,
+    "desc": "맑음"
   },
   "intelligence_backup": [
     {
@@ -55,5 +55,5 @@
       "url": "https://elec4.co.kr/contents/article_detail?article_idx=35844&s_cate=27"
     }
   ],
-  "last_updated": "2026-02-27 02:20:57"
+  "last_updated": "2026-02-28 02:22:46"
 }
