@@ -18,7 +18,7 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-28 11:39:51",
+    "updated": "2026-02-28 11:49:52",
     "temp": 12.26,
     "humidity": 42,
     "desc": "맑음"
@@ -55,5 +55,5 @@
       "url": "https://www.triplelight.co/insight/4450"
     }
   ],
-  "last_updated": "2026-02-28 02:44:39"
+  "last_updated": "2026-02-28 02:49:49"
 }
