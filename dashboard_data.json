@@ -25,22 +25,6 @@
   },
   "intelligence_backup": [
     {
-      "title": "테슬라 로보택시 서비스 런칭: 10개 도시",
-      "summary": "자율주행 택시 10개 도시 서비스 시작. 주가 15% 상승 유발.[1]",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-listeria-monocytogenes-prepared-pasta-meals-june-2025"
-    },
-    {
-      "title": "AI 윤리 규제 법안 통과: EU AI Act 시행",
-      "summary": "고위험 AI 규제 본격 시행. 투명성 및 책임 강화 조항 포함.[3]",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/investigation.html"
-    }
-  ],
-  "intelligence": [
-    {
       "title": "2026년 외환시장 전망 - KRW",
       "summary": "미국 관세 정책으로 인한 달러 약세가 정치 불안정으로 상쇄된 상황이다. 해외 주식 투자 수요와 국민연금 매수세가 환율에 영향을 미쳤다.",
       "tag": "global_biz",
@@ -55,5 +39,21 @@
       "url": "https://blog.b2en.com/747"
     }
   ],
-  "last_updated": "2026-03-01 02:45:20"
+  "intelligence": [
+    {
+      "title": "Boeing 737 MAX orders surge",
+      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
+      "tag": "global_biz",
+      "score": "None",
+      "url": "https://www.wsj.com/boeing-orders-2026"
+    },
+    {
+      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
+      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
+    }
+  ],
+  "last_updated": "2026-03-01 02:59:38"
 }
