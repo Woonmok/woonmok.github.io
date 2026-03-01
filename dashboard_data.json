@@ -25,22 +25,6 @@
   },
   "intelligence_backup": [
     {
-      "title": "Samsung Electronics profit jumps 30% on memory chip boom",
-      "summary": "Samsung 반도체 호황으로 영업이익 30% 증가. HBM 수요 폭증하며 AI 시대 선점.",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://en.yna.co.kr/view/AEN20260225001200315"
-    },
-    {
-      "title": "Grok 3 from xAI tops AI benchmarks",
-      "summary": "xAI Grok 3 벤치마크 1위, 추론·코딩 우수. 무료 공개로 경쟁 심화. Musk 비전 반영.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://arstechnica.com/ai/2026/02/24/grok-3-xai-benchmarks/"
-    }
-  ],
-  "intelligence": [
-    {
       "title": "테슬라 로보택시 서비스 런칭: 10개 도시",
       "summary": "자율주행 택시 10개 도시 서비스 시작. 주가 15% 상승 유발.[1]",
       "tag": "global_biz",
@@ -55,5 +39,21 @@
       "url": "https://www.cdc.gov/listeria/outbreaks/chicken-fettuccine-alfredo-06-25/investigation.html"
     }
   ],
-  "last_updated": "2026-03-01 02:36:33"
+  "intelligence": [
+    {
+      "title": "2026년 외환시장 전망 - KRW",
+      "summary": "미국 관세 정책으로 인한 달러 약세가 정치 불안정으로 상쇄된 상황이다. 해외 주식 투자 수요와 국민연금 매수세가 환율에 영향을 미쳤다.",
+      "tag": "global_biz",
+      "score": "None",
+      "url": "https://biz.kebhana.com/cont/hanafx/file/2026FX.pdf"
+    },
+    {
+      "title": "[IT소식] 2026년 1월 주차 IT·AI 이슈 - 비투엔블로그",
+      "summary": "CES 2026에서 엔비디아가 베라 루빈 플랫폼과 젯슨 토르 로봇용 AI 칩을 공개하며 데이터센터와 엣지 AI 통합 전략을 강조했다. AMD와 퀄컴도 AI 프로세서와 서버 랙을 선보여 AI PC 전쟁이 치열해졌다.",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "https://blog.b2en.com/747"
+    }
+  ],
+  "last_updated": "2026-03-01 02:45:20"
 }
