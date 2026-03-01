@@ -18,10 +18,10 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-02-28 11:49:52",
-    "temp": 12.26,
-    "humidity": 42,
-    "desc": "맑음"
+    "updated": "2026-03-01 10:42:19",
+    "temp": 10.17,
+    "humidity": 52,
+    "desc": "튼구름"
   },
   "intelligence_backup": [
     {
@@ -55,5 +55,5 @@
       "url": "https://www.triplelight.co/insight/4450"
     }
   ],
-  "last_updated": "2026-02-28 02:49:49"
+  "last_updated": "2026-03-01 01:44:35"
 }
