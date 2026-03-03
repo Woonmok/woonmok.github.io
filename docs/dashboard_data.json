@@ -18,9 +18,9 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-01 11:02:22",
-    "temp": 10.17,
-    "humidity": 52,
+    "updated": "2026-03-01 15:12:33",
+    "temp": 13.61,
+    "humidity": 41,
     "desc": "튼구름"
   },
   "intelligence_backup": [
@@ -36,7 +36,7 @@
       "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
     }
   ],
   "intelligence": [
@@ -52,8 +52,8 @@
       "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
     }
   ],
-  "last_updated": "2026-03-02 02:53:36"
+  "last_updated": "2026-03-03 07:47:44"
 }
