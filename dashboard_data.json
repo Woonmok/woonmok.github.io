@@ -2,25 +2,25 @@
   "todo_list": [
     {
       "id": 1,
-      "text": "1. 7일 템플릿 영어 쓰기.",
+      "text": "1. GEMS Strategy 완성하기.",
       "completed": false
     },
     {
       "id": 2,
-      "text": "2. 플러그인_이펙터 업그레이드 하기.",
+      "text": "2. 도의원 후보자 등록 완료하기.",
       "completed": false
     },
     {
       "id": 3,
-      "text": "3. 도의원 의정보고 준비 하기.",
+      "text": "3. 군의원 후보/도의원 후보 플래카드 만들기.",
       "completed": false
     }
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-04 11:22:06",
-    "temp": 7,
-    "humidity": 55,
+    "updated": "2026-03-04 15:23:14",
+    "temp": 9.56,
+    "humidity": 43,
     "desc": "맑음"
   },
   "intelligence_backup": [
@@ -55,5 +55,5 @@
       "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
     }
   ],
-  "last_updated": "2026-03-04 02:21:57"
+  "last_updated": "2026-03-04 14:55:25"
 }
