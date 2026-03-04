@@ -42,7 +42,7 @@ TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "")
 OPENWEATHER_CITY = "Jinan,KR"
-AUTO_BRIEFING_ENABLED = os.getenv("ANTIGRAVITY_AUTO_BRIEFING", "false").strip().lower() in {"1", "true", "yes", "on"}
+AUTO_BRIEFING_ENABLED = os.getenv("ANTIGRAVITY_AUTO_BRIEFING", "true").strip().lower() in {"1", "true", "yes", "on"}
 
 if not TOKEN:
     raise ValueError("TELEGRAM_BOT_TOKEN 환경 변수가 설정되지 않았습니다! (.env 또는 시스템 환경 변수 확인 필요)")
@@ -56,8 +56,10 @@ TODO_STORAGE_JSON = os.path.join(BASE_DIR, "todo_storage.json")
 LOG_FILE = os.path.join(BASE_DIR, "logs", "antigravity.log")
 INSTANCE_LOCK_FILE = os.path.join(BASE_DIR, ".antigravity.lock")
 INSTANCE_LOCK_FD = None
+STATE_DIR = os.path.join(BASE_DIR, ".state")
 
 os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
+os.makedirs(STATE_DIR, exist_ok=True)
 
 
 def log(msg):
@@ -327,6 +329,33 @@ def send_briefing():
         log(f"브리핑 전송 실패: {e}")
 
 
+def briefing_sent_stamp_path(target_date: datetime) -> str:
+    return os.path.join(STATE_DIR, f"briefing_sent_{target_date.strftime('%Y-%m-%d')}.stamp")
+
+
+def mark_briefing_sent(target_date: datetime):
+    stamp = briefing_sent_stamp_path(target_date)
+    with open(stamp, "w", encoding="utf-8") as f:
+        f.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+
+def already_sent_today(target_date: datetime) -> bool:
+    return os.path.exists(briefing_sent_stamp_path(target_date))
+
+
+def send_missed_briefing_if_needed():
+    now = datetime.now()
+    target = now.replace(hour=9, minute=0, second=0, microsecond=0)
+    if now < target:
+        return
+    if already_sent_today(now):
+        return
+
+    log("09:00 브리핑 누락 감지: 즉시 1회 보정 전송")
+    send_briefing()
+    mark_briefing_sent(now)
+
+
 def briefing_scheduler():
     """매일 아침 9시에 브리핑 전송"""
     log("브리핑 스케줄러 시작 (매일 09:00)")
@@ -343,6 +372,7 @@ def briefing_scheduler():
 
         # 브리핑 전송
         send_briefing()
+        mark_briefing_sent(datetime.now())
 
         # 같은 시각 중복 방지
         time.sleep(60)
@@ -558,6 +588,7 @@ def main():
 
     # 2) 아침 9시 브리핑 스케줄러 스레드 (기본 비활성화)
     if AUTO_BRIEFING_ENABLED:
+        send_missed_briefing_if_needed()
         t2 = threading.Thread(target=briefing_scheduler, daemon=True)
         t2.start()
         log("브리핑 스케줄러 스레드 시작")
