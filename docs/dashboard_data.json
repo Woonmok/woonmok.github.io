@@ -18,7 +18,7 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-04 11:02:05",
+    "updated": "2026-03-04 11:12:06",
     "temp": 7,
     "humidity": 55,
     "desc": "맑음"
@@ -41,19 +41,19 @@
   ],
   "intelligence": [
     {
-      "title": "Alibaba AI Cloud Biz Boom",
-      "summary": "Alibaba AI 클라우드 매출 50% 성장. 중국 내 점유율 40%. 글로벌 파트너십 확대.",
+      "title": "Saudi Aramco Expands LNG Deals",
+      "summary": "Aramco 유럽·아시아 LNG 장기 계약 20년치 체결. 재생에너지 전환 속 화석연료 안정 공급.[web:18]",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.scmp.com/business/alibaba-ai-cloud-2026-02-28"
+      "url": "https://www.aramco.com/en/news-media/news/2026/lng-deals"
     },
     {
-      "title": "Google DeepMind AGI Progress",
-      "summary": "Google DeepMind AGI 개발 70% 달성. 2026 말 테스트 버전. 윤리 가이드라인 강조.",
+      "title": "Google DeepMind AGI Milestone",
+      "summary": "Google DeepMind AGI 경로 첫 이정표 달성, 자율 에이전트 테스트 성공. 윤리 가이드라인 강화.[web:14]",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://www.wired.com/story/google-deepmind-agi-2026"
+      "url": "https://deepmind.google/discover/agi-milestone-2026"
     }
   ],
-  "last_updated": "2026-03-04 02:03:02"
+  "last_updated": "2026-03-04 02:14:43"
 }
