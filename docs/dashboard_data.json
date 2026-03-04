@@ -18,42 +18,42 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-01 15:12:33",
-    "temp": 13.61,
-    "humidity": 41,
-    "desc": "튼구름"
+    "updated": "2026-03-04 10:52:05",
+    "temp": 7,
+    "humidity": 55,
+    "desc": "맑음"
   },
   "intelligence_backup": [
     {
-      "title": "Boeing 737 MAX orders surge",
-      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
+      "title": "The 2026 supply chain challenge: Confronting complexity and disruption in global trade",
+      "summary": "2026 톰슨 로이터 글로벌 무역 보고서에 따르면, 미국 관세 변동성으로 공급망 우려가 전년 대비 두 배 증가하며 무역 전문가 72%가 이를 가장 큰 규제 변화로 꼽았다. 기업들은 소싱 패턴 변경(65%), 공급업체 계약 재협상(57%), 근소싱(51%) 등으로 대응 중이다.[1]",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.wsj.com/boeing-orders-2026"
+      "url": "https://tax.thomsonreuters.com/blog/2026s-supply-chain-challenge-confronting-complexity-and-disruption-in-global-trade-tri/"
     },
     {
-      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
-      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
+      "title": "Nvidia Delivers Upbeat Forecast to AI-Wary Market",
+      "summary": "엔비디아가 AI 시장 불확실성 속 긍정적 전망을 제시하며 투자자 우려를 완화했다. GPU 수요 강세를 바탕으로 매출 성장 기대감을 밝혔다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
+      "url": "https://www.youtube.com/watch?v=CK5J7kbwH90"
     }
   ],
   "intelligence": [
     {
-      "title": "Boeing 737 MAX orders surge",
-      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
+      "title": "Alibaba AI Cloud Biz Boom",
+      "summary": "Alibaba AI 클라우드 매출 50% 성장. 중국 내 점유율 40%. 글로벌 파트너십 확대.",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.wsj.com/boeing-orders-2026"
+      "url": "https://www.scmp.com/business/alibaba-ai-cloud-2026-02-28"
     },
     {
-      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
-      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
+      "title": "Google DeepMind AGI Progress",
+      "summary": "Google DeepMind AGI 개발 70% 달성. 2026 말 테스트 버전. 윤리 가이드라인 강조.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
+      "url": "https://www.wired.com/story/google-deepmind-agi-2026"
     }
   ],
-  "last_updated": "2026-03-03 07:49:26"
+  "last_updated": "2026-03-04 01:58:41"
 }
