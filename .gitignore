@@ -13,6 +13,9 @@ __pycache__/
 # Ignore log files
 logs/antigravity_error.log
 logs/*.log
+.antigravity.lock
+.state/
+logs/.smbdelete*
 
 # Ignore dashboard_data.json and log files in root
 /dashboard_data.json
