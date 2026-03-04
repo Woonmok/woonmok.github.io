@@ -25,35 +25,35 @@
   },
   "intelligence_backup": [
     {
-      "title": "Alibaba AI Cloud Biz Boom",
-      "summary": "Alibaba AI 클라우드 매출 50% 성장. 중국 내 점유율 40%. 글로벌 파트너십 확대.",
+      "title": "Boeing 737 MAX orders surge",
+      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.scmp.com/business/alibaba-ai-cloud-2026-02-28"
+      "url": "https://www.wsj.com/boeing-orders-2026"
     },
     {
-      "title": "Google DeepMind AGI Progress",
-      "summary": "Google DeepMind AGI 개발 70% 달성. 2026 말 테스트 버전. 윤리 가이드라인 강조.",
+      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
+      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://www.wired.com/story/google-deepmind-agi-2026"
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
     }
   ],
   "intelligence": [
     {
-      "title": "Saudi Aramco Expands LNG Deals",
-      "summary": "Aramco 유럽·아시아 LNG 장기 계약 20년치 체결. 재생에너지 전환 속 화석연료 안정 공급.[web:18]",
+      "title": "Boeing 737 MAX orders surge",
+      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.aramco.com/en/news-media/news/2026/lng-deals"
+      "url": "https://www.wsj.com/boeing-orders-2026"
     },
     {
-      "title": "Google DeepMind AGI Milestone",
-      "summary": "Google DeepMind AGI 경로 첫 이정표 달성, 자율 에이전트 테스트 성공. 윤리 가이드라인 강화.[web:14]",
+      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
+      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://deepmind.google/discover/agi-milestone-2026"
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
     }
   ],
-  "last_updated": "2026-03-04 02:14:43"
+  "last_updated": "2026-03-04 02:20:02"
 }
