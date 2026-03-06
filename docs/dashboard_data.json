@@ -25,35 +25,35 @@
   },
   "intelligence_backup": [
     {
-      "title": "세계는 현재 배양육 규제 확대 중",
-      "summary": "미국과 EU 등에서 세포 배양육 규제를 강화 중이며, 국내도 안전성 검증까지 배양육 도입을 보류하고 있다.",
-      "tag": "cultured_meat",
+      "title": "AI 윤리 규제 신법 통과",
+      "summary": "EU AI 법안 최종 통과. 고위험 AI 감시 강화. 글로벌 표준화 영향.",
+      "tag": "computer_ai",
       "score": "None",
-      "url": "http://www.pigtimes.co.kr/news/articleView.html?idxno=52135"
+      "url": "https://www.reuters.com/technology/ai-regulation-law-2026-03-06"
     },
     {
-      "title": "Weekly Market Update March 2 2026 - ATB Financial",
-      "summary": "트럼프 행정부가 글로벌 관세를 10%에서 15%로 인상하며 무역 전쟁 불확실성이 고조되고 있으며, 미국의 이란 공격으로 브렌트 및 WTI 유가가 7% 급등해 글로벌 공급망과 인플레이션 압력이 커지고 있다. 캐나다 은행들의 실적은 미국 무역 불확실성 속에서 혼조세를 보였다.[1]",
-      "tag": "global_biz",
+      "title": "새 플래그십 DAC-앰프 리뷰: 최고 음질",
+      "summary": "최신 DAC-앰프, 초고해상도 음원 지원. 가격대비 성능 탁월로 올해 최고 제품 선정. 무선 스트리밍 강화.",
+      "tag": "high_end_audio",
       "score": "None",
-      "url": "https://www.atb.com/wealth/good-advice/markets/weekly-market-update-march-2-2026/"
+      "url": "https://www.whathifi.com/reviews/flagship-dac-amp-2026"
     }
   ],
   "intelligence": [
     {
-      "title": "Weekly Global Economic Update | Deloitte Insights",
-      "summary": "미 대법원이 국가비상사태 기반 관세를 위법으로 판결하며 글로벌 무역 불확실성이 증대됐다. 2025년 4분기 미국 GDP 성장 둔화와 인플레이션 가속이 금리 인하 기대를 낮추고 있다.",
+      "title": "럭셔리 브랜드 M&A 활성화",
+      "summary": "럭셔리 업계 대형 인수합병 잇따라. LVMH 등 성장 전략. 아시아 시장 공략.",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html"
+      "url": "https://www.ft.com/content/luxury-mergers-2026"
     },
     {
-      "title": "New AI Model Releases News | March, 2026 (STARTUP EDITION)",
-      "summary": "3월 AI 모델 릴리즈 급증으로 Google Gemini 3.1 Pro, Anthropic Claude 4.6, OpenAI GPT-5.3 등이 출시되었으며, Nvidia Vera Rubin 플랫폼과 H300 GPU가 데이터센터용으로 발표됐다. AMD Ryzen AI 400 시리즈와 Samsung의 AI 기기 확대도 주목된다.",
+      "title": "퀀텀 컴퓨팅 상용화 첫 사례",
+      "summary": "IBM 퀀텀 컴퓨터 클라우드 서비스 시작. 약물 발견 분야 적용. 오류율 대폭 감소.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
+      "url": "https://www.ibm.com/quantum/news/commercial-2026"
     }
   ],
-  "last_updated": "2026-03-05 02:05:09"
+  "last_updated": "2026-03-06 01:46:15"
 }
