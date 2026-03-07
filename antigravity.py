@@ -26,7 +26,7 @@ os.environ['PYTHONWARNINGS'] = 'ignore'
 warnings.filterwarnings('ignore')
 
 # --- 환경 변수 ---
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.realpath(os.path.dirname(os.path.abspath(__file__)))
 
 from dotenv import load_dotenv
 env_candidates = [
@@ -54,7 +54,7 @@ DASHBOARD_JSON = os.path.join(BASE_DIR, "dashboard_data.json")
 DAILY_NEWS_JSON = os.path.join(BASE_DIR, "daily_news.json")
 TODO_STORAGE_JSON = os.path.join(BASE_DIR, "todo_storage.json")
 LOG_FILE = os.path.join(BASE_DIR, "logs", "antigravity.log")
-INSTANCE_LOCK_FILE = os.path.join(BASE_DIR, ".antigravity.lock")
+INSTANCE_LOCK_FILE = os.path.join(tempfile.gettempdir(), "wavetree_antigravity.lock")
 INSTANCE_LOCK_FD = None
 STATE_DIR = os.path.join(BASE_DIR, ".state")
 
@@ -444,6 +444,7 @@ def cmd_help(message):
 @bot.message_handler(func=lambda m: True)
 def handle_text(message):
     text = message.text.strip()
+    normalized_text = re.sub(r"\s+", " ", text).strip()
     data = load_dashboard()
 
     def format_numbered_line(item):
@@ -453,8 +454,12 @@ def handle_text(message):
         return f"\u2713 {tid}. {clean_text}"
 
     # 추가
-    if text.startswith("추가:"):
-        task = text.replace("추가:", "").strip()
+    add_match = re.match(r"^(?:오늘의\s*)?할\s*일\s*추가\s*[:：]\s*(.+)$", normalized_text)
+    if not add_match and text.startswith("추가:"):
+        add_match = re.match(r"^추가\s*[:：]\s*(.+)$", normalized_text)
+
+    if add_match:
+        task = add_match.group(1).strip()
         if not task:
             bot.reply_to(message, "\u274c 작업명을 입력해주세요.")
             return
@@ -467,8 +472,12 @@ def handle_text(message):
         return
 
     # 완료
-    if text.startswith("완료:"):
-        target = text.replace("완료:", "").strip()
+    done_match = re.match(r"^(?:오늘의\s*)?할\s*일\s*완료\s*[:：]\s*(.+)$", normalized_text)
+    if not done_match and text.startswith("완료:"):
+        done_match = re.match(r"^완료\s*[:：]\s*(.+)$", normalized_text)
+
+    if done_match:
+        target = done_match.group(1).strip()
         for item in data.get("todo_list", []):
             if str(item.get("id")) == target or item.get("text") == target:
                 item["completed"] = True
@@ -480,8 +489,12 @@ def handle_text(message):
         return
 
     # 삭제
-    if text.startswith("삭제:"):
-        target = text.replace("삭제:", "").strip()
+    delete_match = re.match(r"^(?:오늘의\s*)?할\s*일\s*삭제\s*[:：]\s*(.+)$", normalized_text)
+    if not delete_match and text.startswith("삭제:"):
+        delete_match = re.match(r"^삭제\s*[:：]\s*(.+)$", normalized_text)
+
+    if delete_match:
+        target = delete_match.group(1).strip()
         original = len(data.get("todo_list", []))
         data["todo_list"] = [
             item for item in data.get("todo_list", [])
@@ -496,7 +509,7 @@ def handle_text(message):
         return
 
     # 목록
-    if text in ["목록", "오늘", "할일", "내가 할 일", "내가할일"]:
+    if normalized_text in ["목록", "오늘", "할일", "내가 할 일", "내가할일", "오늘 할일", "오늘의 할일"]:
         cmd_todo(message)
         return
 
