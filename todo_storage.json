@@ -1,25 +1,6 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "text": "1. 7일 템플릿 영어 쓰기.",
-      "completed": false,
-      "date": "2026-03-07T02:09:48Z"
-    },
-    {
-      "id": 2,
-      "text": "2. DSP 엣지기반 Acoustic Emission 만들기.",
-      "completed": false,
-      "date": "2026-03-07T02:09:48Z"
-    },
-    {
-      "id": 3,
-      "text": "3. 도의원 예비후보등록 완료 하기.",
-      "completed": false,
-      "date": "2026-03-07T02:09:48Z"
-    }
-  ],
+  "tasks": [],
   "lastMsgId": 0,
   "synced_from": "dashboard_data.json",
-  "synced_at": "2026-03-07 11:09:48"
+  "synced_at": "2026-03-08 14:58:04"
 }
