@@ -25,18 +25,18 @@
   },
   "intelligence_backup": [
     {
-      "title": "Samsung Galaxy S26 AI 폰 예약 시작",
-      "summary": "Samsung Galaxy S26 시리즈 AI 기능 탑재 예약 개시. 카메라·배터리 혁신.",
+      "title": "Weekly Global Economic Update | Deloitte Insights",
+      "summary": "미 대법원이 국가비상사태 기반 관세를 위법으로 판결하며 글로벌 무역 불확실성이 증대됐다. 2025년 4분기 미국 GDP 성장 둔화와 인플레이션 가속이 금리 인하 기대를 낮추고 있다.",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://en.yna.co.kr/view/AEN2026030400010000"
+      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html"
     },
     {
-      "title": "US Considers Permits for Global Nvidia, AMD AI Chip Sales | Bloomberg Tech 3/6/2026",
-      "summary": "미국 상무부가 NVIDIA와 AMD의 AI 칩 글로벌 수출에 대한 허가 제도를 검토 중으로, 전 세계 AI 칩 출하를 미국 승인 하에 제한할 계획이다. Oracle은 AI 데이터센터 확장으로 현금 부족을 겪으며 대규모 감원을 추진한다.",
+      "title": "New AI Model Releases News | March, 2026 (STARTUP EDITION)",
+      "summary": "3월 AI 모델 릴리즈 급증으로 Google Gemini 3.1 Pro, Anthropic Claude 4.6, OpenAI GPT-5.3 등이 출시되었으며, Nvidia Vera Rubin 플랫폼과 H300 GPU가 데이터센터용으로 발표됐다. AMD Ryzen AI 400 시리즈와 Samsung의 AI 기기 확대도 주목된다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://www.youtube.com/watch?v=Sf4GBsgz8bY"
+      "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
     }
   ],
   "intelligence": [
@@ -55,5 +55,5 @@
       "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
     }
   ],
-  "last_updated": "2026-03-08 11:59:37"
+  "last_updated": "2026-03-08 12:14:39"
 }
