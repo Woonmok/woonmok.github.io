@@ -1,59 +1,10 @@
 {
-  "todo_list": [
-    {
-      "id": 1,
-      "text": "1. GEMS Strategy 완성하기.",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "text": "2. 도의원 후보자 등록 완료하기.",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "text": "3. 군의원 후보/도의원 후보 플래카드 만들기.",
-      "completed": false
-    }
-  ],
+  "todo_list": [],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-06 10:44:04",
-    "temp": 3.58,
-    "humidity": 69,
-    "desc": "튼구름"
-  },
-  "intelligence_backup": [
-    {
-      "title": "AI 윤리 규제 신법 통과",
-      "summary": "EU AI 법안 최종 통과. 고위험 AI 감시 강화. 글로벌 표준화 영향.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://www.reuters.com/technology/ai-regulation-law-2026-03-06"
-    },
-    {
-      "title": "새 플래그십 DAC-앰프 리뷰: 최고 음질",
-      "summary": "최신 DAC-앰프, 초고해상도 음원 지원. 가격대비 성능 탁월로 올해 최고 제품 선정. 무선 스트리밍 강화.",
-      "tag": "high_end_audio",
-      "score": "None",
-      "url": "https://www.whathifi.com/reviews/flagship-dac-amp-2026"
-    }
-  ],
-  "intelligence": [
-    {
-      "title": "럭셔리 브랜드 M&A 활성화",
-      "summary": "럭셔리 업계 대형 인수합병 잇따라. LVMH 등 성장 전략. 아시아 시장 공략.",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://www.ft.com/content/luxury-mergers-2026"
-    },
-    {
-      "title": "퀀텀 컴퓨팅 상용화 첫 사례",
-      "summary": "IBM 퀀텀 컴퓨터 클라우드 서비스 시작. 약물 발견 분야 적용. 오류율 대폭 감소.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://www.ibm.com/quantum/news/commercial-2026"
-    }
-  ],
-  "last_updated": "2026-03-06 01:46:15"
+    "updated": "2026-03-08 13:58:01",
+    "temp": 6.23,
+    "humidity": 25,
+    "desc": "온흐림"
+  }
 }

@@ -1,59 +1,10 @@
 {
-  "todo_list": [
-    {
-      "id": 1,
-      "text": "1. 7일 템플릿 영어 쓰기.",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "text": "2. DSP 엣지기반 Acoustic Emission 만들기.",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "text": "3. 도의원 예비후보등록 완료 하기.",
-      "completed": false
-    }
-  ],
+  "todo_list": [],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-07 11:09:48",
-    "temp": 0.86,
-    "humidity": 49,
-    "desc": "구름조금"
-  },
-  "intelligence_backup": [
-    {
-      "title": "Boeing 737 MAX orders surge",
-      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://www.wsj.com/boeing-orders-2026"
-    },
-    {
-      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
-      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
-    }
-  ],
-  "intelligence": [
-    {
-      "title": "Boeing 737 MAX orders surge",
-      "summary": "Boeing 737 MAX 대규모 주문 유치, 생산 정상화. 아시아 항공사 중심 회복세.",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://www.wsj.com/boeing-orders-2026"
-    },
-    {
-      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
-      "summary": "엔비디아가 2026 회계연도 4분기 실적을 발표하며 BlueField-4 데이터 프로세서 기반 AI 스토리지 플랫폼과 메타와의 멀티 GPU 파트너십을 공개했다. DLSS 4.5와 RTX AI 성능 향상도 강조됐다.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026"
-    }
-  ],
-  "last_updated": "2026-03-06 17:40:48"
+    "updated": "2026-03-08 13:58:01",
+    "temp": 6.23,
+    "humidity": 25,
+    "desc": "온흐림"
+  }
 }
