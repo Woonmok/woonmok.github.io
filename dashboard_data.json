@@ -1,6 +1,7 @@
 {
   "todo_list": [
     {
+<<<<<<< HEAD
       "id": 1,
       "text": "1. Monitoring_Stack 완료하기.",
       "completed": false
@@ -13,11 +14,16 @@
     {
       "id": 3,
       "text": "3. 군의원 후보/도의원 후보 플래카드 만들기.",
+=======
+      "id": 2,
+      "text": "2. suno 악보화 하기.",
+>>>>>>> dbbd15e (auto: 7am news publish 2026-03-10 09:08)
       "completed": false
     }
   ],
   "system_status": "NORMAL",
   "weather": {
+<<<<<<< HEAD
     "updated": "2026-03-08 21:20:29",
     "temp": -1.7,
     "humidity": 68,
@@ -56,4 +62,12 @@
     }
   ],
   "last_updated": "2026-03-08 12:19:40"
+=======
+    "updated": "2026-03-10 09:06:01",
+    "temp": 2.17,
+    "humidity": 54,
+    "desc": "맑음"
+  },
+  "last_updated": "2026-03-10 09:06:04"
+>>>>>>> dbbd15e (auto: 7am news publish 2026-03-10 09:08)
 }
