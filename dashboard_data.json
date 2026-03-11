@@ -1,73 +1,43 @@
 {
-  "todo_list": [
-    {
-<<<<<<< HEAD
-      "id": 1,
-      "text": "1. Monitoring_Stack 완료하기.",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "text": "2. 도의원 후보자 등록 완료하기.",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "text": "3. 군의원 후보/도의원 후보 플래카드 만들기.",
-=======
-      "id": 2,
-      "text": "2. suno 악보화 하기.",
->>>>>>> dbbd15e (auto: 7am news publish 2026-03-10 09:08)
-      "completed": false
-    }
-  ],
+  "todo_list": [],
   "system_status": "NORMAL",
   "weather": {
-<<<<<<< HEAD
-    "updated": "2026-03-08 21:20:29",
-    "temp": -1.7,
-    "humidity": 68,
+    "updated": "2026-03-11 08:58:02",
+    "temp": 2.89,
+    "humidity": 53,
     "desc": "온흐림"
   },
-  "intelligence_backup": [
-    {
-      "title": "Weekly Global Economic Update | Deloitte Insights",
-      "summary": "미 대법원이 국가비상사태 기반 관세를 위법으로 판결하며 글로벌 무역 불확실성이 증대됐다. 2025년 4분기 미국 GDP 성장 둔화와 인플레이션 가속이 금리 인하 기대를 낮추고 있다.",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html"
-    },
-    {
-      "title": "New AI Model Releases News | March, 2026 (STARTUP EDITION)",
-      "summary": "3월 AI 모델 릴리즈 급증으로 Google Gemini 3.1 Pro, Anthropic Claude 4.6, OpenAI GPT-5.3 등이 출시되었으며, Nvidia Vera Rubin 플랫폼과 H300 GPU가 데이터센터용으로 발표됐다. AMD Ryzen AI 400 시리즈와 Samsung의 AI 기기 확대도 주목된다.",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
-    }
-  ],
   "intelligence": [
     {
-      "title": "Weekly Global Economic Update | Deloitte Insights",
-      "summary": "미 대법원이 국가비상사태 기반 관세를 위법으로 판결하며 글로벌 무역 불확실성이 증대됐다. 2025년 4분기 미국 GDP 성장 둔화와 인플레이션 가속이 금리 인하 기대를 낮추고 있다.",
+      "title": "Market Thoughts for March 2026 [Video]",
+      "summary": "AI, 관세, 무역 정책 우려로 2월 주식 시장이 변동성을 보였다. 국제 주식이 글로벌 시장에서 가장 좋은 성과를 냈다.",
       "tag": "global_biz",
       "score": "None",
-      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html"
+      "url": "https://blog.commonwealth.com/independent-market-observer/market-thoughts-for-march-2026-video"
     },
     {
-      "title": "New AI Model Releases News | March, 2026 (STARTUP EDITION)",
-      "summary": "3월 AI 모델 릴리즈 급증으로 Google Gemini 3.1 Pro, Anthropic Claude 4.6, OpenAI GPT-5.3 등이 출시되었으며, Nvidia Vera Rubin 플랫폼과 H300 GPU가 데이터센터용으로 발표됐다. AMD Ryzen AI 400 시리즈와 Samsung의 AI 기기 확대도 주목된다.",
+      "title": "US Considers Permits for Global Nvidia, AMD AI Chip Sales",
+      "summary": "미 상무부가 Nvidia, AMD AI 칩의 글로벌 출하에 허가 제도를 도입하며 20만 개 이상 Blackwell 등급 칩은 국가 간 협의를 요구한다. 이는 수출 금지와 차별화된 계층적 규제 조치다.",
       "tag": "computer_ai",
       "score": "None",
-      "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
+      "url": "https://www.youtube.com/watch?v=Sf4GBsgz8bY"
     }
   ],
-  "last_updated": "2026-03-08 12:19:40"
-=======
-    "updated": "2026-03-10 09:06:01",
-    "temp": 2.17,
-    "humidity": 54,
-    "desc": "맑음"
-  },
-  "last_updated": "2026-03-10 09:06:04"
->>>>>>> dbbd15e (auto: 7am news publish 2026-03-10 09:08)
+  "last_updated": "2026-03-11 00:01:47",
+  "intelligence_backup": [
+    {
+      "title": "Saudi Aramco Acquires Stake in US Cultured Meat Firm",
+      "summary": "Aramco, 미국 배양육 회사 지분 인수로 대체 단백질 진출. $2B 투자. 석유 다각화 전략.[web:17]",
+      "tag": "global_biz",
+      "score": "None",
+      "url": "https://www.aramco.com/en/news-media/news/2026-cultured-meat-investment"
+    },
+    {
+      "title": "Google DeepMind Achieves AGI Milestone in Robotics",
+      "summary": "DeepMind, 로봇 AGI 수준 제어 달성. 실시간 학습으로 가정용 로봇 상용화. 파트너십 확대.[web:14]",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "https://deepmind.google/news/agi-robotics-2026"
+    }
+  ]
 }
