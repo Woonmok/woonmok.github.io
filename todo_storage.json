@@ -1,5 +1,12 @@
 {
-  "tasks": [],
+  "tasks": [
+    {
+      "id": 2,
+      "text": "2. suno 악보화 하기.",
+      "completed": false,
+      "date": "2026-03-10T00:06:04Z"
+    }
+  ],
   "lastMsgId": 0,
   "synced_from": "dashboard_data.json",
   "synced_at": "2026-03-12 10:36:07"
