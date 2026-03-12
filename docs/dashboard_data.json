@@ -2,12 +2,29 @@
   "todo_list": [],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-11 08:58:02",
-    "temp": 2.89,
-    "humidity": 53,
-    "desc": "온흐림"
+    "updated": "2026-03-12 09:16:01",
+    "temp": 4.14,
+    "humidity": 49,
+    "desc": "맑음"
   },
   "intelligence": [
+    {
+      "title": "NVIDIA GTC 2026 Keynote",
+      "summary": "Nvidia GTC 2026 키노트가 3월 16일 개최되어 AI 및 변혁적 기술의 최신 동향 발표 예정.",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "https://www.youtube.com/watch?v=L9VAR1Rqt4g"
+    },
+    {
+      "title": "대체식품 관련주, 대안식품·배양육 대중화 새 장 연다~",
+      "summary": "식약처가 배양육을 식품 원료로 한시적 인정하고 경북도를 세포배양식품 규제자유특구로 지정했다. 스캐폴드 기술 개발로 세포 함량 높이고 하이브리드 배양육이 주류 될 전망이다.",
+      "tag": "cultured_meat",
+      "score": "None",
+      "url": "https://blog.naver.com/goldmap7/223533084889"
+    }
+  ],
+  "last_updated": "2026-03-12 00:16:17",
+  "intelligence_backup": [
     {
       "title": "Market Thoughts for March 2026 [Video]",
       "summary": "AI, 관세, 무역 정책 우려로 2월 주식 시장이 변동성을 보였다. 국제 주식이 글로벌 시장에서 가장 좋은 성과를 냈다.",
@@ -21,23 +38,6 @@
       "tag": "computer_ai",
       "score": "None",
       "url": "https://www.youtube.com/watch?v=Sf4GBsgz8bY"
-    }
-  ],
-  "last_updated": "2026-03-11 00:01:47",
-  "intelligence_backup": [
-    {
-      "title": "Saudi Aramco Acquires Stake in US Cultured Meat Firm",
-      "summary": "Aramco, 미국 배양육 회사 지분 인수로 대체 단백질 진출. $2B 투자. 석유 다각화 전략.[web:17]",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://www.aramco.com/en/news-media/news/2026-cultured-meat-investment"
-    },
-    {
-      "title": "Google DeepMind Achieves AGI Milestone in Robotics",
-      "summary": "DeepMind, 로봇 AGI 수준 제어 달성. 실시간 학습으로 가정용 로봇 상용화. 파트너십 확대.[web:14]",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://deepmind.google/news/agi-robotics-2026"
     }
   ]
 }
