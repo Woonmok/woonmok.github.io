@@ -599,25 +599,6 @@
                         `;
                     });
                     todoList.innerHTML = todoHtml;
-                } else if (statusData && Array.isArray(statusData.approved_tickets)) {
-                    let todoHtml = '';
-                    if (statusData.approved_tickets.length > 0) {
-                        statusData.approved_tickets.forEach(text => {
-                            const todoText = String(text || '').replace(/\n/g, '<br>');
-                            todoHtml += `
-                            <li class="todo-item">
-                                <span class="todo-text">${todoText}</span>
-                            </li>
-                            `;
-                        });
-                    } else {
-                        todoHtml = `
-                        <li class="todo-item">
-                            할일 없음
-                        </li>
-                        `;
-                    }
-                    todoList.innerHTML = todoHtml;
                 } else {
                     todoList.innerHTML = '<li class="todo-item">할일 없음</li>';
                 }

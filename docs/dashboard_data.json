@@ -1,43 +1,59 @@
 {
-  "todo_list": [],
-  "system_status": "NORMAL",
-  "weather": {
-    "updated": "2026-03-12 10:56:08",
-    "temp": 7.09,
-    "humidity": 45,
-    "desc": "맑음"
-  },
-  "intelligence": [
+  "todo_list": [
     {
-      "title": "아마존 AWS 아시아 데이터센터 투자 100억",
-      "summary": "아마존 AWS 일본 인도 100억 달러 투자, AI 클라우드 수요 대응. 지역 고용 1만명 창출.[web:19]",
-      "tag": "global_biz",
-      "score": "None",
-      "url": "https://asia.nikkei.com/Business/Amazon-AWS-Asia-2026"
+      "id": 1,
+      "text": "1. Monitoring_Stack 완료하기.",
+      "completed": false
     },
     {
-      "title": "구글 딥마인드 로봇 AI 통합",
-      "summary": "제미나이 기반 로봇 자율 학습, 공장 자동화 적용. 안전 프로토콜 강화, 비용 절감 40%.[web:15]",
-      "tag": "computer_ai",
-      "score": "None",
-      "url": "https://arstechnica.com/2026/03/12/google-deepmind-robot-ai"
+      "id": 2,
+      "text": "2. 도의원 후보자 등록 완료하기.",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "3. 군의원 후보/도의원 후보 플래카드 만들기.",
+      "completed": false
     }
   ],
-  "last_updated": "2026-03-12 02:02:26",
+  "system_status": "NORMAL",
+  "weather": {
+    "updated": "2026-03-08 20:52:17",
+    "temp": -1.7,
+    "humidity": 68,
+    "desc": "온흐림"
+  },
   "intelligence_backup": [
     {
-      "title": "NVIDIA GTC 2026 Keynote",
-      "summary": "Nvidia GTC 2026 키노트가 3월 16일 개최되어 AI 및 변혁적 기술의 최신 동향 발표 예정.",
-      "tag": "computer_ai",
+      "title": "Weekly Global Economic Update | Deloitte Insights",
+      "summary": "미 대법원이 국가비상사태 기반 관세를 위법으로 판결하며 글로벌 무역 불확실성이 증대됐다. 2025년 4분기 미국 GDP 성장 둔화와 인플레이션 가속이 금리 인하 기대를 낮추고 있다.",
+      "tag": "global_biz",
       "score": "None",
-      "url": "https://www.youtube.com/watch?v=L9VAR1Rqt4g"
+      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html"
     },
     {
-      "title": "대체식품 관련주, 대안식품·배양육 대중화 새 장 연다~",
-      "summary": "식약처가 배양육을 식품 원료로 한시적 인정하고 경북도를 세포배양식품 규제자유특구로 지정했다. 스캐폴드 기술 개발로 세포 함량 높이고 하이브리드 배양육이 주류 될 전망이다.",
-      "tag": "cultured_meat",
+      "title": "New AI Model Releases News | March, 2026 (STARTUP EDITION)",
+      "summary": "3월 AI 모델 릴리즈 급증으로 Google Gemini 3.1 Pro, Anthropic Claude 4.6, OpenAI GPT-5.3 등이 출시되었으며, Nvidia Vera Rubin 플랫폼과 H300 GPU가 데이터센터용으로 발표됐다. AMD Ryzen AI 400 시리즈와 Samsung의 AI 기기 확대도 주목된다.",
+      "tag": "computer_ai",
       "score": "None",
-      "url": "https://blog.naver.com/goldmap7/223533084889"
+      "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
     }
-  ]
+  ],
+  "intelligence": [
+    {
+      "title": "Weekly Global Economic Update | Deloitte Insights",
+      "summary": "미 대법원이 국가비상사태 기반 관세를 위법으로 판결하며 글로벌 무역 불확실성이 증대됐다. 2025년 4분기 미국 GDP 성장 둔화와 인플레이션 가속이 금리 인하 기대를 낮추고 있다.",
+      "tag": "global_biz",
+      "score": "None",
+      "url": "https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html"
+    },
+    {
+      "title": "New AI Model Releases News | March, 2026 (STARTUP EDITION)",
+      "summary": "3월 AI 모델 릴리즈 급증으로 Google Gemini 3.1 Pro, Anthropic Claude 4.6, OpenAI GPT-5.3 등이 출시되었으며, Nvidia Vera Rubin 플랫폼과 H300 GPU가 데이터센터용으로 발표됐다. AMD Ryzen AI 400 시리즈와 Samsung의 AI 기기 확대도 주목된다.",
+      "tag": "computer_ai",
+      "score": "None",
+      "url": "https://blog.mean.ceo/new-ai-model-releases-news-march-2026/"
+    }
+  ],
+  "last_updated": "2026-03-11 13:20:12"
 }
