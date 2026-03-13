@@ -18,9 +18,9 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-13 10:40:05",
-    "temp": 6.94,
-    "humidity": 37,
+    "updated": "2026-03-13 17:54:03",
+    "temp": 6.17,
+    "humidity": 44,
     "desc": "맑음"
   },
   "intelligence_backup": [
@@ -55,5 +55,5 @@
       "url": "https://www.ainvest.com/news/nvidia-gtc-2026-reveal-chips-trigger-ai-adoption-curve-2603/"
     }
   ],
-  "last_updated": "2026-03-13 01:47:18"
+  "last_updated": "2026-03-13 09:00:18"
 }
