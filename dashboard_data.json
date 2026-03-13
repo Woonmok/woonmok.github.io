@@ -18,9 +18,9 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-13 10:00:03",
-    "temp": 5.85,
-    "humidity": 45,
+    "updated": "2026-03-13 10:40:05",
+    "temp": 6.94,
+    "humidity": 37,
     "desc": "맑음"
   },
   "intelligence_backup": [
