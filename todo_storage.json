@@ -4,22 +4,22 @@
       "id": 1,
       "text": "1. Monitoring_Stack 완료하기.",
       "completed": false,
-      "date": "2026-03-14T14:15:30Z"
+      "date": "2026-03-15T01:43:17Z"
     },
     {
       "id": 2,
       "text": "2. 도의원 후보자 등록 완료하기.",
       "completed": false,
-      "date": "2026-03-14T14:15:30Z"
+      "date": "2026-03-15T01:43:17Z"
     },
     {
       "id": 3,
       "text": "3. 군의원 후보/도의원 후보 플래카드 만들기.",
       "completed": false,
-      "date": "2026-03-14T14:15:30Z"
+      "date": "2026-03-15T01:43:17Z"
     }
   ],
   "lastMsgId": 0,
   "synced_from": "dashboard_data.json",
-  "synced_at": "2026-03-14 23:15:30"
+  "synced_at": "2026-03-15 10:43:17"
 }

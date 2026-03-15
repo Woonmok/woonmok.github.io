@@ -18,10 +18,10 @@
   ],
   "system_status": "NORMAL",
   "weather": {
-    "updated": "2026-03-14 23:15:30",
-    "temp": 2.38,
-    "humidity": 68,
-    "desc": "온흐림"
+    "updated": "2026-03-15 10:43:17",
+    "temp": 6.05,
+    "humidity": 63,
+    "desc": "실 비"
   },
   "intelligence_backup": [
     {
